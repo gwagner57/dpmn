@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <title>DPMN Specification</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="description"
+       content="DPMN is a diagram language for making (computational) process design models for discrete event simulation based on Event Graphs and BPMN. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the event scheduling arrows of Event Graphs and the event rules of the Object Event Modeling and Simulation paradigm."/>
+ <meta name="author" content="Gerd Wagner" />
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/themes/prism.min.css" />
+ <link rel="stylesheet" type="text/css" href="layout.css" />
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
+</head>
+<body>
+ <header>
+ </header>
+ <main>
+  <div id="front-matter">
+    <h1 id="title">Discrete Event Process Modeling Notation (DPMN)</h1>
+    <div id="subtitle">Language Definition</div>
+   <div id="version">Version 0.1<br/><span style="color:red">Warning: This document is outdated. A new version of the DPMN spec will be published soon.</span></div>
+   <div id="author">Gerd Wagner</div>
+   <div id="affiliation">Brandenburg University of Technology, Germany</div>
+   <small><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"
+     style="float:left; margin-right:1em"><img alt="Creative Commons License"
+      src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>This document is licensed under a <a rel="license"
+     href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />
+     Publication date: <time datetime="2018-03-07">7 March 2018</time>. Also available as <a href="DPMN.pdf">PDF</a>.</small>
+   <div id="issue-reporting">We encourage readers to report any ambiguities, inconsistencies, or inaccuracies they may find to G.Wagner@b-tu.de.</div>
+   <div id="summary">
+    <h1>Summary</h1>
+    <p>DPMN is a diagram language for making (computational) process design models for discrete event simulation based on Event Graphs and BPMN. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the <em>event scheduling</em> arrows of <em>Event Graphs</em> and the <em>event rules</em> of the <em>Object Event Modeling and Simulation</em> paradigm. While BPMN uses XML Schema as its default type definiton language, DPMN uses UML Class Diagrams as its default type definiton language for defining object, event and data types. As opposed to BPMN Data Objects, DPMN Data Objects instantiate an object type defined by an information model expressed in the form of a UML Class Diagram. A DPMN model has a formal semantics in terms of an <em>Abstract State Machine</em> whose state structure is defined by an object-oriented signature and whose transitions are defined by <em>event rules</em> capturing causal regularities.</p>
+   </div>
+   <nav id="toc">
+    <h1>Contents</h1>
+    <ol>
+	<li><a href="#chIntro">Introduction</a></li>
+	<li>Examples
+	 <ol>
+	  <li><a href="#Ex1">Example 1: An Event-Based Inventory Management Model</a></li>
+	  <li><a href="#Ex2">Example 2: An Event-Based Service Desk Model</a></li>
+	  <li><a href="#Ex3">Example 3: An Activity-Based Service Desk Model</a></li>
+	  <li><a href="#Ex4">Example 4: An Activity-Based Service Network Model</a></li>
+	  <li><a href="#Ex5">Example 5: Modeling a Network of Processing Nodes</a></li>
+	 </ol></li>
+	<li><a href="#chLangMod">DPMN Language Models</a></li>
+	<li><a href="#chExecSem">DPMN Execution Semantics</a></li>
+	</ol>
+   </nav>
+   </div>
+
+  <section id="chIntro" class="chapter"><h1>Introduction</h1>
+    
+  <p>The <em>Discrete Event Process Modeling Notation (DPMN)</em> extends and modifies the language of BPMN Process Diagrams for the purpose of making <em>event rule design models</em> and <em>process design models</em>, which are computationally complete process specifications that can be used for <em>Discrete Event Simulation (DES)</em> modeling. DPMN preserves large parts of BPMN's vocabulary, visual syntax and informal semantics. It supports two types of diagrams: <em>event rule design diagrams</em> and <em>process design diagrams</em>, which consist of an integrated set of event rule design diagrams.
+  </p>
+  <p>The development of DPMN is guided by the modeling and simulation concepts of the <em>Object Event Modeling and Simulation (OEM&amp;S)</em> paradigm: object types, event types, event rules and activity types, see [<a href="#Wag18">1</a>]. DPMN is the process design modeling language of choice in OEM&amp;S. DPMN's formal semantics is obtained by considering a DPMN process design model as a composition of event rule design models specifying a set of event rules that act as transition functions such that the <em>Abstract State Machine</em> semantics proposed in [<a href="#Wag17">2</a>] can be applied.
+  </p>
+  <p>The main ideas underlying the development of DPMN can be summarized as follows:</p>
+  <ol>
+   <li>Flowchart-style diagrams provide an intuitive visual syntax for process modeling.</li>
+   <li>A sufficiently expressive flowchart language must include events, activities and (conditional and parallel) branching.</li>
+   <li>Process design models need to express computationaly complete process specifications.</li>
+   <li>BPMN's Sequence Flows do not have a clear computational (control flow) semantics. The event scheduling semantics of Schruben's <em>Event Graphs</em> (see Section 1.4), provides a computational semantics for Sequence Flows leading to event circles.</li>
+   <li>Since they define transition functions, the event rules of OEM&amp;S, which allow capturing causal regularities for describing the dynamics of a system, provide an operational (transition system) semantics for generalized forms of Event Graphs.</li>
+   <li>Constructing a process design model as a composition of event rule design models provides a formal semantics for DPMN process diagrams: the <em>Abstract State Machine</em> semantics proposed in [<a href="#Wag17">2</a>].</li>
+  </ol>
+
+    <section><h1>Model-Driven Engineering</h1>
+            <p><em>Model-Driven Engineering</em> (MDE), also called <em>model-driven development</em>, is a well-established paradigm in <em>Information Systems</em> and <em>Software Engineering</em>. In MDE, there is a clear distinction between three kinds of models as engineering artifacts resulting from corresponding activities in the analysis, design and implementation phases of a development project:</p>
+            <ol>
+               <li>
+                  <p>solution-independent <em>domain models</em> (also called <em>conceptual models</em>),
+                  </p>
+               </li>
+               <li>
+                  <p>platform-independent solution <em>design models</em>,
+                  </p>
+               </li>
+               <li>
+                  <p>platform-specific <em>implementation models</em>. 
+                  </p>
+               </li>
+            </ol>
+            <p>A domain model may include both descriptions of the domain’s state structure (in <em>conceptual information models</em>) and descriptions of its processes (in <em>conceptual process models</em>). They are solution-independent, or ‘computation-independent’, in the sense that they are not concerned with making any system design choices or with other computational issues. Rather, they focus on the perspective and language of the subject matter experts for the domain under consideration.
+            </p>
+            <p>In the design phase, a platform-independent solution design model is developed on the basis of the domain model, consisting of an <em>information design model</em> and a <em>process design model</em>. The same domain model can potentially be used to produce a number of (even radically) different design models. Then, one or more platform-specific implementation models can be derived from a design model. These one-to-many relationships between conceptual models, design models and implementation models are illustrated in <a href="#_Ref493009969">Figure 1.1</a>.
+            </p>
+            <figure id="_Ref493009969">
+               <img src="img/image1.png" />
+               <figcaption>From a conceptual model via design models to implementation models.</figcaption>
+            </figure>
+   </section>
+    <section><h1>Information Modeling with UML Class Diagrams</h1>
+    <p><i>Conceptual information modeling</i> is mainly concerned with describing the relevant <b><i>entity types</i></b> of a domain and the relationships between them, while <i>information design modeling</i> is concerned with describing the <i>logical</i> (<i>platform-independent</i>) data structures, typically in the form of <b><i>classes</i></b> of an Object-Oriented (OO) modeling language like UML Class Diagrams, for designing and implementing a software or simulation system.</p>
+     <p>UML allows defining special categories (called ‘stereotypes’) of modeling elements. For instance, for distinguishing between <b><i>object types</i></b> and <b><i>event types</i></b> as two different categories of entity types we can define corresponding stereotypes of UML classes («object type» and «event type») and use them for categorizing classes in class models. This is shown in the model of Figure 1.2 below, which describes the event type <code>Delivery</code> and the object type <code>Shop</code> and a binary many-to-one association between them assigning to each delivery event the shop that receives the delivery (we can say that the shop <i>participates</i> in the delivery event).</p>
+            <figure id="_Ref493015782">
+               <img src="img/image6.png"></img>
+               <figcaption>Object and event types as two different categories of entity types.</figcaption>
+            </figure>
+    </section>
+    <section><h1>Process Modeling with BPMN Process Diagrams</h1>
+     <p>The <em>Business Process Modeling Notation (BPMN)</em> is an activity-based graphical modeling language for defining business processes following the flow-chart metaphor. In 2011, the Object Management Group has released version 2.0 of BPMN with an optional execution semantics based on Petri-net-style <em>token flows</em>. 
+     </p>
+     <p>The most important elements of a BPMN process model are listed in Table 1.1.</p>
+            <table>
+               <tr>
+                  <th>Name of element</th>
+                  <th>Meaning</th>
+                  <th>Visual symbol(s)</th>
+               </tr>
+               <tr>
+                  <td>
+                     <p>Event</p>
+                  </td>
+                  <td>
+                     <p><q>Something that 'happens' during the course of a process</q>, affecting the process flow. <q>There are three types of Events, based on when they affect the flow</q>: a <em>Start Event</em> is drawn as a circle with a thin border line, while an <em>Intermediate Event</em> has a double border line and an <em>End Event</em> has a thick border line.</p>
+                  </td>
+                  <td>
+                    <img src="img/Events.svg"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p>Activity</p>
+                  </td>
+                  <td>
+                     <p><q>Work that is performed within a Business Process</q>. A <em>Task</em> is an atomic Activity, while a <em>Sub-Process</em> is a <em>composite</em> Activity. A Sub-Process can be either in a <em>collapsed</em> or in an <em>expanded</em> view.</p>
+                  </td>
+                  <td>
+                        <img src="img/Activity.svg"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p>Gateway</p>
+                  </td>
+                  <td>
+                     <p>A Gateway is a node for branching or merging control flows. A Gateway with an "X" symbol denotes an Exclusive OR-Split for conditional branching, if there are 2 or more output flows, or an Exclusive OR-Join, if there are 2 or more input flows. A Gateway with a plus symbol denotes an AND-Split for parallel branching, if there are 2 or more output flows, or an AND-Join, if there are 2 or more input flows. A Gateway can have both input and output flows.
+                     </p>
+                  </td>
+                  <td>
+                        <img src="img/Gateways.svg"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p>Sequence Flow</p>
+                  </td>
+                  <td>
+                     <p>An arrow expressing the temporal order of Events, Activities, and Gateways. A <em>Conditional Sequence Flow</em> arrow starts with a diamond and is annotated with a condition (in brackets).</p>
+                  </td>
+                  <td>
+                        <img src="img/image11.png"/>
+                        <img src="img/ConditionalSequenceFlow.svg"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p>Data Object</p>
+                  </td>
+                  <td>
+                     <p>Data Objects may be associated with Events or Activities, providing a context for reading/writing data. A unidirectional dashed arrow denotes reading, while a bidirectional dashed arrow denotes reading/writing.</p>
+                  </td>
+                  <td>
+                        <img src="img/DataObject.svg"/>
+                  </td>
+               </tr>
+               <!--
+               <tr>
+                  <td>
+                     <p>Pool</p>
+                  </td>
+                  <td>
+                     <p>Represents an agent role (like 'Buyer' or 'Seller') or a specific instance of such
+                        a role (like 'Amazon.com'').
+                     </p>
+                  </td>
+                  <td>
+                     <figure>
+                        <p><img src="img/image12.png"></img></p>
+                     </figure>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p>Message Flow</p>
+                  </td>
+                  <td>
+                     <p>Represents a message exchange communication link between two Pools. It’s an option
+                        to render the message type with a message icon.
+                     </p>
+                  </td>
+                  <td>
+                     <figure>
+                        <p><img src="img/image13.png"></img></p>
+                     </figure>
+                  </td>
+               </tr>
+               -->
+               <caption>Basic elements of BPMN.</caption>
+            </table>
+            <p>BPMN process diagrams can be used for making</p>
+            <ol>
+             <li><em>conceptual process models</em> (called <q>private non-executable</q> business process models), e.g., for documenting existing business processes and as a basis for designing new business processes;</li>
+             <li><em>process automation models</em> (called <q>private executable</q> business process models) for specific business process automation platforms (that allow partially or fully automating a business process) by adding platform-specific technical details in the form of model annotations that are not visible in the diagram;</li>
+            </ol>
+            <p>However, BPMN has several semantic issues and is not expressive enough for making platform-independent computationally complete <em>process design models</em> that can be used for designing DES models and as a basis for obtaining implementation models that allow generating code for specific process automation platforms.
+            </p>
+  <p>Ontologically, BPMN <em>activities</em> (or, more precisely, <em>activity types</em>) are special event types. However, the subsumption of activities under events is not supported by the standard semantics of BPMN. This is one of the issues where BPMN needs to be improved for allowing a more general process modeling semantics. 
+  </p>
+  <p>BPMN supports the utilization of resources by an <i>Activity</i>. As in classical workflow modeling, a (possibly human) <i>Performer</i> is treated as a special case of a <i>Resource Role</i>. An <i>Activity</i> may have <i>Data Inputs</i> and <i>Data Outputs</i>, which can be visually expressed as <i>Data Objects</i> associated with the <i>Activity</i>.</p>
+  <p>A <i>Pool</i> represents a <i>Collaboration</i> <i>Participant</i>. A <i>Pool</i> can be partitioned into <i>Lanes</i>, which may be used for representing the different actors (activity performers) acting in the same domain of control. Other activity resources, such as a room, a desk or a vehicle, cannot be visually expressed in BPMN.</p>
+  
+  <p>In DES, an activity type may be associated with resource roles, typically including an actor. A (discrete) <em>processing activity</em> type is, in addition, associated with one or more <em>processing object</em> types. Typically, processing objects arrive and queue up at a resource where they wait to be processed by the actor(s). We can say that arriving processing objects trigger the performance of a processing activity.</p>
+  
+  <p>Since BPMN has no concept of <em>processing objects</em>, it cannot adequately model <em>processing activities</em> and <em>processing processes</em>. Processing objects are like BPMN <q>tokens</q>: they flow through a sequence of nodes. But while a processing object is a first-class modeling element in DES, <q>a token is [just] a theoretical concept that is used as an aid to define the behavior of a Process</q>, as stated on p. 238 of the BPMN 2.0 specification.</p>
+
+  <p>The official BPMN execution semantics is not mandated by the BPMN specification, which states that <q>implementations claiming <b>Process Modeling Conformance</b> are not expected to support the BPMN execution semantics</q> (p.8). This implies that BPMN does not have a precise semantics, but rather two semantics: a widely adopted informal semantics defined by <i>Process Modeling Conformance</i>, and a rarely adopted formal one based on Petri-net-style <em>token flows</em>, which is limited to <em>case handling</em> processes where each start event represents a new case and starts a new process for handling this case in isolation from other cases. This semantics disallows, for instance, to model processes where several cases are handled in parallel and interact in some way, e.g., by competing for resources. Consequently, this semantics is inadequate for capturing the overall process of a business system with many actors performing tasks related to many cases with various interdependencies, in parallel.</p>
+  
+  <p>While BPMN does not refer to the fundamental concept of <em>object types</em> and utilizes XML Schema for defining <em>data types</em> and XPath for defining <em>expressions</em>, DPMN utilizes UML Class Diagrams for defining data, object and event types and OCL for defining expressions.
+  </p>
+  </section>
+
+  <section><h1>DPMN and Event Graphs</h1>
+   <p>DPMN diagrams can be viewed as a generalization of the <em>Event Graph</em> diagrams of <a href="#LSch83">(Schruben 1983)</a>, which allow defining computationally complete process models for DES. In these diagrams, circles represent event types, which may be annotated with (possibly conditional) variable assignments representing state changes, and may have (possibly conditional) event scheduling arrows going to another event type circle and possibly being annotated with a delay time expression. A simple Event Graph example is expressed with BPMN in Figure 1.3 below.</p>
+   <figure>
+     <img src="img/EventGraph.svg"/>
+     <figcaption>An event graph expressed as a BPMN process diagram.</figcaption>
+   </figure>
+   <p>In the Event Graph shown in Figure 1.3, when an <i>Arrival</i> event occurs, the state variable Q (representing the queue length) is incremented by 1, as defined by the state change statement <i>Q++</i>. In addition, if the state condition Q=1 holds, an immediate follow-up event of type <i>ServiceStart</i> is scheduled. The unconditional event scheduling arrow between <i>ServiceStart</i> and <i>ServiceEnd</i> means that any <i>ServiceStart</i> event schedules a <i>ServiceEnd</i> event (with a delay corresponding to the service duration). Finally, a <i>ServiceEnd</i> event causes (a) the state change that Q is decremented by 1, and (b), if Q > 0, that an immediate follow-up event of type <i>ServiceStart</i> is scheduled.</p>
+   <p>Like Event Graphs, DPMN diagrams have a precise formal semantics, such that they are computationally complete platform-independent design models that can be used as a basis for coding a platform-specific DES model with a DES technology. DPMN generalizes Event Graphs by allowing more expressive (e.g., object-oriented) concepts of system state and state change, and by supporting activities in addition to events.</p>
+  </section>
+    
+  <section><h1>DPMN Elements</h1>
+        <p>The main elements of DPMN are the following <em>diagram node</em> types:</p>
+        <ol>
+         <li>the three <em>control flow node types</em>: 
+          <ol>
+           <li>Event types (circles),</li>
+           <li>Activity types (rounded-corner rectangles), and</li>
+           <li>Gateway types (diamonds),</li>
+          </ol></li>
+         <li>Data Objects (rectangles),</li>
+         <li>Text Annotations (left brackets that are attached, via dashed connection lines, to control flow node types, Data Objects or Sequence Flows),</li>
+        </ol>
+        <p>and the following <em>diagram arc</em> types:</p>
+       <ol>
+        <li>Sequence Flows (solid arrows) between control flow node types,</li>
+        <li>Data Object attachments (dashed arrows) between Event/Activity types and Data Objects.</li>
+       </ol> 
+       <p>DPMN adopts and adapts the syntax and semantics of BPMN in the following way:</p>
+        <ol>
+         <li>A DPMN diagram has an underlying UML class diagram defining its object, event and data types.</li>
+         <li>DPMN Sequence Flow arrows pointing to an event circle denote <em>event scheduling</em> control flows (adopted from Event Graphs). They may be annotated by event attributes assignments and a delay time expression for scheduling (creating) a new event.</li>
+         <li>DPMN has three special forms of Text Annotation: 
+		  <ol>
+		   <li>Text Annotations attached to Event circles for declaring <em>event rule variables</em>,</li> 
+		   <li>Text Annotations attached to Sequence Flow arrows pointing to Event circles for specifying the delays of the events to be scheduled,</li>
+		   <li>Text Annotations attached to Sequence Flow arrows pointing to Event circles for specifying event attributes assignments.</li>
+		  </ol></li>
+         <li>DPMN has an extended form of Data Object visually rendered as rectangles with two compartments:
+          <ol>
+           <li>a first compartment showing an object variable name and an object type name separated by a colon, together with a binding of the object variable to a specfic object in the form of an equality condition enclosed in brackets;</li>
+           <li>a second compartment containing a block of <em>state change statements</em> (such as attribute value assignments).</li>
+          </ol></li>
+         <li>BPMN's temporal semantics and visual syntax distinction between Start, Intermediate and End Events is dropped. A DPMN Event circle implicitly represents a start (or end) Event when it has no incoming (or outgoing) Sequence Flow arrows. It represents an intermediate Event if it has both incoming and outgoing Sequence Flow arrows.</li>
+         <li>In a DPMN <em>event rule design diagram</em>, there is exactly one start Event circle followed by zero or more end Event circles, but there is no intermediate Event circle.</li>
+         <li>A DPMN <em>process design diagram</em> consists of an integrated set of <em>event rule design diagrams</em> such that its intermediate Event circles are semantically overloaded: in the context of an incoming Sequence Flow arrow they denote a scheduled event to be added to the <em>Future Events List (FEL)</em>, while in the context of an outgoing Sequence Flow arrow or an attached Data Object, they denote an event occurrence that causes state changes and follow-up events. The scheduled event and the resulting event occurrence could be separated by drawing two event circles that are connected by a Sequence Flow arrow denoting a <em>wait-for</em> control flow. Such a pair of event circles corresponds to a pair of sequential BPMN Events where the first one is a throwing and the second one is a catching intermediate event.</li>
+        <li>The token flow semantics of BPMN is replaced by the operational semantics of event rules defined in [<a href="#Wag17">2</a>].</li>
+        </ol>
+         <p>An Event circle corresponds to an event type of the underlying information design model and may trigger both state changes, as specified in Data Object rectangles attached to the Event circle, and follow-up events, as specified by (possibly conditional) <em>event scheduling</em> Sequence Flow arrows. 
+        </p>
+   </section>
+  </section>
+  <section class="chapter"><h1>Examples</h1>
+   <section id="Ex1"><h1>Example 1: An Event-Based Inventory Management Model</h1>
+      <p>We consider a simple case of inventory management: a shop selling one product type
+         (e.g., one model of TVs), only, such that its in-house inventory only consists of
+         items of that type. On each business day, customers come to the shop and place their
+         orders. If the ordered product quantity is in stock, the customer pays her order and
+         the ordered products are handed out to her. Otherwise, the order may still be partially
+         fulfilled, if there are still some items in stock, else the customer has to leave
+         the shop without any item.
+      </p>
+      <p>When the stock quantity falls below the reorder point, a replenishment order is sent
+         to the vendor for restocking the inventory, and the ordered quantity is delivered
+         1-3 days later.  
+      </p>
+     <section><h1>Information Model</h1>
+      <p>We can extract the following candidates for object types from the problem description by identifying and analyzing the domain-specific noun phrases: <em>shops</em> (for being more precise, we also say <em>single product shops</em>), <em>products</em> (or <em>items</em>), <em>inventories</em>, <em>customers</em>, <em>customer orders</em>, <em>replenishment orders</em>, and <em>vendors</em>. Since noun phrases may also denote events (or event types), we need to take another look at our list and drop those noun phrases. We recognize that <em>customer orders</em> and <em>replenishment orders</em> denote messages or communication events, and not ordinary objects. This leaves us with the five object types described in the diagram shown in <a href="#_Ref493083679">Figure 2.1</a>.
+      </p>
+      <figure id="_Ref493083679">
+         <img src="img/image14.png"/>
+         <figcaption>A first version conceptual information model, describing object types, only.
+         </figcaption>
+      </figure>
+      <p>Notice that the model also includes associations between object types. The association <em>shops–</em><b><i>have</i></b><em>–products</em> is one-to-one because we assume that shops only sell a single product, while the association <em>shops–</em><b><i>have</i></b><em>–inventories</em> is one-to-one because we assume that shops only have one inventory for their single product.
+      </p>
+      <p>In the next step, event types are added, together with their participation associations with involved object types. They can be identified, e.g., by considering the verb phrases in the problem description, such as <q>pay order</q>, <q>hand out product</q>, and <q>deliver</q>. In the model shown in <a href="#_Ref493084409">Figure 2.2</a>, for forming names for event types, these verb phrases are nominalized.
+      </p>
+      <p>Notice that a participation association between an object type and an event type is typically one-to-many, since an event of that type has typically exactly one participating object of that type, and, vice versa, an object of that type typically participates in many events of that type. 
+      </p>
+      <figure id="_Ref493084409">
+         <img src="img/Inventory_CIM.svg" width="800"/>
+         <figcaption>The complete conceptual information model.</figcaption>
+      </figure>
+
+      <p>We now derive an information design model from the solution-independent conceptual information model shown in <a href="#_Ref493084409">Figure 2.2</a>. A design model is solution-specific because it is a computational design for a specific research question. In the example under consideration, we deal with the following specific research question: compute the average percentage of <em>lost sales</em> (if an order quantity is greater than the current stock level, the difference counts as a lost sale). A design model is platform-independent in the sense that it does not use any modeling element that is specific for a particular platform, such as a Java datatype.
+      </p>
+      <p>In the solution design model, the goal is to keep only those entity types in the model, which are needed for being able to answer the research question(s).In the design model, we follow a widely used naming convention: the name of a class is a capitalized singular noun phrase in mixed case.
+      </p>
+      <p>For simplicity, we add a <em>lostSales</em> attribute to the <em>SingleProductShop</em> class for storing the lost-sales statistics for each shop. Alternatively, we could add a special class for defining statistics variables.
+      </p>
+      <p>Since for computing the percentage of lost sales, we don’t need the order quantities of individual orders, but only the total number of ordered items, it’s sufficient to model an aggregate of customer orders like, for instance, the <em>daily demand</em>. Consequently, we don’t need to consider individual customers and their orders. We can also drop all object types except <em>SingleProductShop</em> and all event types except <em>DailyDemand</em> and <em>Delivery</em>. 
+      </p>
+      <p>Thus, the simplifications of design modeling lead to a model as shown in <a href="#_Ref493086068">Figure 2.3</a>.
+      </p>
+      <figure id="_Ref493086068">
+         <img src="img/Inventory_IDM-2.svg" width="500"/>
+         <figcaption>The information design model with random variables.</figcaption>
+      </figure>
+      <p>Notice that we distinguish between two kinds of event types: <b><i>exogenous event types</i></b> and <b><i>caused event types</i></b>, and that the two associations model the participation of the shop both in <em>DailyDemand</em> events and in <em>Delivery</em> events, and the association end names <em>shop</em> and <em>receiver</em> represent the reference properties <em>DailyDemand::shop</em> and <em>Delivery::receiver</em> (as implied by the corresponding  association end ownership dots). These reference properties allow to access the properties and invoke the methods of a shop from an event, which is essential for the <em>event routine</em> of each event type. Thus, the ontological pattern of <em>objects participating in events</em> and the implied software pattern of object reference properties in event types are the basis for defining event routines (and rules) in event types.
+      </p>
+      <p>While exogenous events of a certain type occur again and again with some (typically <em>random</em>)<em> recurrence</em>, caused events occur at times that result from the internal causation dynamics of the simulation model. So, for any event type adopted from the conceptual model, we choose one of these two categories. For any exogenous event type, we add a <em>recurrence</em> operation, which is responsible for computing the time until the next event occurs, and a <em>createNextEvent</em> operation, which is invoked for creating a new instance of the event type as its next occurrence.
+      </p>
+      </section>
+
+   <section><h1>Process Model</h1>
+     <p>We make a conceptual process model and a process design model for the inventory management system. These models can be expressed visually in the form of BPMN and DPMN <em>process diagrams</em> and textually in the form of <em>event rule tables</em>.
+     </p>
+     <p>A <b><i>conceptual process model</i></b> should include the event types identified in the conceptual information model, and describe in which temporal sequences events may occur, based on conditional and parallel branching. We can do this by describing, for each of the event types from the conceptual information model, the causal regularity associated with it in the form of an event rule that defines the state changes and follow-up events caused by events of that type.
+     </p>
+     <p>The purpose of a conceptual process model for simulation is to identify causal regularities and express them in the form of <em>event rules</em>, one for each relevant type of events, at a conceptual level. We can describe event rules textually and visually in an <i>event rule table</i> like <a href="#_Ref494382666">Table 2.1</a>.</p>
+      <table id="_Ref494382666">
+         <tr>
+            <th>ON (event type)</th>
+            <th>DO (event routine)</th>
+            <th>Conceptual Event Rule Diagram</th>
+         </tr>
+         <tr>
+            <td>
+         <p>customer order</p>
+            </td>
+            <td>
+         <p>check inventory;<br/>if there is sufficient inventory, then product handover, else customer departure</p>
+            </td>
+            <td>
+            <img src="img/CustomerOrder_CRM.svg"/>
+            </td>
+         </tr>
+         <tr>
+            <td>
+         <p>product handover</p>
+            </td>
+            <td>
+         <p>decrement (get product from) inventory;<br/>customer payment</p>
+            </td>
+            <td>
+            <img src="img/ProductHandover_CRM.svg" />
+            </td>
+         </tr>
+         <tr>
+            <td>
+         <p>customer payment</p>
+            </td>
+            <td>
+         <p>customer departure</p>
+         <small>[Notice that we do not describe the increase of the shop's cash balance due to the payment,
+         because we focus on inventory.]</small>
+            </td>
+            <td>
+            <img src="img/CustomerPayment_CRM.svg" />
+            </td>
+         </tr>
+         <tr>
+            <td>
+         <p>replenishment order</p>
+            </td>
+            <td>
+         <p>delivery</p>
+            </td>
+            <td>
+            <img src="img/ReplenishmentOrder_CRM.svg"/>
+            </td>
+         </tr>
+         <tr>
+            <td>
+         <p>delivery</p>
+            </td>
+            <td>
+         <p>increment inventory;<br/>payment</p>
+            </td>
+            <td>
+            <img src="img/Delivery_CRM.svg"/>
+            </td>
+         </tr>
+         <caption>Conceptual event rule models.</caption>
+      </table>
+      <p>We can integrate these conceptual event rule models in a conceptual process model, as shown in <a href="#_Ref493110214">Figure 2.4</a>.</p>
+      <figure id="_Ref493110214">
+         <img src="img/CRM.svg"/>
+         <figcaption>The conceptual process model integrating all event rule models.</figcaption>
+      </figure>
+      <p>Notice that the BPMN End Event circles used in the event rule models may have to be converted to BPMN Intermediate Event circles in the integrated model.</p>
+
+      <p>A <b><i>process design model</i></b> needs to provide a computationally complete specification of <i>event rules</i>, one for each event type defined in the information design model. An event rule for a given event type essentially defines a set of (possibly conditional) state changes and a set of (possibly conditional) follow-up events triggered by an event of that type. We show below how a computational form of event rules can be visually expressed in DPMN diagrams.</p>
+      <p>Since our information design model (tailored to the given research question of computing the lost sales statistics) only includes two event types, <em>DailyDemand</em> and <em>Delivery</em>, we need to model the two corresponding event rules, only, as in the event rule design <a href="#_Ref494385925">Table 2.2</a>, where these rules are modeled textually using pseudo-code.</p>
+      <table id="_Ref494385925">
+         <tr>
+            <th>ON (event expr.)</th>
+            <th>DO (event routine)</th>
+         </tr>
+         <tr>
+            <td>
+         <p>DailyDemand( sh, demQ) @ t</p>
+          <ul style="font-size:smaller"><li>sh:SingleProductShop references the shop where the DailyDemand event happens</li>
+           <li>demQ is the daily demand quantity</li></ul>
+            </td>
+            <td><pre><code><b>var</b> sQ := sh.stockQuantity
+<b>var</b> newSQ := sQ - demQ
+<b>var</b> rP := sh.reorderPoint
+sh.stockQuantity := <b>max</b>( 0, newSQ)
+<b>if</b> sQ > rP &amp; newSQ &lt;= rP <b>then</b>
+  <b>if</b> newSQ &lt; 0 <b>then</b>
+    sh.lostSales += demQ - sQ
+    newSQ := 0
+  <b>var</b> delQ := sh.targetInventory − newSQ
+  <b>schedule</b> Delivery( sh, delQ) @ t + leadTime()</code></pre>
+         </td>
+         </tr>
+         <tr>
+            <td>
+         <p>Delivery( rec, delQ) @ t</p>
+          <ul style="font-size:smaller"><li>rec:SingleProductShop references the shop that is the receiver of the delivery </li>
+           <li>delQ is the delivered quantity</li></ul>
+            </td>
+            <td><pre><code>rec.stockQuantity += delQ</code></pre>
+         </td>
+         </tr>
+         <caption>Event rule design with pseudo-code.</caption>
+      </table>
+      <p>Notice the general structure of an event expression like <code>DailyDemand( sh, demQ) @ t</code>: it starts with the name of an event type (here: <i>DailyDemand</i>) followed by a comma-separated list of event parameter names (here, <code>sh</code> and <code>demQ</code>), corresponding to event attributes, and an occurrence time annotation <code>@ t</code>. The event expression is complemented with a parameter legend (here, <code>sh: SingleProductShop</code>) defining the type of each event parameter.
+      </p>
+      <p>We can also express these two rules in DPMN event rule design diagrams, as shown in <a href="#_Ref493110215">Figure 2.5</a> and <a href="#_Ref494386620">Figure 2.6</a>.</p>
+      <figure id="_Ref493110215">
+         <img src="img/DailyDemand_RDM.svg" width="600"/>
+         <figcaption>A DPMN event rule design model for the event type <i>DailyDemand</i>.</figcaption>
+      </figure>
+      <p>In general, a DPMN event rule design diagram contains event circles with two-part names (like <i>dd: DailyDemand</i>) specifying an event variable (like <i>dd</i>) and an event type (like <i>DailyDemand</i>). Event circles may be associated with one or more data object rectangles (like <i>sh: SingleProductShop</i>). There is exactly one start event circle without incoming arrows, which may contain rule variable declarations in an attached text annotation. The data object rectangles contain state change statements using the event variable and possibly the rule variable(s).
+      </p>
+      <p>An event circle may have one or more outgoing arrows leading to gateways or to event circles. The incoming arrows to an event circle represent <em>event scheduling</em> control flows. They must be annotated with event attribute assignments (like <em>quantity</em> and <em>receiver</em> in <a href="#_Ref493110215">Figure 2.5</a>) and an assignment of the scheduled event's occurrence time, which is provided in the form of a delay expression prefixed with "+". E.g, the annotation <em>+Delivery.leadTime()</em> in <a href="#_Ref493110215">Figure 2.5</a> means that the scheduled <em>Delivery</em> event will occur with a delay provided by invoking the <em>Delivery.leadTime()</em> function.</p>
+      <figure id="_Ref494386620">
+         <img src="img/Delivery_RDM.svg" width="300"/>
+         <figcaption>A rule design model for the event type <i>Delivery</i>.</figcaption>
+      </figure>
+      <p>Notice that <i>Delivery</i> events trigger a state change, but no follow-up events.</p>
+      <p>These two event rule design models can be merged into a process design model shown in <a href="#_Ref493110216">Figure 2.7</a>.</p>
+      <figure id="_Ref493110216">
+         <img src="img/Inventory_PDM.svg" width="600"/>
+         <figcaption>A process design model in the form of a DPMN diagram.</figcaption>
+      </figure>
+      </section>
+   </section>
+   <section id="Ex2"><h1>Example 2: An Event-Based Service Desk Model</h1>
+     <p>In a basic <a href="http://sim4edu.com/sims/2">service system example</a>, customers arrive at random times at a service desk where they have to wait in a queue when the service desk is busy. Otherwise, when the queue is empty and the service desk is not busy, they are immediately served by the service clerk. Whenever a service is completed, the next customer from the queue, if there is any, is invited for the service and moves forward to the desk.
+     </p>
+    <section><h1>Information Model</h1>
+      <p>It is straight-forward to extract four object types and six event types from the problem description above, resulting in the <b><i>conceptual information model</i></b> shown in <a href="#_Ref494398925">Figure 2.8</a>. 
+      </p>
+      <figure id="_Ref494398925">
+       <img src="img/Service_CIM.svg" width="600" />
+       <figcaption>A conceptual information model.</figcaption>
+      </figure>
+      <p>The associations between event types and object types represent <i>participation</i> relationships. For instance, in the model of <a href="#_Ref494398925">Figure 2.8</a>, we express that a customer arrival event has exactly one customer and one service desk as its participants. For completing the conceptual information model, we may add attributes for describing objects and events of these types.
+      </p>
+      <p>The model of <a href="#_Ref494398925">Figure 2.8</a> implicitly contains an activity type composed of the two event types <q>service start</q> and <q>service end</q>. It is well-known that, conceptually, an activity is a composite event that is temporally framed by a pair of start and end events. When making an information model for a form of DES with activities, we can replace such pairs of start and end event types with corresponding activity types. For instance, in <a href="#_Ref494398925">Figure 2.8</a>, we could replace the two event types <q>service start</q> and <q>service end</q> with the activity type <q>service performances</q>.
+      </p>
+     <p>We now derive a solution-specific, but platform-independent <b><i>information design model</i></b> from the solution-independent <em>conceptual information model</em> shown in <a href="#_Ref494398925">Figure 2.8</a>. A design model is solution-specific because it is a computational solution design for answering one or more research questions, allowing to abstract away from those object and event types that are not relevant for the solution design.</p>
+     <p>We consider the following specific research question: compute the <em>Mean Response Time</em>, which is the average length of time a customer spends in the system from arrival to departure. This research question allows abstracting away from all object types of the conceptual model except <q>service desks</q> and <q>customers</q>, and from all event types except <q>customer arrivals</q> and <q>customer departures</q>. However, for getting a uniform series of models, we also include <q>service start</q> and <q>service end</q> events.</p>
+      <p>In an information design model we distinguish between two kinds of event types: <em>exogenous</em> event types and <em>caused</em> event types. While exogenous events of a certain type occur again and again, typically with some <em>random recurrence</em> that can be modeled with a probability distribution, caused events occur at times that result from the internal causation dynamics of the simulation model.
+      </p>
+      <p>In our example model, shown in <a href="#_Ref494399721">Figure 2.9</a>, we define <code>CustomerArrival</code> as an exogenous event type with a <code>recurrence</code> function that implements a random variable based on the exponential distribution with event rate 0.5, symbolically expressed as <em>Exp</em>(0.5). Notice that all event types have a functional association with the object type <code>ServiceDesk</code>, which will be implemented in the form of a <code>serviceDesk</code> reference property.
+      </p>
+      <figure id="_Ref494399721">
+       <img src="img/ServiceDesk-2b_IDM.svg" width="600"/>
+       <figcaption>An information design model for the service desk system.</figcaption>
+      </figure>
+      <p>Notice that we have modeled the random duration of a service with the help of the random variable operation <code>serviceDuration()</code> shown in the third compartment of the <code>ServiceDesk</code> class. It must be implemented by a method that samples the exponential distribution function <i>Exp</i>(0.5). 
+      </p>
+      <p>The information design model shown in <a href="#_Ref494399721">Figure 2.9</a> supports simulation scenarios with one or more service desks, each having its own <em>waitingCustomers</em> queue and its own events, operating in parallel. For chained service desks scenarios, an optional <em>successor</em> property would have to be added to the <code>ServiceDesk</code> object type. Chained service desks will be discussed in Example 4.
+      </p>
+    </section>
+    <section><h1>Process Model</h1>
+     <p>The most basic form of a process model consists of a set of event rule models, expressed textually in the form of <em>event rule statements</em>, or visually in the form of <em>event rule diagrams</em>, preferably collected in an <em>event rule table</em>. Alternatively, a <em>process model</em> may be obtained by integrating all event rule diagrams within a consolidated process diagram.
+     </p>
+     <p><b><i>Conceptual process models</i></b> can be expressed visually in the form of <em>BPMN process diagrams</em> or textually in the form of <em>English event rule statements</em>.
+     </p>
+     <p>For simplicity, we consider the customer that is currently being served to be part of the queue. In this way, in the simulation program, we can check if the service desk is busy by testing if the length of the queue is greater than 0.
+      </p>
+      <table id="_Ref494404037">
+       <tr>
+        <th>ON (event type)</th>
+        <th>DO (event routine)</th>
+        <th>Conceptual Event Rule Diagram</th>
+       </tr>
+       <tr>
+        <td>
+           <p>customer arrival</p>
+        </td>
+        <td>
+           <p>the queue (length) is incremented;<br/>if there is no one else in the queue (queue length = 1), the service for the newly arrived customer starts</p>
+        </td>
+        <td>
+            <img src="img/Service-Arrival_CRM.svg"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+           <p>service start</p>
+        </td>
+        <td>
+           <p>service end</p>
+        </td>
+        <td>
+            <img src="img/image30.png"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+           <p>service end</p>
+        </td>
+        <td>
+           <p>customer departure
+           </p>
+        </td>
+        <td>
+            <img src="img/Service-ServiceEnd_CRM.svg"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+           <p>customer departure</p>
+        </td>
+        <td>
+           <p>the queue (length) is decremented; if there is still someone in the queue (queue length > 0), the next service starts</p>
+        </td>
+        <td>
+            <img src="img/Service-Departure_CRM.svg"/>
+        </td>
+       </tr>
+       <caption>Conceptual event rule models for the service system example.</caption>
+      </table>
+      <p>The individual event rule diagrams shown in <a href="#_Ref494404037">Table 2.1</a> can be integrated with each other as shown in <a href="#_Ref494405660">Figure 22</a> where we have to express the event types <q>service start</q>, <q>service end</q> and <q>customer departure</q> in the form of BPMN’s <em>intermediate events</em> for complying with the BPMN syntax.
+      </p>
+      <figure id="_Ref494405660">
+       <img src="img/Service_CPM.svg" width="550"/>
+       <figcaption>A conceptual process model integrating the event rule diagrams of Table 2.1.</figcaption>
+      </figure>
+      <p>If we would make a process model for a form of basic DES extended with activities, as in the next example, we would replace the two event types <q>service start</q> 
+	  and <q>service end</q> with the activity type <q>service performance</q> resulting in the model depicted below in <a href="#_Ref499542494">Figure 2.11</a>.
+      </p>
+      <figure id="_Ref499542494">
+       <img src="img/ServiceDesk-3_CPM.svg" width="550"/>
+       <figcaption>A model with an activity replacing a start/end event pair.</figcaption>
+      </figure>
+      <p><b><i>Process design models</i></b> can be visually expressed in the form of <em>DPMN process diagrams</em> and textually in the form of <em>event rule pseudo code</em>.</p>
+      <p>In the process design model, we include one event rule for each of the event types of the information design model in <a href="#_Ref494399721">Figure 2.9</a>. Notice that the event scheduling time expression <code>@t'</code>, e.g., in the <em>CustomerArrival</em> and <em>ServiceEnd</em> rules, denotes scheduling at the next moment in time, which is either <i>t+1</i>, if time is discrete, or, otherwise, <i>t+&epsilon;</i> where <i>&epsilon;</i> is the smallest time point distance depending on the time granularity of the model.</p>
+      <table>
+	  <thead>
+       <tr>
+        <th>ON (event expr.)</th>
+        <th>DO (event routine)</th>
+       </tr>
+	  </thead>
+	  <tbody>
+       <tr>
+        <td>
+           <p>CustomerArrival( sd) @ t <br/>with sd:Servicedesk</p>
+        </td>
+        <td><pre><code>sd.waitingCustomers.<b>push</b>(c)
+<b>if</b> sd.waitingCustomers.length = 1 <b>then</b>
+  <b>schedule</b> ServiceStart( sd) @ t'</code></pre>
+           </td>
+       </tr>
+       <tr>
+        <td>
+           <p>ServiceStart( sd) @ t <br/>with sd:Servicedesk</p>
+        </td>
+        <td><pre><code><b>schedule</b> ServiceEnd( sd) @ 
+    (t + ServiceDesk.serviceDuration())</code></pre>
+           </td>
+       </tr>
+       <tr>
+        <td>
+           <p>ServiceEnd( sd) @ t <br/>with sd:Servicedesk</p>
+        </td>
+        <td><pre><code><b>schedule</b> CustomerDeparture( sd) @ t'</code></pre>
+           </td>
+       </tr>
+       <tr>
+        <td>
+           <p>CustomerDeparture( sd) @ t <br/>with sd:Servicedesk</p>
+        </td>
+        <td><pre><code>sd.waitingCustomers.<b>pop</b>()
+<b>if</b> sd.waitingCustomers.length > 0 <b>then</b>
+  <b>schedule</b> ServiceStart( sd) @ t'</code></pre>
+           </td>
+       </tr>
+	  </tbody>
+       <caption>An event rule design table for Example 2.</caption>
+      </table>
+      <p>These event rule design models can be merged into a process design model:</p>
+      <figure id="_Ref499542496">
+       <img src="img/ServiceDesk-2b_PDM.svg" />
+       <figcaption>A DPMN process design model.</figcaption>
+      </figure>
+      <p>The operators <em>PUSH</em> and <em>POP</em> in the <code>sd.ServiceDesk</code> data object rectangles refer to the standard queue operations <em>push</em> and <em>pop</em>. Generally, in DPMN, state change statements are expressed in a language that depends on the state structure of the modeled system. Typically, this will be an object-oriented system state structure where basic state changes consist of attribute value changes as well as link creations and destructions. If an attribute has a complex data value, such as a <em>set</em> or an <em>array list</em>, a state change statement can be expressed in terms of the operations provided by the complex (collection) datatype.</p>
+     </section>
+    </section>
+   <section id="Ex3"><h1>Example 3: An Activity-Based Service Desk Model</h1>
+    <section><h1>Information Model</h1>
+	<p>We again consider the <em>service desk</em> system, as described in the section about Example 2. But now we model the service performed at the service desk as an <em>activity</em>.</p>
+    <p>Conceptually, an <em>activity</em> is a composite event that is temporally framed by a pair of start and end events. Consequently, whenever a model contains a pair of related start and end event types, like <i>service start</i> and <i>service end</i> in the model of <a href="#_Ref494398925">Figure 2.8</a>, they can be replaced with a corresponding activity type, like <i>service performances</i>, as shown in <a href="#_Ref500398925">Figure 2.13</a>.
+      </p>
+      <figure id="_Ref500398925">
+       <img src="img/Service-with-Activity_CIM.svg" width="600"/>
+       <figcaption>A conceptual information model with an activity type.</figcaption>
+      </figure>
+	  <p>As in Example 2, in the design model we only need the object types <i>ServiceDesk</i> and <i>Customer</i>. But instead of the pair of related start/end event types <i>ServiceStart</i> and <i>ServiceEnd</i>, we now have the activity type <i>ServicePerformance</i>.</p>
+      <figure id="_Ref500399721">
+       <img src="img/ServiceDesk-3b_IDM.svg" width="500"/>
+       <figcaption>An information design model for Example 3.</figcaption>
+      </figure>
+	  <p>Notice that we have moved the random variate sampling method <i>serviceDuration()</i> from <i>ServiceDesk</i> to <i>ServicePerformance</i>, as shown in <a href="#_Ref500399721">Figure 2.14</a>, since this is the most natural context class for it. 
+	  </p>
+	  <p>This model only supports scenarios with either just one service desk or multiple service desks operating in parallel. For chained service desks scenarios, an optional <em>next</em> property, defining a successor association, can be added to the <code>ServiceDesk</code> object type, as shown in the following diagram.
+	  </p>
+      <figure id="_Ref501399721">
+       <img src="img/ServiceDesk-3b-NextSD_IDM.svg" width="180" alt="A service desk class with a successor association defining a network of service desks"/>
+      </figure>
+       <p>The successor association defines a network of service desks. The resulting service network model is discussed in the section on Example 4.</p>
+    </section>
+    <section><h1>Process Model</h1>
+      <table id="_Ref501404037">
+       <tr>
+        <th>ON (event type)</th>
+        <th>DO (event routine)</th>
+        <th>Conceptual Event Rule Diagram</th>
+       </tr>
+       <tr>
+        <td>
+           <p>customer arrival</p>
+        </td>
+        <td>
+           <p>the queue (length) is incremented;<br/>if there is no one else in the queue (queue length = 1), the service for the newly arrived customer starts</p>
+        </td>
+        <td>
+            <img src="img/ServiceDesk-3-Arrival_CRM.svg" />
+        </td>
+       </tr>
+       <tr>
+        <td>
+           <p>service performance</p>
+        </td>
+        <td>
+           <p>customer departure
+           </p>
+        </td>
+        <td>
+            <img src="img/ServiceDesk-3-ServicePerformance_CRM.svg"/>
+        </td>
+       </tr>
+       <tr>
+        <td>
+           <p>customer departure</p>
+        </td>
+        <td>
+           <p>the queue (length) is decremented; if there is still someone in the queue (queue length > 0), the next service starts</p>
+        </td>
+        <td>
+            <img src="img/ServiceDesk-3-Departure_CRM.svg"/>
+        </td>
+       </tr>
+       <caption>Conceptual event rule models for Example 3.</caption>
+      </table>
+      <p>The conceptual event rule models shown in <a href="#_Ref501404037">Table 2.5</a> are integrated with each other in the diagram shown in <a href="#_Ref499542494">Figure 2.11</a>.
+      </p>
+      <p>An activity is scheduled by providing both its start time <i>t</i> and its duration <i>&Delta;</i> in the form of an ordered pair <code>[t, &Delta;]</code>. In the following table, when the start time is specified with the expression <i>t'</i> refering to a given time instant <i>t</i>, this represents the next moment in time, which means the activity starts immediately.</p>
+      <table>
+	  <thead>
+       <tr>
+        <th>ON (event expr.)</th>
+        <th>DO (event routine)</th>
+       </tr>
+	  </thead>
+	  <tbody>
+       <tr>
+        <td>
+           <p>CustomerArrival( sd) @ t <br/>with sd:Servicedesk</p>
+        </td>
+        <td><pre><code>
+<b>increment</b> sd.queueLength 
+<b>if</b> sd.queueLength = 1 <b>then</b>
+<b>schedule</b> ServicePerformance( sd) @
+ [t', ServicePerformance.serviceDuration()]</code></pre>
+           </td>
+       </tr>
+       <tr>
+        <td>
+           <p>ServicePerformance( sd) @ t <br/>with sd:Servicedesk</p>
+        </td>
+        <td><pre><code>
+<b>schedule</b> CustomerDeparture( sd) @ t'</code></pre>
+           </td>
+       </tr>
+       <tr>
+        <td>
+           <p>CustomerDeparture( sd) @ t <br/>with sd:Servicedesk</p>
+        </td>
+        <td><pre><code>
+<b>decrement</b> sd.queueLength 
+<b>if</b> sd.queueLength > 0 <b>then</b>
+<b>schedule</b> ServicePerformance( sd) @
+ [t', ServicePerformance.serviceDuration()]</code></pre>
+           </td>
+       </tr>
+	  </tbody>
+       <caption>The event rule design table for Example 3.</caption>
+      </table>
+      <p>Notice that activities are composite events with duration. Scheduling an activity means scheduling its start event. An activity <em>completes</em> with the occurence of its end event. Conseqeuntly, an activity occurs at the same time as its end event.</p>
+      <p>The three event rule design models described in the above table can be merged into a process design model:</p>
+      <figure id="_Ref5001542496">
+       <img src="img/ServiceDesk-3b_PDM.svg" />
+       <figcaption>A DPMN process design model for Example 3.</figcaption>
+      </figure>
+	  <p>In a DPMN diagram, an activity scheduling time expression of the form <code>[t', &Delta;]</code>, where <code>t'</code> means starting the activity without delay, is simplified to the expression <code>+&Delta;</code>.</p>
+    </section>
+   </section>  
+   <section id="Ex4"><h1>Example 4: An Activity-Based Service Network Model</h1>
+	  <p>When chaining service desks, we have to distinguish between start/end nodes and intermediate nodes. For simplicity, we do not model the arrivals and departures at, resp. from, intermediate nodes as explicit events. Rather we leave these events implicit by merging them with the corresponding service start/end events. Thus, in a service network model, a customer arrival event represents an arrival at a start node of the network, and a customer departure event represents a departure at an end node of the network.
+	  </p>
+       <p>A simple example of a service network is a chain of two service desks as in a <em>Department of Motor Vehicles (DMV)</em> where clients first have to queue up at the reception desk for their request being recorded and then have to wait for a clerk who will handle their case. This scenario consists of two parallel chains: 
+	   </p>
+       <ol>
+	    <li>a sequence of two spatial objects: a reception desk followed by a case handling desk;</li>
+	    <li>a sequence of two activity types: a reception activity type associated with the reception desk and a case handling activity type associated with the case handling desk such that the end of a reception activity may schedule the start of a follow-up case handling activity.</li>
+       </ol>
+       <p>The service desk objects are involved in the <q>flow</q> of customers through the network, which is accompanied by a parallel activity control flow. The combination of these two parallel flows is characteristic for the general concept of <em>processing networks</em>: (1) a flow of work objects (like customers, documents or manufacturing materials) from one node object (like a service desk, office desk or machine) to the next one and a parallel activity control flow. Such a network can be modeled either with specific (object and activity) types like <i>ReceptionDesk</i>, <i>CaseHandlingDesk</i>, <i>Reception</i> and <i>CaseHandling</i>, as shown in Section 2.4.1, or with generic types like <i>ServiceDesk</i> and <i>ServicePerfor&shy;mance</i>, as shown in Section 2.4.2.
+	   </p>
+	  <p>A specific model for a service network is more complex than the generic model, simply because it defines more object types and activity types. This complexity is only justified if the model needs to describe different service desk types and related activity types, each with different features (properties, operations and constraints).
+	  </p>
+		
+    <section><h1>A Specific Model</h1>
+	  <p>A specific information design model for a service desk chain consisting of a reception desk and a case handling desk is shown in the following diagram:
+	  </p>
+      <figure id="_Ref520399721">
+       <img src="img/ServiceDesk-3d_IDM.svg" width="800"/>
+       <figcaption>A specific information design model for the DMV service desk chain.</figcaption>
+      </figure>
+       <p>The <em>next</em> property of <i>ReceptionDesk</i> defines a successor relationship that allows <i>ReceptionDesk</i> objects to access the <i>waitingCustomers</i> queue of their successor service desks.</p>
+       <p>Using this model, the initial state of a simulation scenario can be coded by creating a <i>CaseHandlingDesk</i> instance and a <i>ReceptionDesk</i> instance that references the <i>CaseHandlingDesk</i> instance in its <i>next</i> property:
+	   </p>
+<pre><code>CaseHandlingDesk{ id: 2};
+ReceptionDesk{ id: 1, next: 2};
+</code></pre>
+      <figure id="_Ref521399721">
+       <img src="img/DMV_PDM.svg" width="800"/>
+       <figcaption>A specific process design model for the DMV service desk chain.</figcaption>
+      </figure>
+    </section>
+		
+    <section><h1>A Generic Model</h1>
+	  <p>A generic information design model for a service network is shown in the following diagram:
+	  </p>
+      <figure id="_Ref510399721">
+       <img src="img/ServiceDesk-3c_IDM.svg" width="500"/>
+       <figcaption>An information design model for service networks.</figcaption>
+      </figure>
+       <p>The optional <em>next</em> property of service desks defines a successor relationship. Whenever the <em>next</em> property of a service desk has no value, this means that the service desk has no successor, so the customer must depart.
+	   </p>
+       <p>Using this generic model, the initial state of a simulation scenario can be coded by creating two <i>ServiceDesk</i> instances with names <i>receptionDesk</i> and <i>caseHandlingDesk</i>, such that the receptionDesk object references the caseHandlingDesk object in its <i>next</i> property:
+	   </p>
+<pre><code>ServiceDesk{ id: 2, name:"caseHandlingDesk"};
+ServiceDesk{ id: 1, name:"receptionDesk", next: 2}
+</code></pre>
+
+      <table id="_Ref501404037">
+       <tr>
+        <th>ON (event type)</th>
+        <th>DO (event routine)</th>
+        <th>Conceptual Event Rule Diagram</th>
+       </tr>
+       <tr>
+        <td>
+           <p>customer arrival</p>
+        </td>
+        <td>
+           <p>the queue (length) is incremented;<br/>if there is no one else in the queue (queue length = 1), the service for the newly arrived customer starts</p>
+        </td>
+        <td>
+            <img src="img/ServiceDesk-3-Arrival_CRM.svg" />
+        </td>
+       </tr>
+       <tr>
+        <td>
+           <p>service performance</p>
+        </td>
+        <td>
+           <p>the queue (length) is decremented; check simultaneously if the service desk has a successor and if there is still someone in the queue; if the service desk has a successor, then the next service performance at the successor desk starts, if its queue is empty; otherwise, if the service desk does not have a successor, the customer departs; if there is still any customer in the queue, then start the service for the next customer
+           </p>
+        </td>
+        <td>
+            <img src="img/ServiceDesk-4-ServicePerformance_CRM.svg"/>
+        </td>
+       </tr>
+       <caption>Conceptual event rule models for a generic service network model.</caption>
+      </table>
+      <p>Based on these conceptual event rule models, we can make a process design model:</p>
+      <figure id="_Ref5401542496">
+       <img src="img/ServiceDeskNetwork_PDM.svg" />
+       <figcaption>A generic process design model for service networks.</figcaption>
+      </figure>
+	  <p>Notice that the condition <code>(sd.next)</code>, using the syntax of JavaScript, tests if the object referenced by the variable <code>sd</code> has a value for the <code>next</code> property.
+	  </p>
+    </section>
+   </section>
+
+   <section id="Ex5"><h1>Example 5: Modeling a Network of Processing Nodes</h1>
+    <p>In addition to the fundamental DES modeling concepts of objects, events and activities, the OEM&amp;S paradigm also supports the concept of <em>Processing Network (PN)</em> models, which generalize the <em>operations research</em> concept of <q>queueing networks</q>. 
+	</p>
+	<p>In a PN model, describing a network of entry nodes, processing nodes and exit nodes, <i><b>work objects</b></i> (representing, e.g., customers or raw materials) enter a system via <b><i>arrival</i></b> events at an <b><i>entrance</i></b> object and then flow through one or more <i><b>processor</b></i> objects (representing, e.g., sevice desks or manufacturing machines) where they are subject to <i><b>processing activities</b></i> before they leave the system at an <i><b>exit</b></i> object via a <i><b>departure</b></i> event.
+	</p>
+    <p>DPMN adopts the OEM concepts for PN modeling, which are based on the fundamental DES modeling concepts of <em>objects</em>, <em>events </em>and <em>activities</em>. In OEM, a PN model can be converted into a semantically equivalent DES model consisting of object types, event types and activity types, which in turn can be converted to a basic DES model consisting of object and event types, only. The nodes of a PN model represent modeling elements that are overloaded with two meanings. Entry, resp. exit, nodes combine a (possibly spatial) node object, representing entrances resp. exits, and an associated implicit (arrival, resp. departure) event type. Processing nodes combine a (possibly spatial) processor object, representing, e.g., a service desk or a machine, and an associated implicit processing activity type. This semantic overloading makes PN models more concise and easier to read and understand.</p>
+
+    <p>Due to its intuitive building blocks and its applicability to problems in the manufacturing and service industries, PN modeling is the most widely used DES modeling paradigm. It is supported by many simulation tools, such as <em>Arena</em>, <em>ExtendSim</em>, <em>Simul8</em>, <em>Simio</em> and <em>AnyLogic</em>, each of them using their own proprietary terminology and diagram language for the same concepts.</p>
+
+      <figure id="_Ref550398925">
+       <img src="img/Arena-Diagram.png" width="519" height="206"/>
+       <figcaption>A service desk modeled as an Arena Process.</figcaption>
+      </figure>
+	
+    <p>The OEM concepts for PN modeling adopted by DPMN provide a vendor-neutral conceptual framework for analyzing and comparing the proprietary PN modeling languages of these commercial tools. The following table allows comparing the different terms used for core concepts:</p>
+      <table>
+	  <thead>
+       <tr>
+        <th>OEM</th>
+        <th>Arena</th>
+        <th>Simul8</th>
+        <th>Simio</th>
+        <th>AnyLogic</th>
+       </tr>
+	  </thead>
+	  <tbody>
+       <tr>
+        <td>Work Object</td><td>Entity</td><td>Work Item</td><td>Token</td><td>Agent</td>
+       </tr>
+       <tr>
+        <td>Entry Node</td><td>Create</td><td>Start Point</td><td>Source</td><td>Source</td>
+       </tr>
+       <tr>
+        <td>Processing Node</td><td>Process</td><td>Queue + Activity</td><td>Server</td><td>Service</td>
+       </tr>
+       <tr>
+        <td>Exit Node</td><td>Dispose</td><td>End Point</td><td>Sink</td><td>Sink</td>
+       </tr>
+	  </tbody>
+      </table>
+
+	  <section><h1>Information Model</h1>
+      <p>As shown in the information design model shown in <a href="#_Ref510398925">Figure 2.16</a>, the three kinds of PN nodes are modeled as follows:</p>
+	  <ol>
+	   <li>An <em>entry node</em> consists of a <i>CustomerEntrance</i> object and an associated <i>CustomerArrival</i> event type, which is also associated with a <i>Customer</i> object type, stating that a customer arrival event has two participants: a customer and a customer entrance. A <i>CustomerEntrance</i> object has an attribute for the statistics <em>number of arrived customers</em>.</li> 
+	   <li>A <em>processing node</em> consists of a <i>ServiceDesk</i> object with a <i>waitingCustomers</i> queue, and an associated <i>ServicePerformance</i> activity type. Every <i>ServiceDesk</i> object is either connected to a <i>next</i> service desk or to an <i>exit</i> node.</li> 
+	   <li>An <em>exit node</em> consists of a <i>CustomerExit</i> object and an associated <i>CustomerDeparture</i> event type. A <i>CustomerExit</i> object has two attributes for the statistics <em>number of departed customers</em> and <em>cumulative time in system</em>.</li>
+	  </ol> 
+      <figure id="_Ref510398925">
+       <img src="img/ServiceDesk-4_IDM.svg" width="800"/>
+       <figcaption>An information design model for service networks based on PN modeling concepts.</figcaption>
+      </figure>
+    </section>
+    <section><h1>Process Model</h1>
+     <p>The process model for a service network based on PN modeling concepts looks very much like the model shown in <a href="#_Ref5401542496">Figure 2.19</a>, extended by attaching a <i>CustomerEntrance</i> Data Object to the <i>CustomerArrival</i> Event circle and a <i>CustomerExit</i> Data Object to the <i>CustomerDeparture</i> Event circle.
+     </p>
+    </section>
+   </section>
+  </section>
+  <section id="chLangMod" class="chapter"><h1>DPMN Language Models</h1>
+   <section><h1>Control Flow Nodes and Sequence Flows</h1>
+      <figure id="_Ref590398925">
+       <img src="img/DPMN-ControlFlowNodes-SequenceFlows.svg" width="800"/>
+       <figcaption>Control Flow Nodes and Sequence Flows metamodel.</figcaption>
+      </figure>
+   </section>
+   <section><h1>Data Objects</h1>
+    <p>T.B.D.</p>
+   </section>
+  </section>
+  <section id="chExecSem" class="chapter"><h1>DPMN Execution Semantics</h1>
+   <p>A DPMN model has a formal semantics in terms of an <em>Abstract State Machine</em> whose state structure is defined by an object-oriented signature and whose transitions are defined by <em>event rules</em> capturing causal regularities. A DPMN <em>process design model</em> is composed of <em>event rule design models</em> specifying a set of event rules, such that the Abstract State Machine semantics proposed in [<a href="#Wag17">2</a>] can be applied to a DPMN model. </p>
+  </section>
+ </main>
+ <div id="references"><h1>References</h1>
+   <ol>
+    <li id="Wag18">Wagner, Gerd. Information and Process Modeling for Simulation – Part I: Objects and Events. <em>Journal of Simulation Engineering</em>, vol. 1, 2018. <a href="https://articles.jsime.org/1/1">HTML</a> <a href="https://articles.jsime.org/1/jsime-article-1-1.pdf">PDF</a></li>
+    <li id="Wag17">Wagner, Gerd. An Abstract State Machine Semantics For Discrete Event Simulation. In <em>Proceedings of the 2017 Winter Simulation Conference</em>. Piscataway, NJ: IEEE. <a href="http://oxygen.informatik.tu-cottbus.de/publications/wagner/WSC2017-DES-ASM-Semantics.pdf">PDF</a></li>
+    <li id="LSch83">Schruben, L. (1983). Simulation Modeling with Event Graphs. <i>Communications of the ACM</i> 26 (957-963). <a href="https://dl.acm.org/citation.cfm?id=358460">PDF</a></li>
+   </ol>
+ </div>
+</body>
+</html>

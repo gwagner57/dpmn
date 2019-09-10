@@ -1,0 +1,416 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic);
+
+/* -------------------------------------------
+             Set up Page and Page Regions
+   ------------------------------------------- */
+
+@page {
+  size: A4 portrait;  /* or US-Letter */
+  margin: 2.5cm 2.5cm 2cm 2.5cm;
+
+  @top-center {
+    content: "Chapter " counter(chapters) ": " string(chTitle); 
+    font-style: italic;
+    vertical-align: bottom;
+    padding-bottom: 1.5em;
+  }
+  @bottom-center {
+    content: "Page " counter(page) " (of " counter(pages) ")";
+    vertical-align: top;
+    padding-top: 1em;
+  }
+  @footnotes {
+    border-top: thin solid black;
+    border-clip: 100px;
+    margin: 0.6em 0 0 0;
+    padding: 0.3em 0 0 0;
+  }
+}
+
+/* ===============================================
+     generic settings for common HTML elements  
+   =============================================== */
+
+body {
+  color: black;
+  background-color: white; 
+}
+@media screen {
+  body { 
+    font: 1.1rem/1.5 Helvetica, Helvetica Neue, Arial, sans-serif;
+    margin: 0 auto; 
+    padding: 10px;
+    max-width: 45em;
+  }
+  /* floats */
+  .top, .bottom {
+    float: right; 
+    width: 55%;
+    /* margin-right: -60%; */
+  }
+}
+
+@media print { 
+  body { 
+    font: 10pt/1.2 "PT Serif", 'TimesNewRoman', serif;
+    text-align: justify; 
+    hyphens: auto;
+  } 
+  header, h1 {
+    page-break-after: avoid; 
+  }
+  p {
+    margin: 0;
+  }
+  p + p,
+  table + p,
+  figure + p
+  {
+    text-indent: 1.5em;
+  }
+ 
+  ::footnote-call {
+    content: "[" counter(footnote, lower-latin) "]";
+    font-size: 83%;
+    vertical-align: super;
+    line-height: none
+  }
+  ::footnote-marker {
+    content: "[" counter(footnote, lower-latin) "]";
+    list-style-position: inside;
+    margin: 0; padding: 0 0.3em 0 0;
+  }
+  .footNote {
+    float: prince-column-footnote;
+    font-size: 90%;
+    footnote-style-position: outside;
+    margin: 0.3em 0 0 1.3em; padding: 0; text-indent: 0;
+  }
+
+  /* page floats */
+  .top { float: top;  margin-bottom: 2em }
+  .bottom { float: bottom;  margin-top: 2em }
+  .top figcaption, .bottom figcaption { 
+      margin-left: 2em; margin-right: 2em 
+  }
+}
+
+/* =========================================================
+                     Headers & Footers 
+   ========================================================= */
+body { string-set: chTitle "" }
+section.chapter > h1 { string-set: chTitle content() }
+
+#logo { 
+  float: right; 
+  width: 30%; 
+  margin-right: 10%
+}
+
+#title, #subtitle {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0.3em;
+  line-height: 1.2; 
+}
+#title {
+  font-size: 2em;
+  margin-bottom: 0.8em;
+}
+#subtitle {
+  font-size: 1.5em;
+}
+#version {
+  text-align: center;
+}
+#author {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+}
+#affiliation {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+#abstract > h1 {
+  line-height: 1;
+  font-size: 1.5em;
+}
+#abstract > p {
+  font-style: italic
+}
+
+/* =============================================
+           Table of Contents 
+   ============================================= */
+
+#toc > h1 {
+  margin-top: 1.5em
+}
+#toc, #toc li  {
+  font-weight: normal;
+  margin-left: 0
+}
+#toc ul {
+  font-weight: normal;
+  margin-left: 2em
+}
+#toc a::after {
+  content: leader('.') target-counter(attr(href), page)
+}
+/* ==============================================
+                   Headings 
+   ============================================== */
+
+h1, h2, h3, h4, h5 { 
+  margin: 0.8em 0 0.25em;
+  text-align: left;
+  font-weight: bold;
+  font-family: 'Verdana', sans-serif
+}
+main > section > h1,
+#summary > h1,
+#toc > h1,
+#references > h1 
+{
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+main > section > section > h1 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+main > section > section > section > h1 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+/* =============================================================
+    paragraphs and text markup using pre, sub, sup, blockquote 
+   ============================================================= */
+p.caption + p, p + p.noindent, p.noindent { 
+  text-indent: 0 !important 
+}
+p.Reference, p.Reference + p.Reference { 
+  text-align: left; 
+  margin-left: 1.6em; 
+  text-indent: -1.6em; 
+  margin-bottom: 0.7em 
+}
+  
+sub { 
+  font-size: 0.7em; 
+  line-height: 0.4em; 
+  vertical-align: sub 
+}
+sup { 
+  font-size: 0.7em; 
+  line-height: 0.4em; 
+  vertical-align: super
+}  
+
+pre {
+  margin: 0.2em 0;
+  padding: 0.4em;
+  font-family: courier, monospace;
+  font-size: 0.85em;
+  background: #EEE;
+  page-break-inside: avoid
+}
+
+blockquote, blockquote pre {
+  font-style: italic;
+  margin: 0.2em 0;
+  padding: 0.8em;
+  background: #EEE
+}
+
+blockquote em {
+  font-style: normal
+}
+
+blockquote cite {
+  display: block
+}
+
+/* inline elements */
+
+abbr { 
+  text-decoration: none 
+}
+
+q {
+  font-style: italic;
+  background: #FFA
+}
+
+/* ==============================================
+                    Lists 
+   ============================================== */
+
+ul, ol { margin: 0.7em 0 0.7em 1.6em; padding: 0 }
+dl { margin: 0; padding: 0 }
+dt { margin: 0.4em 0 0; padding: 0; }
+dd { margin: 0 0 0.4em 1.6em; padding: 0;  }
+
+
+div.bottom { 
+  clear: both 
+}
+
+div.imprint p { 
+  line-height: 1.3; 
+  text-indent: 0; 
+  margin: 0 0 1.3em
+}
+
+/* ===========================================
+                    Links 
+   =========================================== */
+
+a { text-decoration: none; color: blue }
+a:link, a:active, a:visited {
+  color: #00E;
+  background: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+/*  color: #529;*/
+  color: #AAF;
+  background: transparent;
+}
+
+a.term {
+  font-weight: bold;
+}
+
+/* ===========================================
+    special treatment for Author Information ???
+  ============================================ */
+
+#headline, #headline h1 { text-align: center }
+#headline ul { margin: 1em 0 0.6em 0 }
+#headline li { display: block }
+
+#headline { margin: 0 0 3em }
+
+/* minor styling */
+
+.author_contact { font-style: italic }
+.author {
+  margin-top: 2em;
+  text-indent: 0;
+  text-align: right
+}
+
+/* ============================================
+                     Figures 
+   ============================================ */
+
+figure > figcaption {
+  text-align: center; 
+  /* text-indent: 1.6em; */
+  margin-top: 0.5em;
+  margin-bottom: 1em
+}
+
+figure > img { 
+  display: block; 
+  max-width: 100%; 
+  height: auto; 
+  border: none;
+  margin: auto !important; 
+  prince-image-resolution: 180dpi 
+}
+
+/* ============================================
+                     Tables 
+   ============================================ */
+table {
+  border: thin solid black;
+  margin: 1em auto;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+table td, table th {
+  border: thin solid black;
+  padding: 0.2em;
+}
+table  > caption { 
+  page-break-before: avoid; 
+  font-style: italic; 
+  text-align: center; 
+  text-indent: 1.6em;
+  margin-bottom: 1em;
+}
+
+/* ==========================================
+               Footnotes 
+   ========================================== */
+
+.footnote {
+  display: none;                  
+  position: footnote;
+  footnote-style-position: inside;
+  counter-increment: footnote;
+  margin-left: 1.4em;
+  font-size: 90%;
+  line-height: 1.4
+}
+
+.footnote::footnote-call {
+  vertical-align: super;
+  font-size: 80%
+}
+
+.footnote::footnote-marker {
+  vertical-align: super;
+  color: blue;
+  padding-right: 0.4em
+}
+/* =============================================
+   Chapter/Section Counters 
+   ============================================= */
+
+body { 
+  counter-reset: chapters;
+}
+main > section { 
+  counter-reset: sections figures tables;
+}  
+main > section > section { 
+  counter-reset: sub-sections;
+}
+main > section > section > section { 
+}
+
+main > h1:before {
+  counter-increment: parts;
+  content: "Part " counter(parts) " "
+}
+main > section > h1:before {
+  counter-increment: chapters;
+  content: counter(chapters) " "
+}
+main > section > section > h1:before {
+  counter-increment: sections;
+  content: counter(chapters) "." counter(sections) " "
+}
+main > section > section > section > h1:before {
+  counter-increment: sub-sections;
+  content: counter(chapters) "." counter(sections) "." counter(sub-sections) " ";
+}
+
+figure > figcaption:before {
+  counter-increment: figures; 
+  content: "Figure " counter(chapters) "." counter(figures) ": ";
+}
+table > caption:before {
+  counter-increment: tables;
+  content: "Table " counter(chapters) "." counter(tables) ": ";
+}
+
