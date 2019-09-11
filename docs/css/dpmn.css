@@ -52,6 +52,7 @@ textarea {
     margin: 0 auto;
     padding: 10px;
     max-width: 47em;
+	min-height: 100vh;
     hyphens: auto;
   }
   button {

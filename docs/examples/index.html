@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+ <meta charset="UTF-8"/>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+ <title>DPMN Diagram Examples</title>
+ <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+ <meta name="description"
+       content="Examples of model diagrams made with the Discrete Event Process Modeling Notation (DPMN)."/>
+ <link href="https://dpmn.info/examples" rel="canonical" />
+
+ <link rel="icon" type="image/png" href="../img/favicon32px.png" sizes="32x32">
+ <link rel="icon" type="image/png" href="../img/favicon16px.png" sizes="16x16">
+ 
+ <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+ <link rel="stylesheet" type="text/css" href="../css/prio-menu.css" />
+ <link rel="stylesheet" type="text/css" href="../css/dpmn.css" />
+ <style>
+/*
+body {
+    max-width: 100%;
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+    grid-template-rows: [header] 3rem [headline] 3rem [body] 50rem [footer] 3rem;
+}
+header {
+    grid-row: header;
+    grid-column: 1 / span 3; 
+}
+main > h1 {
+    grid-row: headline;
+}
+ul#examples {
+    grid-row: body;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+    display: grid;
+	grid-template-columns: repeat( 3, 1fr);
+	grid-gap:20px;
+}
+ul#examples > li {
+    min-width: 20rem;
+	background-color: #e5dbff;
+	border: 1px solid #d0bfff;
+	padding: 10px;
+	border-radius: 5px;
+}
+footer {
+    grid-row: footer;
+}
+*/
+
+body {
+    max-width: 100%;
+}
+main > h1 {
+    text-align: center;
+}
+ul#examples {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+    display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+ul#examples > li {
+    min-width: 20rem;
+    max-width: 30rem;
+	margin: 1rem;
+	background-color: #e5dbff;
+	border: 1px solid #d0bfff;
+	padding: 10px;
+	border-radius: 5px;
+}
+footer {
+    text-align: center;
+}
+ </style>
+</head>
+<body>
+ <header>
+ <div id="navigation" class="priority-nav">
+   <nav id="menu">
+    <ul id="menu-closed">
+     <li><a href="../index.html">Home</a></li>
+     <li><a href="../spec" title="Specification Document">Spec</a></li>
+     <li><a href="../examples">Examples</a></li>
+     <li><a href="../reading">Tutorials/Articles</a></li>
+     <li><a href="../faq.html" title="Frequently Asked Questions">FAQ</a></li>
+     <li><a href="#menu-closed">&#215;</a></li>
+     <li><a href="#menu">&#9776;</a></li>
+    </ul>
+   </nav>
+ </div>
+ </header>
+ <main>
+  <h1>Example Models</h1>
+  <ul id="examples">
+    <li>
+	 <h2>Service Desk 1a</h2>
+	 <figure><img src="img/ServiceDesk1_PDM.svg" width="400" /></figure>
+   </li>
+    <li>
+	 <h2>Service Desk 1b</h2>
+	 <figure><img src="img/ServiceDesk1b_PDM.svg" width="400" /></figure>
+   </li>
+    <li>
+	 <h2>Service Desk 2a</h2>
+	 <figure><img src="img/ServiceDesk2_PDM.svg" width="400" /></figure>
+   </li>
+    <li>
+	 <h2>Service Desk 2b</h2>
+	 <figure><img src="img/ServiceDesk2b_PDM.svg" width="500" /></figure>
+   </li>
+    <li>
+	 <h2>Service Desk 3b</h2>
+	 <figure><img src="img/ServiceDesk3b_PDM.svg" width="500" /></figure>
+   </li>
+    <li>
+	 <h2>Medical Department</h2>
+	 <figure><img src="img/MedDep_CPM4.svg" width="600" /></figure>
+   </li>
+    <li>
+	 <h2>Workstations in a Series</h2>
+	 <figure><img src="img/WsSeriesNoBlocking_PDM.svg" width="500" /></figure>
+   </li>
+  </ul>
+ </main>
+  <footer>
+   <p>© 2019 G. Wagner, Brandenburg University of Technology, Germany</p>
+ </footer>
+</body>
+</html>
