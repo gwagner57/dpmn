@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BPMN and Event Graphs presentation</title>
+<meta name="description" content="This presentation shows how BPMN can be combined with Event Graphs for obtaining a powerful simulation modeling language.">
+<meta name="author" content="Gerd Wagner">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+ <link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/css/reveal.min.css" />
+ <link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/css/theme/btu-sky.css" id="theme" />
+ <link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/css/theme/btu-styles.css" />
+ <link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/lib/css/zenburn.css" />
+ <script>
+   document.write( '<link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+ </script>
+
+<!--[if lt IE 9]>
+<script src="https://hydrogen.informatik.tu-cottbus.de/reveal/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+
+ <div class="reveal">
+  <div class="slides">
+
+<section>
+ <h2>Two Problems and One Solution:</h2>
+ <h1>Combining BPMN and Event Graphs</h1>
+ <h3>Gerd Wagner</h3>
+ <h4>Brandenburg University of Technology</h4>
+ <h4>Germany</h4>
+</section>
+
+<section>
+ <h1>Overview</h1>
+ <ul>
+  <li>Part I: What is Discrete Event Simulation (DES)?</li>
+  <li>Part II: Process Modeling with Event Graphs</li>
+  <li>Part III: Process Modeling with BPMN</li>
+  <li>Part IV: Process Modeling with DPMN</li>
+ </ul>
+</section>
+
+<section>
+  <h1>Part I</h1>
+  <h1>What is DES?</h1>
+</section>
+
+<section>
+  <h1>What is DES?</h1>
+  <ul>
+    <li><figure><img src="img/umbrella.svg" alt="umbrella" width="200"/></figure>
+  An <strong>umbrella term</strong> subsuming a variety of computer simulation approaches:</li>
+    <li><strong>Event-Based</strong> Simulation (<em>Event Scheduling</em>): SIMSCRIPT (1962), Event Graphs (1983), Simio, AnyLogic, ...</li>
+    <li><strong>Processing Network</strong> Simulation: GPSS (1961), SIMAN/Arena, Simio, AnyLogic, DESMO-J, ...</li>
+    <li><strong>Object-Oriented</strong> Simulation: Simula (1966), Simio, AnyLogic, ...</li>
+    <li>Other (academic) paradigms/formalisms: Petri Nets, DEVS*, ...</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What is a Discrete Dynamic System (DDS)?</h2>
+  <p>A real world system consisting of <b>objects</b> and a discrete non-deterministic flow of <b>events</b> in time
+   such that at any moment in time, the system's past is a sequence of situations each characterized by</p>
+   <ol>
+      <li>a time point <i>t</i> (the situation time)</li>
+      <li>the <strong>system state</strong> at <i>t</i> (as a combination of the states of all objects of the system), and</li>
+    <li>a set of <strong>imminent events</strong>, to occur at times greater than <i>t</i>.</li>
+     </ol>
+</section>
+
+<section>
+  <h1>Causal Regularities</h1>
+  <p>In a DDS, an event <i>e@t</i> causes:</p>
+   <ol>
+    <li><strong>state changes</strong> <i>&Delta;</i> of affected objects, and</li>
+      <li><strong>follow-up events</strong> <i>e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...</i></li>
+     </ol>
+  <p>according to the <strong>dispositions</strong> of affected objects, which can be generalized as <strong>causal regularities</strong>
+   of the form</p>
+  <div><i>t, O, e@t</i> &rarr; <i>&Delta;, {e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...}</i> with <i>t<sub>i</sub> > t</i></div>
+  <p>with <i>O</i> being the set of the system's objects, such that</p>
+  <div><i>O'</i> = Upd( <i>O</i>, <i>&Delta;</i>)</div>
+  <p>is the resulting changed system state.</p>
+</section>
+
+<section>
+  <h1>Modeling a DDS</h1>
+  <p>Computationally, a DDS can be represented by an <em>Object Event Model (OEM)</em> consisting of:</p>
+  <ol>
+   <li><p><b><i>object types</i></b> <i>OT</i>, e.g., in the form of <i>classes</i> of an object-oriented language;</p></li>
+   <li><p><b><i>event types</i></b> <i>ET</i>, e.g., in the form of <i>classes</i> of an object-oriented language;</p></li>
+   <li><p><b><i>event rules</i></b> <i>R</i> representing <i>causal regularities</i>, e.g., in the form of <code>onEvent</code> 
+    methods of the class that implements the triggering event type.</p></li>
+  </ol>
+  <p>While <i>OT</i> and <i>ET</i> can be defined by a UML Class Diagram, the set of event rules <i>R</i> can be defined by a DPMN Process Diagram.</p>
+</section>
+
+<section>
+ <section>
+  <h2>Example: A Manufacturing Workstation</h2>
+  <ul>
+  <li><figure> <img src="img/Machinery-with-input-buffer.svg" alt="Workstation" width="400"/></figure>
+  Event rule 1: When a new part arrives at the workstation it is added to its input buffer.</li>
+  <li>Event rule 2: When the workstation is available it fetches the new part and starts processing it.</li>
+  <li>Event rule 3: When processing ends, the processed part departs, and, if the input buffer is not empty, 
+   the workstation fetches the next part and starts processing it.</li>
+  </ul>
+  <p>Potentially relevant <strong>object types</strong>: parts, workstations.</p>
+  <p>Potentially relevant <strong>event types</strong>: part arrivals, processing starts, processing ends, part departures.</p>
+ </section>
+ <section>
+  <h2>Conceptual Information Model</h2>
+   <img src="img/WS_CIM.svg" alt="workstation" width="800"/>
+ </section>
+ <section>
+  <h2>Conceptual Process Model</h2>
+   <img src="img/WS_CPM.svg" alt="workstation" width="900"/>
+ </section>
+</section>
+
+<section>
+  <h1>Simulating a DDS</h1>
+  <p>An OEM defines a <em>state transition system</em> where</p>
+   <ol>
+    <li><p>a state of the transition system consists of a situation <i>S</i> = &langle;<i>t, O, E</i>&rangle;</p></li>
+      <li><p>a transition of a situation <i>S</i> consists of</p>
+       <ol>
+        <li><p>advancing <i>t</i> to the occurrence time <i>t'</i> of the next events <i>NE</i> &sube; <i>E</i>,</p></li>
+        <li><p>processing all next events <i>e</i> &isin; <i>NE</i> by applying their event rules <i>r<sub>e</sub></i> &isin; <i>R</i> according to</p> 
+         <div style="text-align:center; margin-bottom:0.5em"><i>r<sub>e</sub></i>( <i>O</i>) = &langle; <i>&Delta;<sub>e</sub> , FE<sub>e</sub></i> &rangle;</div>
+     <p>resulting in <i>&Delta;</i> = &cup; {<i>&Delta;<sub>e</sub></i> | <i>e</i> &isin; <i>NE</i> } 
+      and <i>FE</i> = &cup; {<i>FE<sub>e</sub></i> | <i>e</i> &isin; <i>NE</i> }</p></li>
+       </ol>
+       <p>such that the successor situation <i>S'</i> = &langle;<i>t', O', E'</i>&rangle; with</p>
+     <div  style="text-align:center; margin-top:0.5em"><i>O'</i> = Upd( <i>O</i>, <i>&Delta;</i>)</div>
+     <div  style="text-align:center"><i>E'</i> = <i>E</i> &minus; <i>NE</i> &cup; <i>FE</i></div>
+    </li>
+     </ol>
+</section>
+
+
+<!--
+  <section>
+    <h1>Qualities and Dispositions</h1>
+  <p>In ontology (the philosophical study of what there is), objects have <i>qualities</i> and <i>dispositions</i>.</p>
+  <div style="margin-top:1.5em">
+    <figure><img src="img/green_bottle.jpg" alt="green_bottle" width="123" /></figure>
+  <p>For instance, this bottle has <b><i>a specific green color</i></b> (a quality) and 
+  <b><i>a specific fragility</i></b> (a disposition).</p>
+  <p>This disposition is only manifested (by a break-up event) 
+  when it is triggered (by a collision event).</p>
+  </div>
+  </section>
+
+<section>
+  <h1>Dispositions and Event Rules</h1>
+  <ul>
+  <li>The specific dispositions of objects of the same type can be generalized as <i>disposition types</i>, 
+  or <b><i>causal regularities</i></b></li>
+  <li>Causal regularities can be modeled in the form of <b><i>event rules</i></b></li>
+  <li>Example: <i>Whenever one of these green bottles collides with a non-elastic solid object, it breaks up</i></li>
+  </ul>
+</section>
+-->
+
+<!--
+<section style="background-image: url(ServiceQueue_CPM_background.svg); background-size: contain;">
+-->
+<section>
+  <h1>Part II</h1>
+  <h1>Process Modeling</h1>
+  <h3>with</h3>
+  <h1>Event Graphs</h1>
+</section>
+
+ <section>
+  <h1>Event Graphs</h1>
+   <p>... have been proposed for DES modeling by Schruben in 1983.</p>
+   <p>Strengths:</p>
+  <ul>
+   <li>Event graphs capture the fundamental event scheduling paradigm with annotated arrows between event circles.</li>
+  </ul>
+   <p>Weaknesses:</p>
+  <ul>
+   <li>Event graphs lack a visual notation for (conditional and parallel) branching.</li>
+   <li>Event graphs do not support OO state structure modeling (with objects and attributes).</li>
+  </ul>
+ </section>
+ <section>
+  <h2>An Event Graph Model of<br/>the Workstation Process</h2>
+   <img src="img/Workstation_EG.svg" alt="workstation" width="900"/>
+ </section>
+
+
+<section style="background-image: url(ServiceQueue_CPM_background.svg); background-size: contain;">
+  <h1>Part III</h1>
+  <h1>Process Modeling</h1>
+  <h3>with</h3>
+  <h1>B P M N</h1>
+</section>
+
+ <section>
+  <h2>A BPMN Model of<br/>the Workstation Process</h2>
+   <img src="img/WS-Activity_CPM.svg" alt="workstation" width="900"/>
+ </section>
+<!-- 
+<section>
+<h1>What is BPMN?</h1>
+<ul>
+ <li>BPMN is an <b><i>activity-based</b></i> graphical modeling language for defining business process types 
+  following the <i>flow-chart</i> metaphor</li> 
+ <li>In 2011, the Object Management Group (OMG) has released version 2.0 of BPMN with a (semi-formal) semantics 
+  based on the Petri net mechanism of a <i>token flow</i> representing the handling of a specific case</li>
+ <li>The most important elements of BPMN are: activities, events, (control flow) gateways, sequence flow, 
+  'pools' (actors), and (asynchronous) message flow</li>
+</ul>
+</section>
+
+<section>
+<h1>Activities</h1>
+<ul>
+<li><figure><img src="img/BPMN-Activity.svg" alt="BPMN-Activity" width="300"/></figure>
+Defined as "work that is performed within a process"</li>
+<li>A <i>Task</i> is an atomic <i>Activity</i></li>
+<li>A <i>Sub-Process</i> is a composite <i>Activity</i>, which can be either in a <i>collapsed</i> or in an <i>expanded</i> view</li>
+<li>An <i>Activity</i> is temporally framed by an <b><i>activity start</b></i> and an <b><i>activity end</b></i> event (typically not shown)</li>
+</ul>
+</section>
+
+<section>
+<h1>Events</h1>
+<ul>
+<li><figure><img src="img/BPMN-EventTypes.svg" alt="BPMN-EventTypes" width="400"/></figure>
+Defined as "something that 'happens' during the course of a process, affecting the process flow"</li>
+<li>A distinction between <i>Start</i>, <i>Intermediate</i> and <i>End</i> event is made with respect to the case handling semantics</li>
+<li>Notice that, ontologically, an <i>Activity</i> is also an event, composed of at least an activity start and an activity end event</li>
+<li>But BPMN does not account for this!</li>
+</ul>
+</section>
+
+<section>
+<h1>Gateways and Sequence Flows</h1>
+<ul>
+<li><figure><img src="img/BPMN-Gateways.svg" alt="BPMN-Gateways" width="400"/></figure>
+Defined as "controlling how a process flows"</li>
+<li>A plain gateway symbol denotes an <i>Exclusive OR-Split</i>, if there are 2 or more output flows, 
+or an <i>Exclusive OR-Join</i>, if there are 2 or more input flows</li>
+<li> A gateway with a plus symbol denotes an <i>AND-Split</i>, if there are 2 or more output flows, or an <i>AND-Join</i>, 
+if there are 2 or more input flows</li>
+<li><figure><img src="img/BPMN-SequenceFlow.svg" alt="BPMN-SequenceFlow" width="400"/></figure>
+Sequence Flows define the temporal order of Events, Activities, and Gateways</li>
+</ul>
+</section>
+-->
+
+<section>
+<h2>BPMN Can Be Used in Two Ways</h2>
+<ul>
+ <li>For documenting, and designing improved versions of, existing (non-executable) business processes</li>
+ <li>For defining automated business processes based on a specific BP automation platform</li>
+</ul>
+ <p>BUT: BPMN does not allow defining a computationally complete logical design of an executable business process</p>
+</section>
+
+
+<section>
+<h1>Issues with BPMN</h1>
+<ul>
+ <li>BPMN does not provide a clear/unambiguos meaning of Sequence Flows</li>
+ <li>According to the semantics of BPMN, actions/activities are not events</li> 
+ <li>The official BPMN (token flow) semantics is limited to <b><i>case handling processes</b></i></li>
+ <li>It disallows, for instance, to model processes where several cases are handled in parallel 
+ and compete for resources</li>
+ <li>For a long time, it was an open issue how to best use BPMN, and how to <b><i>adapt its syntax and semantics</b></i>, 
+ for simulation modeling</li> 
+ <li>This issue has been solved in the <strong>Discrete Event Process Modeling Notation (DPMN)</strong></li>
+</ul>
+</section>
+
+<section style="background-image: url(ServiceQueue_CPM_background.svg); background-size: contain;">
+  <h1>Part IV</h1>
+  <h1>Process Modeling</h1>
+  <h3>with</h3>
+  <h1>D P M N</h1>
+</section>
+
+ <section>
+  <h2>Defining Object and Event Types</h2>
+   <img src="img/WS1_IDM.svg" alt="workstation" width="800"/>
+ </section>
+ <section>
+  <h2>A DPMN Model of<br/>the Workstation Process</h2>
+   <img src="img/WS1_PDM.svg" alt="workstation" width="900"/>
+ </section>
+
+ <section>
+  <h2>Using an Activity Type</h2>
+  <p>The pair of corresponding event types <i>ProcessingStart</i> and <i>ProcessingEnd</i> can be replaced by an activity type:</p>
+   <img src="img/WS3_IDM.svg" alt="workstation" width="800"/>
+ </section>
+ <section>
+  <h2>An Activity-Based DPMN Model<br/>of the Workstation Process</h2>
+   <img src="img/WS3_PDM.svg" alt="workstation" width="900"/>
+ </section>
+
+ <section>
+ <h1>See also</h1>
+ <ul>
+  <li>Gerd Wagner. <a href="https://articles.jsime.org/1/1/Modeling-for-Simulation-Part-I">Information and Process Modeling for Simulation – Part I: Objects and Events</a>. <em>Journal of Simulation Engineering</em> 1:1, 2018.</li>
+ <li><a href="../oem-manufacturingsystems/index.html">Modeling and Simulation of Manufacturing Systems</a>, a tutorial article on OEM examples with implementations in OESjs and AnyLogic, extending a tutorial given at the <em>Summer Simulation Conference</em>, July 2019, Berlin, Germany</li>
+ </ul>
+</section>
+
+<!-- ========================================================= -->    
+</div>
+</div>
+    
+  <script src="https://hydrogen.informatik.tu-cottbus.de/reveal/lib/js/head.min.js"></script>
+  <script src="https://hydrogen.informatik.tu-cottbus.de/reveal/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1366,
+        height: 768,
+        controls: true,
+        progress: true,
+        history: false,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+</script>
+
+  </body>  
+</html>
+
+

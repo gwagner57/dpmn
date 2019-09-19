@@ -1,0 +1,694 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SpringSim-2019 Tutorial: Information and Process Modeling for Simulation</title>
+<meta name="description" content="This tutorial provides an introduction into information and process modeling for simulation.">
+<meta name="author" content="Gerd Wagner">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+ <link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/css/reveal.min.css" />
+ <link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/css/theme/btu-sky.css" id="theme" />
+ <link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/css/theme/btu-styles.css" />
+ <link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/lib/css/zenburn.css" />
+ <script>
+   document.write( '<link rel="stylesheet" href="https://hydrogen.informatik.tu-cottbus.de/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+ </script>
+
+<!--[if lt IE 9]>
+<script src="https://hydrogen.informatik.tu-cottbus.de/reveal/lib/js/html5shiv.js"></script>
+<![endif]-->
+
+</head>
+<body>
+
+ <div class="reveal">
+  <div class="slides">
+
+<section>
+ <h2>Information and Process</h2>
+ <h1>Modeling<br />
+     for Simulation</h1>
+ <h3 style="color:blue;">How to Model an Economy</h3>
+ <h3>Gerd Wagner</h3>
+ <h4>Brandenburg University of Technology</h4>
+ <h4>Germany</h4>
+</section>
+
+<section>
+<section>
+ <h1>Overview</h1>
+ <ul>
+  <li>Prolog: What is DES?</li>
+  <li>Part I: What is Model-Based Simulation Engineering?</li>
+  <li>Part II: Information Modeling with UML</li>
+  <li>Part III: Process Modeling with BPMN</li>
+  <li>Part IV: How to make Models for Simulation</li>
+ </ul>
+</section>
+<section>
+ <h1>References</h1>
+ <ul>
+  <li>Gerd Wagner. Information and Process Modeling for Simulation – Part I: Objects and Events. <em>Journal of Simulation Engineering</em> 1:1, 2018.</li>
+  <li>Website: <b>https://sim4edu.com</b>
+   <ul>
+    <li>Lengnick's Baseline Economy: https://sim4edu.com/sims/20</li>
+    <li>Further reading: https://sim4edu.com/reading</li>
+   </ul></li>
+ </ul>
+</section>
+</section>
+
+<section>
+  <h1>Prolog</h1>
+  <h1>What is DES?</h1>
+</section>
+
+<section>
+  <h1>What is DES?</h1>
+  <ul>
+    <li><p>Is DES about <q>&quot;<strong>entities flowing through the system</strong>&quot;</q>,<br/>according to the <em>'process worldview'?</em></p>
+    <p><strong>No</strong>, this is a widespread misconception!</p></li>
+    <li>Rather, this metaphor refers to discrete <em>Processing Networks</em>, which represent a system pattern 
+	 that is mainly found in manufacturing and service industries</li>
+    <li>For instance, assembly lines, banks and hospitals can be modeled as Processing Networks</li>
+    <li>But there are many other discrete systems that cannot be modeled as Processing Networks!</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Then, what is DES?</h1>
+  <ul>
+    <li><figure><img src="img/umbrella.svg" alt="umbrella" width="200"/></figure>
+	An <strong>umbrella term</strong> subsuming a variety of computer simulation approaches:</li>
+    <li><strong>Event-Based</strong> Simulation (<em>Event Scheduling</em>): SIMSCRIPT (1962), Event Graphs (1983), Simio, AnyLogic, DESMO-J, ...</li>
+    <li><strong>Processing Network</strong> Simulation: GPSS (1961), SIMAN/Arena, Simio, AnyLogic, DESMO-J, ...</li>
+    <li><strong>Object-Oriented</strong> Simulation: Simula (1966), Simio, AnyLogic, ...</li>
+    <li>Other (academic) paradigms/formalisms: Petri Nets, DEVS*, ...</li>
+  </ul>
+</section>
+
+<section>
+  <h1>What is a Discrete System?</h1>
+  <ul>
+    <li>A system consisting of <b>objects</b> and a discrete flow of <b>events</b> that
+	 <ol>
+      <li>change the state of affected objects and </li>
+	  <li>cause follow-up events</li>
+     </ol></li>
+    <li>A <em>state transition system</em> where
+	 <ol>
+      <li>events are transitions and</li>
+	  <li>the system state consists of object states and future events</li>
+     </ol></li>
+  </ul>
+</section>
+<section>
+ <section>
+  <h3>Example 1: A Service Desk as a Simple Queueing System</h3>
+  <figure> <img src="img/service-desk.svg" alt="Service Desk" width="300" style="margin-top:-1em"/></figure>
+  <p style="font-size:smaller">The customers arriving at a service desk have to wait in a queue when the service desk is busy. Otherwise, when the queue is empty and the service desk is not busy, they are immediately served by the service clerk. Whenever a service is completed, the served customer departs and the next customer from the queue, if there is any, will be served.</p>
+  <p>Potentially relevant <strong>object types</strong>: customers, service desks, service queues, service clerks.</p>
+  <p>Potentially relevant <strong>event types</strong>: customer arrivals, customers queuing up, service start, service end, customer departures.</p>
+ </section>
+ <section>
+  <h2>Example 1: Conceptual Information Model</h2>
+   <img src="img/ServiceQueue_CIMwithEventTypes.svg" alt="Service Desk" width="800"/>
+ </section>
+</section>
+
+<!--
+  <section>
+    <h1>Qualities and Dispositions</h1>
+	<p>In ontology (the philosophical study of what there is), objects have <i>qualities</i> and <i>dispositions</i>.</p>
+	<div style="margin-top:1.5em">
+    <figure><img src="img/green_bottle.jpg" alt="green_bottle" width="123" /></figure>
+	<p>For instance, this bottle has <b><i>a specific green color</i></b> (a quality) and 
+	<b><i>a specific fragility</i></b> (a disposition).</p>
+	<p>This disposition is only manifested (by a break-up event) 
+	when it is triggered (by a collision event).</p>
+	</div>
+  </section>
+
+<section>
+  <h1>Dispositions and Event Rules</h1>
+  <ul>
+	<li>The specific dispositions of objects of the same type can be generalized as <i>disposition types</i>, 
+	or <b><i>causal regularities</i></b></li>
+	<li>Causal regularities can be modeled in the form of <b><i>event rules</i></b></li>
+	<li>Example: <i>Whenever one of these green bottles collides with a non-elastic solid object, it breaks up</i></li>
+  </ul>
+</section>
+-->
+
+<section>
+  <h2>Causal Regularities and Event Rules</h2>
+  <ul>
+	<li>An event type is associated with a <strong>causal regularity</strong>, which implies certain state changes 
+	 and follow-up events when an event of that type occurs</li>
+	<li>Causal regularities can be modeled in the form of <strong>event rules</strong></li>
+	<li>Example: <i>Whenever an Arrival event occurs and the queue is empty, start a new service </i></li>
+  </ul>
+</section>
+
+<section>
+  <h1>Modeling a Discrete System</h1>
+  <p>For modeling a Discrete System, we have to describe its</p>
+  <ol>
+      <li><b><i>object types</i></b>, e.g., in the form of <i>classes</i> of an object-oriented
+       language;</li>
+      <li><b><i>event types</i></b>, e.g., in the form of <i>classes</i> of an object-oriented
+       language;</li>
+      <li><b><i>event rules</i></b> (<i>causal regularities</i>), e.g., in the form of <code>onEvent</code> 
+	   methods of the class that implements the triggering event type.</li>
+   </ol>
+</section>
+
+<section>
+  <h1>Part I</h1>
+  <h1>Model-Based<br />
+  Simulation Engineering</h1>
+</section>
+
+<section>
+  <h1>Why should we make models?</h1>
+  <ul>
+	<li>Today, in many M&amp;S projects, developers make a model in their mind, and then jump 
+	from their mental models to code without making explicit models in a visual modeling language</li>
+	<li>Even in simulation tutorials and textbooks you hardly find any model diagrams (at most some "flow charts")</li>
+	<li>Making conceptual models and design models greatly helps to <span style="color:magenta">document</span>, 
+	<span style="color:blue">communicate</span>, <span style="color:green">share</span>, 
+	<span style="color:red">reuse</span>, <span style="color:brown">maintain</span> and 
+	<span style="color:purple">evolve</span> your simulation models</li>
+  </ul>
+</section>
+
+<section>
+<h1>Three Kinds of Models</h1>
+<p>In model-based engineering there is a distinction between three kinds of models:</p>
+ <ul>
+ <li><b><i>domain models</b></i>, which are descriptions of the system under investigation, and not of the artifact to be developed;
+ <em>in this sense, they are <i>IT-independent</i> or <i>solution-independent</i> models</em></li>
+ <li><b><i>design models</b></i>, which express computational solution designs independently of a target technology platform</li>
+ <li><b><i>implementation models</b></i>, which are platform-specific models</li>
+ </ul></li>
+<p>In IS/SE, <i>"<b>conceptual model</b>"</i> = <i>domain model</i>.</p>
+<p>In M&amp;S, the term <i>"conceptual model"</i> has been used ambiguosly both for <i>domain model</i> and for <i>design model</i>.</p>
+</section>
+
+<section>
+<h2>Conceptualization &rightarrow; Design &rightarrow; Implementation</h2>
+<img src="img/ModelTransformations.svg" alt="Model Transformations" width="100%"/>
+</section>
+
+<section>
+<h1>MDE Example</h1>
+<img src="img/MDD-Example.svg" alt="MDE Example" width="100%"/>
+</section>
+
+<section>
+ <section>
+ <h1>Viewpoints</h1>
+  <ul style="font-size:90%">
+   <li>A domain model does not consist of just one model diagram including all viewpoints (or aspects) of the system under investigation</li>
+   <li>Rather it consists of a set of models, one (or more) for each viewpoint</li>
+   <li>The two most important viewpoints, crosscutting all three modeling levels (domain, design and implementation), are 
+    <ol style="font-size:90%">
+    <li><strong>information modeling</strong>, which is concerned with the <strong>state structure</strong> of the domain</li>
+    <li><strong>process modeling</strong>, which is concerned with the <strong>dynamics</strong> of the domain</li>
+    </ol></li>
+   <li>For each viewpoint, there are one (or more) modeling languages to be used for making models for that viewpoint</li>
+  </ul>
+ </section>
+ <section>
+  <h1>Information Modeling</h1>
+  <table> 
+    <thead> 
+      <tr> 
+        <th>Language</th><th>Conceptual</th><th>Design</th><th>Implementation</th>
+      </tr> 
+    </thead>
+    <tbody>
+      <tr> 
+        <td>Entity Relationship (ER) Diagrams</td><td style="text-align:center">+</td><td style="text-align:center">+</td><td style="text-align:center">&minus;</td>
+      </tr>
+      <tr> 
+        <td>UML Class Diagrams</td><td style="text-align:center">+</td><td style="text-align:center">+</td><td style="text-align:center">+</td>
+      </tr>
+    </tbody> 
+  </table> 
+ </section>
+ <section>
+  <h1>Process Modeling</h1>
+  <table> 
+    <thead> 
+      <tr> 
+        <th>Language</th><th>Conceptual</th><th>Design</th><th>Implem.</th>
+      </tr> 
+    </thead>
+    <tbody>
+      <tr> 
+        <td>(Colored) Petri Nets</td><td style="text-align:center">&minus;</td><td style="text-align:center">+</td><td style="text-align:center">+</td>
+      </tr>
+      <tr> 
+        <td>UML State Machines ("state charts")</td><td style="text-align:center">&minus;</td><td style="text-align:center">+</td><td style="text-align:center">+</td>
+      </tr>
+      <tr> 
+        <td>UML Activity Diagrams</td><td style="text-align:center">+</td><td style="text-align:center">+</td><td style="text-align:center">+</td>
+      </tr>
+      <tr> 
+        <td>Business Process Modeling Notation (BPMN)</td><td style="text-align:center">+</td><td style="text-align:center">+</td><td style="text-align:center">+</td>
+      </tr>
+    </tbody> 
+  </table> 
+ </section>
+</section>
+
+
+<section style="background-image: url(InventoryManagement_CIM_background.svg); background-size: 100%;">
+  <h1>Part II</h1>
+  <h1>Information Modeling</h1>
+  <h3>with</h3>
+  <h1>UML Class Diagrams</h1>
+</section>
+
+<section>
+<h1>From Entity Types to Classes</h1>
+<ul>
+<li><b><i>Conceptual information modeling</b></i>: describe the relevant entity types of a domain and the relationships between them</li>
+<li><b><i>Information design modeling</b></i>: describe the platform-independent data structures (classes) providing a logical design of a system</li>
+<li><b><i>Data/class modeling</b></i>: describe the platform-specific data structures (classes) for implementing a system</li>
+</ul>
+</section>
+
+<section>
+<h1>Basic Concepts (1)</h1>
+<img src="img/IntroUML1.svg" alt="Shop-Delivery model 1" width="1000"/>
+<ul>
+<li>
+<b><i>Classes</b></i> are visualized as rectangles</li>
+<li><b><i>Associations</b></i> between classes are visualized as connection lines with <b><i>multiplicities</b></i> at both ends</li>
+<li>Notice that the association defines a Shop to be a <i>participant</i> of a <i>Delivery</i> event ("objects participate in events")</li>
+</ul>
+</section>
+
+<section>
+<h1>Adding Properties and Operations</h1>
+<img src="img/IntroUML2.svg" alt="Shop-Delivery model 2" width="1000"/>
+<ul>
+<li>In class rectangles, we can also define <b><i>properties</b></i> and <b><i>operations</b></i>, using further compartments</li>
+<li>The properties Shop::name, Shop::stockQuantity and Delivery::quantity</li>
+<li>The <i>instance-level</i> operation Delivery::onEvent</li>
+<li>The <i>class-level</i> operation Delivery::leadTime</li>
+</ul>
+</section>
+
+<section>
+<h1>Adding Constraints</h1>
+<img src="img/IntroUML3.svg" alt="Shop-Delivery model 3" width="1000"/>
+<ul>
+<li>An ID constraint stating that the property is a <i>standard identifier</i>, or <i>primary key</i>, attribute</li>
+<li>An operation constraint: the operation Delivery::leadTime must implement the exponential probability distribution with event rate 0.5</li>
+</ul>
+</section>
+
+<section>
+<h1>Categorizing Model Elements</h1>
+<img src="img/IntroUML4.svg" alt="Shop-Delivery model 4" width="1000"/>
+<ul>
+<li>UML allows defining special categories of modeling elements called ‘stereotypes’</li>
+<li><b>«object type»</b> and <b>«event type»</b> are two different categories of entity types</li>
+<li><b>«rv»</b> defines a category of operations/methods that represent a <b><i>random variable</b></i></li>
+</ul>
+</section>
+
+<section>
+<h1>Useful Resources</h1>
+<ul>
+<li>A good overview of the most recent version of UML (2.5) is available at 
+<a href="http://www.uml-diagrams.org/uml-25-diagrams.html">www.uml-diagrams.org/uml-25-diagrams.html</a></li>
+<li>Recommended UML modeling tools:
+ <ol>
+<li>Microsoft <i>Visio 2010</i>, but not Visio 2013!</li>
+<li><i>Visual Paradigm</i> (its <a href="http://www.visual-paradigm.com/download/community.jsp">community
+       edition</a> is free for non-commercial use)</li>
+ </ol></li>
+</ul>
+</section>
+
+
+<section style="background-image: url(ServiceQueue_CPM_background.svg); background-size: contain;">
+  <h1>Part III</h1>
+  <h1>Process Modeling</h1>
+  <h3>with</h3>
+  <h1>B P M N</h1>
+</section>
+
+<section>
+<h1>What is BPMN?</h1>
+<ul>
+ <li>BPMN is an <b><i>activity-based</b></i> graphical modeling language for defining business process types 
+  following the <i>flow-chart</i> metaphor</li> 
+ <li>In 2011, the Object Management Group (OMG) has released version 2.0 of BPMN with a (semi-formal) semantics 
+  based on the Petri net mechanism of a <i>token flow</i> representing the handling of a specific case</li>
+ <li>The most important elements of BPMN are: activities, events, (control flow) gateways, sequence flow, 
+  'pools' (actors), and (asynchronous) message flow</li>
+</ul>
+</section>
+
+<section>
+<h1>Activities</h1>
+<ul>
+<li><figure><img src="img/BPMN-Activity.svg" alt="BPMN-Activity" width="300"/></figure>
+Defined as "work that is performed within a process"</li>
+<li>A <i>Task</i> is an atomic <i>Activity</i></li>
+<li>A <i>Sub-Process</i> is a composite <i>Activity</i>, which can be either in a <i>collapsed</i> or in an <i>expanded</i> view</li>
+<li>An <i>Activity</i> is temporally framed by an <b><i>activity start</b></i> and an <b><i>activity end</b></i> event (typically not shown)</li>
+</ul>
+</section>
+
+<section>
+<h1>Events</h1>
+<ul>
+<li><figure><img src="img/BPMN-EventTypes.svg" alt="BPMN-EventTypes" width="400"/></figure>
+Defined as "something that 'happens' during the course of a process, affecting the process flow"</li>
+<li>A distinction between <i>Start</i>, <i>Intermediate</i> and <i>End</i> event is made with respect to the case handling semantics</li>
+<li>Notice that, ontologically, an <i>Activity</i> is also an event, composed of at least an activity start and an activity end event</li>
+<li>But BPMN does not account for this!</li>
+</ul>
+</section>
+
+<section>
+<h1>Gateways and Sequence Flows</h1>
+<ul>
+<li><figure><img src="img/BPMN-Gateways.svg" alt="BPMN-Gateways" width="400"/></figure>
+Defined as "controlling how a process flows"</li>
+<li>A plain gateway symbol denotes an <i>Exclusive OR-Split</i>, if there are 2 or more output flows, 
+or an <i>Exclusive OR-Join</i>, if there are 2 or more input flows</li>
+<li> A gateway with a plus symbol denotes an <i>AND-Split</i>, if there are 2 or more output flows, or an <i>AND-Join</i>, 
+if there are 2 or more input flows</li>
+<li><figure><img src="img/BPMN-SequenceFlow.svg" alt="BPMN-SequenceFlow" width="400"/></figure>
+Sequence Flows define the temporal order of Events, Activities, and Gateways</li>
+</ul>
+</section>
+
+<section>
+ <section><h1>Event Rules</h1>
+  <table>
+    <colgroup>
+        <col style="width:20%" />
+        <col style="width:50%" />
+        <col style="width:30%" />
+    </colgroup>
+	<thead>
+       <tr>
+         <th>ON (event type)</th><th>DO (event routine)</th><th>Rule Diagram</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr>
+         <td>customer arrival</td>
+         <td>If the service desk is busy, then the new customer queues up,
+           else the service starts.</td>
+         <td><img src="img/Arrival_CRM.svg" width="400" style="margin:-1em auto"></td>
+       </tr>
+       <tr>
+         <td>service start</td>
+         <td>After some time, the service ends.</td>
+         <td><img src="img/ServiceStart_CRM.svg" width="300" style="margin:-1em auto"></td>
+       </tr>
+       <tr>
+         <td>service end</td>
+         <td>The served customer departs. If there are still customers waiting in the queue,
+           then the next service starts.</td>
+         <td><img src="img/ServiceEnd_CRM.svg" width="400" style="margin:-1em auto"></td>
+       </tr>
+       </tbody>
+  </table>
+ </section>
+ <section>
+  <h1>A Conceptual Process Model</h1>
+  <p>... integrates all event rule models:</p>
+  <img src="img/ServiceQueue_CPM.svg" alt="ServiceQueue CPM" width="100%"/>
+ </section>
+</section>
+
+<!--
+<section>
+<h1>Pools and Message Flows</h1>
+<ul>
+<li><figure><img src="img/BPMN-Pool.svg" alt="BPMN-MessageFlow" width="300"/></figure>
+A Pool represents an agent role (like 'Buyer' or 'Seller') or a specific instance of such a role (like 'Amazon.com'). </li>
+<li><figure><img src="img/BPMN-MessageFlow.svg" alt="BPMN-MessageFlow" width="300"/></figure>
+A Message Flow represents a message exchange communication link between two Pools</li>
+</ul>
+</section>
+-->
+
+<section>
+<h1>Issues with BPMN</h1>
+<ul>
+ <li>BPMN does not provide a clear/unambiguos meaning of Sequence Flows</li>
+ <li>According to the semantics of BPMN, actions/activities are not events</li> 
+ <li>The official BPMN (token flow) semantics is limited to <b><i>case handling processes</b></i></li>
+ <li>It disallows, for instance, to model processes where several cases are handled in parallel 
+ and compete for resources</li>
+ <li>For a long time, it was an open issue how to best use BPMN, and how to <b><i>adapt its syntax and semantics</b></i>, 
+ for simulation modeling</li> 
+ <li>This issue has been solved in OEM&amp;S</li>
+</ul>
+</section>
+
+<section>
+<h1>Useful Resources</h1>
+<ul>
+<li>A good modeling tool, with the advantages of an online solution, is the 
+<a href="http://www.signavio.com/bpm-academic-initiative">Signavio Process Editor</a>, which is
+free for academic use</li>
+</ul>
+</section>
+
+<section>
+ <section>
+  <h1>Event Graphs and BPMN</h1>
+   <p>Event graphs (EGs) have been proposed for DES modeling by Schruben in 1983.</p>
+   <img src="img/EG-QueueingSystem.png" alt="Queueing System" width="532" height="255"/>
+   <p>An event graph modeling the service desk system in Schruben's original notation.</p>
+ </section>
+ <section>
+  <h2>Strengths and Weaknesses of Event Graphs</h2>
+   <p>Strengths:</p>
+  <ul>
+   <li>Event graphs capture the fundamental event scheduling paradigm with annotated arrows between event circles.</li>
+  </ul>
+   <p>Weaknesses:</p>
+  <ul>
+   <li>Event graphs lack a visual notation for (conditional and parallel) branching.</li>
+   <li>Event graphs do not support OO state structure modeling (with objects and attributes).</li>
+  </ul>
+ </section>
+ <section>
+  <h1>From EGs to BPMN</h1>
+  <ul>
+   <li>BPMN Process Diagrams are a natural evolution/extension of EGs.</li>
+   <li>BPMN adds Gateways (for branching), Data Objects and Activities to EGs.</li>
+   <li>However, the syntax and semantics of BPMN (especially Data Objects) needs to be adapted.</li>
+   <li>The resulting variant of BPMN is called <em>Discrete Event Process Modeling Notation (DPMN)</em>.</li>
+  </ul>
+ </section>
+ <section>
+  <h1>A DPMN Model</h1>
+   <img src="img/ServiceQueue_PDM.svg" alt="Queueing System" style="width:100%"/>
+ </section>
+</section>
+
+
+
+<section>
+  <h1>Part IV</h1>
+  <h1>How to Make Models for Simulation</h1>
+</section>
+
+<section>
+<h1>Object Event Modeling (OEM)</h1>
+<ol>
+<li>Model object and event types as stereotyped classes in a UML class diagram</li>
+<li>Add associations among object types (e.g., queues are ordered association ends)</li>
+<li>Add associations between object types and event types whenever objects (of some type) participate in events (of some type)</li>
+<li>Model random variables as stereotyped operations constrained to implement a certain probability distribution.</li>
+<li>Model event rules in an event rule table associating a triggering event expression with an event routine specified in pseudo-code</li>
+<li>Model each event rule from the event rule table in the form of an "atomic" BPMN process diagram</li>
+<li>Model the sequencing of events by merging all "atomic" BPMN process diagrams into one BPMN process diagram, if possible</li>
+</ol>
+</section>
+
+<section>
+<h2>OEM is Well-Founded by a Formal Semantics<br/>and an Implementation</h2>
+<ol>
+<li>OEM results in a simulation design model that has a well-defined operational semantics, as shown in <a href="http://oxygen.informatik.tu-cottbus.de/publications/wagner/WSC2017-DES-ASM-Semantics.pdf">(Wagner, 2017a)</a></li>
+<li>An OEM model can, in principle, be implemented with any OO simulation technology</li>
+<li>However, a straightforward implementation can only be expected from a technology that implements the OES paradigm, such as the <em>OES JavaScript (OESjs)</em> framework presented in <a href="http://oxygen.informatik.tu-cottbus.de/publications/wagner/WSC2017-Sim4Edu.pdf">(Wagner, 2017c)</a></li>
+</ol>
+</section>
+
+<section>
+<h1>Example: A Minimal Economy</h1>
+<ol>
+<li>... consists of two types of economic actors only: households and firms.</li>
+<li>Households play the roles of workers/employees and consumers.</li>
+<li>Firms play the roles of employers and producers/suppliers.</li>
+</ol>
+</section>
+
+<section>
+<h1>Conceptual Modeling</h1>
+<ol>
+<li>Making a conceptual information model:
+<ol>
+<li>Potentially relevant object types: households, firms, product types, ...</li>
+<li>Potentially relevant event types: start of month, customer orders, replenishment orders, deliveries, daily production, end of month, ...</li>
+</ol></li>
+<li>Making a conceptual process model: for each relevant event type, describe the effects of events of that type ... </li>
+</ol>
+</section>
+
+<section>
+ <section>
+  <h1>Conceptual Information Model (1)</h1>
+  <img src="img/LBE_CIM-Core.svg" alt="LBE Core" style="width:100%"/>
+  <p>This is just a core model that has to be elaborated...</p>
+ </section>
+ <section>
+  <h1>Conceptual Information Model (2)</h1>
+  <img src="img/LBE_CIM.svg" alt="LBE" style="width:60%"/>
+ </section>
+</section>
+
+<section>
+ <section>
+  <h1>Conceptual Process Model (1)</h1>
+  <p>At the <strong>start of a month</strong>,</p>
+  <ol>
+   <li>firms may adjust their wage rate and consumption goods price as well as their number of employees;</li>
+   <li>households may search for cheaper vendors and for a job (if unemployed) or a better paid job (if employed), 
+    as well as decide on their monthly consumption budget.</li>
+  </ol>
+ </section>
+ <section>
+  <h1>Conceptual Process Model (2)</h1>
+  <p>On <strong>each day</strong>,</p>
+  <ol>
+   <li>households purchase consumption goods and</li>
+   <li>firms produce new consumption goods depending on their number of workers.</li>
+  </ol>
+ </section>
+ <section>
+  <h1>Conceptual Process Model (3)</h1>
+  <p>At the <strong>end of a month</strong>,</p>
+  <ol>
+   <li>firms distribute profits, pay wages, and decide about firing a worker;</li>
+   <li>households receive their wage and may adjust their reservation wage.</li>
+  </ol>
+ </section>
+</section>
+
+<section>
+<h1>Design Modeling</h1>
+<ol>
+<li>Making an information design model</li>
+<li>Making a process design model</li>
+</ol>
+</section>
+
+<section>
+<section>
+<h1>Information Design</h1>
+<ul>
+<li>Purpose of the model: confirm a number of stylized economic facts and laws</li>
+<li>Make several simplifying assumptions:
+ <ol>
+  <li>Abstract away from individual customer orders.</li>
+  <li>Abstract away from the individual members of a household</li>
+  <li>Assume that there is only one consumption good</li>
+  <li>...</li>
+ </ol></li>
+<li>Required object types: <code>Household</code> and <code>Firm</code></li>
+</ul>
+</section>
+<section>
+<h1>Information Design Model</h1>
+<img src="img/LBE_IDM-ObjectTypes.svg" alt="LBE_IDM-ObjectTypes" width="1000"/>
+</section>
+</section>
+
+<!--
+<section>
+<section>
+<h1>Process Design Model</h1>
+<img src="img/ServiceQueue_PDM.svg" alt="ServiceQueue_PDM" width="1200"/>
+</section>
+</section>
+-->
+
+<section>
+<h1>Implementation (Modeling)</h1>
+<ol>
+<li>Information viewpoint: making a <i>class model</i> for the target programming laguage/platform and coding it</li>
+<li>Process viewpoint: coding the event rules defined by the process design model (e.g., in the form of <i>onEvent</i> methods 
+ of the event class concerned)</li>
+</ol>
+</section>
+
+
+<section>
+<h1>How to Proceed?</h1>
+<ol>
+<li>This tutorial is an ongoing project</li>
+<li>You can find the presentation slides and other materials at <a href="https://sim4edu.com">https://sim4edu.com</a></li>
+<li>You can contribute by developing your own modeling examples</li>
+<li>Just contact me at G.Wagner@b-tu.de</li>
+<li><span style="font-size:200%; float:right">☺</span>
+ Or invite me (as a visiting professor or guest researcher) during my next sabbatical leave in winter 2019/20</li>
+</ol>
+</section>
+
+<!-- ========================================================= -->    
+</div>
+</div>
+    
+  <script src="https://hydrogen.informatik.tu-cottbus.de/reveal/lib/js/head.min.js"></script>
+  <script src="https://hydrogen.informatik.tu-cottbus.de/reveal/js/reveal.min.js"></script>
+<script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1366,
+        height: 768,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+</script>
+
+  </body>  
+</html>
+
+

@@ -1,0 +1,4 @@
+<script>
+// load iframe only after loading the page
+document.getElementById("subsecDesModel0__iframe1").src = "https://sim4edu.com/sims/101/";
+</script>
