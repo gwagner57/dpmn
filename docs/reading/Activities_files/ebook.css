@@ -203,8 +203,8 @@ a:visited {
  */
 
 aside {
-    background-color: #FFFFEE;
-    border: 1px solid #DDDDC0;
+    background-color: ghostwhite;
+    border: 1px solid gainsboro;
     border-top-width: 5px;
     border-bottom-width: 5px;
     border-left-style: none;
@@ -244,8 +244,8 @@ a[target="_blank"]:after {
 /*
  * By default, the fonts used for headings are slightly too small.
  * They are even made smaller when a heading is nested inside sections.
- * 
- * In the context of an ebook, headings other than those having 
+ *
+ * In the context of an ebook, headings other than those having
  * class="role-XXX-title" are used as bridgeheads and thus should keep their
  * normal sizes. If you don't want this to happen, the simplest is to set
  * book attribute adjustuserheadings to "true".
@@ -1231,9 +1231,13 @@ figure.threecells > div > img {
     /*
      * FOP complains about margin:auto.
      */
-    .xmtable, 
+    .xmtable,
+    body,
+    hr.role-footnote-separator,
     table[border="1"],
     figure {
+        margin-top: 0;
+        margin-bottom: 0;
         margin-left: 0;
         margin-right: 0;
     }
