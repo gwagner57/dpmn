@@ -22,6 +22,11 @@ body {
   color: black;
   background-color: white;
 }
+@media screen {
+ body {
+   padding: 5px;
+ }
+}
 
 h1,
 h2,
@@ -534,6 +539,8 @@ span.role-index-toc-placeholder {
 
 a.role-index-div-ref {
     color: #394986; /*Like h2*/
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 div.role-index-div {
@@ -1037,7 +1044,7 @@ a.role-table-ref {
  */
 
 a.role-index-term {
-    display: hidden; /* Not none if we want a link to reach the anchor. */
+    visbility: hidden; /* Not display:none if we want a link to reach the anchor. */
 }
 
 /*
