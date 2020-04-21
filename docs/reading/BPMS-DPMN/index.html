@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Presentation: Business Process Modeling and Simulation with DPMN</title>
+<meta name="description" content="UML Class Diagrams and BPMN Process Diagrams are two big success stories in the history of information technology. However, unlike UML Class Diagrams, BPMN does not have a convincing formal semantics and lacks several important elements needed for BP simulation. BPMN is also not well-aligned with the Processing/Queuing Network paradigm of Operations Research (OR) and the related business process simulation paradigm pioneered by the Discrete Event Simulation (DES) languages/tools GPSS and SIMAN/Arena. The Discrete Event Process Modeling Notation (DPMN) proposed by Wagner (2018, 2019) is based on the semantics of Event Graphs (Schruben 1983), which capture the event scheduling paradigm of DES. Since DPMN supports modeling resource-constrained activities (with resource pools and resource allocation procedures) and the distinction between resources and processing objects, it allows modeling 'processing processes' performed in Processing Networks, and thus reconciles BPMN with OR and DES.">
+<meta name="author" content="Gerd Wagner">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/reveal.min.css" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/theme/btu-sky.css" id="theme" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/theme/btu-styles.css" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/lib/css/zenburn.css" />
+ <script>
+   document.write( '<link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+ </script>
+
+ <style>
+.reveal strong {
+    font-style: italic;
+    font-weight: bold;
+}
+.reveal section p, .reveal section li, .reveal section div {
+    font-size: larger;
+	line-height: 1.2em;
+}
+.reveal section pre {
+    font-size: 90%;
+	width: 96%;
+}
+
+table#ML-Usage td:nth-child(2) { text-align: center; }
+table#ML-Usage td:nth-child(3) { text-align: center; }
+</style>
+
+</head>
+<body>
+
+ <div class="reveal">
+  <div class="slides">
+
+<section class="title-slide">
+ <h1>Business Process</h1>
+ <h2>Modeling and Simulation</h2>
+ <h3>with</h3>
+ <h1>DPMN</h1>
+ <h3>Gerd Wagner</h3>
+ <h4>Brandenburg University of Technology</h4>
+ <h4>Germany</h4>
+</section>
+
+<section>
+ <h1>See also</h1>
+ <ol>
+  <li>Gerd Wagner: <a href="https://articles.jsime.org/1/1/Modeling-for-Simulation-Part-I">Information and Process Modeling for Simulation – Part I: Objects and Events</a>. <em>Journal of Simulation Engineering</em>, volume 1, 2018.</li>
+  <li>Gerd Wagner: <a href="../OEMS-DPMN-Activities/">Information and Process Modeling for Simulation – Part II: Activities and Processing Networks</a>. 2019.</li>
+ </ol>
+</section>
+
+<section>
+ <h1>Modeling Language Usage</h1>
+ <table id="ML-Usage">
+  <thead>
+  <tr><th>Modeling Language</th><th>BPM</th><th>DES</th></tr>
+  </thead>
+  <tr>
+  <tbody>
+  <tr><td>Petri Nets (1939)</td><td>+</td><td>-</td></tr>
+  <tr><td>Event Graphs (1983)</td><td>--</td><td>+</td></tr>
+  <tr><td>UML Activity Diagrams (1997)</td><td>+</td><td>--</td></tr>
+  <tr><td>BPMN (2004)</td><td>++</td><td>-</td></tr>
+  <tr><td span="3"></td></tr>
+  <tr><td>UML Class Diagrams (1997)</td><td>-</td><td>-</td></tr>
+  </tbody>
+ </table>
+</section>
+
+<section>
+ <h1>Some Observations</h1>
+ <ol>
+  <li>Modeling <em>resource-constrained</em> activities has been a major issue in DES since the 1960'ies, while it has been <strong>neglected in BPM(N)</strong>.</li>
+  <li>In process simulation with DES tools, <em>queuing</em> (of planned activities waiting for the availability of resources) has always been an important issue, while <strong>BPM(N) does hardly consider it.</strong></li>
+  <li>GPSS and SIMAN/Arena have pioneered the M&amp;S of queuing/<strong>processing networks</strong>.</li>
+  <li>GPSS has introduced the modeling pattern <em>Seize-Delay-Release</em> for resource-dependent <strong>processing activities</strong>.</li>
+ </ol>
+</section>
+
+<section>
+ <h1>What's wrong with BPMN?</h1>
+ <ol>
+  <li>Insufficient integration of the <em>objects</em> that participate in a process</li>
+  <li>Insufficient support of <em>resource-constrained activities</em></li>
+  <li>No support of <em>processing activities</em></li>
+  <li>Underdetermined/ambiguous meaning of <em>sequence flow arrows</em></li>
+  <li>No convincing <em>formal semantics</em></li>
+ </ol>
+</section>
+
+<section>
+ <h1>Ontological Principles (1)</h1>
+ <ol>
+  <li><figure><img src="img/Individuals-Core-Ontology.svg" alt="Individuals Core Ontology" width="700"/></figure>
+  There are two main categories: <em>objects</em> ("endurants") and <em>events</em> ("perdurants").</li>
+  <li>Objects participate in events.</li>
+  <li>Actions and activities are events that are performed by an agent.</li>
+  <li>Activities are composite events composed of at least a start and an end event with a duration greater than zero.</li>
+ </ol>
+</section>
+
+<section>
+ <h1>Ontological Principles (2)</h1>
+ <ol>
+  <li>Processes are governed by <em>causal regularities</em>, which relate events with (1) <em>state changes</em> of affected objects and (2) <em>follow-up events</em>.</li>
+  <li>A <em>discrete process</em> consists of a partially ordered set of events that happen in a spatio-temporal region determined by the events' participants and the causal regularities involved.</li>
+  <li>A <em>business process</em> is a discrete process that "happens in the context of an organization".</li>
+ </ol>
+</section>
+
+<section>
+ <h1>Implications for Modeling (1)</h1>
+ <ol>
+  <li>Since events depend on objects, we first need to model object types and then event types.</li>
+  <li>A process model that does not model the participating objects is incomplete!</li>
+  <li>A process model is based on an underlying information model, which defines the types of objects and events involved in the process model.</li>
+  <li>A <em>conceptual process model</em> describes the causal regularities of a real world process.</li>
+ </ol>
+</section>
+
+<section>
+ <h1>Implications for Modeling (2)</h1>
+ <ol>
+  <li>A <em>simulation design model</em> consists of an <em>information design model</em> and a <em>process design model</em>.</li>
+  <li>An <em>information design model</em> defines <em>object types</em> and <em>event types</em> (e.g., in the form of classes in a Class Diagram).</li>
+  <li>A <em>process design model</em> defines <strong>event rules</strong> that represent causal regularities (e.g., in a DPMN Process Diagram).</li>
+ </ol>
+</section>
+
+<section>
+ <h1>DPMN =</h1>
+<p><em>Event Graphs</em> with BPMN's <i>Conditional Sequence Flow</i> arrows <span style="font-size:larger">+</span></p>
+ <ol style="margin-top:1em">
+  <li><i>Exclusive/Inclusive/Parallel Gateways</i> for conditional/parallel branching</li>
+  <li><i>Data Objects</i> for replacing "state variables" (like <i>Q</i>) with attributes (like <i>ServiceDesk::queueLength</i>)</li>
+  <li><i>Activities</i> composed of a <i>Start</i> and <i>End</i> event</li>
+  <li><i>Resource-Dependent Event Flow</i> arrows <img src="img/Res-Dep-Evt-Flow-Arrow.svg" alt="Resource-Dependent Event Flow" width="100"/></li>
+  <li><i>Object Flow</i> arrows <img src="img/Object-Flow-Arrow.svg" alt="Object Flow" width="100"/></li>
+ </ol>
+</section>
+
+<section>
+  <h2>An Event Graph<br/>with Conditional Sequence Flow Arrows</h2>
+   <img src="img/ServiceDesk0_EG.svg" alt="Service Desk Event Graph" width="1000"/>
+</section>
+
+<section>
+<section>
+  <h2>OEM&amp;S: Modeling Object and Event Types</h2>
+   <div><img src="img/ServiceDesk-1_IDM.svg" alt="Service Desk Information Model" width="800"/></div>
+</section>
+<section>
+  <h2>DPMN: Using Objects instead of State Variables</h2>
+   <div><img src="img/ServiceDesk-1_PDM.svg" alt="Service Desk Event Graph" width="1200"/></div>
+   <p>The model specifies two <strong>event rules</strong>: one for <i>Arrival</i> events and one for <i>Departure</i> events.</p>
+</section>
+<section>
+ <h1>Event Rules</h1>
+ <table style="border-spacing:3px;width:100%;" border="1">
+  <thead><tr><td>ON (event type)</td><td>DO (event routine)</td></tr></thead>
+  <tbody><tr><td><p>Arrival( <i>sd</i>) @ <i>t</i></p><p>with <i>sd</i> : ServiceDesk</p></td><td><pre>INCREMENT sd.queueLength
+IF sd.queueLength = 1 THEN
+  sTime := ServiceDesk.serviceTime()
+  SCHEDULE Departure( sTime, sd) @(t + sTime)</pre></td></tr>
+  <tr><td><p>Departure( <i>sd</i>) @ <i>t</i></p><p>with <i>sd</i> : ServiceDesk</p></td><td><pre>DECREMENT sd.queueLength
+IF sd.queueLength &gt; 0 THEN
+  sTime := ServiceDesk.serviceTime()
+  SCHEDULE Departure( sTime, sd) @(t + sTime)</pre></td></tr>
+  </tbody>
+ </table>
+</section>
+</section>
+
+<section>
+ <section>
+  <h2>Introducing Activities as Paired Start/End Events</h2>
+  <div style="display:flex"><img src="img/WS_CIM_2.svg" style="min-width:300px" width="650"><img src="img/RightArrow.svg" width="60"><img src="img/WS-Activity_CIM.svg" style="min-width:300px" width="650"></div>
+ </section>
+ <section>
+  <h2>Introducing Activities as Paired Start/End Events</h2>
+  <div style="display:flex"><img src="img/WS_CPM_2.svg" width="700"><img src="img/RightArrow.svg" width="60"><img src="img/WS-Activity_CPM.svg" width="650"></div>
+ </section>
+</section>
+
+<section>
+<section>
+  <h2>Modeling Resources in an Information Model</h2>
+   <div><img src="img/MedExam_CM3.svg" alt="Model with an Activity" width="1100"/></div>
+</section>
+<section>
+  <h2>A Conceptual Model of a<br/>Resource-Dependent Activity</h2>
+   <div><img src="img/MedExam_CPM.svg" alt="Service Desk Event Graph" width="1000"/></div>
+</section>
+<section>
+  <h2>Using a Resource-Dependent Event Flow Arrow</h2>
+   <div><img src="img/WS3_PDM3.svg" alt="Service Desk Event Graph" width="1000"/></div>
+   <p>The new symbol of a Resource-Dependent Event Flow Arrow implicitly expresses the resource management logic of queuing a planned activity if the required resources are not available.</p>
+</section>
+</section>
+
+<section>
+ <h1>Operational Semantics of DPMN</h1>
+ <ol>
+  <li>Gerd Wagner: <a href="https://www.informs-sim.org/wsc17papers/includes/files/056.pdf">An Abstract State Machine Semantics For Discrete Event Simulation</a>, <em>Proc. of the 2017 Winter Simulation Conference</em>.</li>
+  <li>A <strong>simulation state</strong> consists of (1) a <i>system state</i> and (2) a list of <i>future events</i>.</li>
+  <li>An <strong>event rule</strong> represents a function that maps a given system state to a set of <i>state changes</i> (of affected objects) and to a set of <i>follow-up events</i>.</li>
+  <li>A set of event rules represents a <strong>transition function</strong> that maps a given simulation state to a successor simulation state.</li>
+ </ol>
+</section>
+
+<section>
+ <h1>Conclusions</h1>
+ <ol>
+  <li>DPMN allows BPMN-like high-level simulation modeling</li>
+  <li>Open question: can workflow modeling benefit from the semantics and new modeling concepts of DPMN?</li>
+ </ol>
+</section>
+
+
+<!-- ========================================================= -->    
+</div>
+</div>
+
+  <script src="https://oxygen.informatik.tu-cottbus.de/reveal/lib/js/head.min.js"></script>
+  <script src="https://oxygen.informatik.tu-cottbus.de/reveal/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1366,
+        height: 768,
+        controls: true,
+        progress: true,
+        history: false,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+        ]
+      });
+
+</script>
+
+  </body>  
+</html>
+
+
