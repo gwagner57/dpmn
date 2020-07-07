@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Object Event Simulation (OES)</title>
+<meta name="description" content="This presentation shows how BPMN can be combined with Event Graphs for obtaining a powerful simulation modeling language.">
+<meta name="author" content="Gerd Wagner">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/reveal.min.css" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/theme/btu-sky.css" id="theme" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/theme/btu-styles.css" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/lib/css/zenburn.css" />
+ <script>
+   document.write( '<link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+ </script>
+<style>
+.reveal strong {font-style: italic;}
+
+.reveal figure.threecells {
+  float: unset;
+}
+.reveal figure.threecells > div {
+  display: flex;
+}
+.reveal figure.threecells > div > img {
+  display: block;
+}
+.reveal section.part-title-slide {
+  font-size: larger;
+}
+table#ML-Usage td:nth-child(2) { text-align: center; }
+table#ML-Usage td:nth-child(3) { text-align: center; }
+</style>
+
+</head>
+<body>
+
+ <div class="reveal">
+  <div class="slides">
+
+<section>
+ <h1>Object Event Simulation (OES)</h1>
+ <h2 style="color:blue;text-transform:none">A New DES Paradigm with a Formal Semantics</h2>
+ <h3>Gerd Wagner</h3>
+ <h4>Brandenburg University of Technology</h4>
+ <h4>Germany</h4>
+</section>
+
+<section>
+ <h1>Overview</h1>
+ <ul>
+  <li>Prolog: Conceptual Confusion in Discrete Event Simulation (DES)</li>
+  <li>Part I: Discrete Dynamic Systems</li>
+  <li>Part II: Information Modeling with UML Class Diagrams</li>
+  <li>Part III: Process Modeling with Extended Event Graphs</li>
+  <li>Part IV: Simulation with OESjs</li>
+ </ul>
+</section>
+
+<section class="part-title-slide">
+  <h2>Prolog</h2>
+  <h1>Conceptual Confusion<br/>in DES</h1>
+</section>
+
+<section>
+ <h1>Are You also Confused about...</h1>
+ <ul>
+  <li>What is Discrete Event Simulation (DES)?</li>
+  <li>What is an Activity?</li>
+  <li>What is a Process?</li>
+  <li>What is Process-Oriented Simulation?</li>
+  <li>What is Process-Interaction Simulation?</li>
+  <li>What is an agent, as opposed to an object? What is Agent-Based Simulation?</li>
+  <li>Where are the objects, and why is there no OO Modeling, in DES?</li>
+  <li>Why is there no standard modeling language in DES, except Event Graphs (Schruben 1983)?</li>
+  <li>Why are Event Graphs hardly used?</li>
+ </ul>
+</section>
+
+<section>
+ <h1>Some Observations</h1>
+ <ul>
+  <li>There is a lot of conceptual confusion in DES.</li>
+  <li>DES textbooks avoid defining DES.</li>
+  <li>Event-Based Simulation, as defined by Event Graphs, is the foundation of DES.</li>
+  <li>All other DES languages/frameworks should extend Event-Based Simulation.</li>
+  <li>Activities, as an important high-level modeling concept, should be defined on top of events.</li>
+  <li>"Process-Oriented" Simulation is, in fact, about Queuing/<strong>Processing Networks</strong>.</li>
+  <li>Processing Network models ("entities flowing through a system") are a special class of DES models.</li>
+ </ul>
+</section>
+
+<section>
+ <h1>Modeling Language Usage</h1>
+ <table id="ML-Usage">
+  <thead>
+  <tr><th>Modeling Language</th><th>BPM</th><th>DES</th></tr>
+  </thead>
+  <tr>
+  <tbody>
+  <tr><td>Petri Nets (1939)</td><td>+</td><td>-</td></tr>
+  <tr><td>Event Graphs (1983)</td><td>--</td><td>+</td></tr>
+  <tr><td>UML Activity Diagrams (1997)</td><td>+</td><td>--</td></tr>
+  <tr><td>BPMN (2004)</td><td>++</td><td>-</td></tr>
+  <tr><td span="3"></td></tr>
+  <tr><td>UML Class Diagrams (1997)</td><td>-</td><td>-</td></tr>
+  </tbody>
+ </table>
+</section>
+
+<section>
+  <h1 style="margin-top:-3%">Conceptual Confusion</h1>
+  <div style="margin-top:-2%"><img src="img/Confusion.svg" alt="Confusion" width="1000"/></div>
+</section>
+
+<section>
+  <div style="margin-top:-5%"><img src="img/OES-Enlightenment.svg" alt="OES-Enlightenment" width="1200"/></div>
+</section>
+
+<section class="part-title-slide">
+  <h2>Part I</h2>
+  <h1>Discrete Dynamic Systems</h1>
+</section>
+
+<section>
+  <h2>What is a Discrete Dynamic System (DDS)?</h2>
+  <p>A real world system consisting of <b>objects</b> and a discrete flow of <b>events</b> 
+   such that at any moment in time, the system's past is a sequence of situations each characterized by</p>
+   <ol>
+    <li>a time point <i>t</i> (the situation time)</li>
+    <li>the <strong>system state</strong> at <i>t</i> (as a combination of the states of all objects of the system), and</li>
+    <li>a set of <strong>imminent events</strong>, to occur at times greater than <i>t</i>.</li>
+   </ol>
+  <p>and each situation <i>S<sub>t+1</sub></i> is created from <i>S<sub>t</sub></i> via <strong>causal regularities</strong> 
+   triggered through the events occuring at <i>t</i>.</p>
+</section>
+
+<section>
+  <h1>Causal Regularities</h1>
+  <p>An event <i>e@t</i> causes:</p>
+   <ol>
+    <li><strong>state changes</strong> <i>&Delta;</i> of affected objects, and</li>
+      <li><strong>follow-up events</strong> <i>e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...</i></li>
+     </ol>
+  <p>according to the <strong>dispositions</strong> of affected objects, which can be generalized as <strong>causal regularities</strong>
+   of the form</p>
+  <div><i>t, O, e@t</i> &rarr; <i>&Delta;, {e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...}</i> with <i>t<sub>i</sub> > t</i></div>
+  <p>with <i>O</i> being the set of the system's object states at time <i>t</i>, such that</p>
+  <div><i>O'</i> = Upd( <i>O</i>, <i>&Delta;</i>)</div>
+  <p>is the resulting changed system state.</p>
+</section>
+
+<section>
+  <h1>Modeling a DDS</h1>
+  <p>Computationally, a DDS can be represented by an <em>Object Event Model (OEM)</em> consisting of:</p>
+  <ol>
+   <li><p><b><i>object types</i></b> <i>OT</i>, e.g., in the form of <i>classes</i> of an object-oriented language;</p></li>
+   <li><p><b><i>event types</i></b> <i>ET</i>, e.g., in the form of <i>classes</i> of an object-oriented language;</p></li>
+   <li><p><b><i>event rules</i></b> <i>R</i> representing <i>causal regularities</i>, e.g., in the form of <code>onEvent</code> 
+    methods of the class that implements the triggering event type.</p></li>
+  </ol>
+  <p>While <i>OT</i> and <i>ET</i> can be defined by a UML Class Diagram, the set of event rules <i>R</i> can be defined by an Extended Event Graph 
+   (or a basic DPMN Process Diagram).</p>
+</section>
+
+<section>
+ <section>
+  <h2>Example: A Manufacturing Workstation</h2>
+  <ul>
+  <li><figure> <img src="img/Machinery-with-input-buffer.svg" alt="Workstation" width="400"/></figure>
+  Event rule 1: When a new <strong>part arrives</strong> at the workstation it is added to its input buffer,
+  and if the workstation is available, processing starts.</li>
+  <li>Event rule 2: When <strong>processing starts</strong>, the next part is fetched from the input buffer and is being processed until processing ends.</li>
+  <li>Event rule 3: When <strong>processing ends</strong>, the processed part is removed, and, if the input buffer is not empty, 
+   the workstation fetches the next part and starts processing it.</li>
+  </ul>
+  <p>Potentially relevant <strong>object types</strong>: parts, workstations.</p>
+  <p>Potentially relevant <strong>event types</strong>: part arrivals, processing starts, processing ends, part departures.</p>
+ </section>
+ <section>
+  <h2>Conceptual Information Model</h2>
+   <img src="img/WS_CIM.svg" alt="workstation" width="800"/>
+ </section>
+ <section>
+  <h2>Conceptual Process Model</h2>
+   <img src="img/WS_CPM.svg" alt="workstation" width="900"/>
+ </section>
+</section>
+<!--
+<section>
+  <h1>Simulating a DDS</h1>
+  <p>An OEM defines a <em>state transition system</em> where</p>
+   <ol>
+    <li><p>a state of the transition system consists of a situation <i>S</i> = &langle;<i>t, O, E</i>&rangle;</p></li>
+      <li><p>a transition of a situation <i>S</i> consists of</p>
+       <ol>
+        <li><p>advancing <i>t</i> to the occurrence time <i>t'</i> of the next events <i>NE</i> &sube; <i>E</i>,</p></li>
+        <li><p>processing all next events <i>e</i> &isin; <i>NE</i> by applying their event rules <i>r<sub>e</sub></i> &isin; <i>R</i> according to</p> 
+         <div style="text-align:center; margin-bottom:0.5em"><i>r<sub>e</sub></i>( <i>O</i>) = &langle; <i>&Delta;<sub>e</sub> , FE<sub>e</sub></i> &rangle;</div>
+     <p>resulting in <i>&Delta;</i> = &cup; {<i>&Delta;<sub>e</sub></i> | <i>e</i> &isin; <i>NE</i> } 
+      and <i>FE</i> = &cup; {<i>FE<sub>e</sub></i> | <i>e</i> &isin; <i>NE</i> }</p></li>
+       </ol>
+       <p>such that the successor situation <i>S'</i> = &langle;<i>t', O', E'</i>&rangle; with</p>
+     <div  style="text-align:center; margin-top:0.5em"><i>O'</i> = Upd( <i>O</i>, <i>&Delta;</i>)</div>
+     <div  style="text-align:center"><i>E'</i> = <i>E</i> &minus; <i>NE</i> &cup; <i>FE</i></div>
+    </li>
+     </ol>
+</section>
+-->
+<!--
+<section style="background-image: url(ServiceQueue_CPM_background.svg); background-size: contain;">
+-->
+<section class="part-title-slide">
+  <h2>Part II</h2>
+  <h1>Information Modeling with UML Class Diagrams</h1>
+</section>
+
+ <section>
+  <h2>Defining Object and Event Types</h2>
+   <img src="img/WS1_IDM.svg" alt="workstation" width="800"/>
+ </section>
+
+<section class="part-title-slide">
+  <h1>Part III</h1>
+  <h1>Process Modeling</h1>
+  <h3>with</h3>
+  <h1>Extended Event Graphs</h1>
+</section>
+
+ <section>
+  <h1>Event Graphs</h1>
+   <p>Event Graphs (EGs) have been proposed for DES modeling by Schruben in 1983.</p>
+   <p><b>Strengths</b>:</p>
+  <ul>
+   <li>EGs provide an intuitive visual modeling language.</li>
+   <li>EGs capture the fundamental <em>event scheduling</em> paradigm.</li>
+  </ul>
+   <p><b>Weaknesses</b>:</p>
+  <ol>
+   <li>EGs lack a visual notation for (conditional and parallel) branching.</li>
+   <li>EGs do not support OO state structure modeling (with objects/classes and attributes).</li>
+   <li>EGs do not allow combining events and activities.</li>
+  </ol>
+ </section>
+ <section>
+  <h1>An Event Graph Model</h1>
+   <img src="img/Workstation_EG.svg" alt="workstation" width="900"/>
+ </section>
+ 
+<section>
+ <h1 style="font-size:300%">DPMN</h1>
+ <p>...is the <em>Discrete Event Process Modeling Notation</em>, which extends <em>Event Graphs</em> by adding:</p>
+ <ol style="margin-top:1em">
+  <li><i>Exclusive/Inclusive/Parallel <b>Gateways</b></i> for conditional/parallel branching</li>
+  <li><i><b>Data Objects</b></i> for replacing "state variables" (like <i>Q</i>) with attributes (like <i>ServiceDesk::queueLength</i>)</li>
+ </ol>
+ <p>A <em>DPMN Process Model</em> is composed of <strong>Event Rule Models</strong>.</p>
+</section>
+
+
+
+ <section>
+  <h2>An event rule model for<br/>the <code style="text-transform:none">PartArrival</code> Event</h2>
+   <img src="img/WS1-PartArrival_RDM.svg" alt="workstation" width="800"/>
+ </section>
+ <section>
+  <h2>An event rule model for<br/>the <code style="text-transform:none">ProcessingStart</code> Event</h2>
+   <img src="img/WS1-ProcessingStart_RDM.svg" alt="workstation" width="800"/>
+ </section>
+ <section>
+  <h2>An event rule model for<br/>the <code style="text-transform:none">ProcessingEnd</code> Event</h2>
+   <img src="img/WS1-ProcessingEnd_RDM.svg" alt="workstation" width="800"/>
+ </section>
+ <section>
+  <h2>A DPMN Model of<br/>the Workstation Process</h2>
+   <img src="img/WS1_PDM.svg" alt="workstation" width="1000"/>
+ </section>
+
+<!--
+ <section>
+  <h2>Introducing an Activity Type<br/>in the Process Model</h2>
+  <figure class="threecells" id="figWorkstationIDM"><div><img src="img/WS2_PDM_2.svg" width="650" /><img src="img/RightArrow.svg"
+  width="60" /><img src="img/WS3_PDM.svg" style="min-width:300px" width="650" /></div></figure>
+ </section>
+-->
+
+ <section class="part-title-slide">
+  <h2>Part IV</h2>
+  <h1>Simulation with OESjs</h1>
+ </section>
+
+ <section>
+  <h2>An <span style="text-transform: none">OESjs</span> Model of the Workstation Process</h2>
+  <p>... consists of</p>
+  <ul>
+   <li>an object type definition <code>Workstation</code></li>
+   <li>three event type definitions:<br/><code>PartArrival</code>, <code>ProcessingStart</code> and <code>ProcessingEnd</code></li>
+  </ul>
+  <p>It can be run as an online simulation at <a href="https://sim4edu.com/sims/102">https://sim4edu.com/sims/102</a>.</p>
+ </section>
+
+ <section>
+  <h1 style="text-transform: none"><kbd>Workstation.js</kbd></h1>
+  <pre>var WorkStation = new cLASS({
+  Name: "WorkStation",
+  supertypeName: "oBJECT",
+  properties: {
+    "inputBufferLength": {range: "NonNegativeInteger",
+        label: "Input buffer length"},
+    "status": {range: WorkstationStatusEL, label: "Status"}
+  }
+});</pre>
+ </section>
+ <section>
+  <h1 style="text-transform: none"><kbd>PartArrival.js</kbd></h1>
+  <pre>var PartArrival = new cLASS({
+  Name: "PartArrival",
+  supertypeName: "eVENT",
+  properties: {
+    "workStation": {range: "WorkStation", label:"Workstation"}
+  },
+  methods: {
+    "<b>onEvent</b>": function () {
+      var events=[], ws = this.workStation;
+      // add part to buffer
+      ws.inputBufferLength++;
+      // update statistics
+      sim.stat.arrivedParts++;
+      // if the work station is available
+      if (ws.status === WorkstationStatusEL.AVAILABLE) {
+        // schedule the part's processing start event
+        events.push( new ProcessingStart({ workStation: ws}));
+      }
+      return events;
+    }
+  }
+});
+</pre>
+ </section>
+
+ <section>
+  <h1>See also</h1>
+  <ul>
+   <li>Gerd Wagner: <a href="https://www.informs-sim.org/wsc17papers/includes/files/056.pdf">An Abstract State Machine Semantics For Discrete Event Simulation</a>, <em>Proc. of the 2017 Winter Simulation Conference</em>.</li>
+   <li>Gerd Wagner: <a href="https://articles.jsime.org/1/1/Modeling-for-Simulation-Part-I">Information and Process Modeling for Simulation – Part I: Objects and Events</a>. <em>Journal of Simulation Engineering</em> 1:1, 2018.</li>
+   <li>Gerd Wagner: <a href="https://dpmn.info/reading/Activities.html">Information and Process Modeling for Simulation – Part II: Activities and Processing Networks</a>. 2019.</li>
+   <li>Available on <b><code>dpmn.info</code></b></li>
+  </ul>
+ </section>
+
+<!-- ========================================================= -->    
+</div>
+</div>
+    
+  <script src="https://oxygen.informatik.tu-cottbus.de/reveal/lib/js/head.min.js"></script>
+  <script src="https://oxygen.informatik.tu-cottbus.de/reveal/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1366,
+        height: 768,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+</script>
+
+  </body>  
+</html>
+
+
