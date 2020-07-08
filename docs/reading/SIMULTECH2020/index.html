@@ -46,6 +46,7 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
  <h3>Gerd Wagner</h3>
  <h4>Brandenburg University of Technology</h4>
  <h4>Germany</h4>
+ <div style="color:blue; margin-top: 1em">This SIMULTECH 2020 presentation is available from<br/><a href="https://dpmn.info/reading/SIMULTECH2020/">https://dpmn.info/reading/SIMULTECH2020</a>.</div>
 </section>
 
 <section>
@@ -246,7 +247,8 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
  </section>
  <section>
   <h1>An Event Graph Model</h1>
-   <img src="img/Workstation_EG.svg" alt="workstation" width="900"/>
+  <div style="margin-top:-5%"><img src="img/Workstation_EG.svg" alt="workstation" width="1400"/></div>
+ <p>The integer variable <i>L</i> denotes the length of the input buffer.<br/>The Boolean variable <i>B</i> denotes the busy/available status of the machine.</p>
  </section>
  
 <section>
@@ -254,7 +256,7 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
  <p>...is the <em>Discrete Event Process Modeling Notation</em>, which extends <em>Event Graphs</em> by adding:</p>
  <ol style="margin-top:1em">
   <li><i>Exclusive/Inclusive/Parallel <b>Gateways</b></i> for conditional/parallel branching</li>
-  <li><i><b>Data Objects</b></i> for replacing "state variables" (like <i>Q</i>) with attributes (like <i>ServiceDesk::queueLength</i>)</li>
+  <li><i><b>Data Objects</b></i> for replacing "state variables" (like <i>L</i>) with attributes (like <i>WorkStation::inputBufferLength</i>)</li>
  </ol>
  <p>A <em>DPMN Process Model</em> is composed of <strong>Event Rule Models</strong>.</p>
 </section>
@@ -263,19 +265,19 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
 
  <section>
   <h2>An event rule model for<br/>the <code style="text-transform:none">PartArrival</code> Event</h2>
-   <img src="img/WS1-PartArrival_RDM.svg" alt="workstation" width="800"/>
+  <div style="margin-top:-5%"><img src="img/WS1-PartArrival_RDM.svg" alt="workstation" width="1000"/></div>
  </section>
  <section>
   <h2>An event rule model for<br/>the <code style="text-transform:none">ProcessingStart</code> Event</h2>
-   <img src="img/WS1-ProcessingStart_RDM.svg" alt="workstation" width="800"/>
+  <div style="margin-top:-5%"><img src="img/WS1-ProcessingStart_RDM.svg" alt="workstation" width="1000"/></div>
  </section>
  <section>
   <h2>An event rule model for<br/>the <code style="text-transform:none">ProcessingEnd</code> Event</h2>
-   <img src="img/WS1-ProcessingEnd_RDM.svg" alt="workstation" width="800"/>
+  <div style="margin-top:-5%"><img src="img/WS1-ProcessingEnd_RDM.svg" alt="workstation" width="1000"/></div>
  </section>
  <section>
   <h2>A DPMN Model of<br/>the Workstation Process</h2>
-   <img src="img/WS1_PDM.svg" alt="workstation" width="1000"/>
+  <div style="margin-top:-3%"><img src="img/WS1_PDM.svg" alt="workstation" width="1200"/></div>
  </section>
 
 <!--
@@ -288,14 +290,14 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
 
  <section class="part-title-slide">
   <h2>Part IV</h2>
-  <h1>Simulation with OESjs</h1>
+  <h1>Simulation with <span style="text-transform: none">OESjs</span></h1>
  </section>
 
  <section>
   <h2>An <span style="text-transform: none">OESjs</span> Model of the Workstation Process</h2>
   <p>... consists of</p>
   <ul>
-   <li>an object type definition <code>Workstation</code></li>
+   <li>an object type definition: <code>Workstation</code></li>
    <li>three event type definitions:<br/><code>PartArrival</code>, <code>ProcessingStart</code> and <code>ProcessingEnd</code></li>
   </ul>
   <p>It can be run as an online simulation at <a href="https://sim4edu.com/sims/102">https://sim4edu.com/sims/102</a>.</p>
@@ -303,10 +305,10 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
 
  <section>
   <h1 style="text-transform: none"><kbd>Workstation.js</kbd></h1>
-  <pre>var WorkStation = new cLASS({
+  <pre>var <b>WorkStation</b> = new cLASS({
   Name: "WorkStation",
-  supertypeName: "oBJECT",
-  properties: {
+  supertypeName: "<b>oBJECT</b>",
+  <b>properties</b>: {
     "inputBufferLength": {range: "NonNegativeInteger",
         label: "Input buffer length"},
     "status": {range: WorkstationStatusEL, label: "Status"}
@@ -315,9 +317,9 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
  </section>
  <section>
   <h1 style="text-transform: none"><kbd>PartArrival.js</kbd></h1>
-  <pre>var PartArrival = new cLASS({
+  <pre>var <b>PartArrival</b> = new cLASS({
   Name: "PartArrival",
-  supertypeName: "eVENT",
+  supertypeName: "<b>eVENT</b>",
   properties: {
     "workStation": {range: "WorkStation", label:"Workstation"}
   },
@@ -338,6 +340,16 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
   }
 });
 </pre>
+ </section>
+
+ <section>
+  <h1>Conclusion and Outlook</h1>
+  <ul>
+   <li>OES is a new DES paradigm with a <em>formal</em> semantics and an <em>ontological</em> foundation.</li>
+   <li>The preferred modeling languages for OES are <em>UML Class Diagrams</em> and <em>DPMN Process Diagrams</em>.</li>
+   <li>OES has been implemented in <em>JavaScript</em>, a <em>Python</em> implementation will follow.</li>
+   <li>Basic OES can be extended by adding <em>Activities</em>, <em>Processing Networks</em>, <em>Agents</em>, etc.</li>
+  </ul>
  </section>
 
  <section>
@@ -366,7 +378,7 @@ table#ML-Usage td:nth-child(3) { text-align: center; }
         height: 768,
         controls: true,
         progress: true,
-        history: true,
+        history: false,
         center: true,
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
