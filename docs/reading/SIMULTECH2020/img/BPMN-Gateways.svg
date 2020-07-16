@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export BPMN-Gateways.svg Zeichenblatt-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		width="2.07693in" height="1.3549in" viewBox="0 0 149.539 97.5529" xml:space="preserve" color-interpolation-filters="sRGB"
+		class="st6">
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st2 {fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72;visibility:hidden}
+		.st3 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st4 {font-size:1em}
+		.st5 {fill:#000000;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st6 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g>
+		<title>Zeichenblatt-1</title>
+		<g id="group63-1" transform="translate(0.36,-40.5)">
+			<title>Gateway</title>
+			<desc>Exclusive Gateway</desc>
+			<g id="shape64-2">
+				<title>Tabelle.64</title>
+				<path d="M35.43 97.55 L70.87 69.21 L35.43 40.86 L0 69.21 L35.43 97.55 Z" class="st1"/>
+			</g>
+			<g id="shape65-4" transform="translate(24.4945,-14.47)">
+				<title>Tabelle.65</title>
+			</g>
+			<g id="group66-6" transform="translate(19.0089,-11.9993)">
+				<title>Tabelle.66</title>
+				<g id="shape67-7">
+					<title>Tabelle.67</title>
+				</g>
+				<g id="shape68-9" transform="translate(6.71911,-8.08247)">
+					<title>Tabelle.68</title>
+				</g>
+			</g>
+			<g id="shape69-11" transform="translate(18.4451,-11.4382)">
+				<title>Tabelle.69</title>
+			</g>
+			<g id="shape70-13" transform="translate(20.2283,-13.4888)">
+				<title>Tabelle.70</title>
+			</g>
+			<g id="shape71-15" transform="translate(19.8065,-12.4011)">
+				<title>Tabelle.71</title>
+			</g>
+			<g id="group72-17" transform="translate(19.0089,-11.9993)">
+				<title>Tabelle.72</title>
+				<g id="shape73-18">
+					<title>Tabelle.73</title>
+					<ellipse cx="16.4242" cy="81.2057" rx="16.4242" ry="16.3472" class="st2"/>
+				</g>
+				<g id="shape74-20" transform="translate(6.71911,-8.08247)">
+					<title>Tabelle.74</title>
+				</g>
+			</g>
+			<g id="group75-22" transform="translate(19.0089,-11.9993)">
+				<title>Tabelle.75</title>
+				<g id="shape76-23">
+					<title>Tabelle.76</title>
+					<ellipse cx="16.4242" cy="81.2057" rx="16.4242" ry="16.3472" class="st2"/>
+				</g>
+				<g id="shape77-25" transform="translate(6.40544,-5.65612)">
+					<title>Tabelle.77</title>
+				</g>
+			</g>
+			<g id="shape63-27">
+				<text x="20.76" y="66.81" class="st3">Exclusive <tspan x="21.08" dy="1.2em" class="st4">Gateway</tspan></text>			</g>
+		</g>
+		<g id="group78-30" transform="translate(78.3128,-40.5)">
+			<title>Gateway.78</title>
+			<desc>Parallel Gateway</desc>
+			<g id="shape79-31">
+				<title>Tabelle.79</title>
+				<path d="M35.43 97.55 L70.87 69.21 L35.43 40.86 L0 69.21 L35.43 97.55 Z" class="st1"/>
+			</g>
+			<g id="shape80-33" transform="translate(24.4945,-14.47)">
+				<title>Tabelle.80</title>
+			</g>
+			<g id="group81-35" transform="translate(19.0089,-11.9993)">
+				<title>Tabelle.81</title>
+				<g id="shape82-36">
+					<title>Tabelle.82</title>
+				</g>
+				<g id="shape83-38" transform="translate(6.71911,-8.08247)">
+					<title>Tabelle.83</title>
+				</g>
+			</g>
+			<g id="shape84-40" transform="translate(18.4451,-11.4382)">
+				<title>Tabelle.84</title>
+			</g>
+			<g id="shape85-42" transform="translate(20.2283,-13.4888)">
+				<title>Tabelle.85</title>
+			</g>
+			<g id="shape86-44" transform="translate(19.8065,-12.4011)">
+				<title>Tabelle.86</title>
+				<path d="M13.19 84.24 L13.19 97.55 L18.07 97.55 L18.07 84.24 L31.25 84.24 L31.25 78.98 L18.07 78.98 L18.07 65.66
+							 L13.19 65.66 L13.19 78.98 L0 78.98 L0 84.24 L13.19 84.24 Z" class="st5"/>
+			</g>
+			<g id="group87-46" transform="translate(19.0089,-11.9993)">
+				<title>Tabelle.87</title>
+				<g id="shape88-47">
+					<title>Tabelle.88</title>
+					<ellipse cx="16.4242" cy="81.2057" rx="16.4242" ry="16.3472" class="st2"/>
+				</g>
+				<g id="shape89-49" transform="translate(6.71911,-8.08247)">
+					<title>Tabelle.89</title>
+				</g>
+			</g>
+			<g id="group90-51" transform="translate(19.0089,-11.9993)">
+				<title>Tabelle.90</title>
+				<g id="shape91-52">
+					<title>Tabelle.91</title>
+					<ellipse cx="16.4242" cy="81.2057" rx="16.4242" ry="16.3472" class="st2"/>
+				</g>
+				<g id="shape92-54" transform="translate(6.40544,-5.65612)">
+					<title>Tabelle.92</title>
+				</g>
+			</g>
+			<g id="shape78-56">
+				<text x="23.4" y="106.75" class="st3">Parallel <tspan x="21.08" dy="1.2em" class="st4">Gateway</tspan></text>			</g>
+		</g>
+	</g>
+</svg>
