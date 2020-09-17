@@ -236,7 +236,7 @@ pre.xmsynopsis {
 b.xmgui {
 }
 
-a[target="_blank"]:after {
+a.external:after {
     content: " " url(new_window.svg);
 }
 
@@ -369,12 +369,11 @@ div.role-book-title-div h1.role-book-title {
 div[id$="subtitle"] {
     font-size: 1.5em;
     margin-top: -2.33em;
-    margin-bottom: 2.66em;
+    margin-bottom: 1.33em;
 }
 /* id value ending with "authors" */
 div[id$="authors"] {
     font-size: 1.2em;
-    margin-top: -2.33em;
     margin-bottom: 2.66em;
 }
 div.role-book-title-div p {
