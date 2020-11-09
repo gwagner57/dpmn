@@ -1,0 +1,16 @@
+Modeling and Simulation of Organizations and Business Processes with DPMN
+
+Organizations are complex social systems with many actors performing various activities in multiple business processes. 
+At a basic level, organizations are Discrete Dynamic Systems consisting of objects and events, connected via causal regularities.
+As such, they can be described with an Object Event Modeling (OEM) approach, using UML Class Diagrams for state structure modeling
+and the Discrete Event Process Modeling Notation (DPMN) for process modeling. In particular, their business processes can
+be modeled in the form of a DPMN Process Diagram defining a set of event rules capturing causal regularities. The resulting 
+model defines a set of object types, event types, and event rules, which form an Abstract State Machine providing the execution
+semantics of OEM and DPMN. Like Petri Nets, OEM has a formal semantics. But while Petrie Nets are an abstract formalism 
+without an ontological semantics, OEM is based on the ontological categories of objects, events and causal regularities.
+We argue that OEM/DPMN form a good basis for exploring the semantics of higher-level organizational concepts, such as norms and goals.
+
+Points to make
+
+- why is it better to develop a simulation modeling language, instead of just a modeling language, for modeling organizations
+- before we can investigate agent-oriented modeling we first need to  

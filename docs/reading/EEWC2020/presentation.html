@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Object Event Simulation (OES)</title>
+<meta name="description" content="This presentation shows how BPMN can be combined with Event Graphs for obtaining a powerful simulation modeling language.">
+<meta name="author" content="Gerd Wagner">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link rel="stylesheet" href="file://D:/Repos/Teaching/reveal/css/reveal.min.css" />
+<link rel="stylesheet" href="file://D:/Repos/Teaching/reveal/css/theme/btu-sky.css" id="theme" />
+<link rel="stylesheet" href="file://D:/Repos/Teaching/reveal/css/theme/btu-styles.css" />
+<link rel="stylesheet" href="file://D:/Repos/Teaching/reveal/lib/css/zenburn.css" />
+<!--
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/reveal.min.css" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/theme/btu-sky.css" id="theme" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/theme/btu-styles.css" />
+ <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/lib/css/zenburn.css" />
+ <script>
+   document.write( '<link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+ </script>
+-->
+<style>
+.reveal section > h1 {
+  text-transform: none;
+}
+
+.reveal strong {font-style: italic;}
+
+.reveal section {
+  font-size: 2.5rem;
+  line-height: 1.2em;
+}
+.reveal section.part-title-slide > h1 {
+  font-size: 200%;
+}
+.reveal section .current-fragment {
+  font-size: larger;
+  color: black;
+}
+.reveal section li:not(.current-fragment) {
+  color: dimgrey;
+}
+</style>
+
+</head>
+<body>
+
+ <div class="reveal">
+  <div class="slides">
+
+<section>
+ <h1>Modeling <span style="text-transform:none;">and</span> Simulation <span style="text-transform:none;">of</span></h1>
+ <h2>Organizations <span style="text-transform:none;">and</span> Business Processes <span style="text-transform:none;">with</span></h2>
+ <h1 class="fragment"> <span style="color:blue;">DPMN</span></h1>
+ <div class="fragment">
+ <h3>Gerd Wagner</h3>
+ <h4>Brandenburg University of Technology</h4>
+ <h4>Germany</h4>
+ </div>
+ <div class="fragment" style="color:blue; margin-top: 1em">This EEWC 2020 keynote presentation is available from<br/><a href="https://dpmn.info/reading/EEWC2020/">https://dpmn.info/reading/EEWC2020</a>.</div>
+</section>
+
+<section>
+ <h1>Overview</h1>
+ <ul>
+  <li class="fragment">Setting the Scene</li>
+  <li class="fragment">Part I: Discrete Dynamic Systems</li>
+  <li class="fragment">Part II: Object-Event Modeling and Simulation (OEM&amp;S)</li>
+  <li class="fragment">Part III: Outlook</li>
+ </ul>
+</section>
+
+<section class="part-title-slide">
+  <h1>Setting the Scene (1)</h1>
+  <ol>
+   <li class="fragment">First things first: <strong>objects</strong> and <strong>events</strong> before <strong>agents</strong> and <strong>actions</strong></li>
+   <li class="fragment">A <strong>Business Process Modeling (BPM)</strong> language is only meaningful if it allows making <strong>Business Process Simulation (BPS)</strong> models</li>
+   <li class="fragment">The <strong>Business Process Modeling Notation (BPMN)</strong> does not allow making BPS models
+    <!--However, there are approaches for turning BPMN models into limited forms of simulation models by adding information 
+    (such as probability distributions for the duration of activities)--></li>
+  </ol>
+</section>
+<section class="part-title-slide">
+  <h1>Setting the Scene (2)</h1>
+  <ol>
+   <li class="fragment"><strong>Discrete Event Simulation (DES)</strong> frameworks for BPS use 
+    proprietary modeling languages based on the 70-years old <strong>Processing Networks (PN)</strong> paradigm </li>
+   <li class="fragment">BPMN-based BPS is <strong>incompatible</strong> with DES-based BPS</li>
+   <li class="fragment">The <strong>Discrete Event Process Modeling Notation (DPMN)</strong> combines BPMN with DES-based BPS</li>
+  </ol>
+</section>
+
+ <section>
+  <h1>First Things First</h1>
+   <img src="img/ResourceConstrained-Activities.svg" alt="ResourceConstrained-Activities" width="1300"/>
+ </section>
+
+<section>
+ <h1>What's wrong with BPMN?</h1>
+ <ol>
+  <li class="fragment">A <strong>limited</strong> concept of "business process" (e.g., only human resources)</li>
+  <li class="fragment">Overloading/<strong>ambiguity</strong> of <em>sequence flow arrows</em></li>
+  <li class="fragment"><strong>Insufficient</strong> integration of the <strong>objects</strong> that participate in a process</li>
+  <li class="fragment"><strong>Insufficient</strong> support of <strong>resource management</strong></li>
+  <li class="fragment"><strong>No</strong> support of <strong>processing activities</strong></li>
+  <li class="fragment"><strong>No</strong> convincing <strong>formal semantics</strong></li>
+ </ol>
+</section>
+ <section>
+  <h1>Baking a Blueberry Cake</h1>
+  <img src="img/BlueberryCake_CPM.svg" alt="process model 1 baking blueberry cake" width="1300"/>
+  <div>Which resources are there?</div>
+ </section>
+ <section>
+  <h1>Baking with Two Performers</h1>
+   <img src="img/BlueberryCake-withLanes_CPM.svg" alt="process model 2 baking blueberry cake" width="1300"/>
+ </section>
+ <section>
+  <h1>A Haul Service Company</h1>
+   <img src="img/Load-Haul-Dump_BPMN.svg" alt="process model Load-Haul-Dump" width="1300"/>
+ </section>
+ <section>
+  <h1>Compare with DPMN</h1>
+   <img src="img/Load-Haul-Dump_DPMN.svg" alt="process model Load-Haul-Dump" width="1300"/>
+ </section>
+
+
+ <section>
+  <h1>BPM versus DES (1)</h1>
+   <ul>
+    <li class="fragment">When a BPM language allows simulation, it does have an <strong>execution semantics</strong></li>
+    <li class="fragment">There are various proposals how to extend BPMN for BPS: Signavio, BIMP (Univ. Tartu), etc.)</li>
+    <li class="fragment">All of them result in quite limited forms of BPS: 
+	 <ul><li class="fragment">no conditional branching</li>
+	  <li class="fragment">only human, but no other, resources</li>
+	  <li class="fragment">lack of support for important resource management features (alternative resources, pre-emption)</li>
+	 </ul></li>
+   </ul>
+ </section>
+
+ <section>
+  <h1>BPM versus DES (2)</h1>
+   <ol>
+    <li class="fragment">In DES, there are many paradigms (and a lot of conceptual confusion)</li>
+    <li class="fragment">The two main paradigms are <strong>Event-Based Simulation</strong> and (higher-level) <strong>Processing Network (PN) Simulation</strong></li>
+    <li class="fragment">There are 10+ commercial DES tools, all of them focusing on PN Simulation, but with different (proprietary) terminologies and diagram languages</li>
+    <li class="fragment">PN Simulation is a form of BPS, but it is incompatible with BPMN</li>
+   </ol>
+ </section>
+
+<section class="part-title-slide">
+  <h2>Part I</h2>
+  <h1>Discrete Dynamic Systems</h1>
+</section>
+
+<section>
+  <h2>What is a Discrete Dynamic System (DDS)?</h2>
+  <p>A real world system consisting of <b>objects</b> and a discrete flow of <b>events</b> 
+   such that at any moment in time, the system's past is a sequence of situations each characterized by</p>
+   <ol>
+    <li class="fragment">a time point <i>t</i> (the situation time)</li>
+    <li class="fragment">the system's object states <i>O</i> at <i>t</i> , and</li>
+    <li class="fragment">a set of <strong>imminent events</strong>, to occur at times greater than <i>t</i>.</li>
+   </ol>
+  <p class="fragment">and each situation <i>S<sub>t+1</sub></i> is created from <i>S<sub>t</sub></i> via <strong>causal regularities</strong> 
+   triggered through the events occuring at <i>t</i>.</p>
+</section>
+
+<section>
+  <h1>Causal Regularities</h1>
+  <p>An event <i>e@t</i> causes:</p>
+   <ol>
+    <li class="fragment"><strong>state changes</strong> <i>&Delta;</i> of affected objects, and</li>
+      <li class="fragment"><strong>follow-up events</strong> <i>e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...</i></li>
+     </ol>
+  <p class="fragment">according to the <strong>dispositions</strong> of affected objects, which can be generalized as <strong>causal regularities</strong>
+   of the form</p>
+  <div class="fragment"><i>t, O, e@t</i> &rarr; <i>&Delta;, {e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...}</i> with <i>t<sub>i</sub> > t</i></div>
+  <p class="fragment">with <i>O</i> being the set of the system's object states at time <i>t</i>, such that</p>
+  <div class="fragment"><i>O'</i> = Upd( <i>O</i>, <i>&Delta;</i>)</div>
+  <p class="fragment">is the resulting changed system state.</p>
+</section>
+
+<section>
+  <h1>Modeling a DDS</h1>
+  <p>Computationally, a DDS can be represented by an <em>Object Event Model (OEM)</em> consisting of:</p>
+  <ol>
+   <li class="fragment"><p><b><i>object types</i></b> <i>OT</i>, e.g., in the form of <i>classes</i> of an object-oriented language;</p></li>
+   <li class="fragment"><p><b><i>event types</i></b> <i>ET</i>, e.g., in the form of <i>classes</i> of an object-oriented language;</p></li>
+   <li class="fragment"><p><b><i>event rules</i></b> <i>R</i> representing <i>causal regularities</i>, e.g., in the form of <code>onEvent</code> 
+    methods of the class that implements the triggering event type.</p></li>
+  </ol>
+  <p class="fragment">While <i>OT</i> and <i>ET</i> can be defined by a UML Class Diagram, the set of event rules <i>R</i> can be defined by a DPMN Process Diagram.</p>
+</section>
+
+
+<section class="part-title-slide">
+  <h2>Part II</h2>
+  <h1>Object-Event Modeling and Simulation (OEM&amp;S)</h1>
+</section>
+
+<section>
+ <h1>Events and Discrete Processes</h1>
+ <ol>
+  <li class="fragment">Discrete processes are governed by <strong>causal regularities</strong>, which relate events with (1) <strong>state changes</strong> of affected objects and (2) <strong>follow-up events</strong>.</li>
+  <li class="fragment">A <strong>discrete process</strong> consists of a partially ordered set of events that happen in a spatio-temporal region determined by the events' participants and the causal regularities involved.</li>
+  <li class="fragment">A <strong>business process</strong> is a discrete process that "happens in the context of an organization".</li>
+ </ol>
+</section>
+
+<section>
+ <h1>Modeling Objects and Events (1)</h1>
+ <ol>
+  <li class="fragment">Since events depend on objects, we first need to model object types and then event types.</li>
+  <li class="fragment">A process model is based on an underlying information model defining the types of its objects and events.</li>
+  <li class="fragment">A <em>conceptual process model</em> describes the causal regularities of a real world process.</li>
+ </ol>
+</section>
+
+<section>
+ <h1>Modeling Objects and Events (2)</h1>
+ <ol>
+  <li class="fragment">A <em>simulation design model</em> consists of an <em>information design model</em> and a <em>process design model</em>.</li>
+  <li class="fragment">An <em>information design model</em> defines <em>object types</em> and <em>event types</em> (e.g., in the form of classes in a UML Class Diagram).</li>
+  <li class="fragment">A <em>process design model</em> defines <strong>event rules</strong> that represent causal regularities (e.g., in a DPMN Process Diagram).</li>
+ </ol>
+</section>
+
+ <section>
+  <h1>Event Graphs</h1>
+   <p>Event Graphs (EGs) have been proposed for DES modeling by Schruben in 1983.</p>
+   <p><b>Strengths</b>:</p>
+  <ul>
+   <li class="fragment">EGs provide an intuitive visual modeling language.</li>
+   <li class="fragment">EGs capture the fundamental <em>event scheduling</em> paradigm.</li>
+  </ul>
+   <p class="fragment"><b>Weaknesses</b>:</p>
+  <ol>
+   <li class="fragment">EGs lack a visual notation for (conditional and parallel) branching.</li>
+   <li class="fragment">EGs do not support OO state structure modeling (with objects/classes and attributes).</li>
+   <li class="fragment">EGs do not support activities.</li>
+  </ol>
+ </section>
+ <section>
+  <h1>An Event Graph Model</h1>
+  <div style="margin-top:-5%"><img src="img/Processing_EG.svg" alt="workstation" width="1300"/></div>
+ <p>The integer variable <i>L</i> denotes the length of the input buffer.<br/>The Boolean variable <i>B</i> denotes the busy/available status of the service desk or machine.</p>
+ </section>
+ 
+<section>
+ <h1 style="font-size:300%">DPMN</h1>
+ <p>...is the <em>Discrete Event Process Modeling Notation</em>, which extends <em>Event Graphs</em> by adding:</p>
+ <ol style="margin-top:1em">
+  <li class="fragment"><i>Exclusive/Inclusive/Parallel <b>Gateways</b></i> for conditional/parallel branching</li>
+  <li class="fragment"><i><b>Data Objects</b></i> for replacing "state variables" (like <i>L</i>) with attributes (like <i>WorkStation::inputBufferLength</i>)</li>
+  <li class="fragment"><i><b>Activities</b></i></li>
+ </ol>
+ <p class="fragment">A <em>DPMN Process Model</em> is composed of <strong>Event Rule Models</strong>.</p>
+</section>
+
+<section>
+<section>
+  <h2 style="font-size:120%">Modeling Resources in an Information Model</h2>
+   <div><img src="img/MedExam_CM3.svg" alt="Model with an Activity" width="1100"/></div>
+</section>
+<section>
+  <h2>A Resource-Constrained Activity</h2>
+   <div><img src="img/MedExam_CPM.svg" alt="Service Desk Event Graph" width="1000"/></div>
+</section>
+<section>
+  <h2>A Resource-Dependent Activity Start Arrow</h2>
+   <div><img src="img/WS3_PDM3.svg" alt="Service Desk Event Graph" width="1000"/></div>
+</section>
+</section>
+
+
+
+ <section>
+  <h1>Conclusion and Outlook</h1>
+  <ul>
+   <li class="fragment">OEM&amp;S is a new modeling and simulation paradigm with a <em>formal</em> semantics and an <em>ontological</em> foundation.</li>
+   <li class="fragment">The preferred modeling languages for OEM&amp;S are <em>UML Class Diagrams</em> and <em>DPMN Process Diagrams</em>.</li>
+   <li class="fragment">OES has been implemented in <em>JavaScript</em>, a <em>Python</em> implementation will follow.</li>
+   <li class="fragment">DPMN allows modeling of message-based communication (with <em>out-message</em> and <em>in-message</em> events).</li>
+   <li class="fragment">OEM&amp;S can be extended by adding <em>Agents</em> with <em>Beliefs</em> about, and <em>Perceptions</em> of, their environment</li>
+   <li class="fragment">How to model (DEMO) <em>transactions</em> in DPMN still has to be investigated.</li>
+  </ul>
+ </section>
+
+ <section>
+  <h1>See also</h1>
+  <ul>
+   <li class="fragment">Gerd Wagner: <a href="https://www.informs-sim.org/wsc17papers/includes/files/056.pdf">An Abstract State Machine Semantics For Discrete Event Simulation</a>, <em>Proc. of the 2017 Winter Simulation Conference</em>.</li>
+   <li class="fragment">Gerd Wagner: <a href="https://articles.jsime.org/1/1/Modeling-for-Simulation-Part-I">Information and Process Modeling for Simulation – Part I: Objects and Events</a>. <em>Journal of Simulation Engineering</em> 1:1, 2018.</li>
+   <li class="fragment">Gerd Wagner: <a href="https://dpmn.info/reading/Activities.html">Information and Process Modeling for Simulation – Part II: Activities and Processing Networks</a>. 2019.</li>
+   <li class="fragment">Available on <b><code>dpmn.info</code></b></li>
+  </ul>
+ </section>
+
+<!-- ========================================================= -->    
+</div>
+</div>
+    
+<script src="file://D:/Repos/Teaching/reveal/lib/js/head.min.js"></script>
+<script src="file://D:/Repos/Teaching/reveal/js/reveal.min.js"></script>
+ <!--
+  <script src="https://oxygen.informatik.tu-cottbus.de/reveal/lib/js/head.min.js"></script>
+  <script src="https://oxygen.informatik.tu-cottbus.de/reveal/js/reveal.min.js"></script>
+-->
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1366,
+        height: 768,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+          // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+</script>
+
+  </body>  
+</html>
+
+
