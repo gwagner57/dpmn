@@ -1,0 +1,80 @@
+/* ==================================
+   BTU-specific rules
+==================================== */
+.reveal section h1 {
+  font-size: 2.11em;
+}
+.reveal section h2 {
+  font-size: 1.55em;
+}
+.reveal section h3 {
+  font-size: 1.22em;
+}
+.reveal section#title h1 {
+  font-size: 3.77em;
+}
+.reveal section#title h2 {
+  font-size: 2.11em;
+}
+.reveal section#title h3 {
+  font-size: 1.55em;
+}
+.reveal li { 
+  margin-bottom: 0.3em;
+}
+.reveal table { 
+  margin: 0.5em auto;
+}
+.reveal table, .reveal td, .reveal th { 
+  border-collapse: collapse; 
+  border: 2px solid #333333;
+  vertical-align: middle;
+}
+.reveal td, .reveal th { 
+  padding: 5px;
+}
+.reveal thead {
+  background: lightblue;
+  font-weight: bold;
+}
+.reveal table th  {
+  text-align: center
+}
+.reveal p, .reveal dl  { 
+  text-align: left;
+}
+.reveal dt  { 
+  font-weight: bold;
+}
+.reveal dd  { 
+  margin-left: 1.5em;
+}
+.reveal pre { 
+  background: white;
+  padding: 0.3em;
+}
+.reveal section > ul, .reveal section > ol {
+  margin-bottom: 0.7em;
+}
+.reveal figure { float: right; margin-left: 1em; }
+.reveal figure>figcaption { font-size: smaller; }
+
+.reveal aside.rbox { 
+  float: right; 
+  margin-left: 1em; 
+  text-align: left;
+  font-size: smaller;
+  width: 35%; 
+  border: 2px solid #333333;
+  padding: 5px;
+}
+.reveal sub, .reveal sup {
+  font-size: smaller;
+}
+.reveal pre {
+  margin-left: 0;
+  margin-right: 15px;
+}
+.reveal strong {
+  font-weight: bold;
+}
