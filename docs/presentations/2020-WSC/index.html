@@ -8,27 +8,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<link rel="stylesheet" href="file://D:/Repos/Teaching/reveal/css/reveal.min.css" />
-<link rel="stylesheet" href="file://D:/Repos/Teaching/reveal/css/theme/btu-sky.css" id="theme" />
-<link rel="stylesheet" href="file://D:/Repos/Teaching/reveal/css/theme/btu-styles.css" />
-<link rel="stylesheet" href="file://D:/Repos/Teaching/reveal/lib/css/zenburn.css" />
-<!--
- <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/reveal.min.css" />
- <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/theme/btu-sky.css" id="theme" />
- <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/theme/btu-styles.css" />
- <link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/lib/css/zenburn.css" />
- <script>
-   document.write( '<link rel="stylesheet" href="https://oxygen.informatik.tu-cottbus.de/reveal/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
- </script>
--->
+<link rel="stylesheet" href="../reveal/css/reveal.min.css" />
+<link rel="stylesheet" href="../reveal/css/theme/btu-sky.css" id="theme" />
+<link rel="stylesheet" href="../reveal/css/theme/btu-styles.css" />
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
 <style>
 .reveal section > h1, .reveal section > h2 
 {
   text-transform: none;
 }
-
 .reveal strong {font-style: italic;}
-
 .reveal section {
   font-size: 2.5rem;
   line-height: 1.2em;
@@ -56,14 +46,14 @@
  <h4>Brandenburg University of Technology</h4>
  <h4>Germany</h4>
  </div>
- <div style="color:blue; margin-top: 1em">This WSC 2020 keynote presentation is available from<br/>
-  <a href="https://dpmn.info/reading/2020-WSC/">https://dpmn.info/reading/2020-WSC</a>.</div>
+ <div style="color:blue; margin-top: 1em">This WSC 2020 tutorial presentation is available from<br/>
+  <a href="https://dpmn.info/presentations/2020-WSC/">https://dpmn.info/presentations/2020-WSC</a>.</div>
 </section>
 
 <section>
  <h1>Overview</h1>
  <ul>
-  <li>Setting the Scene</li>
+  <li>Introduction</li>
   <li>Part I: Basic DPMN</li>
   <li>Part II: DPMN with Simple Activities</li>
   <li>Part III: DPMN with Resource-Constrained Activities</li>
@@ -73,24 +63,62 @@
 </section>
 
 <section class="part-title-slide">
-  <h1>Setting the Scene</h1>
+  <h1>Introduction</h1>
+</section>
+
+ <section>
+  <h1>Objects and Events</h1>
+  <img src="img/Objects-Events.svg" alt="Objects-Events" width="700" style="float:right"/>
+  <p>(1) <strong>Objects</strong> ("endurants") and <strong>events</strong> ("perdurants") are the two most fundamental <strong>ontological categories</strong>.</p>
+  <p class="fragment">(2) <strong>Objects participate in events</strong>.</p>
+  <p class="fragment">(3) Events need not be atomic, nor instantaneous. They may be <strong>composite</strong> and have <strong>non-zero duration</strong>.</p>
+  <p class="fragment">For instance, WW2 is a historic event that is composite and has a duration of 6 years and 1 day.</p>
+ </section>
+ <section>
+  <div style="margin-top:-0.7em;"><img style="float:right; margin-left:1em" src="img/Objects-Events-Activities.svg" width="1000"/></div>
+  <h1>Activities</h1>
+  <p>... are composite events that are composed of a <strong>start event</strong> and an <strong>end event</strong>.</p>
+  <p class="fragment">... have a <strong>performer</strong>, which is an agent.</p>
+ </section>
+
+
+
+<section>
+ <div style="margin-top:-0.7em;"><img style="float:right; margin-left:1em" src="img/CPM_BPMN.svg" width="800"/></div>
+ <h1 style="font-size:300%; margin-bottom:0">BPMN</h1>
+  <p class="fragment">The <strong>Business Process Modeling Notation (BPMN)</strong> does not support simulation.</p>
+  <p class="fragment">However, BPMN models can be turned into <strong>limited</strong> forms of simulation models by...</p>
+    <ul style="line-height:1"><li class="fragment">adding distributions for the case rate and for activity durations,</li>
+	 <li class="fragment">defining human resources and assign them to performer pools.</li>
+	</ul>
 </section>
 
 <section>
-  <div style="margin-top:-0.7em;"><img style="float:right; margin-left:1em" src="img/CPM_BPMN.svg" width="800"/>
- <h1 style="font-size:300%; margin-bottom:0">BPMN</h1></div>
-  <div style="font-size:90%">
-  <p class="fragment">The <strong>Business Process Modeling Notation (BPMN)</strong> does not support simulation.</p>
-  <p class="fragment">However, BPMN models can be turned into <strong>limited</strong> forms of simulation models.</p>
-  <p class="fragment">Examples: <a href="https://bimp.cs.ut.ee/features/parameters">QBP Simulator</a> (Univ. of Tartu), Simul8, 
-    Lanner L-Sim (supports the <a href="http://www.bpsim.org/">BPSim</a> standard).</p>
-   <p class="fragment">Limitations:</p>
-    <ul style="line-height:1"><li class="fragment">Only one human resource per activity (BPMN swimlanes = performers)</li>
-	 <li class="fragment">No alternative resource pools, no pre-emption</li>
-	 <li class="fragment">No conditional, but only probabilistic, branching</li>
+ <div style="margin-top:-0.5em;"><img style="float:right; margin-left:1em" src="img/CPM_BPMN.svg" width="600"/></div>
+ <h1 style="font-size:185%">BPMN-Based Simulation</h1>
+  <p class="fragment">Examples of BPMN simulators:</p>
+   <p class="fragment">• <a href="https://bimp.cs.ut.ee/features/parameters">QBP Simulator</a> (Univ. of Tartu)</p>
+   <p class="fragment">• Simul8</p>
+   <p class="fragment">• Lanner L-Sim (supports the <a href="http://www.bpsim.org/">BPSim</a> standard)</p>
+  <p class="fragment"><strong>Severe limitations</strong>:</p>
+    <ul style="line-height:1">
+	 <li class="fragment">Artificial "token flow" semantics (instead of Event Graph semantics)</li>
 	 <li class="fragment">No state changes</li>
+	 <li class="fragment">No conditional, but only probabilistic, branching</li>
+	 <li class="fragment">Only one actor resource per activity (BPMN swimlanes = "performers")</li>
+	 <li class="fragment">No alternative resource pools, no pre-emption</li>
 	</ul>
-  </div>
+</section>
+<section>
+ <h1>What's wrong with BPMN?</h1>
+ <ol>
+  <li>A <strong>limited</strong> concept of "business process" as isolated "cases"</li>
+  <li>Overloading/<strong>ambiguity</strong> of <em>sequence flow arrows</em></li>
+  <li><strong>Insufficient</strong> integration of the <strong>objects</strong> that participate in a process</li>
+  <li><strong>Insufficient</strong> support of <strong>resource management</strong></li>
+  <li><strong>No</strong> support of <strong>processing activities</strong></li>
+  <li><strong>No</strong> convincing <strong>formal semantics</strong></li>
+ </ol>
 </section>
 
 <section>
@@ -126,27 +154,10 @@
 	<li style="margin-top:0;margin-bottom:0;">Resource-Dependent Activity Start Arrows</li></td>
    <td><img src="img/DPMN_A_wRes.svg" width="500"/></td></tr>
   </tbody>
- </table>
- 
+ </table> 
 <!-- <img src="img/ResourceConstrained-Activities.svg" alt="ResourceConstrained-Activities" width="1300"/> -->
 </section>
 
- <section>
-  <h1>First Things First</h1>
-   <img src="img/ResourceConstrained-Activities.svg" alt="ResourceConstrained-Activities" width="1300"/>
- </section>
-
-<section>
- <h1>What's wrong with BPMN?</h1>
- <ol>
-  <li>A <strong>limited</strong> concept of "business process" (e.g., only human resources)</li>
-  <li>Overloading/<strong>ambiguity</strong> of <em>sequence flow arrows</em></li>
-  <li><strong>Insufficient</strong> integration of the <strong>objects</strong> that participate in a process</li>
-  <li><strong>Insufficient</strong> support of <strong>resource management</strong></li>
-  <li><strong>No</strong> support of <strong>processing activities</strong></li>
-  <li><strong>No</strong> convincing <strong>formal semantics</strong></li>
- </ol>
-</section>
  <section>
   <h1>Baking a Blueberry Cake</h1>
   <img src="img/BlueberryCake_CPM.svg" alt="process model 1 baking blueberry cake" width="1300"/>
@@ -342,15 +353,8 @@
 </div>
 </div>
     
-<script src="file://D:/Repos/Teaching/reveal/lib/js/head.min.js"></script>
-<script src="file://D:/Repos/Teaching/reveal/js/reveal.min.js"></script>
- <!--
-  <script src="https://oxygen.informatik.tu-cottbus.de/reveal/lib/js/head.min.js"></script>
-  <script src="https://oxygen.informatik.tu-cottbus.de/reveal/js/reveal.min.js"></script>
-
-  <script src="https://sim4edu.com/reading/reveal/lib/js/head.min.js"></script>
-  <script src="https://sim4edu.com/reading/reveal/js/reveal.min.js"></script>
--->
+<script src="../reveal/lib/js/head.min.js"></script>
+<script src="../reveal/js/reveal.min.js"></script>
 
   <script>
 
