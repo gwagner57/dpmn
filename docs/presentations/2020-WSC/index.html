@@ -28,10 +28,6 @@
 .reveal section.part-title-slide > h1 {
   font-size: 10rem;
 }
- 
-.reveal section {
-  cursor: url("img/cursor.svg"), pointer;
-}
 </style>
 
 </head>
@@ -73,15 +69,15 @@
   <h1>Objects and Events</h1>
   <figure style="float:right"><img src="img/Objects-Events.svg" alt="Objects-Events" width="700"/></figure>
   <p>(1) <strong>Objects</strong> ("endurants") and <strong>events</strong> ("perdurants") are the two most fundamental <strong>ontological categories</strong>.</p>
-  <p class="fragment">(2) <strong>Objects participate in events</strong>.</p>
-  <p class="fragment">(3) Events need not be atomic, nor instantaneous. They may be <strong>composite</strong> and have <strong>non-zero duration</strong>.</p>
-  <p class="fragment">For instance, WW2 is a historic event that is composite and has a duration of 6 years and 1 day.</p>
+  <p>(2) <strong>Objects participate in events</strong>.</p>
+  <p>(3) Events need not be atomic, nor instantaneous. They may be <strong>composite</strong> and have <strong>non-zero duration</strong>.</p>
+  <p>For instance, WW2 is a historic event that is composite and has a duration of 6 years and 1 day.</p>
  </section>
  <section>
   <figure style="float:right; margin-left:1em"><img src="img/Objects-Events-Activities.svg" width="1000"/></figure>
   <h1>Activities</h1>
   <p>... are composite events that are composed of a <strong>start event</strong> and an <strong>end event</strong>.</p>
-  <p class="fragment">... have a <strong>performer</strong>, which is an agent.</p>
+  <p>... have a <strong>performer</strong>, which is an agent.</p>
  </section>
  <section>
   <h1 style="margin-top:-0.5em;margin-bottom:0">Resource Constrained Activities</h1>
@@ -98,45 +94,46 @@
 <section>
  <h1 style="margin-top:-0.3em">Two Kinds of Business Processes</h1>
  <ol>
-  <li class="fragment">Resource-Constrained <strong>Activity Networks</strong>
-   <ul><li class="fragment">with a <strong>flow of events</strong></li>
-    <li class="fragment">with queues of planned activities</li>
-    <li class="fragment">&Rightarrow; BPMN-style business processes</li></ul></li>
-  <li class="fragment"><strong>Processing</strong> (Activity) <strong>Networks</strong>
-   <ul><li class="fragment">with a <strong>flow of processing objects</strong></li>
-    <li class="fragment">with queues of processing objects</li>
-    <li class="fragment">= "entities flowing through a system"</li>
-    <li class="fragment">generalizing <strong>Queuing Networks</strong></li>
-    <li class="fragment">&Rightarrow; GPSS/SIMAN/Arena-style business processes</li></ul></li>
+  <li>Resource-Constrained <strong>Activity Networks</strong>
+   <ul><li>with a <strong>flow of events</strong></li>
+    <li>with queues of planned activities</li>
+    <li>&Rightarrow; BPMN-style business processes</li></ul></li>
+  <li><strong>Processing</strong> (Activity) <strong>Networks</strong>
+   <ul><li>with a <strong>flow of processing objects</strong></li>
+    <li>with queues of processing objects</li>
+    <li>= "entities flowing through a system"</li>
+    <li>generalizing <strong>Queuing Networks</strong></li>
+    <li>&Rightarrow; GPSS/SIMAN/Arena-style business processes</li></ul></li>
  <ol>
 </section>
 
 <section>
  <div style="margin-top:-0.7em;"><img style="float:right; margin-left:1em" src="img/CPM_BPMN.svg" width="900"/></div>
  <h1 style="font-size:300%; margin-bottom:0">BPMN</h1>
-  <p class="fragment">The <strong>Business Process Modeling Notation (BPMN)</strong> does not support simulation.</p>
-  <p class="fragment">However, BPMN models can be turned into <strong>limited</strong> forms of simulation models by...</p>
-    <ul style="line-height:1"><li class="fragment">adding distributions for the case rate and for activity durations,</li>
-	 <li class="fragment">defining human resources and assign them to performer pools.</li>
+  <p>The <strong>Business Process Modeling Notation (BPMN)</strong> does not support simulation.</p>
+  <p>However, BPMN models can be turned into <strong>limited</strong> forms of simulation models by...</p>
+    <ul style="line-height:1"><li>adding distributions for the case rate and for activity durations,</li>
+	 <li>defining human resources and assign them to performer pools.</li>
 	</ul>
 </section>
 
 <section>
  <div style="margin-top:-0.5em;"><img style="float:right; margin-left:1em" src="img/CPM_BPMN.svg" width="600"/></div>
  <h1 style="font-size:185%">BPMN-Based Simulation</h1>
-  <p class="fragment">Examples of BPMN simulators:</p>
-   <p class="fragment">• <a href="https://bimp.cs.ut.ee/features/parameters">QBP Simulator</a> (Univ. of Tartu)</p>
-   <p class="fragment">• Simul8</p>
-   <p class="fragment">• Lanner L-Sim (supports the <a href="http://www.bpsim.org/">BPSim</a> standard)</p>
-  <p class="fragment"><strong>Severe limitations</strong>:</p>
+  <p>Examples of BPMN simulators:</p>
+   <p>• <a href="https://bimp.cs.ut.ee/features/parameters">QBP Simulator</a> (Univ. of Tartu)</p>
+   <p>• Simul8</p>
+   <p>• Lanner L-Sim (supports the <a href="http://www.bpsim.org/">BPSim</a> standard)</p>
+  <p><strong>Severe limitations</strong>:</p>
     <ul style="line-height:1">
-	 <li class="fragment">Artificial "token flow" semantics (instead of Event Graph semantics)</li>
-	 <li class="fragment">No state changes</li>
-	 <li class="fragment">No conditional, but only probabilistic, branching</li>
-	 <li class="fragment">Only one actor resource per activity (BPMN swimlanes = "performers")</li>
-	 <li class="fragment">No alternative resource pools, no pre-emption</li>
+	 <li>Artificial "token flow" semantics (instead of Event Graph semantics)</li>
+	 <li>No state changes</li>
+	 <li>No conditional, but only probabilistic, branching</li>
+	 <li>Only one actor resource per activity (BPMN swimlanes = "performers")</li>
+	 <li>No alternative resource pools, no pre-emption</li>
 	</ul>
 </section>
+
 <section>
  <h1>What's wrong with BPMN?</h1>
  <ol>
@@ -146,6 +143,21 @@
   <li><strong>Insufficient</strong> support of <strong>resource management</strong></li>
   <li><strong>No</strong> support of <strong>processing activities</strong></li>
   <li><strong>No</strong> convincing <strong>formal/operational semantics</strong></li>
+ </ol>
+</section>
+<section>
+ <h2 style="margin-top:-0.5em;">What's wrong with DES software packages?</h2>
+ <ol>
+  <li><table border="1" style="float:right; width:30%; font-size:70%; margin-left:5px"><thead><tr><th>Arena</th><th>Simul8</th><th>Simio</th><th>AnyLogic</th></tr></thead><tbody><tr><td>Entity</td><td>Work Item</td><td>Token</td><td>Agent</td></tr><tr><td>Create</td><td>Start Point</td><td>Source</td><td>Source</td></tr><tr><td>Process </td><td>Queue+Activity</td><td>Server</td><td>Service or Seize+Delay+Release</td></tr><tr><td>Dispose</td><td>End Point</td><td>Sink</td><td>Sink</td></tr></tbody></table>
+  There is <strong>no common conceptual foundation</strong> for Arena/Simio/AnyLogic/etc. 
+  (therefore, it's hard to compare and evaluate them)</li>
+  <li>They use <strong>proprietary terminologies</strong> and proprietary diagram languages</li>
+  <li>They only support their own proprietary form of PN simulation.
+   <ul>
+    <li><strong>No support for Event-Based DES</strong></li>
+    <li><strong>No support for Activity-Based DES</strong></li>
+   </ul></li>
+  <li><strong>No formal semantics</strong></li>
  </ol>
 </section>
 
@@ -161,10 +173,10 @@
   <tr style="background:aquamarine;"><td style="font-size:70%;line-height:1;writing-mode:vertical-rl;text-orientation:sideways;background:green;color:aquamarine">Event-Based<br/>Simulation</td>
    <td>Event Graphs (Schruben 1983)</td><td>Events, Event Scheduling Arrows, Assignments</td>
    <td><img src="img/SimpleEG.svg" style="width:300px"/></td></tr>
-  <tr class="fragment" style="background:lightcyan;"><td rowspan="3" style="writing-mode:vertical-lr;text-orientation:sideways;background:blue;color:aqua">Object Event Simulation</td>
+  <tr style="background:lightcyan;"><td rowspan="3" style="writing-mode:vertical-lr;text-orientation:sideways;background:blue;color:aqua">Object Event Simulation</td>
    <td>Basic DPMN</td><td>+ Objects w/ State Changes</td><td><img src="img/BasicDPMN.svg" width="500"/></td></tr>
-  <tr class="fragment" style="background:lavender;"><td>DPMN with Simple Activities</td><td>+ Activities</td><td><img src="img/DPMN_A.svg" width="500"/></td></tr>
-  <tr class="fragment" style="background:aqua;"><td>DPMN with Resource-Constrained Activities</td>
+  <tr style="background:lavender;"><td>DPMN with Simple Activities</td><td>+ Activities</td><td><img src="img/DPMN_A.svg" width="500"/></td></tr>
+  <tr style="background:aqua;"><td>DPMN with Resource-Constrained Activities</td>
    <td><ul style="list-style:url('img/PlusSign.svg');padding-left:3%;font-size:smaller;line-height:1">
     <li style="margin-top:0;margin-bottom:0;">Resource Roles</li>
 	<li style="margin-top:0;margin-bottom:0;">Resource Cardinality Constraints</li>
@@ -174,6 +186,21 @@
   </tbody>
  </table> 
 </section>
+<section>
+ <h1 style="margin-top:-0.5em;">The HiStory of DPMN</h1>
+ <ol style="font-size:80%; line-height:1">
+  <li>2000-2004. Working in the group of Wil van der Aalst, G. Wagner is unhappy about the lack of ontological foundations of Petri-Net-based Business Process Modeling.</li>
+  <li>WSC 2009. G. Wagner, O. Nicolae and J. Werner. Extending Discrete Event Simulation by Adding an Activity Concept for Business Process Modeling and Simulation.</li>
+  <li>WSC 2010. G. Guizzardi and G. Wagner. Towards an Ontological Foundation of Discrete Event Simulation.</li>
+  <li>EOMAS 2011. G. Guizzardi and G. Wagner. Can BPMN Be Used for Making Simulation Models?</li>
+  <li>WSC 2014. G. Wagner. Tutorial: Information and Process Modeling for Simulation.</li>
+  <li>WSC 2016. G. Wagner, M. Seck and F. McKenzie. Process Modeling for Simulation: Observations and Open Issues.</li>
+  <li>WSC 2017. G. Wagner. Tutorial: Information and Process Modeling for Simulation.</li>
+  <li>JSimE 2018. G. Wagner. Information and Process Modeling for Simulation – Part I: Objects and Events. Journal of Simulation Engineering.</li>
+  <li>2019. G. Wagner. Information and Process Modeling for Simulation – Part II: Activities and Processing Networks.</li>
+ </ol>
+</section>
+
 
 <section class="part-title-slide">
   <h1>Part I: Basic DPMN</h1>
@@ -182,42 +209,42 @@
 <section>
  <h1>Discrete Processes</h1>
  <ul>
-  <li class="fragment">... are governed by <strong>causal regularities</strong>, which relate events with (1) <strong>state changes</strong> of affected objects and (2) <strong>follow-up events</strong>.</li>
-  <li class="fragment">A <strong>discrete process</strong> consists of a partially ordered set of events.</li>
-  <li class="fragment">A <strong>business process</strong> is a discrete process that "happens in the context of an organization".</li>
+  <li>... are governed by <strong>causal regularities</strong>, which relate events with (1) <strong>state changes</strong> of affected objects and (2) <strong>follow-up events</strong>.</li>
+  <li>A <strong>discrete process</strong> consists of a partially ordered set of events.</li>
+  <li>A <strong>business process</strong> is a discrete process that "happens in the context of an organization".</li>
  </ul>
 </section>
 
  <section>
   <h1>Event Graphs (EGs)</h1>
   <p>... have been proposed for DES modeling by Schruben in 1983.</p>
-  <div class="fragment"><img src="img/Processing_EG.svg" alt="workstation" width="1200"/></div>
-  <p class="fragment" style="margin-top:1em">The integer variable <i>L</i> denotes the length of the input buffer.<br/>The Boolean variable <i>B</i> denotes the busy/available status of the "server".</p>
+  <div><img src="img/Processing_EG.svg" alt="workstation" width="1200"/></div>
+  <p style="margin-top:1em">The integer variable <i>L</i> denotes the length of the input buffer.<br/>The Boolean variable <i>B</i> denotes the busy/available status of the "server".</p>
  </section>
  <section>
   <h1>Strengths and Weaknesses of EGs</h1>
   <p><b>Strengths</b>:</p>
   <ol>
-   <li class="fragment">EGs provide an intuitive visual modeling language.</li>
-   <li class="fragment">EGs capture the fundamental <em>event scheduling</em> paradigm.</li>
+   <li>EGs provide an intuitive visual modeling language.</li>
+   <li>EGs capture the fundamental <em>event scheduling</em> paradigm.</li>
   </ol>
   <p><b>Weaknesses</b>:</p>
   <ol>
-   <li class="fragment">EGs lack a visual notation for (conditional and parallel) branching.</li>
-   <li class="fragment">EGs do not support OO state structure modeling (with objects/classes and attributes).</li>
-   <li class="fragment">EGs do not support activities.</li>
+   <li>EGs lack a visual notation for (conditional and parallel) branching.</li>
+   <li>EGs do not support OO state structure modeling (with objects/classes and attributes).</li>
+   <li>EGs do not support activities.</li>
   </ol>
  </section>
  
 <section>
  <h2 style="margin-top:-0.9em;margin-bottom:0.1em">Object Event Modeling and Simulation (OEM&amp;S)</h2>
  <ul>
-  <li class="fragment"><div><img src="img/ServiceDesk-1_IDM.svg" alt="Service Desk Information Model" width="550" style="margin-top:-0.5em; float:right"/>
-   <img class="fragment" src="img/ServiceDesk-1_PDM.svg" alt="Service Desk Event Graph" width="800" style="margin-top:0; clear:right; float:right"/></div>
+  <li><div><img src="img/ServiceDesk-1_IDM.svg" alt="Service Desk Information Model" width="550" style="margin-top:-0.5em; float:right"/>
+   <img src="img/ServiceDesk-1_PDM.svg" alt="Service Desk Event Graph" width="800" style="margin-top:0; clear:right; float:right"/></div>
 Since <strong>events</strong> depend on <strong>objects</strong> (as their <strong>participants</strong>), we first need to model object types and then event types.</li>
-  <li class="fragment"><strong style="color:blue">A process model is based on an underlying information model defining the types of its objects and events</strong>.</li>
-  <li class="fragment">A <strong>conceptual process model</strong> describes the <strong>causal regularities</strong> of a real world process.</li>
-  <li class="fragment">A <strong>process design model</strong> defines <strong>event rules</strong> that capture <em>causal regularities</em>.</li>
+  <li><strong style="color:blue">A process model is based on an underlying information model defining the types of its objects and events</strong>.</li>
+  <li>A <strong>conceptual process model</strong> describes the <strong>causal regularities</strong> of a real world process.</li>
+  <li>A <strong>process design model</strong> defines <strong>event rules</strong> that capture <em>causal regularities</em>.</li>
  </ul>
 </section>
 
@@ -225,10 +252,10 @@ Since <strong>events</strong> depend on <strong>objects</strong> (as their <stro
  <h1>Simulation Design in OEM&amp;S</h1>
  <p>A <strong>simulation design model</strong> consists of</p>
  <ol>
-  <li class="fragment">an <strong>information design model</strong> defining <em>object types</em> and <em>event types</em>, e.g., in the form of classes in a <em>UML Class Diagram</em>, such as in an <strong>Object Event (OE) Class Diagram</strong>.</li>
-  <li class="fragment">a <strong>process design model</strong> defining <em>event rules</em> that represent <em>causal regularities</em>, e.g., in a <strong>DPMN Process Diagram</strong>.</li>
+  <li>an <strong>information design model</strong> defining <em>object types</em> and <em>event types</em>, e.g., in the form of classes in a <em>UML Class Diagram</em>, such as in an <strong>Object Event (OE) Class Diagram</strong>.</li>
+  <li>a <strong>process design model</strong> defining <em>event rules</em> that represent <em>causal regularities</em>, e.g., in a <strong>DPMN Process Diagram</strong>.</li>
  </ol>
-  <p class="fragment">A simulation design model is a <strong>computationally complete</strong> specification that can be directly implemented.</p>
+  <p>A simulation design model is a <strong>computationally complete</strong> specification that can be directly implemented.</p>
 </section>
 
 <section class="part-title-slide">
@@ -247,14 +274,20 @@ Since <strong>events</strong> depend on <strong>objects</strong> (as their <stro
 
 <section>
  <h2>Exercise 1: Download/Run the Pizza-Server-1 Model</h2>
- <p>A <strong>simulation design model</strong> consists of</p>
  <ol>
-  <li class="fragment">an <strong>information design model</strong> defining <em>object types</em> and <em>event types</em>, e.g., in the form of classes in a <em>UML Class Diagram</em>, such as in an <strong>Object Event (OE) Class Diagram</strong>.</li>
-  <li class="fragment">a <strong>process design model</strong> defining <em>event rules</em> that represent <em>causal regularities</em>, e.g., in a <strong>DPMN Process Diagram</strong>.</li>
+  <li><p><a href="https://github.com/gwagner57/oes/releases/download/v0.1-alpha/OES.zip">Download the OES Pizza-Server-1 model</a> and extract the ZIP archive file
+  in a suitable folder (e.g., in "C:\" or in "C:\simulators"). An "OES" subfolder will be created.</p></li>
+  <li><p>Run the Pizza-Server-1 model by pursuing the following steps</p>
+   <ol>
+    <li>Go to the folder <kbd>OES\js\Core2\Pizza-Server-1</kbd>.</li>
+    <li>Open the <kbd>index.html</kbd> file in your browser.</li>
+    <li>Click the <button style="font-size:100%">Run</button> button.</li>
+    <li>Take a look at the resulting statistics output.</li>
+    <li>If there is anything you'd like to get an explanation for, post your questions on the Chat.</li>
+   </ol>
+  </li>
  </ol>
-  <p class="fragment">A simulation design model is a <strong>computationally complete</strong> specification that can be directly implemented.</p>
 </section>
-
 
 
 <section class="part-title-slide">
@@ -262,54 +295,115 @@ Since <strong>events</strong> depend on <strong>objects</strong> (as their <stro
 </section>
 
 <section>
+ <h2 style="margin-top:-0.5em;margin-bottom:-0.1em">Pizza-Server-2 Design Model</h2>
+ <div><img src="img/Pizza-Server-2_IDM.svg" alt="OE Class Design Model Pizza-Server-2" width="1000"/></div>
+ <div> <hr/>
+  <div><img src="img/Pizza-Server-2_PDM.svg" alt="DPMN Process Design Model Pizza-Server-2" width="500"/></div>
+  <div>Using a <strong>Resource-Dependent Activity Start Arrow</strong></div>
+ </div>
+</section>
+<section>
+ <img src="img/DownArrow.svg" alt="" width="50" style="position:absolute;left:45%;top:65%"/>
+ <h2 style="margin-top:-0.7em;margin-bottom:-0.1em">Pizza-Server-1 versus Pizza-Server-2</h2>
+ <div><img src="img/Pizza-Server-1_PDM.svg" alt="DPMN Process Design Model Pizza-Server-1" width="900"/></div>
+ <hr/>
+ <div style="margin-top:0.2em"><img src="img/Pizza-Server-2_PDM.svg" alt="DPMN Process Design Model Pizza-Server-2" width="500"/></div>
+</section>
+<section>
+ <h2>Exercise 2: Run the Pizza-Server-2 Model</h2>
+ <ol>
+  <li><p>Run the Pizza-Server-2 model by pursuing the following steps</p>
+   <ol>
+    <li>Go to the folder <kbd>OES\js\Core2\Pizza-Server-2</kbd>.</li>
+    <li>Open the <kbd>index.html</kbd> file in your browser.</li>
+    <li>Click the <button style="font-size:100%">Run</button> button.</li>
+    <li>Take a look at the resulting statistics output.</li>
+    <li>If there is anything you'd like to get an explanation for, post your questions on the Chat.</li>
+   </ol>
+  </li>
+ </ol>
+</section>
+
+<section>
+ <h1>The Make-and-Deliver-Pizza Model</h1>
+ <ul>
+  <li><figure><img alt="" src="img/Pizza-Delivery.svg" width="240" /></figure>
+   A pizza service company takes phone orders</li>
+  <li>for making and delivering pizzas, </li>
+  <li>with the help of order takers, pizza makers, ovens and a crew of pizza delivery scooter drivers.</li>
+ </ul>
+ <div><a href="https://gwagner57.github.io/oes/js/Core2/Make-and-Deliver-Pizza-1/index.html">Run the model</a></div>
+</section>
+<section>
  <figure style="margin-top:-1.5em;"><img src="img/Pizzeria_CIM1a.svg" alt="Conceptual OE Class Model Pizza Service" width="1000"/></figure>
- <h2>A Conceptual OE Class Model</h2>
+ <h2>Conceptual OE Class Model</h2>
  <p style="font-size:smaller">«rr» = resource role</p>
  <p style="font-size:smaller">«rp» = resource pool</p>
 </section>
+<section>
+ <figure style="margin-top:-1em;"><img src="img/Pizzeria_IDMa.svg" alt="OE Class Design Model Pizza Service" width="1000"/></figure>
+ <h2>OE Class Design Model</h2>
+ <p style="font-size:smaller">«rv» = random variable</p>
+</section>
+<section>
+ <h1>DPMN Process Design Model</h1>
+ <div><img src="img/Pizzeria_PDM.svg" alt="DPMN Process Design Model Pizza Service" width="1000"/></div>
+</section>
 
+<section>
+ <h1>The Load-Haul-Dump Model</h1>
+ <ul>
+  <li><figure><img alt="" src="img/Load-Truck-Scenario.svg" width="400" /></figure>
+   A haul service company accepts requests for hauling large quantities of earth from a loading site to a dump site, </li>
+  <li>using dump trucks and wheel loaders.</li>
+ </ul>
+ <div><a href="https://gwagner57.github.io/oes/js/Core2/Load-Haul-Dump-1/index.html">Run the model</a></div>
+</section>
  <section>
-  <h1>A Haul Service Company</h1>
-   <img src="img/Load-Haul-Dump_BPMN.svg" alt="process model Load-Haul-Dump" width="1300"/>
+ <h1>Conceptual DPMN Process Model</h1>
+   <img src="img/Load-Haul-Dump_DPMN.svg" alt="Conceptual process model Load-Haul-Dump" width="1300"/>
  </section>
  <section>
-  <h1>Compare with DPMN</h1>
-   <img src="img/Load-Haul-Dump_DPMN.svg" alt="process model Load-Haul-Dump" width="1300"/>
+ <h1>DPMN Process Design Model</h1>
+   <img src="img/Load-Haul-Dump_PDM.svg" alt="process design model Load-Haul-Dump" width="1300"/>
  </section>
+
 
 <section class="part-title-slide">
-  <h1>Outlook</h1>
+  <h1>Summary and Outlook</h1>
 </section>
-
-
  
-<section>
- <h1 style="font-size:300%">DPMN</h1>
- <p>...is the <em>Discrete Event Process Modeling Notation</em>, which extends <em>Event Graphs</em> by adding:</p>
- <ol style="margin-top:1em">
-  <li><i>Exclusive/Inclusive/Parallel <b>Gateways</b></i> for conditional/parallel branching</li>
-  <li><i><b>Data Objects</b></i> for replacing "state variables" (like <i>L</i>) with attributes (like <i>WorkStation::inputBufferLength</i>)</li>
-  <li><i><b>Activities</b></i></li>
- </ol>
- <p>A <em>DPMN Process Model</em> is composed of <strong>Event Rule Models</strong>.</p>
-</section>
-
-
-
  <section>
-  <h1>Conclusion and Outlook</h1>
+  <h1>Summary</h1>
   <ul>
-   <li>OEM&amp;S is a new modeling and simulation paradigm with a <em>formal</em> semantics and an <em>ontological</em> foundation.</li>
-   <li>The preferred modeling languages for OEM&amp;S are <em>UML Class Diagrams</em> and <em>DPMN Process Diagrams</em>.</li>
-   <li>OES has been implemented in <em>JavaScript</em>, a <em>Python</em> implementation will follow.</li>
-   <li>DPMN allows modeling of message-based communication (with <em>out-message</em> and <em>in-message</em> events).</li>
-   <li>OEM&amp;S can be extended by adding <em>Agents</em> with <em>Beliefs</em> about, and <em>Perceptions</em> of, their environment</li>
-   <li>How to model (DEMO) <em>transactions</em> in DPMN still has to be investigated.</li>
+   <li>OEM&amp;S is a new modeling and simulation paradigm with a <strong>formal semantics</strong> and an <strong>ontological foundation</strong>.</li>
+   <li>The preferred modeling languages for OEM&amp;S are <strong>OE/UML Class Diagrams</strong> and <strong>DPMN Process Diagrams</strong>.</li>
+   <li>OES has been implemented in <em>JavaScript</em>, a <em>Python</em> implementation is work in progress.</li>
+   <li>DPMN supports 
+    <ul>
+     <li><strong>Activity-Based Discrete Event Simulation</strong> (Activity Networks)</li>
+     <li><strong>Processing Networks (PN) Simulation</strong></li>
+    </ul></li>
   </ul>
  </section>
+<section>
+ <h1>Next Steps</h1>
+ <ol style="margin-top:1em">
+  <li>Elaborate the PN modeling and simulation layer of OEM&amp;S.</li>
+  <li>Extend OEM&amp;S by adding <strong>Agents</strong> with <em>Beliefs</em>, <em>Perceptions</em> and <em>Communications</em>.</li>
+ </ol>
+</section>
+<section>
+ <h1>Provide Inspiration</h1>
+ <ol style="margin-top:1em">
+  <li>DPMN can inspire the improvement of BPMN</li>
+  <li>DPMN can inspire the improvement and harmonization of Arena/Simio/AnyLogic/etc.</li>
+ </ol>
+</section>
+
 
  <section>
-  <h1>See also</h1>
+  <h1>References</h1>
   <ul>
    <li>Gerd Wagner: <a href="https://www.informs-sim.org/wsc17papers/includes/files/056.pdf">An Abstract State Machine Semantics For Discrete Event Simulation</a>, <em>Proc. of the 2017 Winter Simulation Conference</em>.</li>
    <li>Gerd Wagner: <a href="https://articles.jsime.org/1/1/Modeling-for-Simulation-Part-I">Information and Process Modeling for Simulation – Part I: Objects and Events</a>. <em>Journal of Simulation Engineering</em> 1:1, 2018.</li>
