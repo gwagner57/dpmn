@@ -1,0 +1,119 @@
+/*
+ * Copyright (c) 2017-2019 XMLmind Software. All rights reserved.
+ *
+ * Author: Hussein Shafie (hussein@xmlmind.com)
+ *
+ * This file is part of the XMLmind Ebook Compiler project.
+ * For conditions of distribution and use, see the accompanying LEGAL.txt file.
+ */
+
+/*
+ * The following font contains 4 glyphs:
+ * LIST = \00E80D, LEFT_ARROW = \00E80B, RIGHT_ARROW = \00E80A, BOOK = \00E80C
+ *
+ * We used http://fontello.com/ to create it.
+ */
+
+@font-face {
+    font-family: page-navigation-icons;
+    src: url('data:application/octet-stream;base64,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') format('woff');
+}
+
+header.page-navigation,
+footer.page-navigation {
+    font-size: 0.83em;
+    color: #808080;
+    padding: 0;
+    margin: 0;
+}
+
+header.page-navigation a:link,
+header.page-navigation a:visited,
+header.page-navigation a,
+footer.page-navigation a:link,
+footer.page-navigation a:visited,
+footer.page-navigation a {
+    text-decoration: none;
+}
+
+header.page-navigation table,
+footer.page-navigation table {
+    border-collapse: collapse;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+header.page-navigation table {
+    border-bottom: 1px solid #C0C0C0;
+    margin-bottom: 1.2em; /* 1em/0.83 */
+}
+
+footer.page-navigation table {
+    border-top: 1px solid #C0C0C0;
+    margin-top: 1.2em; /* 1em/0.83 */
+}
+
+td.page-navigation-to-previous,
+td.page-navigation-previous,
+td.page-navigation-current,
+td.page-navigation-next,
+td.page-navigation-to-next {
+    vertical-align: baseline;
+    padding: 0.25em;
+}
+
+td.page-navigation-current {
+    text-align: center;
+    font-weight: bold;
+    width: 50%;
+}
+
+span.page-navigation-current-page {
+    font-weight: normal;
+}
+
+td.page-navigation-previous,
+td.page-navigation-next {
+    width: 25%;
+}
+
+td.page-navigation-to-previous,
+td.page-navigation-previous {
+    text-align: left;
+}
+
+td.page-navigation-next,
+td.page-navigation-to-next {
+    text-align: right;
+}
+
+span.page-navigation-to-toc-icon:before,
+span.page-navigation-to-index-icon:before,
+span.page-navigation-to-previous-icon:before,
+span.page-navigation-to-next-icon:before {
+    font-family: page-navigation-icons;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+span.page-navigation-to-toc-icon:before,
+span.page-navigation-to-index-icon:before {
+    padding-left: 0.5em;
+}
+
+span.page-navigation-to-toc-icon:before {
+    content: "\00E80D";
+}
+
+span.page-navigation-to-index-icon:before {
+    content: "\00E80C";
+}
+
+span.page-navigation-to-previous-icon:before {
+    content: "\00E80B";
+}
+
+span.page-navigation-to-next-icon:before {
+    content: "\00E80A";
+}
