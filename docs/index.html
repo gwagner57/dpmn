@@ -92,15 +92,15 @@
   </hgroup>
   <p>... is a diagram language for making (computational) process design models for <em>discrete event simulation</em> and <em>business process simulation</em> based on <a href="http://sigmawiki.com/support/" title="Proposed by L. Schruben in 1983">Event Graphs</a> and <a href="https://camunda.com/bpmn/reference/" title="Business Process Modeling Notation">BPMN</a>. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the <em>event scheduling</em> arrows of Event Graphs and the <em>event rules</em> of the <a href="https://sim4edu.com/explain/what-is-object-event-modeling-and-simulation">Object Event Modeling and Simulation</a> (OEM&amp;S) paradigm.</p>
   <figure style="float:right"><img src="img/AbstractExample.svg" width="500" /></figure>
-  <p>DPMN is the process modeling language of choice in OEM&amp;S. Process models are based on an underlying definition of the types of objects, events and activities they are using. While in the BPMN 2.0 specification, these type definitions are to be provided by an XML Schema, the object, event and activity types of a DPMN process model are defined in an underlying OEM information model in the form of a UML Class Diagram.</p>
+  <p>DPMN is the process modeling language of choice in OEM&amp;S. Process models are based on an underlying definition of the types of objects, events and activities they are using. While in the BPMN 2.0 specification, these type definitions are to be provided by an XML Schema, the object, event and activity types of a DPMN process model are defined in an underlying <abbr title="Object Event">OE</abbr> class model (in the form of a UML Class Diagram).</p>
   <p>DPMN has two types of arrows:</p>
   <ol>
    <li><strong>Event Flow</strong> arrows, or <strong>Event Scheduling</strong> arrows, like in Event Graphs, representing the causation of follow-up events in conceptual process models, corresponding to <i>event scheduling</i> in the case of process design models. For instance, in the Figure above, the two arrows pointing to E2 and E3 are Event Scheduling arrows.</li>
    <li><strong>Resource-Dependent Activity Scheduling</strong> arrows with three bars representing a task queue. For instance, in the Figure above, E1 events and A1 activities, as well as A1 and A2 activities, are connected via these arrows.</li>
   </ol>
-  <p>A DPMN model has a formal semantics in terms of an <a href="https://en.wikipedia.org/wiki/Abstract_State_Machines">Abstract State Machine</a> whose state structure is defined by its underlying OEM information model and whose transition functions are defined by the <em>event rules</em> of the DPMN process model, which capture causal regularities.</p>
+  <p>A DPMN model has a formal semantics in terms of an <a href="https://en.wikipedia.org/wiki/Abstract_State_Machines">Abstract State Machine</a> whose state structure is defined by its underlying <abbr title="Object Event">OE</abbr> class model and whose transition functions are defined by the <em>event rules</em> of the DPMN process model, which capture causal regularities.</p>
 
-  <p>Summary presentation (Dec 2020):<br/><a href="presentations/2020-WSC/">Modeling and Simulation of Business Processes with DPMN</a>.</p>
+  <p>Summary presentation (Dec 2021): <a href="presentations/2021-WSC/">Modeling and Simulation of Business Processes with DPMN</a>.</p>
 
   <h2>The Layers of DPMN</h2>
   <table style="width:100%; margin-top:5px">

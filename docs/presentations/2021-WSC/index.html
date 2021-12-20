@@ -60,7 +60,7 @@
  <p>It combines the intuitive flowchart modeling style of BPMN (the <em>Business Process Modeling Notation</em>) with the rigorous semantics provided by </p>
   <ul>
   <li>the <em>event scheduling</em> arrows of <em>Event Graphs</em>, and </li>
-  <li>the <em>event rules</em> of the <em>Object Event Modeling and Simulation (OEM&amp;S)</em> paradigm.</li>
+  <li>the <em>event rules</em> of the <em>Object Event Modeling and Simulation (OEM&amp;S)</em> paradigm (Gerd Wagner: <a href="https://www.informs-sim.org/wsc17papers/includes/files/056.pdf">An Abstract State Machine Semantics For Discrete Event Simulation</a>, WSC 2017)</li>
  </ul>
 </section>
 
@@ -160,8 +160,8 @@
  <h1 style="margin-top:-0.3em; color:blue">Key Insight #5</h1>
  <h1 style="margin-top:0">There Are Two Kinds of Business Processes</h1>
  <ol>
-  <li>BPMN-style <strong>Activity Networks</strong> with a flow of events (where activity nodes have task queues).</li>
-  <li>GPSS/SIMAN/Arena-style <strong>Processing Networks</strong> with a flow of objects and events (where processing nodes have object and task queues).</li>
+  <li>BPMN-style <strong>Activity Networks</strong> with <strong>a flow of events</strong>, where activity nodes have task queues.</li>
+  <li>GPSS/SIMAN/Arena-style <strong>Processing Networks</strong> with <strong>a flow of objects and events</strong>, where processing nodes have object and task queues.</li>
  <ol>
 </section>
 <section>
@@ -421,6 +421,7 @@
  <h2>The Real Meaning of Processing Network Nodes</h2>
  <div><img src="img/WS3_PDMa-PN-elab.svg" width="1200"/></div>
  <p>Event/activity flows are complemented by corresponding flows of processing objects.</p>
+ <p><strong>Processing Networks extend Activity Networks</strong>, which extend Event Graphs.</p>
 </section>
  
  <!--
