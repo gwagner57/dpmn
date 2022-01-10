@@ -33,8 +33,9 @@
   <h1 id="page-title">Frequently Asked Questions (FAQ)</h1>
    <ol>
     <li><a href="#Q0">How does DPMN compare to BPMN?</a></li>
-    <li><a href="#Q1">Can I use DPMN for creating a business process simulation with Arena, Simio, AnyLogic, etc.?</a></li>
-    <li><a href="#Q2">Is there a DPMN modeling tool?</a></li>
+    <li><a href="#Q1">Does DPMN have a formal semantics?</a></li>
+    <li><a href="#Q2">Can I use DPMN for creating a business process simulation with Arena, Simio, AnyLogic, etc.?</a></li>
+    <li><a href="#Q3">Is there a DPMN modeling tool?</a></li>
    </ol>
 
    <h2 id="Q0">1 How does DPMN compare to BPMN?</h2>
@@ -45,13 +46,24 @@
 
    <p>For instance, DPMN supports all essential concepts needed for modeling and simulating resource-constrained activities (resource roles, resource constraints and resource pools), while BPMN only supports modeling resource roles, but not resource constraints and resource pools.</p>
    <figure style="float:right"><img src="img/AbstractExample.svg" /></figure>
-   <p>DPMN makes a distinction between <em>Resource-Dependent Activity Start</em> arrows and <em>Event Scheduling</em> arrows, as shown in the DPMN Process Diagram to the right.</p>
+   <p>DPMN makes a distinction between <em>Resource-Dependent Activity Scheduling</em> (RDAS) arrows and <em>Event Scheduling</em> arrows, as shown in the DPMN Process Diagram to the right.</p>
 
-   <h2 id="Q1">2 Can I use DPMN for creating a business process simulation with Arena, Simio, AnyLogic, etc.?</h2>
+   <h2 id="Q1">2 Does DPMN have a formal semantics?</h2>
+
+   <p>Yes, the formal semantics of DPMN is based on the semantics of <em>Event Graphs</em> (<a href="https://dl.acm.org/citation.cfm?id=358460">Schruben 1983</a>), 
+    which was originally defined in terms of 
+    integer programming. <a href="https://www.informs-sim.org/wsc17papers/includes/files/056.pdf">Wagner (2017)</a> has proposed a more general semantics of Event Graphs where such a graph 
+	is decomposed into a set of transition functions ("event rules") such that a transition system (or <em>Abstract State Machine</em>) semantics is obtained. 
+	This semantics can be easily extended to <em>Object Event Graphs</em>. Finally, the semantics of DPMN-A models ("Activity Networks") is obtained by 
+	reduction to Object Event Graphs using two rewriting patterns, and the semantics of DPMN-PN models ("Processing Networks") is obtained by reduction to DPMN-A.</p>
+
+   <p>It has been an unfortunate course of science history that Event Graphs have not become more well-known and, instead of Event Graphs, Petri Nets have been chosen as the standard semantics of BP models, despite the fact that Event Graphs would have been a much more natural choice.</p>
+
+   <h2 id="Q2">3 Can I use DPMN for creating a business process simulation with Arena, Simio, AnyLogic, etc.?</h2>
 
    <p>Yes, DPMN is an open (non-proprietary) Discrete Event Simulation (DES) modeling language for making platform-independent simulation design models, which can be implemented with any particular DES platform, such as Arena, Simio, AnyLogic, etc.</p>
 
-   <h2 id="Q1">3 Is there a DPMN modeling tool?</h2>
+   <h2 id="Q3">4 Is there a DPMN modeling tool?</h2>
 
     <p>At present, there is not yet a DPMN-specific modeling tool. You have to use a diagram drawing tool that supports the basic BPMN modeling elements and allows to draw the new DPMN modeling elements, such as Microsoft Visio or <a href="https://www.draw.io/">draw.io</a>.</p>
    
