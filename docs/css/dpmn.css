@@ -103,6 +103,7 @@ body > header {
   margin-bottom: 0;
 }
 
+/* for the large DPMN on start page */
 hgroup {
   text-align: center;	
 }
@@ -129,6 +130,9 @@ hgroup > h2 {
     margin-top: 0.67em;
     margin-bottom: 0.33em;
   }
+}
+main > h1 {
+    margin-top: 2em;
 }
 
 p.indented {
