@@ -6,13 +6,13 @@
   <title>Discrete Event Process Modeling Notation (DPMN)</title>
   <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
  <meta name="description"
-       content="DPMN is a diagram language for making (computational) process design models for discrete event simulation and business process simulation based on Event Graphs and BPMN. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the event scheduling arrows of Event Graphs and the event rules of the Object Event Modeling and Simulation paradigm. A DPMN model has a formal semantics in terms of an Abstract State Machine whose state structure is defined by an object-oriented signature and whose transitions are defined by event rules capturing causal regularities."/>
+       content="DPMN is a diagram language for making process design models for discrete event simulation and business process simulation based on Event Graphs and BPMN. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the event scheduling arrows of Event Graphs and the event rules of the Object Event Modeling and Simulation paradigm. A DPMN model has a formal semantics in terms of an Abstract State Machine whose state structure is defined by an object-oriented signature and whose transitions are defined by event rules capturing causal regularities."/>
  <!-- Facebook Open Graph annotations -->
  <meta property="og:site_name" content="DPMN"/>
  <meta property="og:title" content="The Discrete Event Process Modeling Notation (DPMN)"/>
  <meta property="og:locale" content="en" />
  <meta property="og:description"
-       content="DPMN is a diagram language for making (computational) process design models for discrete event simulation and business process simulation based on Event Graphs and BPMN. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the event scheduling arrows of Event Graphs and the event rules of the Object Event Modeling and Simulation paradigm. A DPMN model has a formal semantics in terms of an Abstract State Machine whose state structure is defined by an object-oriented signature and whose transitions are defined by event rules capturing causal regularities."/>
+       content="DPMN is a diagram language for making process design models for discrete event simulation and business process simulation based on Event Graphs and BPMN. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the event scheduling arrows of Event Graphs and the event rules of the Object Event Modeling and Simulation paradigm. A DPMN model has a formal semantics in terms of an Abstract State Machine whose state structure is defined by an object-oriented signature and whose transitions are defined by event rules capturing causal regularities."/>
  <meta property="og:url" content="https://dpmn.info/"/>
  <meta property="og:image" content="https://dpmn.info/img/DPMN.png"/>  <!-- recommended 1200 x 630 -->
  <meta name="twitter:card" content="summary_large_image"/>
@@ -25,7 +25,7 @@
     "headline": "The Discrete Event Process Modeling Notation (DPMN)",
     "url": "https://dpmn.info/",
     "keywords": "business process modeling, business process simulation, discrete event simulation",
-    "description": "DPMN is a diagram language for making (computational) process design models for discrete event simulation and business process simulation based on Event Graphs and BPMN. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the event scheduling arrows of Event Graphs and the event rules of the Object Event Modeling and Simulation paradigm. A DPMN model has a formal semantics in terms of an Abstract State Machine whose state structure is defined by an object-oriented signature and whose transitions are defined by event rules capturing causal regularities.",
+    "description": "DPMN is a diagram language for making process design models for discrete event simulation and business process simulation based on Event Graphs and BPMN. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the event scheduling arrows of Event Graphs and the event rules of the Object Event Modeling and Simulation paradigm. A DPMN model has a formal semantics in terms of an Abstract State Machine whose state structure is defined by an object-oriented signature and whose transitions are defined by event rules capturing causal regularities.",
     "publisher": {
         "@type": "Organization",
         "name": "Brandenburg University of Technology",
@@ -90,7 +90,7 @@
    <h1>DPMN</h1>
    <h2>The Discrete Event Process Modeling Notation</h2>
   </hgroup>
-  <p>... is a diagram language for making (computational) process design models for <em>discrete event simulation</em> and <em>business process simulation</em> based on <a href="http://sigmawiki.com/support/" title="Proposed by L. Schruben in 1983">Event Graphs</a> and <a href="https://camunda.com/bpmn/reference/" title="Business Process Modeling Notation">BPMN</a>. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the <em>event scheduling</em> arrows of Event Graphs and the <em>event rules</em> of the <a href="https://sim4edu.com/explain/what-is-object-event-modeling-and-simulation">Object Event Modeling and Simulation</a> (OEM&amp;S) paradigm.</p>
+  <p>... is a diagram language for making process design models for <em>discrete event simulation</em> and <em>business process simulation</em> based on <a href="http://sigmawiki.com/support/" title="Proposed by L. Schruben in 1983">Event Graphs</a> and <a href="https://camunda.com/bpmn/reference/" title="Business Process Modeling Notation">BPMN</a>. It combines the intuitive flowchart modeling style of BPMN with the rigorous semantics provided by the <em>event scheduling</em> arrows of Event Graphs and the <em>event rules</em> of the <a href="https://sim4edu.com/explain/what-is-object-event-modeling-and-simulation">Object Event Modeling and Simulation</a> (OEM&amp;S) paradigm.</p>
   <figure style="float:right"><img src="img/AbstractExample.svg" width="500" /></figure>
   <p>DPMN is the process modeling language of choice in OEM&amp;S. Process models are based on an underlying definition of the types of objects, events and activities they are using. While in the BPMN 2.0 specification, these type definitions are to be provided by an XML Schema, the object, event and activity types of a DPMN process model are defined in an underlying <abbr title="Object Event">OE</abbr> class model (in the form of a UML Class Diagram).</p>
   <p>DPMN has two types of arrows:</p>
@@ -120,6 +120,7 @@
    <td><ul style="list-style:url('img/PlusSign.svg');margin:0;padding-left:7%;font-size:smaller;line-height:1">
     <li style="margin-top:0;margin-bottom:0;">Resource Roles</li>
 	<li style="margin-top:0;margin-bottom:0;">Resource Cardinality Constraints</li>
+	<li style="margin-top:0;margin-bottom:0;">Multitasking Constraints</li>
 	<li style="margin-top:0;margin-bottom:0;">Resource Pools</li>
 	<li style="margin-top:0;margin-bottom:0;">Resource-Dependent Activity Scheduling Arrows</li></ul></td>
    <td><img src="img/DPMN_A_wRes.svg" width="500"></td></tr>
