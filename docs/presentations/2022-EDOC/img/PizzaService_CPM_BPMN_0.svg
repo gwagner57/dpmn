@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-canvas" generated="java" oryx:signavioversion="16.6.1" version="1.1" viewBox="0 0 539 162.5" xmlns="http://www.w3.org/2000/svg" xmlns:oryx="http://oryx-editor.org" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <marker id="sid-596db5de-0979-4785-b0c7-b8079c3e57edstart" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5"/>
+  <marker id="sid-596db5de-0979-4785-b0c7-b8079c3e57edstart_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5"/>
+  <marker id="sid-596db5de-0979-4785-b0c7-b8079c3e57edend" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-596db5de-0979-4785-b0c7-b8079c3e57edarrowhead" d="m0 3 15 5-15 5z" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </marker>
+  <marker id="sid-596db5de-0979-4785-b0c7-b8079c3e57edend_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-596db5de-0979-4785-b0c7-b8079c3e57edarrowhead_shadow" d="m0 3 15 5-15 5z" stroke="#fff" stroke-linejoin="round" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17dastart" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5"/>
+  <marker id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17dastart_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5"/>
+  <marker id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17daend" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17daarrowhead" d="m0 3 15 5-15 5z" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </marker>
+  <marker id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17daend_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17daarrowhead_shadow" d="m0 3 15 5-15 5z" stroke="#fff" stroke-linejoin="round" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3start" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5"/>
+  <marker id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3start_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5"/>
+  <marker id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3end" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3arrowhead" d="m0 3 15 5-15 5z" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </marker>
+  <marker id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3end_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3arrowhead_shadow" d="m0 3 15 5-15 5z" stroke="#fff" stroke-linejoin="round" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <radialGradient id="radialGradient484" cx="29.321" cy="28.685" r="295.95" gradientTransform="scale(1.8212 .54908)" gradientUnits="userSpaceOnUse" xlink:href="#sid-5d6f8770-99d8-44be-9676-6a64002f5732background"/>
+  <radialGradient id="radialGradient486" cx="12.806" cy="10.841" r="129.26" gradientTransform="scale(4.1698 .23982)" gradientUnits="userSpaceOnUse" xlink:href="#sid-5d6f8770-99d8-44be-9676-6a64002f5732background"/>
+ </defs>
+ <g transform="translate(-24.5,-24.5)" font-family="'Open Sans', Kanit, 'Noto Sans CJK HK', 'Noto Sans CJK JP', 'Noto Sans CJK KR', 'Noto Sans CJK SC', 'Noto Sans CJK TC', 'Noto Sans Thai Looped', 'Ezra SIL', 'DejaVu Sans', HanaMinA, HanaMinB, sans-serif" font-size="12px" stroke="#000">
+  <g class="stencils" transform="translate(-2.143,-20)">
+   <g class="children">
+    <g id="svg-sid-530CF457-F609-41CE-A698-4A14A64361CF">
+     <g class="stencils" transform="translate(27.143,45)">
+      <g class="me">
+       <g pointer-events="none" title="Pool">
+        <defs>
+         <radialGradient id="sid-5d6f8770-99d8-44be-9676-6a64002f5732background" cx=".1" cy=".1" r="1">
+          <stop stop-color="#fff" offset="0"/>
+          <stop id="sid-5d6f8770-99d8-44be-9676-6a64002f5732fill_el" stop-color="#fff" offset="1"/>
+         </radialGradient>
+        </defs>
+        <g stroke="#000">
+         <rect id="sid-5d6f8770-99d8-44be-9676-6a64002f5732c" width="538" height="161.5" display="inherit" fill="url(#radialGradient484)" fill-opacity=".3" oryx:resize="vertical horizontal"/>
+         <rect id="sid-5d6f8770-99d8-44be-9676-6a64002f5732caption" width="538" height="30" display="inherit" fill="url(#radialGradient486)" pointer-events="all" oryx:anchors="top right left"/>
+         <rect id="sid-5d6f8770-99d8-44be-9676-6a64002f5732captionDisableAntialiasing" width="538" height="30" display="inherit" fill="url(#radialGradient486)" pointer-events="all" oryx:anchors="top right left"/>
+        </g>
+        <text id="sid-5d6f8770-99d8-44be-9676-6a64002f5732text_name" x="269" y="13" fill="#000000" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:anchors="top" oryx:fittoelem="sid-5d6f8770-99d8-44be-9676-6a64002f5732caption" oryx:fontSize="12" oryx:textWidth="538.001"><tspan x="269" y="13" dy="4">pizza service</tspan></text>
+        <title>Pool</title>
+       </g>
+      </g>
+      <g class="children">
+       <g id="svg-sid-4A964198-B2AA-4298-8E18-2AA3697D211C">
+        <g class="stencils" transform="translate(371.74 30)">
+         <g class="me">
+          <g pointer-events="none" title="Lane">
+           <defs>
+            <radialGradient id="sid-a6be0ace-978f-4086-a16b-8eb8bf6489b1background" cx="-.44502" cy="14.325" r="297.74" fx="29.329" gradientTransform="scale(1.1236 .89003)" gradientUnits="userSpaceOnUse">
+             <stop stop-color="#fff" stop-opacity="0" offset="0"/>
+             <stop id="sid-a6be0ace-978f-4086-a16b-8eb8bf6489b1fill_el" stop-color="#fff" stop-opacity="0" offset="1"/>
+            </radialGradient>
+           </defs>
+           <rect id="sid-a6be0ace-978f-4086-a16b-8eb8bf6489b1border" width="166.26" height="131.5" fill="url(#sid-a6be0ace-978f-4086-a16b-8eb8bf6489b1background)" pointer-events="none" stroke="#000" oryx:resize="vertical horizontal"/>
+           <path id="sid-a6be0ace-978f-4086-a16b-8eb8bf6489b1captionDisableAntialiasing" d="m0 0h164.26" fill="none" stroke="#000" oryx:anchors="top right left"/>
+           <text id="sid-a6be0ace-978f-4086-a16b-8eb8bf6489b1text_name" x="83.132004" y="6" fill="#000000" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center top" oryx:anchors="top" oryx:fittoelem="sid-a6be0ace-978f-4086-a16b-8eb8bf6489b1caption" oryx:fontSize="12" oryx:textWidth="164.264"><tspan x="83.132004" y="6" dy="12">delivery scooter drivers</tspan></text>
+           <title>Lane</title>
+          </g>
+         </g>
+         <g class="children">
+          <g id="svg-sid-58C4D822-5224-4BED-8C77-79C56846B32F">
+           <g class="stencils" transform="translate(27.384,30.5)">
+            <g class="me">
+             <g pointer-events="fill" oryx:minimumSize="50 40" title="Task">
+              <defs>
+               <radialGradient id="sid-3f6621b3-a176-4e28-bf96-0f204282bc77background" cx="8.5971" cy="8.4866" r="90.449" gradientTransform="scale(1.1167 .89553)" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#fff" offset="0"/>
+                <stop id="sid-3f6621b3-a176-4e28-bf96-0f204282bc77fill_el" stop-color="#ffc" offset="1"/>
+               </radialGradient>
+              </defs>
+              <rect id="sid-3f6621b3-a176-4e28-bf96-0f204282bc77bg_frame" width="100" height="80" rx="10" ry="10" fill="url(#sid-3f6621b3-a176-4e28-bf96-0f204282bc77background)" stroke="#000" oryx:resize="vertical horizontal"/>
+              <text id="sid-3f6621b3-a176-4e28-bf96-0f204282bc77text_name" x="50" y="40" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:fittoelem="sid-3f6621b3-a176-4e28-bf96-0f204282bc77text_frame" oryx:fontSize="12" oryx:textWidth="94"><tspan x="50" y="40" dy="4">deliver pizza</tspan></text>
+              <title>Task</title>
+             </g>
+            </g>
+           </g>
+           <g class="controls"></g>
+          </g>
+         </g>
+        </g>
+        <g class="controls"></g>
+       </g>
+       <g id="svg-sid-36FC8868-D784-43D5-9C13-36F86259514F">
+        <g class="stencils" transform="translate(0,30)">
+         <g class="me">
+          <g pointer-events="none" title="Lane">
+           <defs>
+            <radialGradient id="sid-d0413d45-693e-431a-8dc1-3cac2eb3215cbackground" cx="-.40054" cy="15.916" r="330.8" fx="32.68" gradientTransform="scale(1.2483 .80108)" gradientUnits="userSpaceOnUse">
+             <stop stop-color="#fff" stop-opacity="0" offset="0"/>
+             <stop id="sid-d0413d45-693e-431a-8dc1-3cac2eb3215cfill_el" stop-color="#fff" stop-opacity="0" offset="1"/>
+            </radialGradient>
+           </defs>
+           <rect id="sid-d0413d45-693e-431a-8dc1-3cac2eb3215cborder" width="205.47" height="131.5" fill="url(#sid-d0413d45-693e-431a-8dc1-3cac2eb3215cbackground)" pointer-events="none" stroke="#000" oryx:resize="vertical horizontal"/>
+           <path id="sid-d0413d45-693e-431a-8dc1-3cac2eb3215ccaptionDisableAntialiasing" d="m0 0h203.47" fill="none" stroke="#000" oryx:anchors="top right left"/>
+           <text id="sid-d0413d45-693e-431a-8dc1-3cac2eb3215ctext_name" x="102.736" y="6" fill="#000000" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center top" oryx:anchors="top" oryx:fittoelem="sid-d0413d45-693e-431a-8dc1-3cac2eb3215ccaption" oryx:fontSize="12" oryx:textWidth="203.472"><tspan x="102.736" y="6" dy="12">order takers</tspan></text>
+           <title>Lane</title>
+          </g>
+         </g>
+         <g class="children">
+          <g class="stencils" transform="translate(77.941,30.5)">
+           <g class="me">
+            <g pointer-events="fill" oryx:minimumSize="50 40" title="Task">
+             <defs></defs>
+             <rect id="sid-eebf591c-1089-4fba-8188-6e21b1345fcabg_frame" width="100" height="80" rx="10" ry="10" fill="url(#sid-3f6621b3-a176-4e28-bf96-0f204282bc77background)" stroke="#000" oryx:resize="vertical horizontal"/>
+             <text id="sid-eebf591c-1089-4fba-8188-6e21b1345fcatext_name" x="50" y="40" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:fittoelem="sid-eebf591c-1089-4fba-8188-6e21b1345fcatext_frame" oryx:fontSize="12" oryx:textWidth="94"><tspan x="50" y="40" dy="4">take order</tspan></text>
+             <title>Task</title>
+            </g>
+           </g>
+          </g>
+          <g class="controls"></g>
+          <g class="stencils" transform="translate(17.87,55.5)">
+           <g class="me">
+            <g pointer-events="fill" title="Start Event">
+             <defs>
+              <radialGradient id="sid-4b92453d-d502-428a-8017-260cd7e402c8background" cx="2.6" cy="2.6" r="31" gradientUnits="userSpaceOnUse">
+               <stop stop-color="#fff" offset="0"/>
+               <stop id="sid-4b92453d-d502-428a-8017-260cd7e402c8fill_el" stop-color="#fff" offset="1"/>
+              </radialGradient>
+             </defs>
+             <circle id="sid-4b92453d-d502-428a-8017-260cd7e402c8bg_frame" cx="15" cy="15" r="15" fill="url(#sid-4b92453d-d502-428a-8017-260cd7e402c8background)" stroke="#000"/>
+             <text id="sid-4b92453d-d502-428a-8017-260cd7e402c8text_name" x="15" y="32" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center top" oryx:fontSize="11" oryx:textWidth="-1"><tspan x="15" y="32" dy="11">order calls</tspan></text>
+             <title>Start Event</title>
+            </g>
+           </g>
+          </g>
+          <g class="controls"></g>
+         </g>
+        </g>
+        <g class="controls"></g>
+       </g>
+       <g class="stencils" transform="translate(205.47 30)">
+        <g class="me">
+         <g pointer-events="none" title="Lane">
+          <defs></defs>
+          <rect id="sid-f7d5659e-c7b0-41eb-9450-b575c4a0929dborder" width="166.26" height="131.5" fill="url(#sid-a6be0ace-978f-4086-a16b-8eb8bf6489b1background)" pointer-events="none" stroke="#000" oryx:resize="vertical horizontal"/>
+          <path id="sid-f7d5659e-c7b0-41eb-9450-b575c4a0929dcaptionDisableAntialiasing" d="m0 0h164.26" fill="none" stroke="#000" oryx:anchors="top right left"/>
+          <text id="sid-f7d5659e-c7b0-41eb-9450-b575c4a0929dtext_name" x="83.132004" y="6" fill="#000000" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center top" oryx:anchors="top" oryx:fittoelem="sid-f7d5659e-c7b0-41eb-9450-b575c4a0929dcaption" oryx:fontSize="12" oryx:textWidth="164.264"><tspan x="83.132004" y="6" dy="12">pizza makers</tspan></text>
+          <title>Lane</title>
+         </g>
+        </g>
+        <g class="children">
+         <g class="stencils" transform="translate(38.438,30.5)">
+          <g class="me">
+           <g pointer-events="fill" oryx:minimumSize="50 40" title="Task">
+            <defs></defs>
+            <rect id="sid-d484f126-2a57-4299-9e88-086450fcc5f9bg_frame" width="100" height="80" rx="10" ry="10" fill="url(#sid-3f6621b3-a176-4e28-bf96-0f204282bc77background)" stroke="#000" oryx:resize="vertical horizontal"/>
+            <text id="sid-d484f126-2a57-4299-9e88-086450fcc5f9text_name" x="50" y="40" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:fittoelem="sid-d484f126-2a57-4299-9e88-086450fcc5f9text_frame" oryx:fontSize="12" oryx:textWidth="94"><tspan x="50" y="40" dy="4">make pizza</tspan></text>
+            <title>Task</title>
+           </g>
+          </g>
+         </g>
+         <g class="controls"></g>
+        </g>
+       </g>
+       <g class="controls"></g>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+   </g>
+   <g class="edge">
+    <g class="stencils">
+     <g class="me">
+      <g id="sid-596db5de-0979-4785-b0c7-b8079c3e57ededge" fill="none" pointer-events="painted" stroke-linejoin="round">
+       <path id="sid-596db5de-0979-4785-b0c7-b8079c3e57edbg_frame_shadow" d="m75.512 145.5h29.072" marker-end="url(#sid-596db5de-0979-4785-b0c7-b8079c3e57edend_shadow)" marker-start="url(#sid-596db5de-0979-4785-b0c7-b8079c3e57edstart_shadow)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+       <path id="sid-596db5de-0979-4785-b0c7-b8079c3e57edbg_frame" d="m75.512 145.5h29.072" marker-end="url(#sid-596db5de-0979-4785-b0c7-b8079c3e57edend)" marker-start="url(#sid-596db5de-0979-4785-b0c7-b8079c3e57edstart)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+      </g>
+      <text id="sid-596db5de-0979-4785-b0c7-b8079c3e57edtext_name" x="83.512001" y="137.5" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" oryx:align="left bottom" oryx:edgePosition="starttop" oryx:fontSize="12" oryx:rotate="360" oryx:textWidth="-1"/>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g id="svg-sid-148DD512-A7C7-4555-B895-C06A442D4FEA">
+     <g class="stencils">
+      <g class="me">
+       <g id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17daedge" fill="none" pointer-events="painted" stroke-linejoin="round">
+        <path id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17dabg_frame_shadow" d="m205.58 145.5h64.969" marker-end="url(#sid-364abd46-3a54-4738-a7bd-0f1ea18b17daend_shadow)" marker-start="url(#sid-364abd46-3a54-4738-a7bd-0f1ea18b17dastart_shadow)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+        <path id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17dabg_frame" d="m205.58 145.5h64.969" marker-end="url(#sid-364abd46-3a54-4738-a7bd-0f1ea18b17daend)" marker-start="url(#sid-364abd46-3a54-4738-a7bd-0f1ea18b17dastart)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+       </g>
+       <text id="sid-364abd46-3a54-4738-a7bd-0f1ea18b17datext_name" x="213.584" y="137.5" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" oryx:align="left bottom" oryx:edgePosition="starttop" oryx:fontSize="12" oryx:rotate="360" oryx:textWidth="-1"/>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+    <g id="svg-sid-B58AAA1C-5F33-434F-9636-2E915E4F442E">
+     <g class="stencils">
+      <g class="me">
+       <g id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3edge" fill="none" pointer-events="painted" stroke-linejoin="round">
+        <path id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3bg_frame_shadow" d="m371.55 145.5h54.21" marker-end="url(#sid-0bd22379-a2bb-4b09-ba36-613654e8cde3end_shadow)" marker-start="url(#sid-0bd22379-a2bb-4b09-ba36-613654e8cde3start_shadow)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+        <path id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3bg_frame" d="m371.55 145.5h54.21" marker-end="url(#sid-0bd22379-a2bb-4b09-ba36-613654e8cde3end)" marker-start="url(#sid-0bd22379-a2bb-4b09-ba36-613654e8cde3start)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+       </g>
+       <text id="sid-0bd22379-a2bb-4b09-ba36-613654e8cde3text_name" x="379.55301" y="137.5" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" oryx:align="left bottom" oryx:edgePosition="starttop" oryx:fontSize="12" oryx:rotate="360" oryx:textWidth="-1"/>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

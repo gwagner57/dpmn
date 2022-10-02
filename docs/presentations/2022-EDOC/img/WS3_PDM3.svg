@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220.041" height="56.093" viewBox="0 0 165.031 42.07" color-interpolation-filters="sRGB" fill="none" fill-rule="evenodd" font-size="12" overflow="visible" stroke-linecap="square" stroke-miterlimit="3">
+  <style>    .st1,.st4{fill:#fff;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:.24}.st4{visibility:hidden}.st5{fill:#000;font-family:Calibri;font-size:.666664em}
+  </style>
+  <defs id="Markers">
+    <marker id="mrkr1-52" orient="auto" markerUnits="strokeWidth" overflow="visible" fill="#000" fill-opacity="1" stroke="#000" stroke-opacity="1" stroke-width=".357">
+      <use xlink:href="#lend1" transform="scale(-2.8)"/>
+    </marker>
+    <marker id="mrkr26-79" orient="auto" markerUnits="strokeWidth" overflow="visible" fill="#000" fill-opacity="1" stroke="#000" stroke-opacity="1" stroke-width=".068">
+      <use xlink:href="#lend26" transform="scale(-14.6342)"/>
+    </marker>
+    <path d="M1-1L0 0l1 1" stroke-linecap="round" stroke-linejoin="round" id="lend1"/>
+    <path d="M1.5-.75v1.5m.75-1.5v1.5M3-.75v1.5" stroke-linecap="round" stroke-linejoin="round" id="lend26"/>
+  </defs>
+  <g id="group1-1" transform="translate(9.098 -13.604)">
+    <g id="shape2-2">
+      <circle cx="14.173" cy="27.897" class="st1" r="14.173"/>
+    </g>
+    <g id="shape5-8" transform="translate(2.835 -2.835)">
+      <circle cx="11.339" cy="30.731" class="st4" r="11.339"/>
+    </g>
+    <text x="-6.19" y="51.27" class="st5" id="shape1-26">
+      patient arrivals
+    </text>
+  </g>
+  <g id="group14-29" transform="translate(94.044 -13.604)">
+    <g id="shape15-30">
+      <rect y="13.724" width="70.866" height="28.346" rx="5.669" ry="5.669" class="st1"/>
+    </g>
+    <g id="group16-32">
+      <g id="shape17-33">
+        <rect y="13.724" width="70.866" height="28.346" rx="2.126" ry="2.126" class="st4"/>
+      </g>
+      <g id="shape18-35" transform="translate(1.8 -1.8)">
+        <rect y="17.324" width="67.266" height="24.747" rx="2.126" ry="2.126" class="st4"/>
+      </g>
+    </g>
+    <text x="14.07" y="30.3" class="st5" id="shape14-72">
+      examinations
+    </text>
+  </g>
+  <g id="shape37-74" transform="translate(37.445 -27.777)">
+    <path d="M0 42.07h56.6" marker-end="url(#mrkr26-79)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".238"/>
+  </g>
+</svg>
