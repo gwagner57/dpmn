@@ -343,6 +343,18 @@
   <p style="margin-top:0.5em">The integer variable <i>Q</i> denotes the length of the queue.<br/>The Boolean variable <i>B</i> denotes the busy/available status of the service station.</p>
  </section>
  <section>
+  <h2 style="margin-top:-0.5em;">Decomposing Event Graphs into Rules (1)</h2>
+  <div><img src="img/SingleServer_EG_Visio_withER1.svg" alt="service station model" width="1300"/></div>
+ </section>
+ <section>
+  <h2 style="margin-top:-0.8em;">Decomposing Event Graphs into Rules (2)</h2>
+  <div><img src="img/SingleServer_EG_Visio_withER1-2.svg" alt="service station model" width="1100"/></div>
+ </section>
+ <section>
+  <figure style="margin-top:-1.2em"><img src="img/SingleServer_EG_Visio_withRuleDiagrams.svg" alt="service station model" width="1000"/></figure>
+  <h2 style="margin-top:-0.7em; font-size:140%">Decomposing Event Graphs into Rules(3)</h2>
+ </section>
+ <section>
   <h2>Strengths and Weaknesses of Event Graphs</h2>
   <p><b>Strengths</b>:</p>
   <ol>
@@ -581,26 +593,27 @@
 </section>
 
 <section>
- <h1>Example Model: The Blind Jumper</h1>
- <ul>
-  <li>An event-based simulation of a signaling reinforcement learning process, in which two agents learn to communicate with each other via signals.</li>
-  <li>Two <strong>agent types</strong>: Speaker and Jumper, one <strong>object type</strong>: Barrier, 
-   and four <strong>event types</strong>: the <strong>periodic time event</strong> type StartOver, the <strong>perception event</strong> type PerceiveBarrier, 
-   the <strong>message event</strong> type SendJumpLengthSignal and the <strong>action</strong> type Jump.</li>
-  <li>The simulation of learning by trial and failure is based on repeated rounds of event sequences of the form 
-   <blockquote>StartOver <b>→</b> PerceiveBarrier → SendJumpLengthSignal → Jump</blockquote></li>
- </ul>
+ <figure style="margin-top:-2.5em"><img src="img/FourStageSuppyChain_CPM.svg" alt="Service Desk Information Model" width="900"/></figure>
+ <h2>Four-Stage-Supply-Chain-1 (Beer Game)</h2>
+  <p>A retailer, a wholesaler, a distributor and a factory. Each node...</p>
+  <p>... receives orders from and ships the ordered items to its downstream node,  </p>
+  <p>... receives deliveries from and send orders to their upstream nodes</p>
 </section>
 <section>
- <h1>Example Model: The Blind Jumper</h1>
- <div><img src="img/BlindJumper_CPM.svg" alt="Service Desk Information Model" width="1000"/></div>
-  <p>Run <a href="https://sim4edu.com/oesjs/core4/signaling-game-1/">https://sim4edu.com/oesjs/core4/signaling-game-1/</a></p>
+ <h1>Each Node Is Modeled as an Agent</h1>
+ <p>... that reacts to three types of events:</p>
+ <ul>
+  <li>... the in-message event "receive order",</li>
+  <li>... the perception event "perceive reception of items" (delivery)</li>
+  <li>... the time event "end of week";</li>
+ </ul>
+ <p>and performs two types of actions:</p>
+ <ul>
+  <li>... the out-message action "send order",</li>
+  <li>... the action "ship items".</li>
+ </ul>
 </section>
 
-
-<section class="part-title-slide">
-  <h1>Summary</h1>
-</section>
  
  <section>
   <h1>Summary</h1>
@@ -610,8 +623,9 @@
    <li>OES has been implemented in <em>JavaScript</em>, a <em>Python</em> implementation is work in progress.</li>
    <li>DPMN supports 
     <ul>
-     <li><strong>Activity-Based Discrete Event Simulation</strong> (Activity Networks)</li>
-     <li><strong>Processing Networks (PN) Simulation</strong></li>
+     <li><strong>Activity Network</strong> Modeling and Simulation (subsuming BPMN</li>
+     <li><strong>Processing Network</strong> Modeling and Simulation</li>
+     <li><strong>Agent-Based</strong> BP Modeling and Simulation</li>
     </ul></li>
   </ul>
  </section>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-canvas" generated="java" oryx:signavioversion="15.9.0" version="1.1" viewBox="0 0 510.84 222.21" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oryx="http://oryx-editor.org" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <marker id="sid-3fe7abfa-4c14-4e4a-89ad-8be2258c4889start" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refY="5">
+   <path id="sid-3fe7abfa-4c14-4e4a-89ad-8be2258c4889arrowhead" d="m10 0-10 5 10 5" fill="none" stroke="#000"/>
+  </marker>
+  <marker id="sid-3fe7abfa-4c14-4e4a-89ad-8be2258c4889end" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="10" refY="5">
+   <path d="m0 0 10 5-10 5" fill="none" stroke="#000"/>
+  </marker>
+  <marker id="sid-74de8068-8ece-4d3f-9cbd-445de1853081start" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refY="5">
+   <path id="sid-74de8068-8ece-4d3f-9cbd-445de1853081arrowhead" d="m10 0-10 5 10 5" fill="none" stroke="#000"/>
+  </marker>
+  <marker id="sid-74de8068-8ece-4d3f-9cbd-445de1853081end" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="10" refY="5">
+   <path d="m0 0 10 5-10 5" fill="none" stroke="#000"/>
+  </marker>
+  <marker id="sid-23fb7454-74ad-4bb5-9b5b-dcad37e6bde5end" markerHeight="10" markerUnits="userSpaceOnUse" markerWidth="10" orient="auto" refX="10" refY="5">
+   <path id="sid-23fb7454-74ad-4bb5-9b5b-dcad37e6bde5arrowhead" d="m0 0 10 5-10 5" fill="none" stroke="#000"/>
+  </marker>
+  <marker id="sid-b25841b9-84a9-449d-a434-c24d9d81f224start" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5">
+   <path id="sid-b25841b9-84a9-449d-a434-c24d9d81f224conditional" d="m0 6 8-5 7 4-7 4-7-4" display="inherit" fill="#fff" stroke="#000"/>
+  </marker>
+  <marker id="sid-b25841b9-84a9-449d-a434-c24d9d81f224start_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5">
+   <path id="sid-b25841b9-84a9-449d-a434-c24d9d81f224conditional_shadow" d="m0 6 8-5 7 4-7 4-7-4" display="inherit" fill="#fff" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-b25841b9-84a9-449d-a434-c24d9d81f224end" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-b25841b9-84a9-449d-a434-c24d9d81f224arrowhead" d="m0 3 15 5-15 5z" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </marker>
+  <marker id="sid-b25841b9-84a9-449d-a434-c24d9d81f224end_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-b25841b9-84a9-449d-a434-c24d9d81f224arrowhead_shadow" d="m0 3 15 5-15 5z" stroke="#fff" stroke-linejoin="round" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-a98f8472-52e6-41f2-ba32-84fbc03824dastart" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5">
+   <path id="sid-a98f8472-52e6-41f2-ba32-84fbc03824daconditional" d="m0 6 8-5 7 4-7 4-7-4" display="inherit" fill="#fff" stroke="#000"/>
+  </marker>
+  <marker id="sid-a98f8472-52e6-41f2-ba32-84fbc03824dastart_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5">
+   <path id="sid-a98f8472-52e6-41f2-ba32-84fbc03824daconditional_shadow" d="m0 6 8-5 7 4-7 4-7-4" display="inherit" fill="#fff" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-a98f8472-52e6-41f2-ba32-84fbc03824daend" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-a98f8472-52e6-41f2-ba32-84fbc03824daarrowhead" d="m0 3 15 5-15 5z" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </marker>
+  <marker id="sid-a98f8472-52e6-41f2-ba32-84fbc03824daend_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-a98f8472-52e6-41f2-ba32-84fbc03824daarrowhead_shadow" d="m0 3 15 5-15 5z" stroke="#fff" stroke-linejoin="round" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfstart" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5"/>
+  <marker id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfstart_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5"/>
+  <marker id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfend" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfarrowhead" d="m0 3 15 5-15 5z" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </marker>
+  <marker id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfend_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfarrowhead_shadow" d="m0 3 15 5-15 5z" stroke="#fff" stroke-linejoin="round" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+ </defs>
+ <g transform="translate(-23.483 -23.793)" font-family="'Open Sans', Kanit, 'Ezra SIL', 'DejaVu Sans', HanaMinA, HanaMinB, sans-serif" font-size="12px" stroke="#000">
+  <g class="stencils" transform="translate(-159.05 -70)">
+   <g class="children">
+    <g class="stencils" transform="translate(188.5,95)">
+     <g class="me">
+      <g pointer-events="fill" title="Data Object">
+       <defs>
+        <radialGradient id="sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ecbackground" cx="146.01" cy="-.035044" r="11.272" gradientTransform="scale(.96286 1.0386)" gradientUnits="userSpaceOnUse">
+         <stop stop-color="#fff" offset="0"/>
+         <stop id="sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ecfill_el" stop-color="#fff" offset="1"/>
+        </radialGradient>
+       </defs>
+       <g stroke="#000">
+        <polyline id="sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ecframe" points="140 74.5 0 74.5 0 0 140 0" fill="#fff" oryx:anchors="right left" oryx:resize="vertical horizontal"/>
+        <polyline points="140 74.5 150 74.5 150 10 140 10" fill="#fff" oryx:anchors="top right bottom"/>
+        <polyline points="150 10 140 0 140 10 150 10" fill="url(#sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ecbackground)" oryx:anchors="top right"/>
+       </g>
+       <text id="sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ectext_name" x="75" y="37.25" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:fittoelem="sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ecunvisibleBorder" oryx:fontSize="12" oryx:textWidth="150"><tspan x="75" y="37.25" dy="-14">ps: PizzaService<v:newlineChar/></tspan><tspan x="75" y="37.25" dy="-2">[ps = o.pizzaService]<v:newlineChar/></tspan><tspan x="75" y="37.25" dy="10">---------------------------<v:newlineChar/></tspan><tspan x="75" y="37.25" dy="22">INCREM queueLength</tspan></text>
+       <text id="sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ectext_state" x="75" y="57.5" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:anchors="bottom" oryx:fittoelem="sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ecunvisibleBorder" oryx:fontSize="11" oryx:textWidth="150"/>
+       <title>Data Object</title>
+      </g>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g class="stencils" transform="translate(188.5,194.5)">
+     <g class="me">
+      <g pointer-events="fill" title="Start Event">
+       <defs>
+        <radialGradient id="sid-58ed7a76-f4b4-4214-904b-199dc8430d97background" cx="2.6" cy="2.6" r="31" gradientUnits="userSpaceOnUse">
+         <stop stop-color="#fff" offset="0"/>
+         <stop id="sid-58ed7a76-f4b4-4214-904b-199dc8430d97fill_el" stop-color="#cfc" offset="1"/>
+        </radialGradient>
+       </defs>
+       <circle id="sid-58ed7a76-f4b4-4214-904b-199dc8430d97bg_frame" cx="15" cy="15" r="15" fill="url(#sid-58ed7a76-f4b4-4214-904b-199dc8430d97background)" stroke="#396"/>
+       <text id="sid-58ed7a76-f4b4-4214-904b-199dc8430d97text_name" x="15" y="32" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center top" oryx:fontSize="11" oryx:textWidth="-1"><tspan x="15" y="32" dy="11">o:Order</tspan></text>
+       <title>Start Event</title>
+      </g>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g class="stencils" transform="translate(415,95)">
+     <g class="me">
+      <g pointer-events="fill" title="Data Object">
+       <defs>
+        <radialGradient id="sid-37b2a147-5eab-4bc7-ba6a-746a3dc8c9edbackground" cx="238.44" cy="-.035044" r="11.272" gradientTransform="scale(.96286 1.0386)" gradientUnits="userSpaceOnUse">
+         <stop stop-color="#fff" offset="0"/>
+         <stop id="sid-37b2a147-5eab-4bc7-ba6a-746a3dc8c9edfill_el" stop-color="#fff" offset="1"/>
+        </radialGradient>
+       </defs>
+       <g stroke="#000">
+        <polyline id="sid-37b2a147-5eab-4bc7-ba6a-746a3dc8c9edframe" points="229 74.5 0 74.5 0 0 229 0" fill="#fff" oryx:anchors="right left" oryx:resize="vertical horizontal"/>
+        <polyline points="229 74.5 239 74.5 239 10 229 10" fill="#fff" oryx:anchors="top right bottom"/>
+        <polyline points="239 10 229 0 229 10 239 10" fill="url(#sid-37b2a147-5eab-4bc7-ba6a-746a3dc8c9edbackground)" oryx:anchors="top right"/>
+       </g>
+       <text id="sid-37b2a147-5eab-4bc7-ba6a-746a3dc8c9edtext_name" x="119.5" y="37.25" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:fittoelem="sid-37b2a147-5eab-4bc7-ba6a-746a3dc8c9edunvisibleBorder" oryx:fontSize="12" oryx:textWidth="239"><tspan x="119.5" y="37.25" dy="-20">ps: PizzaService<v:newlineChar/></tspan><tspan x="119.5" y="37.25" dy="-8">[ps = mpe.pizzaService]<v:newlineChar/></tspan><tspan x="119.5" y="37.25" dy="4">----------------------------<v:newlineChar/></tspan><tspan x="119.5" y="37.25" dy="16">DECREM queueLength<v:newlineChar/></tspan><tspan x="119.5" y="37.25" dy="28">IF queueLength=0 THEN busy := false</tspan></text>
+       <text id="sid-37b2a147-5eab-4bc7-ba6a-746a3dc8c9edtext_state" x="119.5" y="57.5" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:anchors="bottom" oryx:fittoelem="sid-37b2a147-5eab-4bc7-ba6a-746a3dc8c9edunvisibleBorder" oryx:fontSize="11" oryx:textWidth="239"/>
+       <title>Data Object</title>
+      </g>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g class="stencils" transform="translate(553,194.5)">
+     <g class="me">
+      <g pointer-events="fill" title="Start Event">
+       <defs></defs>
+       <circle id="sid-b0e1f3b2-6917-4475-980b-97342774e7f3bg_frame" cx="15" cy="15" r="15" fill="url(#sid-58ed7a76-f4b4-4214-904b-199dc8430d97background)" stroke="#008000"/>
+       <text id="sid-b0e1f3b2-6917-4475-980b-97342774e7f3text_name" x="35" y="15" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" oryx:align="left middle" oryx:anchors="right" oryx:fontSize="11" oryx:textWidth="-1"><tspan x="35" y="15" dy="4">mpe:MakePizzaEnd</tspan></text>
+       <title>Start Event</title>
+      </g>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g class="stencils" transform="translate(354.75,194.5)">
+     <g class="me">
+      <g pointer-events="fill" title="Start Event">
+       <defs></defs>
+       <circle id="sid-1372125c-b6f4-4077-83a2-05bf0269540abg_frame" cx="15" cy="15" r="15" fill="url(#sid-58ed7a76-f4b4-4214-904b-199dc8430d97background)" stroke="#008000"/>
+       <text id="sid-1372125c-b6f4-4077-83a2-05bf0269540atext_name" x="15" y="-8" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center bottom" oryx:anchors="top" oryx:fontSize="11" oryx:textWidth="-1"><tspan x="15" y="-8" dy="0">mps:MakePizzaStart</tspan></text>
+       <title>Start Event</title>
+      </g>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g id="svg-sid-4B68C34A-7D01-40E7-A26A-23D763ECFC0D">
+     <g class="stencils" transform="translate(188.75,254.5)">
+      <g class="me">
+       <g pointer-events="fill" title="Data Object">
+        <defs></defs>
+        <g stroke="#000">
+         <polyline id="sid-dd72acd0-0b42-4098-9cbb-2779ecd9698fframe" points="140 61 0 61 0 0 140 0" fill="#fff" oryx:anchors="right left" oryx:resize="vertical horizontal"/>
+         <polyline points="140 61 150 61 150 10 140 10" fill="#fff" oryx:anchors="top right bottom"/>
+         <polyline points="150 10 140 0 140 10 150 10" fill="url(#sid-6af3cf3c-66a1-45c5-8ea6-44956545f6ecbackground)" oryx:anchors="top right"/>
+        </g>
+        <text id="sid-dd72acd0-0b42-4098-9cbb-2779ecd9698ftext_name" x="75" y="30.5" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:fittoelem="sid-dd72acd0-0b42-4098-9cbb-2779ecd9698funvisibleBorder" oryx:fontSize="12" oryx:textWidth="150"><tspan x="75" y="30.5" dy="-14">ps: PizzaService<v:newlineChar/></tspan><tspan x="75" y="30.5" dy="-2">[ps = mps.pizzaService]<v:newlineChar/></tspan><tspan x="75" y="30.5" dy="10">---------------------<v:newlineChar/></tspan><tspan x="75" y="30.5" dy="22">busy := true</tspan></text>
+        <text id="sid-dd72acd0-0b42-4098-9cbb-2779ecd9698ftext_state" x="75" y="44" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:anchors="bottom" oryx:fittoelem="sid-dd72acd0-0b42-4098-9cbb-2779ecd9698funvisibleBorder" oryx:fontSize="11" oryx:textWidth="150"/>
+        <title>Data Object</title>
+       </g>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+   </g>
+   <g class="edge">
+    <g class="stencils">
+     <g class="me">
+      <g id="sid-3fe7abfa-4c14-4e4a-89ad-8be2258c4889edge" pointer-events="painted">
+       <path id="sid-3fe7abfa-4c14-4e4a-89ad-8be2258c4889bg_frame" d="m207.52 194.53 22.499-25.03" fill="none" marker-end="url(#sid-3fe7abfa-4c14-4e4a-89ad-8be2258c4889end)" marker-start="url(#sid-3fe7abfa-4c14-4e4a-89ad-8be2258c4889start)" stroke="#000" stroke-dasharray="3, 4" stroke-width="2"/>
+      </g>
+      <text id="sid-3fe7abfa-4c14-4e4a-89ad-8be2258c4889name" x="224.978" y="166.87801" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" text-anchor="end" oryx:align="right bottom" oryx:edgePosition="midtop" oryx:fontSize="12" oryx:offsetTop="6" oryx:textWidth="-1"/>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g id="svg-sid-7DA797D0-7912-45B2-9BE4-50309E2AAD3B">
+     <g class="stencils">
+      <g class="me">
+       <g id="sid-74de8068-8ece-4d3f-9cbd-445de1853081edge" pointer-events="painted">
+        <path id="sid-74de8068-8ece-4d3f-9cbd-445de1853081bg_frame" d="m564.41 194.42-29.907-24.922" fill="none" marker-end="url(#sid-74de8068-8ece-4d3f-9cbd-445de1853081end)" marker-start="url(#sid-74de8068-8ece-4d3f-9cbd-445de1853081start)" stroke="#000" stroke-dasharray="3, 4" stroke-width="2"/>
+       </g>
+       <text id="sid-74de8068-8ece-4d3f-9cbd-445de1853081name" x="434.34799" y="137.336" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" oryx:align="left bottom" oryx:edgePosition="midtop" oryx:fontSize="12" oryx:offsetTop="6" oryx:textWidth="-1"/>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+    <g id="svg-sid-3CDAC15B-FC12-4597-B049-E65C9F971BAE">
+     <g class="stencils">
+      <g class="me">
+       <g id="sid-23fb7454-74ad-4bb5-9b5b-dcad37e6bde5edge" pointer-events="painted">
+        <path id="sid-23fb7454-74ad-4bb5-9b5b-dcad37e6bde5bg_frame" d="m357.12 218.49-50.554 36.008" fill="none" marker-end="url(#sid-23fb7454-74ad-4bb5-9b5b-dcad37e6bde5end)" stroke="#000" stroke-dasharray="3, 4" stroke-width="2"/>
+       </g>
+       <text id="sid-23fb7454-74ad-4bb5-9b5b-dcad37e6bde5name" transform="rotate(-35.461 331.85 236.5)" x="331.84799" y="230.496" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" text-anchor="middle" oryx:align="center bottom" oryx:edgePosition="midtop" oryx:fontSize="12" oryx:offsetTop="6" oryx:rotate="-35.461" oryx:textWidth="-1"/>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+    <g class="stencils">
+     <g class="me">
+      <g id="sid-b25841b9-84a9-449d-a434-c24d9d81f224edge" fill="none" pointer-events="painted" stroke-linejoin="round">
+       <path id="sid-b25841b9-84a9-449d-a434-c24d9d81f224bg_frame_shadow" d="m219 209.5h134.5" marker-end="url(#sid-b25841b9-84a9-449d-a434-c24d9d81f224end_shadow)" marker-start="url(#sid-b25841b9-84a9-449d-a434-c24d9d81f224start_shadow)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+       <path id="sid-b25841b9-84a9-449d-a434-c24d9d81f224bg_frame" d="m219 209.5h134.5" marker-end="url(#sid-b25841b9-84a9-449d-a434-c24d9d81f224end)" marker-start="url(#sid-b25841b9-84a9-449d-a434-c24d9d81f224start)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+      </g>
+      <text id="sid-b25841b9-84a9-449d-a434-c24d9d81f224text_name" x="239.44299" y="202.2" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" oryx:align="left bottom" oryx:edgePosition="starttop" oryx:fontSize="12" oryx:textWidth="-1"><tspan x="239.44299" y="202.2" dy="0">[NOT ps.busy]</tspan></text>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g id="svg-sid-FA9A4AE6-E751-4EC5-8A56-DE9CAF20642B">
+     <g class="stencils">
+      <g class="me">
+       <g id="sid-a98f8472-52e6-41f2-ba32-84fbc03824daedge" fill="none" pointer-events="painted" stroke-linejoin="round">
+        <path id="sid-a98f8472-52e6-41f2-ba32-84fbc03824dabg_frame_shadow" d="m568.5 224.99v37.008h-203v-34" marker-end="url(#sid-a98f8472-52e6-41f2-ba32-84fbc03824daend_shadow)" marker-start="url(#sid-a98f8472-52e6-41f2-ba32-84fbc03824dastart_shadow)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+        <path id="sid-a98f8472-52e6-41f2-ba32-84fbc03824dabg_frame" d="m568.5 224.99v37.008h-203v-34" marker-end="url(#sid-a98f8472-52e6-41f2-ba32-84fbc03824daend)" marker-start="url(#sid-a98f8472-52e6-41f2-ba32-84fbc03824dastart)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+       </g>
+       <text id="sid-a98f8472-52e6-41f2-ba32-84fbc03824datext_name" x="424.215" y="269.20001" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" oryx:align="left top" oryx:edgePosition="starttop" oryx:fontSize="12" oryx:textWidth="-1"><tspan x="424.215" y="269.20001" dy="12">[ps.queueLength &gt; 0]</tspan></text>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+    <g id="svg-sid-531C12EB-5EBC-49DC-B184-82CD6964917A">
+     <g class="stencils">
+      <g class="me">
+       <g id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfedge" fill="none" pointer-events="painted" stroke-linejoin="round">
+        <path id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfbg_frame_shadow" d="m385.25 209.5h166.75" marker-end="url(#sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfend_shadow)" marker-start="url(#sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfstart_shadow)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+        <path id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfbg_frame" d="m385.25 209.5h166.75" marker-end="url(#sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfend)" marker-start="url(#sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecfstart)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+       </g>
+       <text id="sid-81d9462a-04ce-4f1c-81c1-2a6a02912ecftext_name" x="390.323" y="216.2" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" oryx:align="left top" oryx:edgePosition="starttop" oryx:fontSize="12" oryx:textWidth="-1"><tspan x="390.323" y="216.2" dy="12">+PizzaService.ovenTime()</tspan></text>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
