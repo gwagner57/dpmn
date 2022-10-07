@@ -395,6 +395,11 @@
 <section>
  <div style="float:right; margin-top:-0.7em"><img src="img/SingleServer_IDM.svg" alt="Service Desk Information Model" width="700"/></div>
  <h2>An <abbr title="Object Event">OE</abbr> Class Model as Information Design Model</h2>
+ <p style="font-size:smaller"><strong>«rv»</strong> = random variable</p>
+ <p style="font-size:smaller"><strong>{Tri(3,4,8)}</strong> is a constraint requiring the operation to implement (or comply with) 
+  the <em>triangular probability distribution</em> with lower bound 3, mode 4 and upper bound 8.</p>
+ <p style="font-size:smaller"><strong>{Exp(1/6)}</strong> is a constraint requiring the operation to implement (or comply with) 
+  the <em>exponential probability distribution</em> with an event rate of 1/6 (that is, on average 1 event every 6 time units).</p>
 </section>
 <section>
  <h2>An <em>Object Event Graph</em> as Process Design Model</h2>
@@ -473,7 +478,9 @@
 <section>
  <figure style="margin-top:-1em;"><img src="img/Pizzeria_IDMa.svg" alt="OE Class Design Model Pizza Service" width="1000"/></figure>
  <h2>OE Class Model</h2>
- <p style="font-size:smaller">«rv» = random variable</p>
+ <p style="font-size:smaller"><strong>«rv»</strong> = random variable</p>
+ <p style="font-size:smaller"><strong>{U(1,4)}</strong> is a constraint requiring the operation to implement (or comply with) 
+  the <em>uniform probability distribution</em> with lower bound 1 and upper bound 4.</p>
 </section>
 <section>
  <h1>DPMN Process Model</h1>
@@ -589,23 +596,23 @@
 
 <section>
  <figure style="margin-top:-2.5em"><img src="img/FourStageSuppyChain_CPM.svg" alt="Service Desk Information Model" width="900"/></figure>
- <h2>Four-Stage-Supply-Chain-1 (Beer Game)</h2>
-  <p>A retailer, a wholesaler, a distributor and a factory. Each node...</p>
-  <p>... receives orders from and ships the ordered items to its downstream node,  </p>
-  <p>... receives deliveries from and send orders to their upstream nodes</p>
+ <h3 style="margin-top:-0.7em"><a href="https://sim4edu.com/oesjs/core4a/Four-Stage-Supply-Chain-1/" title="Run the model">Four Stage Supply Chain</a> (Beer Game)</h3>
+  <p>Four nodes: a retailer, a wholesaler, a distributor and a factory. Each node...</p>
+  <p>... receives orders from, and ships the ordered items to, its downstream node,  </p>
+  <p>... sends orders to, and receives deliveries from, its upstream nodes.</p>
 </section>
 <section>
  <h1>Each Node Is Modeled as an Agent</h1>
  <p>... that reacts to three types of events:</p>
  <ul>
-  <li>... the in-message event "receive order",</li>
-  <li>... the perception event "perceive reception of items" (delivery)</li>
-  <li>... the time event "end of week";</li>
+  <li>... <em>in-message events</em> of type "receive order",</li>
+  <li>... <em>perception events</em> of type "perceive delivery of items"</li>
+  <li>... <em>time events</em> of type "end of week";</li>
  </ul>
  <p>and performs two types of actions:</p>
  <ul>
-  <li>... the out-message action "send order",</li>
-  <li>... the action "ship items".</li>
+  <li>... <em>out-message actions</em> of type "send order",</li>
+  <li>... <em>physical actions</em> of type "ship items".</li>
  </ul>
 </section>
 
@@ -615,12 +622,12 @@
   <ul>
    <li>OEM&amp;S is a new modeling and simulation paradigm with a <strong>formal semantics</strong> and an <strong>ontological foundation</strong>.</li>
    <li>The preferred modeling languages for OEM&amp;S are <strong>OE/UML Class Diagrams</strong> and <strong>DPMN Process Diagrams</strong>.</li>
-   <li>OES has been implemented in <em>JavaScript</em>, a <em>Python</em> implementation is work in progress.</li>
+   <li>OES has been implemented in <em>JavaScript</em> (<a href="https://sim4edu.com/oesjs/">OESjs</a>), a <em>Python</em> implementation is work in progress.</li>
    <li>DPMN supports 
     <ul>
-     <li><strong>Activity Network</strong> Modeling and Simulation (subsuming BPMN</li>
-     <li><strong>Processing Network</strong> Modeling and Simulation</li>
-     <li><strong>Agent-Based</strong> BP Modeling and Simulation</li>
+     <li><strong>Activity Network</strong> Modeling and Simulation (in the style of BPMN)</li>
+     <li><strong>Processing Network</strong> Modeling and Simulation (in the style of Arena)</li>
+     <li><strong>Agent-Based</strong> Modeling and Simulation</li>
     </ul></li>
   </ul>
  </section>
