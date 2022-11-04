@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Object Event Models: A Discrete Event Simulation Formalism in Search of a Logic</title>
+<meta name="description" content="This presentation shows how to design business brocess simulations with DPMN.">
+<meta name="author" content="Gerd Wagner">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link rel="stylesheet" href="../reveal/css/reveal.min.css" />
+<link rel="stylesheet" href="../reveal/css/theme/btu-sky.css" id="theme" />
+<link rel="stylesheet" href="../reveal/css/theme/btu-styles.css" />
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+<style>
+.reveal section > h1, .reveal section > h2 
+{
+  text-transform: none;
+}
+.reveal strong {font-style: italic;}
+.reveal section {
+  font-size: 2.2rem;
+  line-height: 1.4em;
+}
+.reveal section li {margin-top: 0.4em;}
+
+.reveal section .current-fragment {
+  font-size: larger;
+  color: black;
+}
+/*
+.reveal section li:not(.current-fragment) {
+  color: dimgrey;
+}
+*/
+
+.reveal section.part-title-slide > h1 {
+  font-size: 10rem;
+}
+ 
+.reveal section {
+  cursor: url("img/cursor.svg"), pointer;
+}
+</style>
+
+</head>
+<body>
+
+ <div class="reveal">
+  <div class="slides">
+
+<section>
+ <h1>Object Event Models &ndash;</h1>
+ <h2 style="display:flex; align-items: center; justify-content:space-evenly;">A <div style="display: inline-block; font-size:smaller">Discrete Event</br>Business Process</div> Simulation Formalism</h2>
+ <h1>in Search of a Logic</h1>
+ <div style="margin-top:1em">
+ <h3>Gerd Wagner</h3>
+ <h4>Brandenburg University of Technology</h4>
+ <h4>Germany</h4>
+ </div>
+</section>
+
+<section>
+ <h2 style="margin-top:-0.5em">Object Event Modeling and Simulation</h2>
+ <p>... is a new <em>Discrete Event Simulation (DES)</em> paradigm based on the following ontological principles:</p>
+ <ul>
+  <li>Many systems of the real world are <em>Discrete Dynamic Systems (DDS)</em> consisting of <strong>objects</strong> and 
+   a (partially ordered) sequence/flow of <strong>events</strong>.</li>
+  <li><figure style="float:right;margin-top:-1em"><img src="img/EventRule.svg" alt="Objects-Events" width="400"/></figure>
+   Objects <strong>participate</strong> in events.</li>
+  <li>The dynamics of a DDS is determined by <strong>causal regularities</strong>, which map <strong>situations</strong> 
+   to successor situations by ...</li>
+  <li>... events causing <strong>state changes</strong> of participating objects and <strong>follow-up events</strong>.</li>
+ </ul>
+</section>
+<section>
+ <h1>References</h1>
+ <ul>
+  <li>Gerd Wagner: <a href="https://www.informs-sim.org/wsc17papers/includes/files/056.pdf">An Abstract State Machine Semantics For Discrete Event Simulation</a>, <em>Proc. of the 2017 Winter Simulation Conference</em>.</li>
+  <li>Gerd Wagner: <a href="https://sim4edu.com/reading/des-engineering/">Discrete Event Simulation Engineering</a>, Open Access E-Book, 2021-2022.</li>
+ </ul>
+</section>
+
+
+<section>
+ <h1 style="margin-top:-0.5em">Situations</h1>
+ <ul>
+  <li>A DDS is characterized by a <strong>succession of situations</strong> brought about by <strong>causal regularities</strong>.</li>
+  <li><p>Each situation <i>s</i> = &lang; <i>t</i>, <u>O</u>, <u>E</u> &rang; consists of a time point <i>t</i>, 
+   a set of <strong>objects</strong> <u>O</u> being in a certain state at <i>t</i> and a set of <strong>imminent events</strong> 
+   <u>E</u> = {e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...}, such that <i>t<sub>i</sub> > t</i>.</p></li>
+  <li>A situation has a set of <em>next events</em> <i>N</i> &sube; <u>E</u> occuring at 
+   <p style="text-align:center"><i>t'</i> = min { <i>t<sub>i</sub></i> : e@t<sub>i</sub> &isin; <u>E</u> }.</p></li>
+  <li>These next events will trigger causal regularities at time <i>t'</i> resulting in a successor situation <i>s'</i>.</li>
+ </ul>
+</section>
+
+<section>
+  <h1>Causal Regularities</h1>
+  <p>... determine under which conditions events <i>e@t</i> cause:</p>
+   <ol>
+    <li><figure style="float:right;margin-top:-2em"><img src="img/EventRule.svg" alt="Objects-Events" width="600"/></figure>
+	 <strong>state changes</strong> <i>&Delta;</i> of affected objects, and</li>
+    <li><strong>follow-up events</strong> <i>e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...</i></li>
+   </ol>
+  <div><i>t', <u>O</u><sub>t</sub>, e@t'</i> &rarr; <i>&Delta;, {e<sub>1</sub>@t<sub>1</sub>, e<sub>2</sub>@t<sub>2</sub>,...}</i> with <i>t<sub>i</sub> > t'</i></div>
+</section>
+
+<section>
+  <h1>Modeling a DDS</h1>
+  <p>Computationally, a DDS can be represented by an <em>Object Event Model (OEM)</em> &lang; OT, ET, R &rang; consisting of:</p>
+  <ol>
+   <li><p><b><i>object types</i></b> OT,</p></li>
+   <li><p><b><i>event types</i></b> ET,</p></li>
+   <li><p><b><i>event rules</i></b> R representing <em>causal regularities</em>.</p></li>
+  </ol>
+  <p>While OT and ET can be defined by corresponding <em>classes</em> in a UML class model, R can be defined by a process model 
+   in the form of an <em>Object Event Graph</em>.</p>
+</section>
+
+ <section>
+ <h2 style="margin-top:-0.7em">An Example of a Discrete Dynamic Systems</h2>
+ <ul>
+  <li><figure style="float:right"><img src="img/service-desk.svg" alt="service-desk" width="200"/></figure>
+   Customers arrive at a service desk at random times.</li>
+  <li>If there is no other customer in front of them, and the service desk is available, 
+   they are served immediately, otherwise they have to queue up in a waiting line.</li>
+  <li>The duration of services varies, depending on the individual case.</li>
+  <li>When a service is completed, the customer departs and the next customer is served, if there is still any customer in the queue.</li>
+ </ul>
+ <p style="margin-top:-0.5em"><strong>Objects</strong>: customers, the service desk.</p>
+ <p><strong>Events</strong>: arrivals, service starts, service ends.</p>
+</section>
+
+ <section>
+  <h1 style="margin-top:-0.8em;">Event Graphs</h1>
+  <p style="margin-bottom:-1em">... have been proposed for event-based simulation modeling by Schruben in 1983.</p>
+  <div><img src="img/SingleServer_EG_improved.svg" alt="service station model" width="1200"/></div>
+  <p style="margin-top:0.5em">The integer variable <i>Q</i> denotes the length of the queue.<br/>The Boolean variable <i>B</i> denotes the busy/available status of the service station.</p>
+  <p>The semantics of an Event Graph is obtained by decomposing it into <strong>event rules</strong>.</p>
+ </section>
+ <section>
+  <h2 style="margin-top:-0.5em;">Decomposing EGs into Event Rules (1)</h2>
+  <div><img src="img/SingleServer_EG_Visio_withER1.svg" alt="service station model" width="1300"/></div>
+  <p>ON Arrival DO Q++ AND if not B, SCHEDULE ServiceStart</p>
+ </section>
+ <section>
+  <h2 style="margin-top:-0.8em;">Decomposing EGs into Event Rules (2)</h2>
+  <div><img src="img/SingleServer_EG_Visio_withER1-2.svg" alt="service station model" width="1100"/></div>
+ </section>
+ <section>
+  <figure style="margin-top:-1.7em"><img src="img/SingleServer_EG_Visio_withRuleDiagrams.svg" alt="service station model" width="1000"/></figure>
+ </section>
+
+<section>
+ <h1>Object Event Graph Example</h1>
+ <div style="display:flex; flex-wrap:wrap; justify-content:space-between;"><img src="img/SingleServer_IDM.svg" alt="Service Desk Information Model" width="300"/><img src="img/SingleServer_PDM.svg" alt="Service Desk Information Model" width="650"/></div>
+ <p style="margin-top:1em;">You can <a href="https://sim4edu.com/oesjs/core1/service-desk-3/">run this model</a> from the sim4edu website.</p>
+</section>
+ 
+<section><h2 style="margin-top:-2%;">Event Rules</h2>
+ <p style="font-size:95%">... are expressions of the form</p> 
+ <div><b>ON</b> <i>e(x<sub>1</sub>, &hellip;)@t</i> <b>DO</b> <i>F( t, x<sub>1</sub>, &hellip;)</i>,</div>
+ <p>where</p>
+ <ul style="font-size:95%">
+  <li><b><i>e(x<sub>1</sub>, &hellip;)@t</i></b> is an event expression specifying 
+  (1) the type <i>e</i> of events that trigger the rule, 
+   (2) a parameter <i>t</i> for the occurrence time of triggering events, and possibly 
+   (3) further parameters <i>x<sub>1</sub>, &hellip;</i> corresponding to the event type's attributes</li>
+  <li><b><i>F( t, x<sub>1</sub>, &hellip;)</i></b> is a function that computes 
+   (1) a set of <i>state changes</i> and 
+   (2) a set of <i>follow-up events</i>, based on the event parameters <i>x<sub>1</sub>, &hellip;</i> 
+    and the event's occurrence time <i>t</i></li>
+ </ul>
+</section>
+
+<section><h2>Event Rules as Mappings</h2>
+ <p>When a rule <i>r</i> is triggered by an event <i>e</i>, it is applied to the current situation <i>s</i> 
+ by mapping it to a set of state changes <i>Δ</i> and a set of follow-up events <i>F</i>:</p>
+ <div style="text-align:center">
+  <i>r<sub>e</sub>(s)</i> = &langle; Δ, <i>F</i> &rangle;
+ </div>
+ <p>For a given set of events <i>N</i> and a rule set <i>R</i>, we can form the set of rules triggered by events from <i>N</i> 
+ and apply it as a mapping to <i>s</i>:</p>
+ <div style="text-align: center">
+  <i>R<sub>N</sub></i> = { <i>r</i> : <i>r</i> &in; <i>R</i> &amp;  <i>e</i> &in; <i>N</i> &amp; <i>e</i> triggers <i>r</i> }<br/>
+Δ = &bigcup; { Δ<sub>i</sub> : <i>r<sub>i</sub></i> &in; <i>R<sub>N</sub></i> &amp; <i>r<sub>i</sub>(s)</i> = 
+    &langle; Δ<sub>i</sub>, <i>F<sub>i</sub></i> &rangle; }<br/>
+F = &bigcup; { F<sub>i</sub> : <i>r<sub>i</sub></i> &in; <i>R<sub>N</sub></i> &amp; <i>r<sub>i</sub>(s)</i> = 
+    &langle; Δ<sub>i</sub>, <i>F<sub>i</sub></i> &rangle; }<br/>
+<i>R<sub>N</sub>(s)</i> = &langle; Δ, <i>F</i> &rangle;
+ </div>
+</section>
+
+<section><h2>Updating a Situation</h2>
+ <p>The current situation <i>s</i> = &lang; <i>t</i>, <u>O</u>, <u>E</u> &rang; is updated in the following steps:</p>
+ <ol>
+  <li>computing the next events N</li>
+  <li>processing N by applying the triggered rules to <i>s</i> resulting in <i>R<sub>N</sub>(s)</i> = &langle; Δ, <i>F</i> &rangle;</li>
+  <li>processing the state changes Δ resulting in an updated set of objects <u>O</u>' = Upd( <u>O</u>, Δ)</li>
+  <li>processing the follow-up events <i>F</i> : <u>E</u>' = <u>E</u> - N &cup; F</li>
+ </ol>
+ <p>... resulting in a successor situation <i>s'</i> = &lang; <i>t'</i>, <u>O</u>', <u>E</u>' &rang;</p>
+</section>
+
+<section>
+ <h2 style="margin-top:-1em;">Executing an OEM as a Transition System</h2>
+ <figure style="margin-top:-4%"><img src="img/OES-ExecutionLoop.svg" width="900" alt="OES Execution Loop"/></figure>
+</section>
+
+<section>
+ <h1 style="margin-top:-0.7em;">In Search of a Logic</h1>
+ <ul>
+  <li>The transition system of the OEM/OES formalism seems to define a kind of 
+   <a href="https://plato.stanford.edu/entries/logic-temporal/#FirOrdTemLog">temporal predicate logic</a> with Past and Future operators.</li>
+  <li>Having a logic for OEM/OES would allow to express Liveness/Safety/Fairness properties of (business process) simulation models.</li>
+  <li>If Object Event Models could, for instance, be transformed to <a href="https://lamport.azurewebsites.net/tla/learning.html">TLA+</a>, 
+   this would allow to prove Liveness/Safety/Fairness properties.</li>
+  <li>Can we consider a situation <i>s</i> = &lang; <i>t</i>, <u>O</u>, <u>E</u> &rang; as a possible world of a temporal predicate logic frame M?</li>
+  <li>M = &lang; T, &lt;, U, Dom, Ind &rang;</li>
+  <li>Or in which way would the semantics of temporal predicate logic have to be modified?</li>
+ </ul>
+</section>
+
+<!-- ========================================================= -->    
+</div>
+</div>
+    
+<script src="../reveal/lib/js/head.min.js"></script>
+<script src="../reveal/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+//        width: 1366,
+//        height: 768,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        ]
+      });
+
+</script>
+
+  </body>  
+</html>
+
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="0.17903729in"
+   height="0.19083747in"
+   viewBox="0 0 5.3711186 8.2441409"
+   xml:space="preserve"
+   color-interpolation-filters="sRGB"
+   class="st3"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="PlusSign.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
+   id="metadata23"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs21" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   id="namedview19"
+   showgrid="false"
+   inkscape:zoom="17.291667"
+   inkscape:cx="13.237981"
+   inkscape:cy="8.42926"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="shape2-1" />
+	<v:documentProperties
+   v:langID="1033"
+   v:viewMarkup="false" />
+
+	<style
+   type="text/css"
+   id="style2">
+	<![CDATA[
+		.st1 {fill:none;stroke:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.75}
+		.st2 {fill:#000000;font-family:Calibri;font-size:1.5em}
+		.st3 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g
+   v:mID="0"
+   v:index="1"
+   v:groupContext="foregroundPage"
+   id="g15"
+   transform="translate(-4.8168625,-7.0068006)">
+		<title
+   id="title4">Page-1</title>
+		<v:pageProperties
+   v:drawingScale="1"
+   v:pageScale="1"
+   v:drawingUnits="0"
+   v:shadowOffsetX="9"
+   v:shadowOffsetY="-9" />
+		<g
+   id="shape2-1"
+   v:mID="2"
+   v:groupContext="shape"
+   transform="translate(0.75,-4.04984)">
+			<title
+   id="title6">Sheet.2</title>
+			<desc
+   id="desc8">+</desc>
+			<v:textBlock
+   v:margins="rect(0,0,0,0)" />
+			<v:textRect
+   cx="6.75"
+   cy="14.8499"
+   width="13.5"
+   height="13.5" />
+			<rect
+   x="0"
+   y="8.0999498"
+   width="13.5"
+   height="13.5"
+   class="st1"
+   id="rect10" />
+			<text
+   x="2.27"
+   y="20.25"
+   class="st2"
+   v:langID="1031"
+   id="text12"><v:paragraph
+   v:horizAlign="1" /><v:tabList />+</text>		</g>
+	</g>
+</svg>
