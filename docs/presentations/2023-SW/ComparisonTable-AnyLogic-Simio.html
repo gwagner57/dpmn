@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title></title>
+  </head>
+
+  <body><p></p> <table border="1" style="border-spacing:0px;width:100%;">
+      <colgroup style="width: 20%"></colgroup>
+
+      <colgroup style="width: 40%"></colgroup>
+
+      <colgroup style="width: 40%"></colgroup>
+
+      <tbody>
+        <tr>
+          <td><p><i>DPMN-AN element</i></p></td>
+
+          <td style="vertical-align:top;"><p><i>Corresponding
+          <strong>AnyLogic</strong> element/pattern </i></p></td>
+
+          <td><em>Corresponding <strong>Simio</strong>
+          element/pattern</em></td>
+        </tr>
+
+        <tr>
+          <td><p><b>Start Event node</b></p><ol>
+              <li>eventType</li>
+
+              <li>eventRate</li>
+
+              <li>recurrence()</li>
+
+              <li>numberOfStartEvents</li>
+
+              <li>onEvent()</li>
+            </ol></td>
+
+          <td><p><b>Source</b></p><ol>
+              <li>(not available)</li>
+
+              <li><i>Arrivals defined by</i>: Rate + <i>Arrival rate</i></li>
+
+              <li><i>Arrivals defined by</i>: Interarrival time +
+              <i>Interarrival time</i></li>
+
+              <li><i>Limited number of arrivals</i>: true + <i>Max. number of
+              arrivals</i></li>
+
+              <li>“On exit” action</li>
+            </ol></td>
+
+          <td><p><b>Source</b></p><ol>
+              <li>(not available)</li>
+
+              <li>(not available)</li>
+
+              <li><i>Arrival Mode</i>: Interarrival time + <i>Interarrival
+              time</i> in the section <i>Entity Arrival Logic</i></li>
+
+              <li><i>Maximum Arrivals</i> in the section <i>Stopping
+              Conditions</i></li>
+
+              <li>“Created Entity” Process Trigger</li>
+            </ol></td>
+        </tr>
+
+        <tr>
+          <td><p><b>End Event node</b></p><ol>
+              <li>eventType</li>
+
+              <li>onEvent()</li>
+            </ol></td>
+
+          <td><p><b>Sink</b></p><ol>
+              <li>(not available)</li>
+
+              <li>“On enter” action</li>
+            </ol></td>
+
+          <td><p><b>Sink</b></p><ol>
+              <li>(not available)</li>
+
+              <li>“Entered” Process Trigger</li>
+            </ol></td>
+        </tr>
+
+        <tr>
+          <td><p><b>Activity node</b></p><ol>
+              <li>activityType</li>
+
+              <li>duration()</li>
+
+              <li>onActivityStart()</li>
+
+              <li>onActivityEnd()</li>
+            </ol></td>
+
+          <td><p><b>Service</b> or [Seize+]<b>Delay</b>[+Release]</p><ol>
+              <li>(not available)</li>
+
+              <li>Delay time</li>
+
+              <li>“On enter” action</li>
+
+              <li>“On exit” action</li>
+            </ol></td>
+
+          <td><p><b>Server</b></p><ol>
+              <li>(not available)</li>
+
+              <li>Processing time</li>
+
+              <li>“Before Processing” Process Trigger</li>
+
+              <li>“After Processing” Process Trigger</li>
+            </ol></td>
+        </tr>
+
+        <tr>
+          <td><p><strong>Resource Pool</strong> (by default, implicitly
+          defined per <em>resource role type</em> or per <em>organizational
+          position</em>)</p></td>
+
+          <td><p><b>Resource Pool</b> defines an individual resource pool
+          (with resource objects of the default type <i>Agent</i> or of a
+          user-defined type)</p></td>
+
+          <td>Either implemented as (1) a <em>count pool</em> by defining a
+          <b>Resource</b> object and setting its <i>Initial Capacity</i> field
+          to the pool's size, or (2) an <em>individual pool</em> by defining
+          as many individual <b>Resource</b> objects as needed and placing
+          them on an <b>Object List</b> representing a resource pool</td>
+        </tr>
+
+        <tr>
+          <td><p><strong>Resource Role</strong> (defined per activity type in
+          the underlying OE class model)</p></td>
+
+          <td><p>A resource pool assignment in the <b>Resource pool</b> field
+          of the <em>Service</em> element (or the <em>Seize</em> element in a
+          Seize+Delay+Release pattern)</p></td>
+
+          <td><p>A resource pool assignment in the <strong>Secondary
+          Resources</strong> section of the <em>Server</em> element</p></td>
+        </tr>
+
+        <tr>
+          <td><p><b>Resource Cardinality Constraints</b> of the form
+          <i>l</i>..<i>u</i></p></td>
+
+          <td><p>Only available in the limited form of <i>l</i> = <i>u</i> by
+          entering <i>u</i> in the field <b>Number of units</b> of the
+          <em>Service</em> element (or the <em>Seize</em> element in a
+          Seize+Delay+Release pattern)</p></td>
+
+          <td><p>Only available in the limited form of <i>l</i> = <i>u</i> by
+          entering <i>u</i> </p><ol>
+              <li>in the case of a count pool in the field <b>Units Per
+              Object</b> of the <i>Required quantities</i> subsection of the
+              <i>For Processing</i> subsection of the section
+              <strong>Secondary Resources</strong></li>
+
+              <li>in the case of an individual pool in the field <b>Number of
+              Object</b>s of the <i>Required quantities</i> subsection of the
+              <i>For Processing</i> subsection of the section
+              <strong>Secondary Resources</strong></li>
+            </ol></td>
+        </tr>
+      </tbody>
+    </table></body>
+</html>
