@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-canvas" generated="java" oryx:signavioversion="16.1.0" version="1.1" viewBox="0 0 217 94" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oryx="http://oryx-editor.org" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <radialGradient id="radialGradient124" cx="-.32908" cy="13.522" r="142.82" fx="28.235" gradientTransform="scale(1.5194 .65816)" gradientUnits="userSpaceOnUse" xlink:href="#sid-0f65f369-2093-46cc-ac5a-7ed4572153efbackground"/>
+  <radialGradient id="radialGradient126" cx="-.87067" cy="5.111" r="53.981" fx="9.9256" gradientTransform="scale(.57427 1.7413)" gradientUnits="userSpaceOnUse" xlink:href="#sid-0f65f369-2093-46cc-ac5a-7ed4572153efbackground"/>
+ </defs>
+ <g transform="translate(-24.5,-24.5)" font-family="'Open Sans', Kanit, 'Ezra SIL', 'DejaVu Sans', HanaMinA, HanaMinB, sans-serif" font-size="12px" stroke="#000">
+  <g class="stencils" transform="translate(-165,-45)">
+   <g class="children">
+    <g id="svg-sid-E8F5216B-6FF3-4753-81F0-100AD8CF0A5A">
+     <g class="stencils" transform="translate(190,70)">
+      <g class="me">
+       <g pointer-events="none" title="Pool">
+        <defs>
+         <radialGradient id="sid-0f65f369-2093-46cc-ac5a-7ed4572153efbackground" cx="0" cy=".1" r="1" fx=".2">
+          <stop stop-color="#fff" offset="0"/>
+          <stop id="sid-0f65f369-2093-46cc-ac5a-7ed4572153effill_el" stop-color="#fff" offset="1"/>
+         </radialGradient>
+        </defs>
+        <g stroke="#000">
+         <rect id="sid-0f65f369-2093-46cc-ac5a-7ed4572153efc" width="216" height="93" display="inherit" fill="url(#radialGradient124)" fill-opacity=".3" oryx:resize="vertical horizontal"/>
+         <rect id="sid-0f65f369-2093-46cc-ac5a-7ed4572153efcaption" width="30" height="93" display="inherit" fill="url(#radialGradient126)" pointer-events="all" oryx:anchors="left top bottom"/>
+         <rect id="sid-0f65f369-2093-46cc-ac5a-7ed4572153efcaptionDisableAntialiasing" width="30" height="93" display="inherit" fill="url(#radialGradient126)" pointer-events="all" oryx:anchors="left top bottom"/>
+        </g>
+        <text id="sid-0f65f369-2093-46cc-ac5a-7ed4572153eftext_name" transform="rotate(-90,13,46.5)" x="13" y="46.5" fill="#000000" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:anchors="left" oryx:fittoelem="sid-0f65f369-2093-46cc-ac5a-7ed4572153efcaption" oryx:fontSize="12" oryx:rotate="270" oryx:textWidth="93"><tspan x="13" y="46.5" dy="4">doctors</tspan></text>
+        <title>Pool</title>
+       </g>
+      </g>
+      <g class="children">
+       <g class="stencils" transform="translate(30)">
+        <g class="me">
+         <g pointer-events="none" title="Lane">
+          <defs>
+           <radialGradient id="sid-3289ad67-78ac-4d2e-bfa9-c90c313ebe7fbackground" cx="-.3545" cy="12.553" r="265.16" fx="26.162" gradientTransform="scale(1.4104 .70899)" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#fff" stop-opacity="0" offset="0"/>
+            <stop id="sid-3289ad67-78ac-4d2e-bfa9-c90c313ebe7ffill_el" stop-color="#fff" stop-opacity="0" offset="1"/>
+           </radialGradient>
+          </defs>
+          <rect id="sid-3289ad67-78ac-4d2e-bfa9-c90c313ebe7fborder" width="186" height="93" fill="url(#sid-3289ad67-78ac-4d2e-bfa9-c90c313ebe7fbackground)" pointer-events="none" stroke="#000" oryx:resize="vertical horizontal"/>
+          <path id="sid-3289ad67-78ac-4d2e-bfa9-c90c313ebe7fcaptionDisableAntialiasing" d="m0 0v93" fill="none" stroke="#000" oryx:anchors="left top bottom"/>
+          <text id="sid-3289ad67-78ac-4d2e-bfa9-c90c313ebe7ftext_name" transform="rotate(-90,6,46.5)" x="6" y="46.5" fill="#000000" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center top" oryx:anchors="left" oryx:fittoelem="sid-3289ad67-78ac-4d2e-bfa9-c90c313ebe7fcaption" oryx:fontSize="12" oryx:rotate="270" oryx:textWidth="91"/>
+          <title>Lane</title>
+         </g>
+        </g>
+        <g class="children">
+         <g class="stencils" transform="translate(28,27)">
+          <g class="me">
+           <g pointer-events="fill" oryx:minimumSize="50 40" title="Task">
+            <defs>
+             <radialGradient id="sid-9cd49a10-409f-44d2-85eb-2d356a1d2eb7background" cx="6.1165" cy="5.6503" r="64.351" gradientTransform="scale(1.5695 .63713)" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#fff" offset="0"/>
+              <stop id="sid-9cd49a10-409f-44d2-85eb-2d356a1d2eb7fill_el" stop-color="#ffc" offset="1"/>
+             </radialGradient>
+            </defs>
+            <rect id="sid-9cd49a10-409f-44d2-85eb-2d356a1d2eb7bg_frame" width="100" height="40" rx="10" ry="10" fill="url(#sid-9cd49a10-409f-44d2-85eb-2d356a1d2eb7background)" stroke="#000" oryx:resize="vertical horizontal"/>
+            <text id="sid-9cd49a10-409f-44d2-85eb-2d356a1d2eb7text_name" x="50" y="20" font-size="12px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:fittoelem="sid-9cd49a10-409f-44d2-85eb-2d356a1d2eb7text_frame" oryx:fontSize="12" oryx:textWidth="94"><tspan x="50" y="20" dy="4">examinations</tspan></text>
+            <title>Task</title>
+           </g>
+          </g>
+         </g>
+         <g class="controls"></g>
+        </g>
+       </g>
+       <g class="controls"></g>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

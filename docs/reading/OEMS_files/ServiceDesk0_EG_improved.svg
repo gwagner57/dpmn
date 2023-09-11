@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg-canvas" generated="java" oryx:signavioversion="15.10.3" version="1.1" viewBox="0 0 241.86 120.03" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oryx="http://oryx-editor.org" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <marker id="sid-a12035b2-cf69-408e-a744-598f1659f6e8start" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5">
+   <path id="sid-a12035b2-cf69-408e-a744-598f1659f6e8conditional" d="m0 6 8-5 7 4-7 4-7-4" display="inherit" fill="#fff" stroke="#000"/>
+  </marker>
+  <marker id="sid-a12035b2-cf69-408e-a744-598f1659f6e8start_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5">
+   <path id="sid-a12035b2-cf69-408e-a744-598f1659f6e8conditional_shadow" d="m0 6 8-5 7 4-7 4-7-4" display="inherit" fill="#fff" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-a12035b2-cf69-408e-a744-598f1659f6e8end" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-a12035b2-cf69-408e-a744-598f1659f6e8arrowhead" d="m0 3 15 5-15 5z" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </marker>
+  <marker id="sid-a12035b2-cf69-408e-a744-598f1659f6e8end_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-a12035b2-cf69-408e-a744-598f1659f6e8arrowhead_shadow" d="m0 3 15 5-15 5z" stroke="#fff" stroke-linejoin="round" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7start" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5">
+   <path id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7conditional" d="m0 6 8-5 7 4-7 4-7-4" display="inherit" fill="#fff" stroke="#000"/>
+  </marker>
+  <marker id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7start_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="11" markerUnits="userSpaceOnUse" markerWidth="17" orient="auto" refX="1" refY="5">
+   <path id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7conditional_shadow" d="m0 6 8-5 7 4-7 4-7-4" display="inherit" fill="#fff" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+  <marker id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7end" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7arrowhead" d="m0 3 15 5-15 5z" stroke="#000" stroke-linejoin="round" stroke-width="2"/>
+  </marker>
+  <marker id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7end_shadow" stroke="#ffffff" stroke-opacity=".7" stroke-width="5" markerHeight="16" markerUnits="userSpaceOnUse" markerWidth="15" orient="auto" refX="15" refY="8">
+   <path id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7arrowhead_shadow" d="m0 3 15 5-15 5z" stroke="#fff" stroke-linejoin="round" stroke-opacity=".7" stroke-width="5"/>
+  </marker>
+ </defs>
+ <g transform="translate(-23.668 -27.883)" font-family="'Open Sans', Kanit, 'Ezra SIL', 'DejaVu Sans', HanaMinA, HanaMinB, sans-serif" font-size="12px" stroke="#000">
+  <g class="stencils" transform="translate(-236.97 -58.2)">
+   <g class="children">
+    <g class="stencils" transform="translate(265,150)">
+     <g class="me">
+      <g pointer-events="fill" title="Start Event">
+       <defs>
+        <radialGradient id="sid-d56236fe-2ef3-4697-a651-0bbcded85c04background" cx="2.6" cy="2.6" r="31" gradientUnits="userSpaceOnUse">
+         <stop stop-color="#fff" offset="0"/>
+         <stop id="sid-d56236fe-2ef3-4697-a651-0bbcded85c04fill_el" stop-color="#fff" offset="1"/>
+        </radialGradient>
+       </defs>
+       <circle id="sid-d56236fe-2ef3-4697-a651-0bbcded85c04bg_frame" cx="15" cy="15" r="15" fill="url(#sid-d56236fe-2ef3-4697-a651-0bbcded85c04background)" stroke="#000"/>
+       <text id="sid-d56236fe-2ef3-4697-a651-0bbcded85c04text_name" x="15" y="32" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center top" oryx:fontSize="11" oryx:textWidth="-1"><tspan x="15" y="32" dy="11">Arrival<v:newlineChar/></tspan><tspan x="15" y="32" dy="22">{Q++}</tspan></text>
+       <title>Start Event</title>
+      </g>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g id="svg-sid-186F0ADF-B1B5-47C8-9E17-296C76A977FE">
+     <g class="stencils" transform="translate(415,150)">
+      <g class="me">
+       <g pointer-events="fill" title="Start Event">
+        <defs></defs>
+        <circle id="sid-9c1d1511-d41b-4627-9dc9-e5f6e30db17abg_frame" cx="15" cy="15" r="15" fill="url(#sid-d56236fe-2ef3-4697-a651-0bbcded85c04background)" stroke="#000"/>
+        <text id="sid-9c1d1511-d41b-4627-9dc9-e5f6e30db17atext_name" x="15" y="32" font-size="11px" letter-spacing="-.01px" stroke="#000000" stroke-width="0pt" text-anchor="middle" oryx:align="center top" oryx:fontSize="11" oryx:textWidth="-1"><tspan x="15" y="32" dy="11">Departure<v:newlineChar/></tspan><tspan x="15" y="32" dy="22">{Q--}</tspan></text>
+        <title>Start Event</title>
+       </g>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+   </g>
+   <g class="edge">
+    <g class="stencils">
+     <g class="me">
+      <g id="sid-a12035b2-cf69-408e-a744-598f1659f6e8edge" fill="none" pointer-events="painted" stroke-linejoin="round">
+       <path id="sid-a12035b2-cf69-408e-a744-598f1659f6e8bg_frame_shadow" d="m295.5 165h119.5" marker-end="url(#sid-a12035b2-cf69-408e-a744-598f1659f6e8end_shadow)" marker-start="url(#sid-a12035b2-cf69-408e-a744-598f1659f6e8start_shadow)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+       <path id="sid-a12035b2-cf69-408e-a744-598f1659f6e8bg_frame" d="m295.5 165h119.5" marker-end="url(#sid-a12035b2-cf69-408e-a744-598f1659f6e8end)" marker-start="url(#sid-a12035b2-cf69-408e-a744-598f1659f6e8start)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+      </g>
+      <text id="sid-a12035b2-cf69-408e-a744-598f1659f6e8text_name" x="352.69199" y="163.2" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:edgePosition="starttop" oryx:fontSize="12" oryx:textWidth="-1"><tspan x="352.69199" y="163.2" dy="-8">[Q = 1]<v:newlineChar/></tspan><tspan x="352.69199" y="163.2" dy="4"/><tspan x="352.69199" y="163.2" dy="16">+serviceTime()</tspan></text>
+     </g>
+    </g>
+    <g class="controls"></g>
+    <g id="svg-sid-E1D5031D-E0ED-44D3-8A30-C0107C0CD81D">
+     <g class="stencils">
+      <g class="me">
+       <g id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7edge" fill="none" pointer-events="painted" stroke-linejoin="round">
+        <path id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7bg_frame_shadow" d="m444.22 158.83 55.779-54.834h-134l54 48" marker-end="url(#sid-095da655-4f17-403b-b1ef-7306f80c9bc7end_shadow)" marker-start="url(#sid-095da655-4f17-403b-b1ef-7306f80c9bc7start_shadow)" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+        <path id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7bg_frame" d="m444.22 158.83 55.779-54.834h-134l54 48" marker-end="url(#sid-095da655-4f17-403b-b1ef-7306f80c9bc7end)" marker-start="url(#sid-095da655-4f17-403b-b1ef-7306f80c9bc7start)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+       </g>
+       <text id="sid-095da655-4f17-403b-b1ef-7306f80c9bc7text_name" x="434" y="103.2" font-size="12px" letter-spacing="-.01px" stroke-width="0pt" text-anchor="middle" oryx:align="center middle" oryx:edgePosition="starttop" oryx:fontSize="12" oryx:textWidth="-1"><tspan x="434" y="103.2" dy="-8">[Q &gt; 0]<v:newlineChar/></tspan><tspan x="434" y="103.2" dy="4"/><tspan x="434" y="103.2" dy="16">+serviceTime()</tspan></text>
+      </g>
+     </g>
+     <g class="controls"></g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

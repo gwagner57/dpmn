@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="st5" width="1.6122in" height=".63863in" color-interpolation-filters="sRGB" version="1.1" viewBox="0 0 116.08 45.981" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata>
+	<v:documentProperties v:langID="1033" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {font-size:1em}
+		.st4 {fill:#000000;font-family:Calibri;font-size:0.666664em;font-weight:bold}
+		.st5 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g transform="translate(-.36039 -5.2965)" v:groupContext="foregroundPage" v:index="1" v:mID="0">
+		<title>Page-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:drawingUnits="24" v:pageScale="0.0393701" v:shadowOffsetX="8.50394" v:shadowOffsetY="-8.50394"/>
+		<g transform="translate(.72 -.72)" v:groupContext="group" v:mID="25">
+			<v:userDefs>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(24):26"/>
+				<v:ud v:nameU="UMLTemplate" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(20):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({C69259B9-25A5-4451-9803-27A77A2871F7})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLAutoLockTextEdit" v:val="VT0(1):26"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(147):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:val="VT0(0):26"/>
+				<v:ud v:nameU="DefaultWidth" v:val="VT0(1.6022563371274):1"/>
+				<v:ud v:nameU="EnsureWidthOK" v:val="VT0(1.6022563371274):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents a descriptor for a set of objects with similar structure, behavior and relationships.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<title>Class.25</title>
+			<g transform="rotate(180 28.841 40.323)" v:groupContext="shape" v:mID="26">
+				<title>Sheet.26</title>
+			</g>
+			<g transform="rotate(180 28.841 40.323)" v:groupContext="shape" v:mID="27">
+				<title>Sheet.27</title>
+			</g>
+			<g transform="rotate(180 28.841 40.323)" v:groupContext="shape" v:mID="28">
+				<title>Sheet.28</title>
+			</g>
+			<g transform="rotate(161.56 30.677 45.003)" v:groupContext="shape" v:mID="29">
+				<title>Sheet.29</title>
+			</g>
+			<g v:groupContext="shape" v:mID="30">
+				<title>Operations</title>
+			</g>
+			<g v:groupContext="shape" v:mID="31">
+				<title>Attributes</title>
+				<desc>startTime[1] : Decimal duration[1] : Decimal wheelLoaders[1.....</desc>
+				<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+				<v:textRect width="115.37" height="30.8035" cx="57.6812" cy="36.236"/>
+				<rect class="st1" y="20.834" width="115.36" height="30.803"/>
+				<text class="st2" x="1" y="29.030001" v:langID="1031"><v:paragraph/><v:tabList/>startTime[1] : Decimal<v:newlineChar/><tspan class="st3" x="1" dy="1.2em">duration</tspan>[1] : Decimal<v:newlineChar/><tspan class="st3" x="1" dy="1.2em">wheelLoaders</tspan>[1..2] : WheelLoader</text>			</g>
+			<g transform="translate(0 -30.804)" v:groupContext="shape" v:mID="32">
+				<title>Name</title>
+				<desc>LoadTruck</desc>
+				<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+				<v:textRect width="115.37" height="14.4567" cx="57.6812" cy="44.4094"/>
+				<path class="st1" d="m0 51.64h115.36v-14.46h-115.36z"/>
+				<text class="st4" x="40.580002" y="46.810001" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>LoadTruck</text>			</g>
+			<g transform="translate(79.362 -39.603)" v:groupContext="shape" v:mID="33">
+				<title>Parameters</title>
+			</g>
+		</g>
+	</g>
+</svg>

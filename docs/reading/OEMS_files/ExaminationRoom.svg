@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   class="st5"
+   width="1.0018in"
+   height=".38596in"
+   color-interpolation-filters="sRGB"
+   version="1.1"
+   viewBox="0 0 72.13 27.789"
+   xml:space="preserve"
+   id="svg68"
+   sodipodi:docname="ExaminationRoom.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><defs
+   id="defs72" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   id="namedview70"
+   showgrid="false"
+   inkscape:zoom="12.63351"
+   inkscape:cx="48.086397"
+   inkscape:cy="18.526081"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg68" /><metadata
+   id="metadata2"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata>
+	<v:documentProperties
+   v:langID="1033"
+   v:viewMarkup="false" />
+
+	<style
+   type="text/css"
+   id="style4">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {font-size:1em;text-decoration:underline}
+		.st4 {fill:#000000;font-family:Calibri;font-size:0.666664em;font-weight:bold}
+		.st5 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g
+   transform="translate(-.36029 -3.0258)"
+   v:groupContext="foregroundPage"
+   v:index="1"
+   v:mID="0"
+   id="g66">
+		<title
+   id="title6">Page-1</title>
+		<v:pageProperties
+   v:drawingScale="0.0393701"
+   v:drawingUnits="24"
+   v:pageScale="0.0393701"
+   v:shadowOffsetX="8.50394"
+   v:shadowOffsetY="-8.50394" />
+		<g
+   transform="translate(.72 -.72)"
+   v:groupContext="group"
+   v:mID="25"
+   id="g64">
+			<v:userDefs>
+				<v:ud
+   v:nameU="UMLSuppressOption"
+   v:val="VT0(24):26" />
+				<v:ud
+   v:nameU="UMLTemplate"
+   v:val="VT0(0):26" />
+				<v:ud
+   v:nameU="UMLVersion"
+   v:val="VT0(2):26" />
+				<v:ud
+   v:nameU="UMLShapeType"
+   v:val="VT0(20):26" />
+				<v:ud
+   v:nameU="UMLObjectGUID"
+   v:val="VT4({C27BD5FD-3B20-4C4F-B0E2-3BC3C4F7529A})" />
+				<v:ud
+   v:nameU="UMLError"
+   v:val="VT0(0):26" />
+				<v:ud
+   v:nameU="UMLAutoLockTextEdit"
+   v:val="VT0(1):26" />
+				<v:ud
+   v:nameU="UMLPresOption1"
+   v:val="VT0(8209):26" />
+				<v:ud
+   v:nameU="UMLPresOption2"
+   v:val="VT0(0):26" />
+				<v:ud
+   v:nameU="DefaultWidth"
+   v:val="VT0(0.99179796310395):1" />
+				<v:ud
+   v:nameU="EnsureWidthOK"
+   v:val="VT0(0.99179796310395):1" />
+				<v:ud
+   v:nameU="visDescription"
+   v:val="VT4(Represents a descriptor for a set of objects with similar structure, behavior and relationships.)" />
+				<v:ud
+   v:nameU="visVersion"
+   v:val="VT0(14):26" />
+			</v:userDefs>
+			<title
+   id="title8">Class.25</title>
+			<g
+   transform="rotate(180 17.852 24.407)"
+   v:groupContext="shape"
+   v:mID="26"
+   id="g12">
+				<title
+   id="title10">Sheet.26</title>
+			</g>
+			<g
+   transform="rotate(180 17.852 24.407)"
+   v:groupContext="shape"
+   v:mID="27"
+   id="g16">
+				<title
+   id="title14">Sheet.27</title>
+			</g>
+			<g
+   transform="rotate(180 17.852 24.407)"
+   v:groupContext="shape"
+   v:mID="28"
+   id="g20">
+				<title
+   id="title18">Sheet.28</title>
+			</g>
+			<g
+   transform="rotate(165.96 18.686 26.605)"
+   v:groupContext="shape"
+   v:mID="29"
+   id="g24">
+				<title
+   id="title22">Sheet.29</title>
+			</g>
+			<g
+   v:groupContext="shape"
+   v:mID="30"
+   id="g28">
+				<title
+   id="title26">Operations</title>
+			</g>
+			<g
+   v:groupContext="shape"
+   v:mID="31"
+   id="g48">
+				<title
+   id="title30">Attributes</title>
+				<desc
+   id="desc32">capacity : Integer = 3</desc>
+				<v:textBlock
+   v:margins="rect(1,1,1,1)"
+   v:tabSpace="42.5197"
+   v:verticalAlign="0" />
+				<v:textRect
+   width="71.41"
+   height="12.6142"
+   cx="35.7047"
+   cy="24.8676" />
+				<rect
+   class="st1"
+   y="18.561"
+   width="71.41"
+   height="12.614"
+   id="rect34" />
+				<text
+   class="st2"
+   x="1"
+   y="26.76"
+   v:langID="1033"
+   id="text46"><v:paragraph /><v:tabList /><tspan
+     class="st3"
+     text-decoration="underline"
+     style="text-decoration-line:underline"
+     id="tspan36">capacity </tspan><tspan
+     class="st3"
+     text-decoration="underline"
+     style="text-decoration-line:underline"
+     id="tspan38">: </tspan><tspan
+     class="st3"
+     text-decoration="underline"
+     style="text-decoration-line:underline"
+     id="tspan40">Integer </tspan><tspan
+     class="st3"
+     text-decoration="underline"
+     style="text-decoration-line:underline"
+     id="tspan42">= </tspan><tspan
+     class="st3"
+     text-decoration="underline"
+     style="text-decoration-line:underline"
+     id="tspan44">3</tspan></text>			</g>
+			<g
+   transform="translate(0 -12.614)"
+   v:groupContext="shape"
+   v:mID="32"
+   id="g58">
+				<title
+   id="title50">Name</title>
+				<desc
+   id="desc52">ExaminationRoom</desc>
+				<v:textBlock
+   v:margins="rect(1,1,1,1)"
+   v:tabSpace="42.5197" />
+				<v:textRect
+   width="71.41"
+   height="14.4567"
+   cx="35.7047"
+   cy="23.9464" />
+				<path
+   class="st1"
+   d="m0 31.17h71.41v-14.45h-71.41z"
+   id="path54" />
+				<text
+   class="st4"
+   x="5.1100001"
+   y="26.35"
+   v:langID="1031"
+   id="text56"><v:paragraph
+   v:horizAlign="1" /><v:tabList />ExaminationRoom</text>			</g>
+			<g
+   transform="translate(35.41 -23.687)"
+   v:groupContext="shape"
+   v:mID="33"
+   id="g62">
+				<title
+   id="title60">Parameters</title>
+			</g>
+		</g>
+	</g>
+</svg>

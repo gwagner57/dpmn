@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="st6" width="2.9234in" height="1.854in" color-interpolation-filters="sRGB" version="1.1" viewBox="0 0 210.49 133.49" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/"><metadata><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata>
+	<v:documentProperties v:langID="1033" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#fdebdd;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st2 {fill:#000000;font-family:Calibri;font-size:0.666664em}
+		.st3 {font-size:1em;font-weight:bold}
+		.st4 {fill:#ffffff;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.72}
+		.st5 {stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:0.48}
+		.st6 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g transform="translate(-.36017 -5.669)" v:groupContext="foregroundPage" v:index="1" v:mID="0">
+		<title>Page-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:drawingUnits="24" v:pageScale="0.0393701" v:shadowOffsetX="8.50394" v:shadowOffsetY="-8.50394"/>
+		<g transform="translate(77.255 -43.274)" v:groupContext="group" v:mID="91">
+			<v:userDefs>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(28):26"/>
+				<v:ud v:nameU="UMLTemplate" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(20):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({E83A52E2-7B38-4303-9286-C4029D5AB70B})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLAutoLockTextEdit" v:val="VT0(1):26"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(19):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:val="VT0(0):26"/>
+				<v:ud v:nameU="DefaultWidth" v:val="VT0(0.74803149606299):24"/>
+				<v:ud v:nameU="EnsureWidthOK" v:val="VT0(0.75):0"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents a descriptor for a set of objects with similar structure, behavior and relationships.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<title>Class.92</title>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="92">
+				<title>Sheet.92</title>
+			</g>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="93">
+				<title>Sheet.93</title>
+			</g>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="94">
+				<title>Sheet.94</title>
+			</g>
+			<g transform="rotate(161.56 14.325 145.06)" v:groupContext="shape" v:mID="95">
+				<title>Sheet.95</title>
+			</g>
+			<g v:groupContext="shape" v:mID="96">
+				<title>Operations</title>
+			</g>
+			<g v:groupContext="shape" v:mID="97">
+				<title>Attributes</title>
+			</g>
+			<g v:groupContext="shape" v:mID="98">
+				<title>Name</title>
+				<desc>«activity type» processing</desc>
+				<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+				<v:textRect width="53.86" height="21.2035" cx="26.9291" cy="137.572"/>
+				<path class="st1" d="m0 148.17h53.86v-21.2h-53.86z"/>
+				<text class="st2" x="2.95" y="135.17" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>«activity type»<v:newlineChar/><tspan class="st3" x="9.3100004" dy="1.2em">processing</tspan></text>			</g>
+			<g transform="translate(17.858 -18.553)" v:groupContext="shape" v:mID="99">
+				<title>Parameters</title>
+			</g>
+		</g>
+		<g transform="translate(.72 -114.88)" v:groupContext="group" v:mID="2">
+			<v:userDefs>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(28):26"/>
+				<v:ud v:nameU="UMLTemplate" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(20):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({2A08C911-33B0-42AB-A270-E153C020897A})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLAutoLockTextEdit" v:val="VT0(1):26"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(65539):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:val="VT0(0):26"/>
+				<v:ud v:nameU="DefaultWidth" v:val="VT0(0.74803149606299):24"/>
+				<v:ud v:nameU="EnsureWidthOK" v:val="VT0(0.75):0"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents a descriptor for a set of objects with similar structure, behavior and relationships.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<title>Class</title>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="3">
+				<title>Sheet.3</title>
+			</g>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="4">
+				<title>Sheet.4</title>
+			</g>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="5">
+				<title>Sheet.5</title>
+			</g>
+			<g transform="rotate(161.56 14.325 145.06)" v:groupContext="shape" v:mID="6">
+				<title>Sheet.6</title>
+			</g>
+			<g v:groupContext="shape" v:mID="7">
+				<title>Operations</title>
+			</g>
+			<g v:groupContext="shape" v:mID="8">
+				<title>Attributes</title>
+			</g>
+			<g v:groupContext="shape" v:mID="9">
+				<title>Name</title>
+				<desc>«object type» parts</desc>
+				<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+				<v:textRect width="53.86" height="21.2035" cx="26.9291" cy="137.572"/>
+				<path class="st4" d="m0 148.17h53.86v-21.2h-53.86z"/>
+				<text class="st2" x="4.5" y="135.17" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>«object type»<v:newlineChar/><tspan class="st3" x="18.4" dy="1.2em">parts</tspan></text>			</g>
+			<g transform="translate(17.858 -18.553)" v:groupContext="shape" v:mID="10">
+				<title>Parameters</title>
+			</g>
+		</g>
+		<g transform="translate(156.63 -114.88)" v:groupContext="group" v:mID="11">
+			<v:userDefs>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(28):26"/>
+				<v:ud v:nameU="UMLTemplate" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(20):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({571BE393-5917-4C91-BBF0-9A4E165BC875})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLAutoLockTextEdit" v:val="VT0(1):26"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(65539):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:val="VT0(0):26"/>
+				<v:ud v:nameU="DefaultWidth" v:val="VT0(0.74803149606299):24"/>
+				<v:ud v:nameU="EnsureWidthOK" v:val="VT0(0.75):0"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents a descriptor for a set of objects with similar structure, behavior and relationships.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<title>Class.11</title>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="12">
+				<title>Sheet.12</title>
+			</g>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="13">
+				<title>Sheet.13</title>
+			</g>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="14">
+				<title>Sheet.14</title>
+			</g>
+			<g transform="rotate(161.56 14.325 145.06)" v:groupContext="shape" v:mID="15">
+				<title>Sheet.15</title>
+			</g>
+			<g v:groupContext="shape" v:mID="16">
+				<title>Operations</title>
+			</g>
+			<g v:groupContext="shape" v:mID="17">
+				<title>Attributes</title>
+				<desc>busy</desc>
+				<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197" v:verticalAlign="0"/>
+				<v:textRect width="53.86" height="0" cx="26.9291" cy="148.174"/>
+			</g>
+			<g v:groupContext="shape" v:mID="18">
+				<title>Name</title>
+				<desc>«object type» workstations</desc>
+				<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+				<v:textRect width="53.86" height="21.2035" cx="26.9291" cy="137.572"/>
+				<path class="st4" d="m0 148.17h53.86v-21.2h-53.86z"/>
+				<text class="st2" x="4.5" y="135.17" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>«object type»<v:newlineChar/><tspan class="st3" x="5.2399998" dy="1.2em">workstations</tspan></text>			</g>
+			<g transform="translate(17.858 -18.553)" v:groupContext="shape" v:mID="19">
+				<title>Parameters</title>
+			</g>
+		</g>
+		<g transform="translate(156.63 -118.39)" v:groupContext="group" v:mID="20">
+			<v:userDefs>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(23):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({6E29D0F8-A56E-407E-8E3F-AB2383682830})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:val="VT0(3.1415926535898):32"/>
+				<v:ud v:nameU="EndAngle" v:val="VT0(3.1415926535898):32"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(1536):26"/>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(0):26"/>
+				<v:ud v:nameU="Navigability" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="DX1" v:val="VT0(-0.042519685039371):1"/>
+				<v:ud v:nameU="DY1" v:val="VT0(0):1"/>
+				<v:ud v:nameU="DX3" v:val="VT0(-0.042519685039372):1"/>
+				<v:ud v:nameU="DY3" v:val="VT0(0):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents an association between two classifiers.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<title>Binary Association</title>
+			<g transform="translate(-16.153 15.605)" v:groupContext="shape" v:mID="21">
+				<title>end1_name</title>
+			</g>
+			<g transform="translate(-30.114 -12.178)" v:groupContext="shape" v:mID="22">
+				<title>end1_mp</title>
+				<desc>0..1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="21.97" height="17.6036" cx="10.9805" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>0..1</text>			</g>
+			<g transform="translate(-93.895 15.608)" v:groupContext="shape" v:mID="23">
+				<title>end2_name</title>
+				<desc>waiting parts</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="52.13" height="17.6036" cx="26.0621" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>waiting parts</text>			</g>
+			<g transform="translate(-93.895 -12.178)" v:groupContext="shape" v:mID="24">
+				<title>end2_mp</title>
+				<desc>*</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.8" height="17.6036" cx="6.89835" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>*</text>			</g>
+			<g v:groupContext="groupContent" v:mID="20">
+				<path class="st5" d="m0 141.09h-102.05"/>
+			</g>
+		</g>
+		<g transform="translate(77.255 -75.192)" v:groupContext="group" v:mID="25">
+			<v:userDefs>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(28):26"/>
+				<v:ud v:nameU="UMLTemplate" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(20):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({64ED5EE7-C415-45AC-A6CB-A87D242B763D})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLAutoLockTextEdit" v:val="VT0(1):26"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(65539):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:val="VT0(0):26"/>
+				<v:ud v:nameU="DefaultWidth" v:val="VT0(0.74803149606299):24"/>
+				<v:ud v:nameU="EnsureWidthOK" v:val="VT0(0.75):0"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents a descriptor for a set of objects with similar structure, behavior and relationships.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<title>Class.25</title>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="26">
+				<title>Sheet.26</title>
+			</g>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="27">
+				<title>Sheet.27</title>
+			</g>
+			<g transform="rotate(180 13.465 142.87)" v:groupContext="shape" v:mID="28">
+				<title>Sheet.28</title>
+			</g>
+			<g transform="rotate(161.56 14.325 145.06)" v:groupContext="shape" v:mID="29">
+				<title>Sheet.29</title>
+			</g>
+			<g v:groupContext="shape" v:mID="30">
+				<title>Operations</title>
+			</g>
+			<g v:groupContext="shape" v:mID="31">
+				<title>Attributes</title>
+			</g>
+			<g v:groupContext="shape" v:mID="32">
+				<title>Name</title>
+				<desc>«event type» part arrivals</desc>
+				<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+				<v:textRect width="53.86" height="21.2035" cx="26.9291" cy="137.572"/>
+				<path class="st4" d="m0 148.17h53.86v-21.2h-53.86z"/>
+				<text class="st2" x="5.46" y="135.17" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>«event type»<v:newlineChar/><tspan class="st3" x="6.8499999" dy="1.2em">part arrivals</tspan></text>			</g>
+			<g transform="translate(17.858 -18.553)" v:groupContext="shape" v:mID="33">
+				<title>Parameters</title>
+			</g>
+		</g>
+		<g transform="translate(27.649 -114.88)" v:groupContext="group" v:mID="34">
+			<v:userDefs>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(23):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({AF2DB1E5-C1B4-4A25-93FF-E6A58B14703A})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:val="VT0(-1.5707963267949):32"/>
+				<v:ud v:nameU="EndAngle" v:val="VT0(-2.7089080119704E-014):32"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(512):26"/>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(0):26"/>
+				<v:ud v:nameU="Navigability" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="DX1" v:val="VT0(-1.6653345369377E-016):24"/>
+				<v:ud v:nameU="DY1" v:val="VT0(-0.032787323001569):1"/>
+				<v:ud v:nameU="DX3" v:val="VT0(0.032787323001569):24"/>
+				<v:ud v:nameU="DY3" v:val="VT0(-8.8817841970013E-016):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents an association between two classifiers.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:prompt="" v:val="VT0(2147483647):26"/>
+			</v:userDefs>
+			<title>Binary Association.34</title>
+			<g transform="translate(5.0912 25.052)" v:groupContext="shape" v:mID="35">
+				<title>end1_name</title>
+			</g>
+			<g transform="translate(-18.958 25.055)" v:groupContext="shape" v:mID="36">
+				<title>end1_mp</title>
+				<desc>1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.87" height="17.6036" cx="6.9335" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>1</text>			</g>
+			<g transform="translate(34.154 23.992)" v:groupContext="shape" v:mID="37">
+				<title>end2_name</title>
+			</g>
+			<g transform="translate(28.358 51.778)" v:groupContext="shape" v:mID="38">
+				<title>end2_mp</title>
+				<desc>*</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.8" height="17.6036" cx="6.89835" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>*</text>			</g>
+			<g v:groupContext="groupContent" v:mID="34">
+				<path class="st5" d="m0 148.17v29.09h49.61"/>
+			</g>
+		</g>
+		<g transform="translate(183.56 -114.88)" v:groupContext="group" v:mID="39">
+			<v:userDefs>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(23):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({245E3F1A-E271-476C-9F7B-8D1F1B4D5A76})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:val="VT0(-1.5707963267949):32"/>
+				<v:ud v:nameU="EndAngle" v:val="VT0(-3.1415926535897):32"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(512):26"/>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(0):26"/>
+				<v:ud v:nameU="Navigability" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="DX1" v:val="VT0(4.4408920985006E-016):24"/>
+				<v:ud v:nameU="DY1" v:val="VT0(-0.033968425363777):1"/>
+				<v:ud v:nameU="DX3" v:val="VT0(-0.033968425363777):24"/>
+				<v:ud v:nameU="DY3" v:val="VT0(-3.5527136788005E-015):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents an association between two classifiers.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:prompt="" v:val="VT0(2147483647):26"/>
+			</v:userDefs>
+			<title>Binary Association.39</title>
+			<g transform="translate(5.0912 25.137)" v:groupContext="shape" v:mID="40">
+				<title>end1_name</title>
+			</g>
+			<g transform="translate(-18.958 25.14)" v:groupContext="shape" v:mID="41">
+				<title>end1_mp</title>
+				<desc>1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.87" height="17.6036" cx="6.9335" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>1</text>			</g>
+			<g transform="translate(-44.904 51.774)" v:groupContext="shape" v:mID="42">
+				<title>end2_name</title>
+			</g>
+			<g transform="translate(-44.904 23.992)" v:groupContext="shape" v:mID="43">
+				<title>end2_mp</title>
+				<desc>*</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.8" height="17.6036" cx="6.89835" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>*</text>			</g>
+			<g v:groupContext="groupContent" v:mID="39">
+				<path class="st5" d="m0 148.17v29.09h-52.44"/>
+			</g>
+		</g>
+		<g transform="translate(27.649 -114.88)" v:groupContext="group" v:mID="44">
+			<v:userDefs>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(23):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({724BAFC1-B515-44E5-805F-D858EB018AD6})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:val="VT0(-1.5707963267949):32"/>
+				<v:ud v:nameU="EndAngle" v:val="VT0(1.9272004771041E-014):32"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(512):26"/>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(1):26"/>
+				<v:ud v:nameU="Navigability" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="DX1" v:val="VT0(5.5511151231258E-017):24"/>
+				<v:ud v:nameU="DY1" v:val="VT0(-0.046086457026764):1"/>
+				<v:ud v:nameU="DX3" v:val="VT0(0.046086457026763):24"/>
+				<v:ud v:nameU="DY3" v:val="VT0(8.8817841970013E-016):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents an association between two classifiers.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:prompt="" v:val="VT0(2147483647):26"/>
+			</v:userDefs>
+			<title>Binary Association.44</title>
+			<g transform="translate(5.0912 26.009)" v:groupContext="shape" v:mID="45">
+				<title>end1_name</title>
+			</g>
+			<g transform="translate(-18.958 26.013)" v:groupContext="shape" v:mID="46">
+				<title>end1_mp</title>
+				<desc>1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.87" height="17.6036" cx="6.9335" cy="139.372"/>
+			</g>
+			<g transform="translate(33.197 55.91)" v:groupContext="shape" v:mID="47">
+				<title>end2_name</title>
+			</g>
+			<g transform="translate(27.4 83.696)" v:groupContext="shape" v:mID="48">
+				<title>end2_mp</title>
+				<desc>*</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.8" height="17.6036" cx="6.89835" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>*</text>			</g>
+			<g v:groupContext="groupContent" v:mID="44">
+				<path class="st5" d="m0 148.17v61h49.61"/>
+			</g>
+		</g>
+		<g transform="translate(183.56 -114.88)" v:groupContext="group" v:mID="49">
+			<v:userDefs>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(23):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({0B2B613B-294B-4368-8DDC-9946136F0EF2})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:val="VT0(-1.5707963267949):32"/>
+				<v:ud v:nameU="EndAngle" v:val="VT0(3.1415926535898):32"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(512):26"/>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(1):26"/>
+				<v:ud v:nameU="Navigability" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="DX1" v:val="VT0(4.4408920985006E-016):24"/>
+				<v:ud v:nameU="DY1" v:val="VT0(-0.047267559388967):1"/>
+				<v:ud v:nameU="DX3" v:val="VT0(-0.047267559388969):24"/>
+				<v:ud v:nameU="DY3" v:val="VT0(8.8817841970013E-016):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents an association between two classifiers.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:prompt="" v:val="VT0(2147483647):26"/>
+			</v:userDefs>
+			<title>Binary Association.49</title>
+			<g transform="translate(5.0912 26.094)" v:groupContext="shape" v:mID="50">
+				<title>end1_name</title>
+			</g>
+			<g transform="translate(-18.958 26.098)" v:groupContext="shape" v:mID="51">
+				<title>end1_mp</title>
+				<desc>1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.87" height="17.6036" cx="6.9335" cy="139.372"/>
+			</g>
+			<g transform="translate(-43.946 83.692)" v:groupContext="shape" v:mID="52">
+				<title>end2_name</title>
+			</g>
+			<g transform="translate(-43.946 55.91)" v:groupContext="shape" v:mID="53">
+				<title>end2_mp</title>
+				<desc>*</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.8" height="17.6036" cx="6.89835" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>*</text>			</g>
+			<g v:groupContext="groupContent" v:mID="49">
+				<path class="st5" d="m0 148.17v61h-52.44"/>
+			</g>
+		</g>
+		<g transform="translate(77.255 -12.093)" v:groupContext="group" v:mID="54">
+			<v:userDefs>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(28):26"/>
+				<v:ud v:nameU="UMLTemplate" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(20):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({9CA45F95-CB48-4746-8674-831FC2BEEEEF})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLAutoLockTextEdit" v:val="VT0(1):26"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(65539):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:val="VT0(0):26"/>
+				<v:ud v:nameU="DefaultWidth" v:val="VT0(0.77799562545747):1"/>
+				<v:ud v:nameU="EnsureWidthOK" v:val="VT0(0.77799562545747):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents a descriptor for a set of objects with similar structure, behavior and relationships.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+			</v:userDefs>
+			<title>Class.54</title>
+			<g transform="rotate(180 14.004 142.87)" v:groupContext="shape" v:mID="55">
+				<title>Sheet.55</title>
+			</g>
+			<g transform="rotate(180 14.004 142.87)" v:groupContext="shape" v:mID="56">
+				<title>Sheet.56</title>
+			</g>
+			<g transform="rotate(180 14.004 142.87)" v:groupContext="shape" v:mID="57">
+				<title>Sheet.57</title>
+			</g>
+			<g transform="rotate(161.56 14.864 145.15)" v:groupContext="shape" v:mID="58">
+				<title>Sheet.58</title>
+			</g>
+			<g v:groupContext="shape" v:mID="59">
+				<title>Operations</title>
+			</g>
+			<g v:groupContext="shape" v:mID="60">
+				<title>Attributes</title>
+			</g>
+			<g v:groupContext="shape" v:mID="61">
+				<title>Name</title>
+				<desc>«event type» part departures</desc>
+				<v:textBlock v:margins="rect(1,1,1,1)" v:tabSpace="42.5197"/>
+				<v:textRect width="56.02" height="21.2035" cx="28.0078" cy="137.572"/>
+				<path class="st4" d="m0 148.17h56.02v-21.2h-56.02z"/>
+				<text class="st2" x="6.54" y="135.17" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>«event type»<v:newlineChar/><tspan class="st3" x="1.91" dy="1.2em">part departures</tspan></text>			</g>
+			<g transform="translate(20.016 -18.553)" v:groupContext="shape" v:mID="62">
+				<title>Parameters</title>
+			</g>
+		</g>
+		<g transform="translate(183.56 -114.88)" v:groupContext="group" v:mID="63">
+			<v:userDefs>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(23):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({C3C7BF1D-085E-4346-BB0E-4EBFA14E3C3D})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:val="VT0(-1.5707963267949):32"/>
+				<v:ud v:nameU="EndAngle" v:val="VT0(3.1415926535898):32"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(512):26"/>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(1):26"/>
+				<v:ud v:nameU="Navigability" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="DX1" v:val="VT0(0):24"/>
+				<v:ud v:nameU="DY1" v:val="VT0(-0.059360761491387):1"/>
+				<v:ud v:nameU="DX3" v:val="VT0(-0.059360761491386):24"/>
+				<v:ud v:nameU="DY3" v:val="VT0(8.8817841970013E-016):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents an association between two classifiers.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:prompt="" v:val="VT0(2147483647):26"/>
+			</v:userDefs>
+			<title>Binary Association.63</title>
+			<g transform="translate(5.0912 26.965)" v:groupContext="shape" v:mID="64">
+				<title>end1_name</title>
+			</g>
+			<g transform="translate(-18.958 26.969)" v:groupContext="shape" v:mID="65">
+				<title>end1_mp</title>
+				<desc>1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.87" height="17.6036" cx="6.9335" cy="139.372"/>
+			</g>
+			<g transform="translate(-40.918 114.87)" v:groupContext="shape" v:mID="66">
+				<title>end2_name</title>
+			</g>
+			<g transform="translate(-40.918 87.091)" v:groupContext="shape" v:mID="67">
+				<title>end2_mp</title>
+				<desc>*</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.8" height="17.6036" cx="6.89835" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>*</text>			</g>
+			<g v:groupContext="groupContent" v:mID="63">
+				<path class="st5" d="m0 148.17v92.19h-50.28"/>
+			</g>
+		</g>
+		<g transform="translate(27.649 -114.88)" v:groupContext="group" v:mID="68">
+			<v:userDefs>
+				<v:ud v:nameU="UMLShapeType" v:val="VT0(23):26"/>
+				<v:ud v:nameU="UMLObjectGUID" v:val="VT4({63F1CABE-6F27-495C-9DB3-2F5470C63002})"/>
+				<v:ud v:nameU="UMLError" v:val="VT0(0):26"/>
+				<v:ud v:nameU="BeginAngle" v:val="VT0(-1.5707963267949):32"/>
+				<v:ud v:nameU="EndAngle" v:val="VT0(1.5033847706444E-014):32"/>
+				<v:ud v:nameU="UMLPresOption1" v:val="VT0(512):26"/>
+				<v:ud v:nameU="UMLSuppressOption" v:val="VT0(1):26"/>
+				<v:ud v:nameU="Navigability" v:val="VT0(0):26"/>
+				<v:ud v:nameU="UMLVersion" v:val="VT0(2):26"/>
+				<v:ud v:nameU="DX1" v:val="VT0(5.5511151231258E-017):24"/>
+				<v:ud v:nameU="DY1" v:val="VT0(-0.059078583011017):1"/>
+				<v:ud v:nameU="DX3" v:val="VT0(0.059078583011018):24"/>
+				<v:ud v:nameU="DY3" v:val="VT0(8.8817841970013E-016):1"/>
+				<v:ud v:nameU="visDescription" v:val="VT4(Represents an association between two classifiers.)"/>
+				<v:ud v:nameU="visVersion" v:val="VT0(14):26"/>
+				<v:ud v:nameU="UMLPresOption2" v:prompt="" v:val="VT0(2147483647):26"/>
+			</v:userDefs>
+			<title>Binary Association.68</title>
+			<g transform="translate(5.0912 26.945)" v:groupContext="shape" v:mID="69">
+				<title>end1_name</title>
+			</g>
+			<g transform="translate(-18.958 26.948)" v:groupContext="shape" v:mID="70">
+				<title>end1_mp</title>
+				<desc>1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.87" height="17.6036" cx="6.9335" cy="139.372"/>
+			</g>
+			<g transform="translate(32.262 87.091)" v:groupContext="shape" v:mID="71">
+				<title>end2_name</title>
+			</g>
+			<g transform="translate(26.465 114.88)" v:groupContext="shape" v:mID="72">
+				<title>end2_mp</title>
+				<desc>*</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect width="13.8" height="17.6036" cx="6.89835" cy="139.372"/>
+				<text class="st2" x="4.9099998" y="141.77" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>*</text>			</g>
+			<g v:groupContext="groupContent" v:mID="68">
+				<path class="st5" d="m0 148.17v92.19h49.61"/>
+			</g>
+		</g>
+	</g>
+</svg>
