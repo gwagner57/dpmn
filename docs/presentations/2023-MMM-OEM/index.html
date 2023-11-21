@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Object Event Modeling - a Unified View of States and Processes</title>
+<meta name="description" content="This presentation shows how to design business brocess simulations with DPMN.">
+<meta name="author" content="Gerd Wagner">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<link rel="stylesheet" href="../reveal/css/reveal.min.css" />
+<link rel="stylesheet" href="../reveal/css/theme/btu-sky.css" id="theme" />
+<link rel="stylesheet" href="../reveal/css/theme/btu-styles.css" />
+<link rel="stylesheet" href="../reveal/lib/css/zenburn.css" />
+
+<style>
+.reveal section > h1, .reveal section > h2 
+{
+  text-transform: none;
+}
+.reveal strong {font-style: italic;}
+.reveal section {
+  font-size: 2.5rem;
+  line-height: 1.2em;
+}
+.reveal section li {margin-top: 0.4em;}
+
+.reveal section.part-title-slide > h1 {
+  font-size: 10rem;
+}
+ 
+.reveal section {
+  cursor: url("img/cursor.svg"), pointer;
+}
+</style>
+
+</head>
+<body>
+
+ <div class="reveal">
+  <div class="slides">
+
+<section>
+ <h1>Objekt-Ereignis-Modellierung</h1>
+ <h2 style="color:blue">Eine vereinheitlichende Sichtweise</br>auf Zustände und Prozesse</h2>
+ <div style="margin-top:1em">
+ <h3>Gerd Wagner</h3>
+ <h4>Brandenburgische Technische Universität</h4>
+
+ </div>
+</section>
+
+<!--
+<section>
+ <h1>Acronyms</h1>
+ <ul style="font-size:larger">
+  <li class="fragment">DES = Discrete Event Simulation</li>
+  <li class="fragment">OEM = Object Event Modeling</li>
+  <li class="fragment">OES = Object Event Simulation</li>
+  <li class="fragment">M&amp;S = Modeling and Simulation</li>
+  <li class="fragment">OEM&amp;S = Object Event Modeling and Simulation</li>
+  <li class="fragment">DPMN = Discrete Event Process Modeling Notation</li>
+ </ul>
+</section>
+-->
+
+<section>
+ <h1 style="margin-top:-0.5em">Zu meinem Werdegang</h1>
+ <ul>
+  <li class="fragment" style="margin-top:-0.2em">Ich bin ein "alter Hase" ("alt", weil seit Oktober pensioniert).</li>
+  <li class="fragment">MFDBS 1991: <em>A Database Needs Two Kinds of Negation</em>. 
+   3rd Symposium on Mathematical Fundamentals of Database and KnowledgeBase Systems, Rostock.</li>
+  <li class="fragment">2000-2004: Mitarbeit in Wil van der Aalsts Gruppe an der TU Eindhoven. 
+   Betreuung der Doktorabeit von Giancarlo Guizzardi.</li>
+  <li class="fragment"><div class="fragment" style="float: right"><img src="img/Information-Systems-28-5.png" width="606" height="235"/></div>
+   ER 2002: <em>On the General Ontological Foundations of Conceptual Modeling</em>, zusammen mit Giancarlo Guizzardi und Heinrich Herre.</li>
+  <li class="fragment">Seit 2009 arbeite ich auch im Gebiet <em>Ereignisbasierte Simulationsmodellierung</em>.</li>
+ </ul>
+</section>
+<section>
+ <h2 style="margin-top:-0.3em">Die zwei grundlegenden Modellierungssprachen</h2>
+ <div><img src="img/The-ER-Model.png" width="1022" height="278"/></div>
+ <div class="fragment"><img src="img/Event-Graphs-1983.png" width="917" height="277"/></div>
+</section>
+
+<section>
+ <h1 style="margin-top:-0.5em">Objekte und Ereignisse</h1>
+ <ul>
+  <li class="fragment" style="margin-top:-0.2em">Die Welt besteht aus Objekten und Ereignissen:
+  <blockquote style="width: 90%">
+   Smiles, walks, dances, weddings, explosions, hiccups, hand-waves, arrivals and departures, births and deaths, 
+   thunder and lightning: the variety of the world seems to lie not only in the assortment of its ordinary citizens
+   — animals and physical objects [...] — but also in the sort of things that happen to or are performed by them. 
+   (<a href="http://plato.stanford.edu/archives/win2015/entries/events/">Casati und Varzi 2015</a>)
+  </blockquote>
+  </li>
+  <li class="fragment">Während die <em>Geschäftsprozess</em>-Modellierung sich auf Ereignisse und Prozesse konzentriert, 
+   und <strong>Objekte vernachlässigt</strong> hat, hat sich die <em>Konzeptuelle Modellierung für IS</em> auf Objekte (Entitäten) konzentriert 
+   und <strong>Ereignisse vernachlässigt</strong>.</li>
+  <li class="fragment">Die Objekt-Ereignis-Modellierung (OEM) versöhnt beide Perspektiven, indem Objekte und Ereignisse 
+   gleichwertig behandelt werden.</li>
+  <!--
+  <li class="fragment">While research in Business Process Modeling has focused on events and processes, neglecting objects, 
+   research in Conceptual Modeling for Information Systems (IS) engineering has focused on objects, neglecting events.</li>
+  <li class="fragment">Object Event Modeling (OEM) reconciles both perspectives, giving equal weight to objects and events.</li>
+  -->
+ </ul>
+</section>
+ 
+<section>
+ <h1 style="margin-top:-0.5em">Objekt-Ereignis-Modellierung</h1>
+ <ul>
+  <li class="fragment" style="margin-top:-0.2em">Ein neues Paradigma für die Modellierung von diskreten dynamischen Systemen, 
+   inklusive Organisationen und deren geschäftsprozess&shy;unterstützenden Informationssystemen.</li>
+  <li class="fragment">OEM kombiniert Informationsmodellierung mit diskreter Prozessmodelierung.</li>
+  <li class="fragment">Ein OE-Klassenmodell definiert Objekt-, Ereignis- und Aktivitäts-Typen, mit Attributen, Assoziationen, 
+   Operationen und Integritätsbedingungen.</li>
+  <li class="fragment">Spezielle Assoziationen spezifizieren die Ressourcenabhängigkeiten von Aktivitäten.</li>
+ </ul>
+</section>
+ <section>
+  <figure style="float:right; margin-left:1em"><img src="img/Objects-Events-Activities.svg" width="1000"/></figure>
+  <h1>Aktivitäten</h1>
+  <p>... sind nicht-augenblickliche Ereignisse, die sich aus einem Paar von augenblicklichen Aktivitäts-Start- 
+   und -End-Ereignissen zusammensetzen.</p>
+  <p>... haben einen <strong>Performer</strong> als spezielle ("aktive") Ressource.</p>
+ </section>
+ 
+<section>
+ <h2 style="margin-top:-0.5em; text-align:left">Ein OE-Klassen-Modell</h2>
+ <div style="margin-top:-2em; float:right"><img src="img/CityLibrary_IDM.svg" width="1000"/></div>
+ <p class="fragment">&bull; Schnapschuss-Population für Objekt-Klassen</p>
+ <p class="fragment">&bull; Historische Population für Ereignis-/Aktivitäts-Klassen</p>
+ <p class="fragment">&bull; Schnapschuss- und historische Multiplizitäten für Ereignis-/Aktivitäts-Assoziationsenden</p>
+</section>
+
+<section>
+ <h1>Flexible Geschäftsprozesse</h1>
+ <ul>
+  <li class="fragment">... benötigen keine Ereignis-/Aktivitäts-Sequenzierung, also kein Prozessmodell!</li>
+  <li class="fragment">Aus einem OE-Klassen-Modell mit <i>onActivityEnd</i>-Ereignishand&shy;habungs&shy;prozeduren kann 
+   eine Business-App mit CRUD- und Aktivitäts-Benutzerschnittstellen automatisch generiert werden.</li>
+ </ul>
+</section>
+ 
+<section>
+ <h1 style="margin-bottom:1em">Ein Ereignis-Graph</h1>
+ <div style="margin-top:-1em"><img src="img/Workstation_EG_simplified.svg" width="1376"/></div>
+ <div style="margin-top:1em">Zustandsvariablen: <i>Len</i> = Länge der Warteschlange,</br><i>Busy</i> = Verarbeitungsstation ist belegt</div>
+</section>
+<section>
+ <h1>Ein Objekt-Ereignis-Graph</h1>
+ <div><img src="img/Workstation_OEG.svg" width="1376"/></div>
+</section>
+
+<section>
+ <h1>Ein vollständiges Objekt-Ereignis-Modell</h1>
+ <div style="display:flex; flex-wrap:wrap; justify-content:space-between;"><img src="img/WS1_IDM.svg" width="320"/><img src="img/Workstation_OEG_2.svg" width="1040"/></div>
+</section>
+
+<section>
+ <h1 style="margin-top:-0.7em; text-align:left">Ereignis-Regeln</h1>
+ <ul style="margin-top:-0.2em">
+  <li class="fragment"><div style="float:right; margin-left:1em; margin-top:-1.5em"><img src="img/WS1-PartArrival_RDM.svg" width="700"/></div>
+   Ein Objekt-Ereignis-Graph (OEG) mit <i>N</i> Ereignis-Knoten kann in <i>N</i> 
+   Ereignis-Regel-Diagramme zerlegt werden.</li>
+  <li class="fragment">Ein OEG spezifiziert Ereignis-Regeln der Form:
+  <p style="margin-top:0.5em">WHEN <em>event expression</em></br>STATE CHANGES <em>state change statements</em></br>
+   FOLLOW-UP EVENTS <em>event expressions</em></p></li>
+  <li class="fragment">Die Zerlegung eines OEG in eine Menge von Ereignis-Regeln und die Interpretation von
+   Ereignis-Regeln als <strong>Transitionsfunktionen</strong> ergibt die formale/operationale Semantik von OEGs als 
+   <em>Abstract State Machines</em>.</li>
+ </ul>
+</section>
+<section>
+ <h1>Ereignis-Regel 1</h1>
+ <div style="float:right"><img src="img/WS1-PartArrival_RDM.svg" width="700"/></div>
+ <p style="margin-top:2em"><b>WHEN</b>: Arrival( ws: Workstation)</br>
+ <b>STATE CHANGES</b>:</br>&nbsp;&nbsp;&nbsp;INCREMENT inputBufferLength</br>
+ <b>FOLLOW-UP EVENTS</b>:</br>&nbsp;&nbsp;&nbsp;IF ws.status == AVAILABLE</br>&nbsp;&nbsp;&nbsp;THEN ProcessingStart( ws)</p>
+</section>
+<section>
+ <h1>Ereignis-Regel 2</h1>
+ <div style="float:right"><img src="img/WS1-ProcessingStart_RDM.svg" width="750"/></div>
+ <p style="margin-top:2em"><b>WHEN</b>:</br>&nbsp;&nbsp;&nbsp;ProcessingStart( ws: Workstation)</br>
+ <b>STATE CHANGES</b>:</br>&nbsp;&nbsp;&nbsp;ws.status = BUSY</br>
+ <b>FOLLOW-UP EVENTS</b>:</br>&nbsp;&nbsp;&nbsp;ProcessingEnd( ws)</p>
+</section>
+<section>
+ <h1>Ereignis-Regel 3</h1>
+ <div style="float:right"><img src="img/WS1-ProcessingEnd_RDM.svg" width="750"/></div>
+ <p style="margin-top:2em"><b>WHEN</b>:</br>&nbsp;&nbsp;&nbsp;ProcessingEnd( ws: Workstation)</br>
+ <b>STATE CHANGES</b>:</br>&nbsp;&nbsp;&nbsp;DECREMENT inputBufferLength</br>
+ &nbsp;&nbsp;&nbsp;IF inputBufferLength == 0 THEN</br>
+ &nbsp;&nbsp;&nbsp;ws.status = AVAILABLE</br>
+ <b>FOLLOW-UP EVENTS</b>:</br>&nbsp;&nbsp;&nbsp;IF inputBufferLength > 0</br>&nbsp;&nbsp;&nbsp;THEN ProcessingStart( ws)</p>
+</section>
+
+<section>
+ <h3 style="margin-top:-0.9em;margin-bottom:0">Die Schichten von DPMN</h3>
+ <table style="width:100%; margin-top:5px">
+  <col style="width:5%"><col style="width:25%"><col style="width:30%"><col style="width:40%">
+  <thead>
+   <tr><th>&nbsp;&nbsp;&nbsp;</th><th>Schicht</th><th>Konzepte</th><th>Diagramme</th></tr>
+  </thead>
+  <tr>
+  <tbody>
+  <tr style="background:aquamarine;"><td style="font-size:70%;line-height:1;writing-mode:vertical-rl;text-orientation:sideways;background:green;color:aquamarine">Event-Based<br/>Simulation</td>
+   <td>Event Graphs (Schruben 1983)</td><td>Events, Event Scheduling Arrows, Assignments</td>
+   <td><img src="img/SimpleEG.svg" style="width:300px"/></td></tr>
+  <tr style="background:lightcyan;"><td rowspan="3" style="writing-mode:vertical-lr;text-orientation:sideways;background:blue;color:aqua">Object Event Simulation</td>
+   <td>Object Event Graphs (Basic DPMN)</td><td>+ Objects w/ State Changes</td><td><img src="img/BasicDPMN.svg" width="500"/></td></tr>
+  <tr style="background:aqua;"><td>Activity Networks (DPMN-AN)</td>
+   <td><ul style="list-style:url('img/PlusSign.svg');padding-left:3%;font-size:smaller;line-height:1">
+    <li style="margin-top:0;margin-bottom:0;">Activities</li>
+    <li style="margin-top:0;margin-bottom:0;">Resource-Dependent Activity Scheduling Arrows</li>
+    <li style="margin-top:0;margin-bottom:0;">Resource Roles</li>
+    <li style="margin-top:0;margin-bottom:0;">Resource Multiplicity Constraints</li>
+    <li style="margin-top:0;margin-bottom:0;">Resource Pools</li></ul>
+   </td>
+   <td><img src="img/DPMN_A_wRes.svg" width="500"/></td></tr>
+  <tr style="background:lavender;"><td></td>
+   <td></td><td></td></tr>
+  </tbody>
+ </table> 
+</section>
+
+<section>
+ <!-- <h1>Introducing Activities<br/>as Pairs of Start and End Events</h1> -->
+ <h1>Aktivititäten sind definierbar<br/>als Paare von Start- und End-Ereignissen</h1>
+ <div style="display:flex;justify-content:space-between;margin-top:1em"><img src="img/ActivityStart-and-End.svg" width="500"><img src="img/RightArrow.svg" width="60"><img src="img/Activity-with-StartEvent.svg" width="500"></div>
+</section>
+ 
+<section>
+ <img src="img/DownArrow.svg" alt="" width="50" style="position:absolute;left:45%;top:65%"/>
+ <h2 style="margin-top:-0.7em;">Ressourcenabhängige Aktivitätsplanungs-Pfeile</h2>
+ <div><img src="img/Pizza-Server-1_PDM.svg" alt="DPMN Process Design Model Pizza-Server-1" width="800"/></div>
+ <hr/>
+ <div style="margin-top:0.2em"><img src="img/Pizza-Server-2_PDM.svg" alt="DPMN Process Design Model Pizza-Server-2" width="500"/></div>
+</section>
+
+<section>
+ <h1 style="margin-top:-0.5em;">Fazit</h1>
+ <ul>
+  <li class="fragment">Die gleichwertige Betrachtung von <strong>Geschäftsobjekten</strong> und <strong>Geschäfts-Ereignissen/Aktivitäten</strong> 
+   sowohl in der Informationsmodellierung als auch in der Prozessmodellierung ist sehr natürlich, wurde aber bisher vernachlässigt.</li>
+  <li class="fragment">OEM/DPMN erlaubt es, ein vollständiges Bild der Zustände and Prozesse diskreter dynamischer Systeme zu erhalten.</li>
+  <li class="fragment">Im Gegensatz zu Petri-Netzen (mit den abstrakten Elementen von Plätzen, Marken und Markierungen) entsprechen die 
+   Elemente DPMN (Objekte, Ereignisse, Aktivitäten) genau den für die Geschäftsprozessmodellierung grundegenden Konzepten.</li>
+  <li class="fragment">Im Gegensatz zu BPMN hat DPMN eine präzise Semantik (auf der Basis von Ereignis-Graphen).</li>
+ </ul>
+</section>
+<!--
+<section>
+ <h1>Conclusions</h1>
+ <ul>
+  <li class="fragment">Considering both <strong>business objects</strong> and <strong>business events/activities</strong> 
+   both in information modeling and in process modeling is very natural, but has not been done traditionally.</li>
+  <li class="fragment">Object Event Modeling provides a complete computational picture of the states and processes of discrete systems 
+  based on the computational concept of <strong>event rules</strong> capturing <em>causal regularities</em>.</li>
+ </ul>
+</section>
+-->
+
+<section>
+ <h1>Related Work</h1>
+ <ul>
+  <li class="fragment">Two existing ISE approaches (MERODE and OPM) already consider both <strong>business objects</strong> and <strong>business events</strong>/processes.</li>
+  <li class="fragment">However, OEM provides a more complete computational treatment of events by capturing <em>causal regularities</em> in the form of <strong>event rules</strong>.</li>
+ </ul>
+</section>
+
+
+ <section>
+  <h1>References</h1>
+  <ul>
+   <li>Gerd Wagner: <a href="https://www.informs-sim.org/wsc17papers/includes/files/056.pdf">An Abstract State Machine Semantics For Discrete Event Simulation</a>, <em>Proc. of the 2017 Winter Simulation Conference</em>.</li>
+   <li>Gerd Wagner: <a href="https://sim4edu.com/reading/bpms-dpmn/">Business Process Modeling and Simulation with DPMN</a>, Open Access E-Book, 2021-2022.</li>
+  </ul>
+ </section>
+
+<!-- ========================================================= -->    
+</div>
+</div>
+    
+<script src="../reveal/lib/js/head.min.js"></script>
+<script src="../reveal/js/reveal.min.js"></script>
+
+  <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        width: 1400,  //1366
+        height: 768,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        ]
+      });
+
+</script>
+
+  </body>  
+</html>
+
+
