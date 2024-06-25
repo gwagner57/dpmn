@@ -15,7 +15,7 @@ span.button {
 }/*]]>*/</style></head><body><section class="role-book" id="OEMS"><div class="role-book-title-div"><h1 class="role-book-title">Object Event Modeling and Simulation</h1><div class="role-content" id="OEMS-content-1"><div id="OEMS-content-1__subtitle">For Information Systems Engineering and for<br />
   Discrete Event Simulation Engineering </div><div id="OEMS-content-1__authors">Gerd Wagner <a href="mailto:G.Wagner@b-tu.de">G.Wagner@b-tu.de</a></div><p>Copyright ©
   2023-24 Gerd Wagner</p><p><b>Draft version</b>, published
-  2024-06-20.</p><figure><img alt="business-process-gearwheels" height="500" src="OEMS_files/Tree-broken-by-lightning.png" width="650" /></figure><section><h2>Abstract</h2><p>This book explains how
+  2024-06-25.</p><figure><img alt="business-process-gearwheels" height="500" src="OEMS_files/Tree-broken-by-lightning.png" width="650" /></figure><section><h2>Abstract</h2><p>This book explains how
   to make models for <em>Information Systems</em> engineering and for
   <em>Discrete Event Simulation</em> engineering using the <em>Unified
   Modeling Language (UML)</em> and the <em>Discrete Event Process Modeling
@@ -26,9 +26,11 @@ span.button {
   Event Scheduling</em>).</p><p>The modeling concepts of OEM&amp;S, in
   particular the concepts of <em>objects</em>, <em>events</em> and
   <em>activities</em>, are ontologically grounded on corresponding categories
-  of the <em>Unified Foundational Ontology (UFO)</em>.</p></section></div></div><div class="role-frontmatter" id="frontmatter"><section class="role-toc" id="toc"><h1 class="role-toc-title">Table of Contents</h1><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-lof"><a class="role-lof-ref" href="#lof">List of Figures</a></li><li class="role-booklist-entry booklist-entry-for-lot"><a class="role-lot-ref" href="#lot">List of Tables</a></li><li class="role-booklist-entry booklist-entry-for-part"><a class="role-part-ref" href="#OEM-Intro"><span class="role-label"><span class="role-number">I</span>. </span>Object Event Modeling</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#Introduction"><span class="role-label"><span class="role-number">1</span>. </span>Introduction</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#UFO"><span class="role-label"><span class="role-number">1.1</span>. </span>Ontological Foundations of OEM</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#IS-model-to-DES-model"><span class="role-label"><span class="role-number">1.2</span>. </span> Turning an IS Model into a DES Model</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#UML-SysML"><span class="role-label"><span class="role-number">1.3</span>. </span>Modeling Events in UML and SysML</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#RelatedWork"><span class="role-label"><span class="role-number">1.4</span>. </span>Related Work</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#chConceptualModels"><span class="role-label"><span class="role-number">2</span>. </span>Making Conceptual Domain Models</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secCIM"><span class="role-label"><span class="role-number">2.1</span>. </span>Making Conceptual Information Models</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ObjectTypes_CIM"><span class="role-label"><span class="role-number">2.1.1</span>. </span>Modeling Object Types</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#EventTypes_CIM"><span class="role-label"><span class="role-number">2.1.2</span>. </span>Modeling Event Types</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ActivityTypes_CIM"><span class="role-label"><span class="role-number">2.1.3</span>. </span>Modeling Activity Types</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#secCIM-ParticipationAssociations"><span class="role-label"><span class="role-number">2.1.4</span>. </span>Modeling Participation Associations</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secCPM"><span class="role-label"><span class="role-number">2.2</span>. </span>Making Conceptual Process Models</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#CPM-EventRuleTable"><span class="role-label"><span class="role-number">2.2.1</span>. </span>Modeling Causal Regularities with Event Rule Tables</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#CPM-OEG"><span class="role-label"><span class="role-number">2.2.2</span>. </span>Modeling Causal Regularities with Object Event Graphs</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#CPM-AN"><span class="role-label"><span class="role-number">2.2.3</span>. </span>Modeling Causal Regularities with Activity Networks</a></li></ul></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#DesigModels-IS"><span class="role-label"><span class="role-number">3</span>. </span>Making Design Models for Information Systems</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secIDM-IS"><span class="role-label"><span class="role-number">3.1</span>. </span>Information Design for IS Engineering</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secIDM-FormalSemantics"><span class="role-label"><span class="role-number">3.2</span>. </span>Formal Semantics of OE Class Models</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secPDM-IS"><span class="role-label"><span class="role-number">3.3</span>. </span>Process Design for IS Engineering</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#DesigModels-DES"><span class="role-label"><span class="role-number">4</span>. </span>Making Design Models for Discrete Event Simulations</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secIDM-DES"><span class="role-label"><span class="role-number">4.1</span>. </span>Making Information Design Models for DES Engineering</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secPDM-DES"><span class="role-label"><span class="role-number">4.2</span>. </span>Making Process Design Models for DES Engineering</a></li></ul></li></ul></li><li class="role-booklist-entry booklist-entry-for-part"><a class="role-part-ref" href="#ES-Part-Intro"><span class="role-label"><span class="role-number">II</span>. </span>Event-Based Simulation</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#ES-without-Objects"><span class="role-label"><span class="role-number">5</span>. </span>Event-Based Simulation without Objects</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#subsec_The-ES-Formalism"><span class="role-label"><span class="role-number">5.1</span>. </span>The ES Formalism</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#subsec_EGs"><span class="role-label"><span class="role-number">5.2</span>. </span>Event Graphs</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#ES-with-Objects"><span class="role-label"><span class="role-number">6</span>. </span>Event-Based Simulation with Objects</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#subsec_The-OES-Formalism"><span class="role-label"><span class="role-number">6.1</span>. </span>The OES Formalism</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#subsec_OEGs"><span class="role-label"><span class="role-number">6.2</span>. </span>Object Event Graphs</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#SimpleActivities-Intro"><span class="role-label"><span class="role-number">7</span>. </span>Simple Activities</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secCM"><span class="role-label"><span class="role-number">7.1</span>. </span>Conceptual Modeling of Simple Activities</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secDesM"><span class="role-label"><span class="role-number">7.2</span>. </span>Design Modeling of Simple Activities</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#ResourceConstrainedActivities-Intro"><span class="role-label"><span class="role-number">8</span>. </span>Resource-Constrained Activities</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secCM-2"><span class="role-label"><span class="role-number">8.1</span>. </span>Conceptual Modeling of Resource-Constrained Activities</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secDesM-2"><span class="role-label"><span class="role-number">8.2</span>. </span>Resource-Constrained Activities in Simulation Design Models</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secAllocateReleasePattern"><span class="role-label"><span class="role-number">8.3</span>. </span>Introducing Resource-Dependent Activity Scheduling Arrows</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secOrganizationModeling"><span class="role-label"><span class="role-number">8.4</span>. </span>Organization Modeling Concepts</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#ResourceModeling-Intro"><span class="role-label"><span class="role-number">8.5</span>. </span>Resource Modeling</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Constraints"><span class="role-label"><span class="role-number">8.5.1</span>. </span>Resource Cardinality Constraints and Multitasking
-    Constraints</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-OrganizationalPositions"><span class="role-label"><span class="role-number">8.5.2</span>. </span>Organizational Positions and Resource Pools</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Alternative-resources"><span class="role-label"><span class="role-number">8.5.3</span>. </span>Alternate Resource Pools</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Task-priorities"><span class="role-label"><span class="role-number">8.5.4</span>. </span>Task Priorities</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Activity-Preemption"><span class="role-label"><span class="role-number">8.5.5</span>. </span>Activity Preemption</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Resource-Outages"><span class="role-label"><span class="role-number">8.5.6</span>. </span>Resource Outages</a></li></ul></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#secPN-CM"><span class="role-label"><span class="role-number">9</span>. </span>Conceptual Modeling of Processing Networks</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#secPN-DM"><span class="role-label"><span class="role-number">10</span>. </span>Processing Network Design Models</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-part"><a class="role-part-ref" href="#AgentBasedDES-Intro"><span class="role-label"><span class="role-number">III</span>. </span>Agent-Based Modeling and Simulation</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#BasicAgents"><span class="role-label"><span class="role-number">11</span>. </span>Basic Agents with Perfect Information</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Perception-Action"><span class="role-label"><span class="role-number">11.1</span>. </span>Perception and Action</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Communication"><span class="role-label"><span class="role-number">11.2</span>. </span>Communication</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#InterleavedAgentSimulation"><span class="role-label"><span class="role-number">11.3</span>. </span>Interleaved Agent Simulation</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#BasicAgentsWithImperfectInformation-Intro"><span class="role-label"><span class="role-number">12</span>. </span>Basic Agents with Imperfect Information</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#Contracts-Intro"><span class="role-label"><span class="role-number">13</span>. </span>Contracts</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#CognitiveAgents-Intro"><span class="role-label"><span class="role-number">14</span>. </span>Cognitive Agents</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Bibliography">Bibliography</a></li><li class="role-booklist-entry booklist-entry-for-index"><a class="role-index-ref" href="#_index">Index</a></li></ul></section><section class="role-lof" id="lof"><h1 class="role-lof-title">List of Figures</h1><ul class="role-booklist-entries"><li class="role-booklist-entry"><a class="role-figure-ref" href="#subsec_OEGs__lof__1"><span class="role-label"><span class="role-number">6-1</span>. </span>A basic DPMN Process Diagram showing an
-  <abbr title="Object Event Graph">OEG</abbr>.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#subsec_OEGs__lof__2"><span class="role-label"><span class="role-number">6-2</span>. </span>A basic <abbr title="Object Event">OE</abbr>
+  of the <em>Unified Foundational Ontology (UFO)</em>.</p></section></div></div><div class="role-frontmatter" id="frontmatter"><section class="role-toc" id="toc"><h1 class="role-toc-title">Table of Contents</h1><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-lof"><a class="role-lof-ref" href="#lof">List of Figures</a></li><li class="role-booklist-entry booklist-entry-for-lot"><a class="role-lot-ref" href="#lot">List of Tables</a></li><li class="role-booklist-entry booklist-entry-for-part"><a class="role-part-ref" href="#OEM-Intro"><span class="role-label"><span class="role-number">I</span>. </span>Object Event Modeling</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#Introduction"><span class="role-label"><span class="role-number">1</span>. </span>Introduction</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#UFO"><span class="role-label"><span class="role-number">1.1</span>. </span>Ontological Foundations of OEM</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#IS-model-to-DES-model"><span class="role-label"><span class="role-number">1.2</span>. </span> Turning an IS Model into a DES Model</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#UML-SysML"><span class="role-label"><span class="role-number">1.3</span>. </span>Modeling Events in UML and SysML</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#RelatedWork"><span class="role-label"><span class="role-number">1.4</span>. </span>Related Work</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#chConceptualModels"><span class="role-label"><span class="role-number">2</span>. </span>Making Conceptual Domain Models</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secCIM"><span class="role-label"><span class="role-number">2.1</span>. </span>Making Conceptual Information Models</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ObjectTypes_CIM"><span class="role-label"><span class="role-number">2.1.1</span>. </span>Modeling Object Types</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#EventTypes_CIM"><span class="role-label"><span class="role-number">2.1.2</span>. </span>Modeling Event Types</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ActivityTypes_CIM"><span class="role-label"><span class="role-number">2.1.3</span>. </span>Modeling Activity Types</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#secCIM-ParticipationAssociations"><span class="role-label"><span class="role-number">2.1.4</span>. </span>Modeling Participation Associations</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secCPM"><span class="role-label"><span class="role-number">2.2</span>. </span>Making Conceptual Process Models</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#CPM-EventRuleTable"><span class="role-label"><span class="role-number">2.2.1</span>. </span>Modeling Causal Regularities with Event Rule Tables</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#CPM-OEG"><span class="role-label"><span class="role-number">2.2.2</span>. </span>Modeling Causal Regularities with Object Event Graphs</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#CPM-AN"><span class="role-label"><span class="role-number">2.2.3</span>. </span>Modeling Causal Regularities with Activity Networks</a></li></ul></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#DesigModels-IS"><span class="role-label"><span class="role-number">3</span>. </span>Making Design Models for Information Systems</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secIDM-IS"><span class="role-label"><span class="role-number">3.1</span>. </span>Information Design for IS Engineering</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#secIDM-FormalSemantics"><span class="role-label"><span class="role-number">3.1.1</span>. </span>Formal Semantics of OE Class Models</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#secIDM-Constraints"><span class="role-label"><span class="role-number">3.1.2</span>. </span>Integrity Constraints</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secPDM-IS"><span class="role-label"><span class="role-number">3.2</span>. </span>Process Design for IS Engineering</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#DesigModels-DES"><span class="role-label"><span class="role-number">4</span>. </span>Making Design Models for Discrete Event Simulations</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secIDM-DES"><span class="role-label"><span class="role-number">4.1</span>. </span>Making Information Design Models for DES Engineering</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secPDM-DES"><span class="role-label"><span class="role-number">4.2</span>. </span>Making Process Design Models for DES Engineering</a></li></ul></li></ul></li><li class="role-booklist-entry booklist-entry-for-part"><a class="role-part-ref" href="#ES-Part-Intro"><span class="role-label"><span class="role-number">II</span>. </span>Event-Based Simulation</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#ES-without-Objects"><span class="role-label"><span class="role-number">5</span>. </span>Event-Based Simulation without Objects</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#subsec_The-ES-Formalism"><span class="role-label"><span class="role-number">5.1</span>. </span>The ES Formalism</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#subsec_EGs"><span class="role-label"><span class="role-number">5.2</span>. </span>Event Graphs</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#ES-with-Objects"><span class="role-label"><span class="role-number">6</span>. </span>Event-Based Simulation with Objects</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#subsec_The-OES-Formalism"><span class="role-label"><span class="role-number">6.1</span>. </span>The OES Formalism</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#subsec_OEGs"><span class="role-label"><span class="role-number">6.2</span>. </span>Object Event Graphs</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#SimpleActivities-Intro"><span class="role-label"><span class="role-number">7</span>. </span>Simple Activities</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secCM"><span class="role-label"><span class="role-number">7.1</span>. </span>Conceptual Modeling of Simple Activities</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secDesM"><span class="role-label"><span class="role-number">7.2</span>. </span>Design Modeling of Simple Activities</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#ResourceConstrainedActivities-Intro"><span class="role-label"><span class="role-number">8</span>. </span>Resource-Constrained Activities</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secCM-2"><span class="role-label"><span class="role-number">8.1</span>. </span>Conceptual Modeling of Resource-Constrained Activities</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secDesM-2"><span class="role-label"><span class="role-number">8.2</span>. </span>Resource-Constrained Activities in Simulation Design Models</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secAllocateReleasePattern"><span class="role-label"><span class="role-number">8.3</span>. </span>Introducing Resource-Dependent Activity Scheduling Arrows</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#secOrganizationModeling"><span class="role-label"><span class="role-number">8.4</span>. </span>Organization Modeling Concepts</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#ResourceModeling-Intro"><span class="role-label"><span class="role-number">8.5</span>. </span>Resource Modeling</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Constraints"><span class="role-label"><span class="role-number">8.5.1</span>. </span>Resource Cardinality Constraints and Multitasking
+    Constraints</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-OrganizationalPositions"><span class="role-label"><span class="role-number">8.5.2</span>. </span>Organizational Positions and Resource Pools</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Alternative-resources"><span class="role-label"><span class="role-number">8.5.3</span>. </span>Alternate Resource Pools</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Task-priorities"><span class="role-label"><span class="role-number">8.5.4</span>. </span>Task Priorities</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Activity-Preemption"><span class="role-label"><span class="role-number">8.5.5</span>. </span>Activity Preemption</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Resource-Outages"><span class="role-label"><span class="role-number">8.5.6</span>. </span>Resource Outages</a></li></ul></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#secPN-CM"><span class="role-label"><span class="role-number">9</span>. </span>Conceptual Modeling of Processing Networks</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#secPN-DM"><span class="role-label"><span class="role-number">10</span>. </span>Processing Network Design Models</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-part"><a class="role-part-ref" href="#AgentBasedDES-Intro"><span class="role-label"><span class="role-number">III</span>. </span>Agent-Based Modeling and Simulation</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#BasicAgents"><span class="role-label"><span class="role-number">11</span>. </span>Basic Agents with Perfect Information</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Perception-Action"><span class="role-label"><span class="role-number">11.1</span>. </span>Perception and Action</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Communication"><span class="role-label"><span class="role-number">11.2</span>. </span>Communication</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#InterleavedAgentSimulation"><span class="role-label"><span class="role-number">11.3</span>. </span>Interleaved Agent Simulation</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#BasicAgentsWithImperfectInformation-Intro"><span class="role-label"><span class="role-number">12</span>. </span>Basic Agents with Imperfect Information</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#Contracts-Intro"><span class="role-label"><span class="role-number">13</span>. </span>Contracts</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#CognitiveAgents-Intro"><span class="role-label"><span class="role-number">14</span>. </span>Cognitive Agents</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Bibliography">Bibliography</a></li><li class="role-booklist-entry booklist-entry-for-index"><a class="role-index-ref" href="#_index">Index</a></li></ul></section><section class="role-lof" id="lof"><h1 class="role-lof-title">List of Figures</h1><ul class="role-booklist-entries"><li class="role-booklist-entry"><a class="role-figure-ref" href="#secIDM-IS__figLibraryIDM"><span class="role-label"><span class="role-number">3-1</span>. </span>An <abbr title="Object Event">OE</abbr> class diagram providing an information design
+  for the Public Library IS.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secIDM-FormalSemantics__lof__2"><span class="role-label"><span class="role-number">3-2</span>. </span>The abstract syntax of the OE Modeling
+  Language based on KerML metaclasses.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#subsec_OEGs__lof__3"><span class="role-label"><span class="role-number">6-1</span>. </span>A basic DPMN Process Diagram showing an
+  <abbr title="Object Event Graph">OEG</abbr>.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#subsec_OEGs__lof__4"><span class="role-label"><span class="role-number">6-2</span>. </span>A basic <abbr title="Object Event">OE</abbr>
   class model defining an object type and three event
   types.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secCM__figWorkstationCIM"><span class="role-label"><span class="role-number">7-1</span>. </span>Introducing an
   activity type in a conceptual information model of a single workstation
@@ -55,7 +57,7 @@ span.button {
   nmrOfRooms and nmrOfDoctors.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secDesM-2__figMedDep1PDM1"><span class="role-label"><span class="role-number">8-12</span>. </span>A process design model
   based on the information design model of <a class="role-figure-ref" href="#secDesM-2__figMedDep1IDM1"><span class="role-label">Figure <span class="role-number">8-11</span></span></a>.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secDesM-2__figMedDep1IDM2"><span class="role-label"><span class="role-number">8-13</span>. </span>An <abbr title="Object Event">OE</abbr> class model with resource object
   types for modeling resource roles and pools.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secDesM-2__figMedDep1PDM2"><span class="role-label"><span class="role-number">8-14</span>. </span>A process design model based on the
-  information design model of <a class="role-figure-ref" href="#secDesM-2__figMedDep1IDM2"><span class="role-label">Figure <span class="role-number">8-13</span></span></a>.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secDesM-2__lof__22"><span class="role-label"><span class="role-number">8-15</span>. </span>Any resource type
+  information design model of <a class="role-figure-ref" href="#secDesM-2__figMedDep1IDM2"><span class="role-label">Figure <span class="role-number">8-13</span></span></a>.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secDesM-2__lof__24"><span class="role-label"><span class="role-number">8-15</span>. </span>Any resource type
   <i>R</i> extends the pre-defined object type
   <code>Resource</code></a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secDesM-2__figMedDep1IDM3"><span class="role-label"><span class="role-number">8-16</span>. </span>A simplified version of the model of <a class="role-figure-ref" href="#secDesM-2__figMedDep1IDM2"><span class="role-label">Figure <span class="role-number">8-13</span></span></a> </a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secDesM-2__figWS3IDM3"><span class="role-label"><span class="role-number">8-17</span>. </span>An OE Class Diagram modeling a
   single workstation system with resource-constrained processing activities
@@ -587,13 +589,16 @@ span.button {
   opposed to the underlying conceptual information model shown in <a class="role-section2-ref" href="#ActivityTypes_CIM"><span class="role-label">Section <span class="role-number">2.1.3</span></span></a>, the following information design model
   provides attribute ranges, standard identifiers, mandatory value and key
   constraint declarations (by default, in UML, attributes are mandatory and
-  single-valued).</p><figure><img src="OEMS_files/PublicLibrary_IDM_IS.svg" width="500" /></figure><p>Notice also the notation &quot;/date&quot; in the attribute
-  compartments of the activity classes <i>BookLending</i> and
-  <i>BookTakeBack</i>, where the slash prefix indicates that the attribute
-  <i>date</i> is a derived attribute (its value can be automatically computed
-  from the implicit <i>occurrenceTime</i> attribute).</p><p>The class model
-  expressed above with the visual modeling language of <abbr title="Object Event">OE</abbr> class diagrams can also be expressed
-  textually, following the syntax of SysML, in the following way:</p><table class="role-listing" style="width: 100%; border-collapse: collapse;"><colgroup class="listing-numbers-column" style="width: 2.25em;"></colgroup><tbody style="vertical-align: baseline;"><tr><td class="listing-numbers"><pre style="text-align: right; background-color: transparent; border-style: none; padding: 0; margin: 0;">1
+  single-valued).</p><figure id="secIDM-IS__figLibraryIDM"><figcaption><span class="role-label">Figure <span class="role-number">3-1</span>. </span>An <abbr title="Object Event">OE</abbr> class diagram providing an information design
+  for the Public Library IS.</figcaption><img src="OEMS_files/PublicLibrary_IDM_IS.svg" width="500" /></figure><p>Notice also
+  the notation &quot;/date&quot; in the attribute compartments of the activity classes
+  <i>BookLending</i> and <i>BookTakeBack</i>, where the slash prefix indicates
+  that the attribute <i>date</i> is a derived attribute (its value can be
+  automatically computed from the implicit <i>occurrenceTime</i>
+  attribute).</p><p>The class model expressed above with the visual modeling
+  language of <abbr title="Object Event">OE</abbr> class diagrams can also be
+  expressed textually, following the syntax of SysML, in the following
+  way:</p><table class="role-listing" style="width: 100%; border-collapse: collapse;"><colgroup class="listing-numbers-column" style="width: 2.25em;"></colgroup><tbody style="vertical-align: baseline;"><tr><td class="listing-numbers"><pre style="text-align: right; background-color: transparent; border-style: none; padding: 0; margin: 0;">1
 2
 3
 4
@@ -675,46 +680,29 @@ activityType <b>BookTakeBack</b> {
   attribute date : Date;
   attribute libraryUser : LibraryUser;
   attribute bookCopies : BookCopy[1..*];
-}</pre></td></tr></tbody></table><p>An <abbr title="Object Event">OE</abbr> class model is based on a
-  set of <em>data types</em> (such as Integer, String, etc.), which are
-  special <em>types</em>. Object types, event types and associations are
-  <em>classifiers</em>, which are also special <em>types</em>.
+}</pre></td></tr></tbody></table><section class="role-section2" id="secIDM-FormalSemantics"><h3 class="role-section2-title"><span class="role-label"><span class="role-number">3.1.1</span>. </span>Formal Semantics of OE Class Models</h3><p>An <abbr title="Object Event">OE</abbr> class model is based on a
+  set of <em>data types</em> (such as Integer, String, etc.). Data types,
+  object types, event types and associations are <em>classifiers</em>, which
+  are <em>types</em>. Also, features, such as attributes, are types.
   <em>Specialization</em> is a relationship between types that is subject to
   certain constraints (such as the constraint that object types can only
-  specialize other object types).</p><p>An <abbr title="Object Event">OE</abbr> class model (based on a set of data types DT)
-  is a 9-tuple ⟨ OT, ET, Attr, dom, rng, Ass, ends, mul, sup ⟩ specifying a
-  vocabulary consisting of a set of <em>object</em> and <em>event type</em>
-  names <i>OT</i> and <i>ET</i>, a set of <em>attribute</em> names <i>Attr</i>
-  and a set of <em>association</em> names <i>Ass</i>, as well as of functions
-  <i>dom</i> and <i>rng</i> for assigning a <em>domain</em> and a
-  <em>range</em> (or <em>codomain</em>) to an attribute, a function
-  <i>ends</i> for assigning a tuple of object types to each association (the
-  object types participating in it), a function <i>mul</i> for assigning
-  multiplicities both to attributes and associations, and a function
-  <i>sup</i> for assigning supertypes to types.</p><p>If an <abbr title="Object Event">OE</abbr> class model has only binary associations, it
-  can be reduced to an an <em>association-free</em> model ⟨ OT, ET, Attr, dom,
-  rng, mul, sup ⟩ by expressing/replacing the associations with the help of
-  corresponding <em>reference attributes</em>.</p><p>An interpretation of an
-  (association-free) <abbr title="Object Event">OE</abbr> class model is a ⟨
-  O, E, Attr, dom, rng, Ass, ends, mul, sup ⟩ </p></section><section class="role-section1" id="secIDM-FormalSemantics"><h2 class="role-section1-title"><span class="role-label"><span class="role-number">3.2</span>. </span>Formal Semantics of OE Class Models</h2><p>An <abbr title="Object Event">OE</abbr> class model is based on a
-  set of <em>data types</em> (such as Integer, String, etc.), which are
-  special <em>types</em>. Object types, event types and associations are
-  <em>classifiers</em>, which are also special <em>types</em>.
-  <em>Specialization</em> is a relationship between types that is subject to
-  certain constraints (such as the constraint that object types can only
-  specialize other object types).</p><p>A <em>multiplicity</em> is an
-  expression <i>l</i>..<i>u</i> consisting of a lower bound <i>l</i> being a
-  non-negative integer and an upper bound <i>u</i> being either a positive
-  integer or the special symbol ∗ standing for <em>unbounded</em> such that
-  either <i>u</i> = ∗ or <i>l</i> ≤ <i>u</i>. Whenever the lower bound
-  <i>l</i> of a multiplicity is greater than 0, it defines a minimum
-  cardinality constraint (&quot;there must be at least <i>l</i> values&quot;). Whenever
-  the upper bound <i>u</i> of a multiplicity is not ∗ (unbounded), it defines
-  a maximum cardinality constraint (&quot;there must be at most <i>u</i> values&quot;).
-  </p><p>An <abbr title="Object Event">OE</abbr> class model (based on a
-  finite set of data types DT) is a 9-tuple ⟨ <i>OT</i>, <i>ET</i>, attr, rng,
-  <i>OAss</i>, <i>PAss</i>, ends, mul, sup ⟩ specifying</p><ol>
-      <li>a <em>vocabulary</em> ⟨ <i>OT</i>, <i>ET</i>, attr,<i>OAss</i>,
+  specialize other object types). The metaclasses <i>Type</i>,
+  <i>Specialization</i>, <i>Classifier</i>, and <i>Feature</i> are defined in
+  the <a href="https://www.omg.org/spec/KerML">Kernel Modeling
+  Language</a>.</p><figure id="secIDM-FormalSemantics__lof__2"><figcaption><span class="role-label">Figure <span class="role-number">3-2</span>. </span>The abstract syntax of the OE Modeling
+  Language based on KerML metaclasses.</figcaption><div><img alt="???" src="OEMS_files/OEML-Metamodel.svg" width="500" /></div></figure><p>A
+  <em>multiplicity</em> is an expression <i>l</i>..<i>u</i> consisting of a
+  lower bound <i>l</i> being a non-negative integer and an upper bound
+  <i>u</i> being either a positive integer or the special symbol ∗ standing
+  for <em>unbounded</em> such that either <i>u</i> = ∗ or <i>l</i> ≤ <i>u</i>.
+  Whenever the lower bound <i>l</i> of a multiplicity is greater than 0, it
+  defines a minimum cardinality constraint (&quot;there must be at least <i>l</i>
+  values&quot;). Whenever the upper bound <i>u</i> of a multiplicity is not ∗
+  (unbounded), it defines a maximum cardinality constraint (&quot;there must be at
+  most <i>u</i> values&quot;). </p><p>An <abbr title="Object Event">OE</abbr> class
+  model (based on a finite set of data types DT) is a 10-tuple </p><p style="text-align: center">⟨ <i>OT</i>, <i>ET</i>, attr, rng, <i>OAss</i>,
+  <i>PAss</i>, ends, mul, mul<sub>s</sub>, sup ⟩</p><p>specifying</p><ol>
+      <li>a <em>vocabulary</em> ⟨ <i>OT</i>, <i>ET</i>, attr,<i> OAss</i>,
       <i>PAss</i> ⟩ consisting of finite sets of <em>object</em> and <em>event
       type</em> names <i>OT</i> and <i>ET</i>, a finite set of composite
       <em>attribute</em> names of the form <i>T</i>-<i>a</i> where <i>T</i> ∈
@@ -736,27 +724,39 @@ activityType <b>BookTakeBack</b> {
       association</em> from <i>PAss</i>;</li>
 
       <li>a function <i>mul</i> for assigning <em>multiplicities</em> both to
-      attributes and association ends;</li>
+      attributes and association ends (<i>mul</i> also expresses <em>history
+      multiplicities</em> for event class association ends of participation
+      associations);</li>
+
+      <li>a function <i>mul<sub>s</sub></i> for assigning <em>snapshot
+      multiplicities</em> to event class association ends of participation
+      associations;</li>
 
       <li>a function <i>sup</i> for assigning <em>supertypes</em> to types
       such that for any object type <i>T</i>, all its supertypes <i>T'</i> ∈
-      sup(<i>T</i>) are also object types (and likewise for event types).</li>
+      sup(<i>T</i>) are also object types (and likewise for event types) and
+      attr(T') ⊆ attr(T);</li>
     </ol><p>If an <abbr title="Object Event">OE</abbr> class model has only
   binary object type associations, it can be reduced to an
-  <em>association-free</em> model ⟨ OT, ET, attr, rng, mul, sup ⟩ by
-  expressing/replacing all associations with the help of corresponding
-  <em>reference attributes</em>.</p><p>An
-  <strong><em>interpretation</em></strong> of an association-free <abbr title="Object Event">OE</abbr> class model is a sextuple ⟨ <i>c</i>,
-  <i>Obj</i>, <i>Evt</i>, type, occt, <b><i>I</i></b> ⟩ such that</p><ol>
-      <li><i>c</i> is the current time,</li>
+  <em>association-free</em> model as a septuple </p><p style="text-align: center">⟨ OT, ET, attr, rng, mul, <i>mul<sub>s</sub></i>,
+  sup ⟩</p><p>by expressing/replacing all associations with the help of
+  corresponding <em>reference attributes</em>.</p><p>An
+  <strong><em>interpretation</em></strong> of an association-free <abbr title="Object Event">OE</abbr> class model is a septuple </p><p style="text-align: center"><b>I</b> = ⟨ <i>T</i>, <i>c</i>, <i>Obj</i>,
+  <i>Evt</i>, type, occt, <b><i>I</i></b> ⟩</p><p>such that</p><ol>
+      <li><i>T</i> is a linearly ordered set of time instants and <i>c</i> ∈
+      <i>T</i> is the <em>current</em> time,</li>
 
-      <li><i>Obj</i> is a finite set of currently existing objects,</li>
+      <li><i>Obj</i> is a finite set of (currently existing) objects, for
+      which it is assumed that they have been existing in the past (and will
+      exist in the future),</li>
 
       <li><i>Evt</i> is a finite set of (past or current) events with
       occt(<i>e</i>) ≤ <i>c</i> for all <i>e</i> ∈ <i>Evt</i>,</li>
 
-      <li><i>type</i> is a function that assigns an object type to each object
-      from <i>Obj</i> and an event type to each event from <i>Evt</i>,</li>
+      <li><i>types</i> is a function that assigns one or more object types to
+      each object from <i>Obj</i> and one or more event types to each event
+      from <i>Evt</i> (<i>types</i> assigns its direct types to an
+      entity,</li>
 
       <li><i>occt</i> is a function that assigns an occurrence time <i>t</i> ≤
       <i>c</i> to each event from <i>Evt</i>, and</li>
@@ -765,34 +765,165 @@ activityType <b>BookTakeBack</b> {
       function</em></strong> for the vocabulary ⟨ OT, ET, attr ⟩ of the class
       model such that</p><ol>
           <li><b><i>I</i></b>(<i>O</i>) ⊆ <i>Obj</i> for all <i>O</i> ∈
-          <i>OT</i><i>,</i></li>
+          <i>OT</i><i>.</i></li>
 
           <li><b><i>I</i></b>(<i>E</i>) ⊆ <i>Evt</i> for all <i>E</i> ∈
-          <i><i>ET</i>,</i></li>
+          <i><i>ET</i>.</i></li>
 
-          <li>An attribute is interpreted as a function from entities to value
-          sets: <b><i>I</i></b>(<i>T</i>-<i>a</i>) : <b><i>I</i></b>(<i>T</i>)
-          → 2<sup><b><i>I</i></b>(<i>R</i>)</sup> for all attributes
+          <li><p>An attribute <i><i>T</i>-<i>a</i></i> with multiplicity
+          mul(<i><i>T</i>-<i>a</i></i>) = ⟨ <i>l</i>, <i>u</i> ⟩ is
+          interpreted as a function from entities to value sets:
+          <b><i>I</i></b>(<i>T</i>-<i>a</i>) : <b><i>I</i></b>(<i>T</i>) →
+          2<sup><b><i>I</i></b>(<i>R</i>)</sup> for all attributes
           <i><i>T</i>-<i>a</i></i> with <i>T</i> ∈ <i>OT</i> ∪ <i>ET</i>,
           <i>a</i> ∈ attr(<i>T</i>) and <i>R</i> =
           rng(<i><i>T</i>-<i>a</i></i>), such that for any entity <i>e</i> ∈
-          <i><b><i>I</i></b>(T</i>), the cardinality of its attribute value
-          set <b><i>I</i></b>(<i>T</i>-<i>a</i>)(<i>e</i>) is greater than
-          <i>l</i> and smaller than <i>u</i> where ⟨ <i>l</i>, <i>u</i> ⟩ =
-          mul(<i><i>T</i>-<i>a</i></i>).</li>
+          <i><b><i>I</i></b>(T</i>) and its attribute value set <i>val</i> =
+          <b><i>I</i></b>(<i>T</i>-<i>a</i>)(<i>e</i>), </p><ol>
+              <li>the cardinality of <i>val</i> is greater than <i>l</i> and
+              smaller than <i>u</i>,</li>
 
-          <li>For any type <i>T</i> ∈ <i>OT</i> ∪ <i>ET</i> and any of its
-          supertypes <i>T'</i> ∈ sup(<i>T</i>),
+              <li>if the attribute has a snapshot multiplicity
+              mul<sub>s</sub>(<i><i>T</i>-<i>a</i></i>) = ⟨
+              <i>l</i><sub>s</sub>, <i>u</i><sub>s</sub> ⟩, that is, if the
+              attribute represents the event class association end of a
+              participation association, then if <i>l</i><sub>s</sub>&gt; 0,
+              the cardinality of the set of current events in the attribute's
+              value set, <i>card</i> = #{ <i>evt</i> ∈ <i>val</i> |
+              occt(<i>evt</i>) = <i>c</i>}, is greater than
+              <i>l</i><sub>s</sub>, and if <i>u</i><sub>s</sub>≠ ∗, then
+              <i>card</i> ≤ <i>u</i><sub>s</sub>.</li>
+            </ol></li>
+
+          <li>For any entity type <i>T</i> ∈ <i>OT</i> ∪ <i>ET</i> and any of
+          its supertypes <i>T'</i> ∈ sup(<i>T</i>),
           <b><i>I</i></b>(<i><i>T</i>)</i> ⊆
           <b><i>I</i></b>(<i><i>T</i>').</i></li>
         </ol></li>
     </ol><p>Together with a variable value assignment α : <i>V</i> →
-  <i>Obj</i> ∪ <i>Evt</i> for a finite set of variables <i>V</i>, an
-  interpretation <b><i>I</i></b> allows to interpret expressions of the form
+  <i>Obj</i> ∪ <i>Evt</i> for a finite set of entity variables <i>V</i>, an
+  interpretation <b>I</b> allows to interpret expressions of the form
   <i>v</i>.<i>a</i> where <i>v</i> is an entity variable and <i>a</i> is a
   (local) attribute name:</p><p style="text-align: center"><b><i>I</i></b><sub>α</sub>(<i>v</i>.<i>a</i>) =
   <b><i>I</i></b>(<i>T</i>-<i>a</i>)(<i>e</i>) where <i>e</i> = α(<i>v</i>)
-  and <i>T</i> = type(<i>e</i>)</p></section><section class="role-section1" id="secPDM-IS"><h2 class="role-section1-title"><span class="role-label"><span class="role-number">3.3</span>. </span>Process Design for IS Engineering</h2><p>In a <dfn>process design model</dfn> for a process-supportive IS,
+  and <i>T</i> ∈ types(<i>e</i>) with <i>a</i> ∈ attr(<i>T</i>)</p><p>Whenever
+  the range of an attribute <i>T</i>-<i>a</i> is an entity type <i>T'</i>, we
+  can interpret expressions of the form
+  <i>v</i>.<i>a</i><sub>1</sub>.<i>a</i><sub>2</sub> where
+  <i>a</i><sub>1</sub> ∈ attr(<i>T</i>) and <i>a</i><sub>2</sub> ∈
+  attr(<i>T'</i>), which are called <em>path expressions</em>, by iterating
+  the attribute function application. While it is obvious how this works for
+  the case of single-valued attributes <i>a</i><sub>1</sub>, in the case of
+  multi-valued attributes <i>a</i><sub>1</sub>, all resulting value sets are
+  simply merged together. In this way, we can form path expressions of any
+  length greater than zero.</p><p>Finally, we can define how an interpretation
+  of a class model <b>I</b><sub>α</sub>, together with a variable value
+  assignment α for a set of data and entity variables, satisfies a logical
+  formula <i>F</i> formed with atomic formulas that are connected with the
+  help of the usual logical operations, which is symbolically expressed as
+  <b>I</b><sub>α</sub> ⊨ <i>F</i>. The base case of atomic formulas includes
+  the following two forms:</p><ol>
+      <li><em>Classification atoms</em> have the form <i>C</i>(<i>x</i>) where
+      <i>C</i> is a classifier. <b>I</b><sub>α</sub> ⊨ <i>C</i>(<i>x</i>) iff
+      α(<i>x</i>) ∈ <b><i>I</i></b>(<i>C</i>).</li>
+
+      <li><em>Comparison atoms</em> have the form <i>expr</i><sub>1</sub> o
+      <i>expr</i><sub>2</sub> where each <i>expr</i><sub>k</sub> is either a
+      data literal (from one of the underlying datatypes), a variable, or a
+      path expression, and o is one of the usual comparison predicates (=, ≠,
+      &lt;, ≤, &gt;, ≥). <b>I</b><sub>α</sub> ⊨ <i>expr</i><sub>1</sub> o
+      <i>expr</i><sub>2</sub> iff ⟨
+      <b><i>I</i></b><sub>α</sub>(<i>expr</i><sub>1</sub>),
+      <b><i>I</i></b><sub>α</sub>(<i>expr</i><sub>2</sub>) ⟩ ∈
+      <b><i>I</i></b>(<i>o</i>), where <b><i>I</i></b>(<i>o</i>) is the binary
+      relation that interprets the comparison predicate.</li>
+    </ol><p>Complex logical formulas formed with the logical operators ¬, ∧,
+  ∨, →, ∀, ∃ are satisfied by an interpretation in the usual way.</p></section><section class="role-section2" id="secIDM-Constraints"><h3 class="role-section2-title"><span class="role-label"><span class="role-number">3.1.2</span>. </span>Integrity Constraints</h3><figure class="right"><img src="OEMS_files/PublicLibrary-Person__IDM_IS.svg" width="150" /></figure><p>An
+  <abbr title="Object Event">OE</abbr> class model like the one presented in
+  <a class="role-figure-ref" href="#secIDM-IS__figLibraryIDM"><span class="role-label">Figure <span class="role-number">3-1</span></span></a> defines the following types of
+  (integrity) constraints:</p><dl>
+      <dt>Range Constraints</dt>
+
+      <dd><p>require that an attribute must have a value from the value space
+      of the type that has been defined as its range. For instance, a value of
+      the attribute Person::birthDate must be a date. These (implicit)
+      constraints are expressed in a class diagram by specifying a range for
+      all attributes.</p></dd>
+
+      <dt>Mandatory Value Constraints</dt>
+
+      <dd><p>require that an attribute must have a value. These constraints
+      are expressed in a class diagram with the help of an attribute
+      multiplicity with a lower bound greater than 0. For instance, in the
+      class diagram to the right, an instance of <i>Person</i> must have a
+      <i>name</i> and a <i>birthDate</i>, but need not have a
+      <i>biography</i>. Notice that the default multiplicity of an attribute
+      is [1], implying that it is mandatory and single-valued. </p></dd>
+
+      <dt>Cardinality Constraints</dt>
+
+      <dd><p>apply to multi-valued attributes, only, and require that the
+      cardinality of a multi-valued attribute's value set is not less than a
+      given minimum cardinality or not greater than a given maximum
+      cardinality, as expressed by the attribute's multiplicity.</p></dd>
+    </dl><p>In addition to these types of constraints, an <abbr title="Object Event">OE</abbr> class model may specify two further, more
+  general, types of constraints:</p><ol>
+      <li>a set of <strong><em>classifier invariants</em></strong>
+      <i>CInvar</i>, which are ordered pairs of a classifier <i>C</i> and a
+      logical formula, or Boolean expression, <i>F</i>(<i>x</i>) with one free
+      variable <i>x</i> stating that <i>F</i>(<i>i</i>) holds for all <i>i</i>
+      from the extent of <i>C</i>;</li>
+
+      <li>a set of <strong><em>global invariants</em></strong> <i>GInvar</i>,
+      which are logical sentences, or Boolean expressions, without free
+      variables.</li>
+    </ol><p>In a class diagram, classifier invariants are expressed within a
+  constraint rectangle that is attached to a classifier with the help of a
+  dashed line. Global invariants can be expressed within a constraint
+  rectangle in a corner of the diagram.</p><p>Interpretations of an <abbr title="Object Event">OE</abbr> class model are required to satisfy all of
+  its invariants:</p><ol>
+      <li><b>I</b> ⊨ ∀<i>x</i>: <i>C</i>(<i>x</i>) → <i>F</i>(<i>x</i>) for
+      all classifier invariants ⟨<i>C</i>, <i>F</i>(<i>x</i>)⟩ ∈
+      <i>CInvar</i>.</li>
+
+      <li><b>I</b> ⊨ <i>F</i> for all <i>F</i> ∈ <i>GInvar</i>.</li>
+    </ol><p>There are several types of very common classifier invariants that
+  can be expressed in a class diagram in the simplified way of an attribute
+  annotation in curly braces appended to the attribute declaration:</p><dl>
+      <dt>Uniqueness Constraints (also called 'Key Constraints')</dt>
+
+      <dd><p>are expressed with the keyword &quot;key&quot; and require that the value
+      of an attribute <i>a</i> is unique among all instances of its domain:
+      F(<i>x</i>) ≡ ∀<i>y</i>: <i>C</i>(<i>y</i>) → <i>x</i>.<i>a ≠</i>
+      <i>y</i>.<i>a</i>.</p></dd>
+
+      <dt>Interval Constraints</dt>
+
+      <dd><p>are expressed with the keywords &quot;min&quot; and &quot;max&quot; and require that
+      the value of a numeric attribute <i>a</i> must be in a specific interval
+      [min,max]: F(<i>x</i>) ≡ min ≤ <i>x</i>.<i>a</i> ∧ <i>x</i>.<i>a</i> ≤
+      max.</p></dd>
+
+      <dt>Pattern Constraints</dt>
+
+      <dd><p>are expressed with the keyword &quot;pattern&quot; and require that a
+      string attribute's value must match a certain pattern defined by a
+      regular expression.</p></dd>
+    </dl><p>The attribute annotation keyword &quot;id&quot; implies that the attribute
+  is unique and mandatory, and that its values <i>e</i>.<i>a</i> are used as
+  standard identifiers for the entities <i>e</i>.</p><p>Examples of global
+  invariants are the following:</p><ol>
+      <li><p>Each <i>Departure</i> event must be preceded by a corresponding
+      <i>Arrival</i> event: </p><p style="text-align: center">∀<i>x</i> [
+      <i>Departure</i>(<i>x</i>) → ∃<i>y</i> [ <i>Arrival</i>(<i>y</i>) ∧
+      <i>y.libraryUser = x.libraryUser</i> ∧ occt(<i>y</i>) &lt;
+      occt(<i>x</i>) ∧ ¬∃<i>z</i> [<i>Departure</i>(<i>z</i>) ∧ occt(<i>z</i>)
+      &lt; occt(<i>x</i>) ∧ occt(<i>z</i>) &gt; occt(<i>y</i>) ]]]</p></li>
+
+      <li>For each book copy involved in a <i>BookTakeBack</i> activity there
+      must be a corresponding preceding <i>BookLending</i> activity involving
+      that book copy.</li>
+    </ol><p></p></section></section><section class="role-section1" id="secPDM-IS"><h2 class="role-section1-title"><span class="role-label"><span class="role-number">3.2</span>. </span>Process Design for IS Engineering</h2><p>In a <dfn>process design model</dfn> for a process-supportive IS,
   we refine a conceptual process model by adding all details needed for
   obtaining a computationally complete definition of the business processes to
   be supported. An important question is whether these processes consist of
@@ -848,13 +979,13 @@ activityType <b>BookTakeBack</b> {
       average and maximal length of the waiting line at the service desk, then
       we can abstract away from the object type <i>Person</i> and the
       attributes <i>Book</i>::<i>title</i>, <i>Book</i>::<i>year</i>, and
-      <i>Book</i>::<i>authors</i> described in the domain model shown in <a class="role-section2-ref" href="#EventTypes_CIM"><span class="role-label">Section <span class="role-number">2.1.2</span></span></a>). We may even drop the object types
+      <i>Book</i>::<i>authors</i> described in the domain model shown in <a class="role-section2-ref" href="#EventTypes_CIM"><span class="role-label">Section <span class="role-number">2.1.2</span></span></a>. We may even drop the object types
       <i>Book</i> and <i><i>BookCopy</i></i> altogether, if we just count the
       number of books lended and taken back in the simulation design
       model.<i><i> </i></i></li>
 
       <li>If the purpose is to support <em>operational decision making</em>,
-      then a <strong>digital twin</strong> design model has to be made an
+      then a <strong>digital twin</strong> design model has to be made as an
       extension of the IS design model. For instance, if the purpose of our
       library simulation is to support making decisions like testing if a
       library clerk can take a one hour break without taking the risk of
@@ -1567,10 +1698,10 @@ activityType <b>BookTakeBack</b> {
   unreliable semantics of certain simulation models in favor of
   performance.</p></section><section class="role-section1" id="subsec_OEGs"><h2 class="role-section1-title"><span class="role-label"><span class="role-number">6.2</span>. </span>Object Event Graphs</h2><p>The following basic DPMN diagram shows an <abbr title="Object Event Graph">OEG</abbr> defining a process pattern that is
   instantiated by the above discrete event process
-  example.</p><figure id="subsec_OEGs__lof__1"><div><img src="OEMS_files/WS1_PDM.svg" width="650" /></div><figcaption><span class="role-label">Figure <span class="role-number">6-1</span>. </span>A basic DPMN Process Diagram showing an
+  example.</p><figure id="subsec_OEGs__lof__3"><div><img src="OEMS_files/WS1_PDM.svg" width="650" /></div><figcaption><span class="role-label">Figure <span class="role-number">6-1</span>. </span>A basic DPMN Process Diagram showing an
   <abbr title="Object Event Graph">OEG</abbr>.</figcaption></figure><p>This
   process model is based on the following Object Event (OE) class
-  model:</p><figure id="subsec_OEGs__lof__2"><div><img src="OEMS_files/WS1_IDM.svg" width="420" /></div><figcaption><span class="role-label">Figure <span class="role-number">6-2</span>. </span>A basic <abbr title="Object Event">OE</abbr>
+  model:</p><figure id="subsec_OEGs__lof__4"><div><img src="OEMS_files/WS1_IDM.svg" width="420" /></div><figcaption><span class="role-label">Figure <span class="role-number">6-2</span>. </span>A basic <abbr title="Object Event">OE</abbr>
   class model defining an object type and three event
   types.</figcaption></figure><p>Notice that the multiplicity 1 (standing for
   &quot;exactly one&quot;) at the association end touching the object class
@@ -2367,7 +2498,7 @@ activityType <b>BookTakeBack</b> {
   role and resource pool properties (association ends stereotyped «res» and
   «pool»). Such object types can be categorized as «resource type» with the
   implied meaning that they inherit a resource status attribute from a
-  pre-defined class <code>Resource</code>, as shown in <a class="role-figure-ref" href="#secDesM-2__figMedDep1IDM3"><span class="role-label">Figure <span class="role-number">8-16</span></span></a>.</p><figure id="secDesM-2__lof__22"><figcaption><span class="role-label">Figure <span class="role-number">8-15</span>. </span>Any resource type
+  pre-defined class <code>Resource</code>, as shown in <a class="role-figure-ref" href="#secDesM-2__figMedDep1IDM3"><span class="role-label">Figure <span class="role-number">8-16</span></span></a>.</p><figure id="secDesM-2__lof__24"><figcaption><span class="role-label">Figure <span class="role-number">8-15</span>. </span>Any resource type
   <i>R</i> extends the pre-defined object type
   <code>Resource</code></figcaption><div><img src="OEMS_files/Resource-Object.svg" /></div></figure><p>The introduction of
   resource types to OEM class models allows simplifying models by dropping the
