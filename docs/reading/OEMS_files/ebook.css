@@ -377,8 +377,7 @@ div[id$="authors"] {
     font-size: 1.2em;
     margin-bottom: 2.66em;
 }
-/* id value ending with "abstract" */
-section[id$="abstract"] {
+div.role-book-title-div section {
     text-align: left;
 }
 
