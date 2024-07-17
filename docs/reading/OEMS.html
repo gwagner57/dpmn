@@ -15,7 +15,7 @@ span.button {
 }/*]]>*/</style></head><body><section class="role-book" id="OEMS"><div class="role-book-title-div"><h1 class="role-book-title">Object Event Modeling and Simulation</h1><div class="role-content" id="OEMS-content-1"><div id="OEMS-content-1__subtitle">For Information Systems Engineering and for<br />
   Discrete Event Simulation Engineering </div><div id="OEMS-content-1__authors">Gerd Wagner <a href="mailto:G.Wagner@b-tu.de">G.Wagner@b-tu.de</a></div><p>Copyright ©
   2023-24 Gerd Wagner</p><p><b>Draft version</b>, published
-  2024-07-03.</p><figure><img alt="business-process-gearwheels" height="500" src="OEMS_files/Tree-broken-by-lightning.png" width="650" /></figure><section><h2>Abstract</h2><p>This book explains how
+  2024-07-17.</p><figure><img alt="business-process-gearwheels" height="500" src="OEMS_files/Tree-broken-by-lightning.png" width="650" /></figure><section><h2>Abstract</h2><p>This book explains how
   to make models for <em>Information Systems</em> engineering and for
   <em>Discrete Event Simulation</em> engineering using the <em>Unified
   Modeling Language (UML)</em> and the <em>Discrete Event Process Modeling
@@ -680,7 +680,8 @@ span.button {
 39
 40
 41
-42</pre></td><td class="listing-lines"><pre style="text-align: left; background-color: transparent; border-style: none; padding: 0; margin: 0;">objectType <b>Person</b> {
+42
+43</pre></td><td class="listing-lines"><pre style="text-align: left; background-color: transparent; border-style: none; padding: 0; margin: 0;">objectType <b>Person</b> {
   attribute id : Integer {id};
   attribute name : String;
   attribute birthDate : Date;
@@ -708,6 +709,7 @@ enum <b>BookCopyStatusEL</b> {
 }
 objectType <b>BookCopy</b> {
   attribute id : Integer {id};
+  attribute isbn : String;
   attribute status : BookCopyStatusEL;
 }
 activityType <b>BookLending</b> {
@@ -750,11 +752,10 @@ activityType <b>BookTakeBack</b> {
   multiplicity is greater than 0, it defines a minimum cardinality constraint
   (&quot;there must be at least <i>l</i> values&quot;). Whenever the upper bound
   <i>u</i> of a multiplicity is not ∗ (unbounded), it defines a maximum
-  cardinality constraint (&quot;there must be at most <i>u</i> values&quot;). </p><p>An
-  <abbr title="Object Event">OE</abbr> class model (based on a finite set of
-  data types DT) is a 10-tuple </p><p style="text-align: center">⟨ <i>OT</i>,
-  <i>ET</i>, attr, rng, <i>OAss</i>, <i>PAss</i>, ends, mul, mul<sub>s</sub>,
-  sup ⟩</p><p>specifying</p><ol>
+  cardinality constraint (&quot;there must be at most <i>u</i> values&quot;). </p><h4>OE
+  Class Models</h4><p>An <abbr title="Object Event">OE</abbr> class model
+  (based on a finite set of data types DT) is a 10-tuple </p><p style="text-align: center">⟨ <i>OT</i>, <i>ET</i>, attr, rng, <i>OAss</i>,
+  <i>PAss</i>, ends, mul, mul<sub>s</sub>, sup ⟩</p><p>specifying</p><ol>
       <li>a <em>vocabulary</em> ⟨ <i>OT</i>, <i>ET</i>, attr,<i> OAss</i>,
       <i>PAss</i> ⟩ consisting of finite sets of <em>object</em> and <em>event
       type</em> names <i>OT</i> and <i>ET</i>, a finite set of composite
@@ -789,25 +790,27 @@ activityType <b>BookTakeBack</b> {
       such that</p><ol>
           <li>for all <i>O</i> ∈ <i>OT</i>, sup(<i>O</i>) ⊆ <i>OT</i>,</li>
 
-          <li>for all <i>E</i> ∈ <i>ET</i>, sup(<i>E</i>) ⊆ <i>ET</i> and
-          <i>Event</i> ∈ sup(<i>E</i>), where <i>Event</i> is the predefined
-          top-level event type,</li>
+          <li>for all <i>E</i> ∈ <i>ET</i>, sup(<i>E</i>) ⊆ <i>ET</i>,</li>
+
+          <li><i>Event</i> ∈ sup*(<i>E</i>), where <i>Event</i> is the
+          predefined top-level event type and <i>sup</i>* is the transitive
+          closure of <i>sup</i>,</li>
 
           <li>for all <i>T</i> ∈ <i>OT</i> ∪ <i>ET</i> and <i>T'</i> ∈
           sup(<i>T</i>), attr(<i>T')</i> ⊆ attr(<i>T)</i>;</li>
         </ol></li>
 
-      <li>for all event types <i>E</i> ∈ <i>ET</i>, the three implicit
-      attributes <i>startTime</i>, <i>occTime</i> and <i>duration</i> are
-      inherited from the predefined event type <i>Event</i> ∈ sup(<i>E</i>)
-      </li>
+      <li>for all event types <i>E</i> ∈ <i>ET</i>, the two implicit
+      attributes <i>startTime</i> and <i>occTime</i> are inherited from the
+      predefined event type <i>Event</i>.</li>
     </ol><p>If an <abbr title="Object Event">OE</abbr> class model has only
   binary object type associations, it can be reduced to an
   <em>association-free</em> model as a septuple </p><p style="text-align: center">⟨ OT, ET, attr, rng, mul, mul<sub>s</sub>, sup
   ⟩</p><p>by expressing/replacing all associations with the help of
-  corresponding <em>reference attributes</em>.</p><p>An
+  corresponding <em>reference attributes</em>, the ranges of which are not
+  data types, but entity types.</p><h4>Interpretations</h4><p>An
   <strong><em>interpretation</em></strong> of an association-free <abbr title="Object Event">OE</abbr> class model is a septuple </p><p style="text-align: center"><b>I</b> = ⟨ <i>T</i>, <i>c</i>, <i>Obj</i>,
-  <i>Evt</i>, type, occt, <b><i>I</i></b> ⟩</p><p>such that</p><ol>
+  <i>Evt</i>, types, startT, occT, <b><i>I</i></b> ⟩</p><p>such that</p><ol>
       <li><i>T</i> is a linearly ordered set of time instants and <i>c</i> ∈
       <i>T</i> is the <em>current</em> time,</li>
 
@@ -822,11 +825,12 @@ activityType <b>BookTakeBack</b> {
 
       <li><i>types</i> is a function that assigns one or more object types to
       each object from <i>Obj</i> and one or more event types to each event
-      from <i>Evt</i> (<i>types</i> assigns its direct types to an
-      entity,</li>
+      from <i>Evt</i> (<i>types</i> assigns an entity its direct types),</li>
 
-      <li><i>occt</i> is a function that assigns an occurrence time <i>t</i> ≤
-      <i>c</i> to each event from <i>Evt</i>, and</li>
+      <li><i>startT</i> and <i>occT</i> are functions that assign a start time
+      <i>t</i><sub>1</sub> and an occurrence time <i>t</i><sub>2</sub> to each
+      event from <i>Evt</i> such that <i>t</i><sub>1</sub> ≤
+      <i>t</i><sub>2</sub> ≤ <i>c</i>, and</li>
 
       <li><p><b><i>I</i></b> is an <strong><em>interpretation
       function</em></strong> for the vocabulary ⟨ OT, ET, attr ⟩ of the class
@@ -888,29 +892,546 @@ activityType <b>BookTakeBack</b> {
   the case of single-valued attributes <i>a</i><sub>1</sub>, in the case of
   multi-valued attributes <i>a</i><sub>1</sub>, all resulting value sets are
   simply merged together. In this way, we can form path expressions of any
-  length greater than zero.</p><p>Finally, we can define how an interpretation
-  of a class model <b>I</b><sub>α</sub>, together with a variable value
-  assignment α for a set of data and entity variables, satisfies a logical
-  formula <i>F</i> formed with atomic formulas that are connected with the
-  help of the usual logical operations, which is symbolically expressed as
+  length greater than zero.</p><h4>An Interpretation Expressed with a Set of
+  Object Tables and Event Tables</h4><p>An interpretation <b>I</b> = ⟨
+  <i>T</i>, <i>c</i>, <i>Obj</i>, <i>Evt</i>, types, startT, occT,
+  <b><i>I</i></b> ⟩ of a class model ⟨ OT, ET, attr, rng, mul,
+  mul<sub>s</sub>, sup ⟩ can be defined in the form </p><p style="text-align: center"><b>I</b> = ⟨ <i>T</i>, <i>c</i>, <i>Obj</i>,
+  <i>Evt</i>, <i>ObjTbls</i>, <i>EvtTbls</i> ⟩</p><p>where the interpretation
+  function <b><i>I</i></b> is defined implicitly by the object and event
+  tables <i>ObjTbls</i> and <i>EvtTbls</i> such that where
+  {<i>objects</i><sub>1</sub>, <i>objects</i><sub>2</sub>, …},
+  {<i>events</i><sub>1</sub>, <i>events</i><sub>2</sub>, …} of a set of
+  tables,. </p><ol>
+      <li><p>for each object type <i>O</i><sub>1</sub> ∈ <i>OT</i>, there is a
+      corresponding object table <b><i>I</i></b>(<i>O</i><sub>1</sub>) =
+      <i>objects</i><sub>1</sub> ∈ <i>ObjTbls</i> with columns corresponding
+      to the attributes of <i>O</i><sub>1</sub> by having the same names and
+      satisfying their range constraints in the sense that for all rows
+      <i>r</i> ∈ <i>objects</i><sub>1</sub> and all attributes <i>a</i> ∈
+      attr(<i>O</i><sub>1</sub>), </p><ol type="a">
+          <li>if the range of <i>a</i> is a data type, then <i>r</i>[<i>a</i>]
+          ∈ rng(<i>a</i>), where <i>r</i>[<i>a</i>] denotes the data literal
+          contained in the <i>objects</i><sub>1</sub> table cell determined by
+          row <i>r</i> and column <i>a</i>,</li>
+
+          <li>if the range of <i>a</i> is an entity type <i>T</i> with
+          corresponding entity table <b><i>I</i></b>(<i>T</i>), then the
+          corresponding table column is a foreign key column, that is,
+          <i>r</i>[<i>a</i>] ∈ <i>T</i>[<i>a</i>] where <i>T</i>[<i>a</i>]
+          denotes </li>
+        </ol></li>
+
+      <li>for each event type <i>E</i><sub>1</sub> ∈ <i>ET</i>, there is a
+      corresponding event table <b><i>I</i></b>(<i>E</i><sub>1</sub>) =
+      <i>events</i><sub>1</sub> ∈ <i>EvtTbls</i> having the two special
+      columns <i>startTime</i> and <i>occTime</i> with data literals
+      corresponding to values from the temporal domain <i>T</i>, and all other
+      columns corresponding to the attributes of <i>E</i><sub>1</sub> by the
+      same names and by satisfying their range constraints as for object
+      types; </li>
+
+      <li><i>Obj</i> is a finite set of (currently existing) objects, for
+      which it is assumed that they have been existing in the past and will
+      exist in the future (for simplicity, by assuming a constant universe of
+      objects, neither object creation nor object destruction is
+      considered),</li>
+
+      <li><i>Evt</i> is a finite set of (past or current) events with
+      occt(<i>e</i>) ≤ <i>c</i> for all <i>e</i> ∈ <i>Evt</i>,</li>
+
+      <li><i>types</i> is a function that assigns one or more object types to
+      each object from <i>Obj</i> and one or more event types to each event
+      from <i>Evt</i> (<i>types</i> assigns an entity its direct types),</li>
+
+      <li><i>startT</i> and <i>occT</i> are functions that assign a start time
+      <i>t</i><sub>1</sub> and an occurrence time <i>t</i><sub>2</sub> to each
+      event from <i>Evt</i> such that <i>t</i><sub>1</sub> ≤
+      <i>t</i><sub>2</sub> ≤ <i>c</i>, and</li>
+
+      <li><p><b><i>I</i></b> is an <strong><em>interpretation
+      function</em></strong> for the vocabulary ⟨ OT, ET, attr ⟩ of the class
+      model such that</p><ol>
+          <li><b><i>I</i></b>(<i>O</i>) ⊆ <i>Obj</i> for all <i>O</i> ∈
+          <i>OT</i><i>.</i></li>
+
+          <li><b><i>I</i></b>(<i>E</i>) ⊆ <i>Evt</i> for all <i>E</i> ∈
+          <i><i>ET</i></i> and <i><b><i>I</i></b>(<i>Event</i>) =
+          <i>Evt</i>.</i></li>
+
+          <li><p>An attribute <i><i>T</i>-<i>a</i></i> with multiplicity
+          mul(<i><i>T</i>-<i>a</i></i>) = ⟨ <i>l</i>, <i>u</i> ⟩ is
+          interpreted as a function from entities to value sets:
+          <b><i>I</i></b>(<i>T</i>-<i>a</i>) : <b><i>I</i></b>(<i>T</i>) →
+          2<sup><b><i>I</i></b>(<i>R</i>)</sup> for all attributes
+          <i><i>T</i>-<i>a</i></i> with <i>T</i> ∈ <i>OT</i> ∪ <i>ET</i>,
+          <i>a</i> ∈ attr(<i>T</i>) and <i>R</i> =
+          rng(<i><i>T</i>-<i>a</i></i>), such that for any entity <i>e</i> ∈
+          <i><b><i>I</i></b>(T</i>) and its attribute value set <i>val</i> =
+          <b><i>I</i></b>(<i>T</i>-<i>a</i>)(<i>e</i>), </p><ol>
+              <li>the cardinality of <i>val</i> is greater than <i>l</i> and
+              smaller than <i>u</i>,</li>
+
+              <li>if the attribute has a snapshot multiplicity
+              mul<sub>s</sub>(<i><i>T</i>-<i>a</i></i>) = ⟨
+              <i>l</i><sub>s</sub>, <i>u</i><sub>s</sub> ⟩, that is, if the
+              attribute represents the event class association end of a
+              participation association, then if <i>l</i><sub>s</sub>&gt; 0,
+              the cardinality of the set of current events in the attribute's
+              value set, <i>card</i> = #{ <i>evt</i> ∈ <i>val</i> |
+              occt(<i>evt</i>) = <i>c</i>}, is greater than
+              <i>l</i><sub>s</sub>, and if <i>u</i><sub>s</sub>≠ ∗, then
+              <i>card</i> ≤ <i>u</i><sub>s</sub>,</li>
+
+              <li>if <i>T</i> ∈ <i>ET</i>, <i>e</i>.<i>occTime</i> =
+              occt(<i>e</i>) and <i>e</i>.<i>duration</i> =
+              <i>e</i>.<i>occTime</i> - <i>e</i>.<i>startTime</i>.</li>
+            </ol></li>
+
+          <li>For any entity type <i>T</i> ∈ <i>OT</i> ∪ <i>ET</i> and any of
+          its supertypes <i>T'</i> ∈ sup(<i>T</i>),
+          <b><i>I</i></b>(<i><i>T</i>)</i> ⊆
+          <b><i>I</i></b>(<i><i>T</i>').</i></li>
+        </ol></li>
+    </ol><p>An example of an interpretation of (a slightly simplified version
+  of) the model presented in <a class="role-figure-ref" href="#secIDM-IS__figLibraryIDM"><span class="role-label">Figure <span class="role-number">3-1</span></span></a>
+  consists of the following tables:</p><div><table border="1">
+      <thead>
+        <tr>
+          <th colspan="2">persons</th>
+        </tr>
+
+        <tr>
+          <th>id</th>
+
+          <th>name</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1049</td>
+
+          <td>Tom Banks</td>
+        </tr>
+
+        <tr>
+          <td>1083</td>
+
+          <td>Mary Swift</td>
+        </tr>
+
+        <tr>
+          <td>1102</td>
+
+          <td>Liza Miller</td>
+        </tr>
+
+        <tr>
+          <td>1157</td>
+
+          <td>Su Kang</td>
+        </tr>
+      </tbody>
+    </table><table border="1">
+      <thead>
+        <tr>
+          <th colspan="2">library_users</th>
+        </tr>
+
+        <tr>
+          <th>id</th>
+
+          <th>address</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1049</td>
+
+          <td>738 Austin Blv, Manchaca, TX 78652</td>
+        </tr>
+
+        <tr>
+          <td>1102</td>
+
+          <td>29 Hank St, Austin, TX 73301</td>
+        </tr>
+
+        <tr>
+          <td>1157</td>
+
+          <td>114 Feritti Dr, Austin, TX 78734</td>
+        </tr>
+      </tbody>
+    </table><table border="1">
+      <thead>
+        <tr>
+          <th colspan="2">books</th>
+        </tr>
+
+        <tr>
+          <th>isbn</th>
+
+          <th>title</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>006251587X</td>
+
+          <td>Weaving the Web</td>
+        </tr>
+
+        <tr>
+          <td>0465026567</td>
+
+          <td>Gödel, Escher, Bach</td>
+        </tr>
+
+        <tr>
+          <td>0465030793</td>
+
+          <td>I Am A Strange Loop</td>
+        </tr>
+      </tbody>
+    </table><table border="1">
+      <thead>
+        <tr>
+          <th colspan="3">book_copies</th>
+        </tr>
+
+        <tr>
+          <th>id</th>
+
+          <th>isbn</th>
+
+          <th>status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>2194</td>
+
+          <td>006251587X</td>
+
+          <td>LENDED</td>
+        </tr>
+
+        <tr>
+          <td>2195</td>
+
+          <td>006251587X</td>
+
+          <td>AVAILABLE</td>
+        </tr>
+
+        <tr>
+          <td>2196</td>
+
+          <td>006251587X</td>
+
+          <td>AVAILABLE</td>
+        </tr>
+
+        <tr>
+          <td>1843</td>
+
+          <td>0465026567</td>
+
+          <td>AVAILABLE</td>
+        </tr>
+
+        <tr>
+          <td>1844</td>
+
+          <td>0465026567</td>
+
+          <td>LENDED</td>
+        </tr>
+
+        <tr>
+          <td>1172</td>
+
+          <td>0465030793</td>
+
+          <td>LENDED</td>
+        </tr>
+      </tbody>
+    </table><table border="1">
+      <thead>
+        <tr>
+          <th colspan="2">arrivals</th>
+        </tr>
+
+        <tr>
+          <th><i>occTime</i></th>
+
+          <th>libraryUser</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>20240705T09:03</td>
+
+          <td>1102</td>
+        </tr>
+
+        <tr>
+          <td>20240705T10:42</td>
+
+          <td>1157</td>
+        </tr>
+
+        <tr>
+          <td>20240705T13:29</td>
+
+          <td>1157</td>
+        </tr>
+
+        <tr>
+          <td>20240706T09:01</td>
+
+          <td>1049</td>
+        </tr>
+
+        <tr>
+          <td>20240706T09:37</td>
+
+          <td>1102</td>
+        </tr>
+      </tbody>
+    </table><table border="1">
+      <thead>
+        <tr>
+          <th colspan="2">departures</th>
+        </tr>
+
+        <tr>
+          <th><i>occTime</i></th>
+
+          <th>libraryUser</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>20240705T11:17</td>
+
+          <td>1157</td>
+        </tr>
+
+        <tr>
+          <td>20240705T12:36</td>
+
+          <td>1102</td>
+        </tr>
+
+        <tr>
+          <td>20240705T15:55</td>
+
+          <td>1157</td>
+        </tr>
+
+        <tr>
+          <td>20240706T09:58</td>
+
+          <td>1049</td>
+        </tr>
+
+        <tr>
+          <td>20240706T10:41</td>
+
+          <td>1102</td>
+        </tr>
+      </tbody>
+    </table><table border="1">
+      <thead>
+        <tr>
+          <th colspan="4">book_lendings</th>
+        </tr>
+
+        <tr>
+          <th><i>startTime</i></th>
+
+          <th><i>occTime</i></th>
+
+          <th>libraryUser</th>
+
+          <th>bookCopies</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>20240705T09:14</td>
+
+          <td>20240705T09:17</td>
+
+          <td>1102</td>
+
+          <td>2195</td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>2195</td>
+
+          <td>AVAILABLE</td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>2196</td>
+
+          <td>AVAILABLE</td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>1843</td>
+
+          <td>AVAILABLE</td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>1844</td>
+
+          <td>LENDED</td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>1172</td>
+
+          <td>LENDED</td>
+
+          <td></td>
+        </tr>
+      </tbody>
+    </table><table border="1">
+      <thead>
+        <tr>
+          <th colspan="4">book_take_backs</th>
+        </tr>
+
+        <tr>
+          <th><i>startTime</i></th>
+
+          <th><i>occTime</i></th>
+
+          <th>libraryUser</th>
+
+          <th>bookCopies</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>20240706T09:42</td>
+
+          <td>20240706T09:44</td>
+
+          <td>1102</td>
+
+          <td>2195</td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>2195</td>
+
+          <td>AVAILABLE</td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>2196</td>
+
+          <td>AVAILABLE</td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>1843</td>
+
+          <td>AVAILABLE</td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>1844</td>
+
+          <td>LENDED</td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td></td>
+
+          <td>1172</td>
+
+          <td>LENDED</td>
+
+          <td></td>
+        </tr>
+      </tbody>
+    </table></div> <h4>Satisfaction of Logical Formulas</h4><p>Finally, we can
+  define how an interpretation <b>I</b><sub>α</sub>, together with a variable
+  value assignment α for a set of data and entity variables, satisfies a
+  logical formula <i>F</i> formed with atomic formulas that are connected with
+  the help of the usual logical operations, which is symbolically expressed as
   <b>I</b><sub>α</sub> ⊨ <i>F</i>. The base case of atomic formulas includes
   the following two forms:</p><ol>
-      <li><em>Classification atoms</em> have the form <i>C</i>(<i>x</i>) where
-      <i>C</i> is a classifier. <b>I</b><sub>α</sub> ⊨ <i>C</i>(<i>x</i>) iff
-      α(<i>x</i>) ∈ <b><i>I</i></b>(<i>C</i>).</li>
+      <li><p><em>Classification atoms</em> have the form <i>C</i>(<i>x</i>)
+      where <i>C</i> is a classifier.</p><p><b>I</b><sub>α</sub> ⊨
+      <i>C</i>(<i>x</i>) iff α(<i>x</i>) ∈ <b><i>I</i></b>(<i>C</i>).</p></li>
 
-      <li><em>Comparison atoms</em> have the form <i>expr</i><sub>1</sub> o
+      <li><p><em>Comparison atoms</em> have the form <i>expr</i><sub>1</sub> o
       <i>expr</i><sub>2</sub> where each <i>expr</i><sub>k</sub> is either a
       data literal (from one of the underlying datatypes), a variable, or a
       path expression, and o is one of the usual comparison predicates (=, ≠,
-      &lt;, ≤, &gt;, ≥). <b>I</b><sub>α</sub> ⊨ <i>expr</i><sub>1</sub> o
-      <i>expr</i><sub>2</sub> iff ⟨
+      &lt;, ≤, &gt;, ≥).</p><p><b>I</b><sub>α</sub> ⊨ <i>expr</i><sub>1</sub>
+      o <i>expr</i><sub>2</sub> iff ⟨
       <b><i>I</i></b><sub>α</sub>(<i>expr</i><sub>1</sub>),
       <b><i>I</i></b><sub>α</sub>(<i>expr</i><sub>2</sub>) ⟩ ∈
-      <b><i>I</i></b>(<i>o</i>), where <b><i>I</i></b>(<i>o</i>) is the binary
-      relation that interprets the comparison predicate.</li>
+      <b><i>I</i></b>(o), where <b><i>I</i></b>(o) is the binary relation
+      providing the interpretation of the comparison predicate.</p></li>
     </ol><p>Complex logical formulas formed with the logical operators ¬, ∧,
-  ∨, →, ∀, ∃ are satisfied by an interpretation in the usual way.</p></section><section class="role-section2" id="secIDM-Constraints"><h3 class="role-section2-title"><span class="role-label"><span class="role-number">3.1.2</span>. </span>Integrity Constraints</h3><figure class="right"><img src="OEMS_files/PublicLibrary-Person__IDM_IS.svg" width="150" /></figure><p>An
+  ∨, →, ∀, ∃ are satisfied by an interpretation in the usual
+  way.</p><h4>Entailment</h4><p>An <abbr title="Object Event">OE</abbr> class
+  model <i>CM</i> entails a logical sentence if the sentence is satisfied by
+  all interpretations of the class model:</p><p style="text-align: center"><i>CM</i> ⊨ <i>F</i> iff <b>I</b> ⊨ <i>F</i> for
+  all interpretations <b>I</b> of <i>CM</i></p></section><section class="role-section2" id="secIDM-Constraints"><h3 class="role-section2-title"><span class="role-label"><span class="role-number">3.1.2</span>. </span>Integrity Constraints</h3><figure class="right"><img src="OEMS_files/PublicLibrary-Person__IDM_IS.svg" width="150" /></figure><p>An
   <abbr title="Object Event">OE</abbr> class model, like the one presented in
   <a class="role-figure-ref" href="#secIDM-IS__figLibraryIDM"><span class="role-label">Figure <span class="role-number">3-1</span></span></a>, defines the following types of
   (integrity) constraints:</p><dl>
@@ -1110,12 +1631,13 @@ activityType <b>BookTakeBack</b> {
       special operation with the predefined name 'recurrence' and normally
       annotated with a probability distribution expression.</li>
 
-      <li>The information design model must add a <i>duration()</i> function
-      to all activity classes. This function is invoked when a new activity is
-      created for computing the value of its <i>duration</i> attribute.
-      Normally, the <i>duration()</i> function represents a <em>random
-      variable</em>, to be indicated by appending a probability distribution
-      annotation such as <em>Exp(1.5)</em>.</li>
+      <li>The information design model must specify a <i>duration()</i>
+      function for all activity classes. This function is invoked when a new
+      activity is created during a simulation run for computing the value of
+      its <i>duration</i> attribute. Normally, the <i>duration()</i> function
+      represents a <em>random variable</em>, to be indicated by the stereotype
+      «rv» and by appending a probability distribution annotation such as
+      <em>Exp(1.5)</em>.</li>
 
       <li>If the simulation is to deal with <em>objects in space</em>, the
       design model must be based on a choice of <em>space model</em>:
