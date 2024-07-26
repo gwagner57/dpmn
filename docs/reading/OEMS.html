@@ -30,8 +30,8 @@ span.button {
     Constraints</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-OrganizationalPositions"><span class="role-label"><span class="role-number">9.5.2</span>. </span>Organizational Positions and Resource Pools</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Alternative-resources"><span class="role-label"><span class="role-number">9.5.3</span>. </span>Alternate Resource Pools</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Task-priorities"><span class="role-label"><span class="role-number">9.5.4</span>. </span>Task Priorities</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Activity-Preemption"><span class="role-label"><span class="role-number">9.5.5</span>. </span>Activity Preemption</a></li><li class="role-booklist-entry booklist-entry-for-section2"><a class="role-section2-ref" href="#ResMod-Resource-Outages"><span class="role-label"><span class="role-number">9.5.6</span>. </span>Resource Outages</a></li></ul></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#secPN-CM"><span class="role-label"><span class="role-number">10</span>. </span>Conceptual Modeling of Processing Networks</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#secPN-DM"><span class="role-label"><span class="role-number">11</span>. </span>Processing Network Design Models</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-part"><a class="role-part-ref" href="#AgentBasedDES-Intro"><span class="role-label"><span class="role-number">III</span>. </span>Agent-Based Modeling and Simulation</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#BasicAgents"><span class="role-label"><span class="role-number">12</span>. </span>Basic Agents with Perfect Information</a><ul class="role-booklist-entries"><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Perception-Action"><span class="role-label"><span class="role-number">12.1</span>. </span>Perception and Action</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Communication"><span class="role-label"><span class="role-number">12.2</span>. </span>Communication</a></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#InterleavedAgentSimulation"><span class="role-label"><span class="role-number">12.3</span>. </span>Interleaved Agent Simulation</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#BasicAgentsWithImperfectInformation-Intro"><span class="role-label"><span class="role-number">13</span>. </span>Basic Agents with Imperfect Information</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#Contracts-Intro"><span class="role-label"><span class="role-number">14</span>. </span>Contracts</a></li><li class="role-booklist-entry booklist-entry-for-chapter"><a class="role-chapter-ref" href="#CognitiveAgents-Intro"><span class="role-label"><span class="role-number">15</span>. </span>Cognitive Agents</a></li></ul></li><li class="role-booklist-entry booklist-entry-for-section1"><a class="role-section1-ref" href="#Bibliography">Bibliography</a></li><li class="role-booklist-entry booklist-entry-for-index"><a class="role-index-ref" href="#_index">Index</a></li></ul></section><section class="role-lof" id="lof"><h1 class="role-lof-title">List of Figures</h1><ul class="role-booklist-entries"><li class="role-booklist-entry"><a class="role-figure-ref" href="#secIDM-IS__figLibraryIDM"><span class="role-label"><span class="role-number">3-1</span>. </span>An <abbr title="Object Event">OE</abbr> class diagram providing an information design
   for the Public Library IS.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secPDM-IS-FlexibleBPs__lof__2"><span class="role-label"><span class="role-number">3-2</span>. </span>A business process design model describing a
   flexible business process type.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secPDM-IS-WorkflowBPs__figBookPurchasePDM"><span class="role-label"><span class="role-number">3-3</span>. </span>A business process design model describing a
-  workflow process type.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secIDM-FormalSemantics__figOEMLmetaclasses"><span class="role-label"><span class="role-number">4-1</span>. </span>The
-  abstract syntax of the OE Modeling Language based on KerML
+  workflow process type.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#secIDM-FormalSemantics__figOEMLmetaclasses"><span class="role-label"><span class="role-number">4-1</span>. </span>The abstract
+  syntax of the OE Modeling Language based on KerML
   meta-classes.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#subsec_OEGs__lof__5"><span class="role-label"><span class="role-number">7-1</span>. </span>A basic DPMN Process Diagram showing an
   <abbr title="Object Event Graph">OEG</abbr>.</a></li><li class="role-booklist-entry"><a class="role-figure-ref" href="#subsec_OEGs__lof__6"><span class="role-label"><span class="role-number">7-2</span>. </span>A basic <abbr title="Object Event">OE</abbr>
   class model defining an object type and three event
@@ -377,36 +377,20 @@ span.button {
   borrowing</i> and <i>book return</i> events have both a library user and one
   or more book copies as participants. The participation associations
   expressing these participations are shown with a blue line in the diagram
-  above. </p><p>According to the <em>temporal snapshot semantics</em> of UML
-  class models, the multiplicity 0..1 at the <em>arrival</em> association end
-  states that a library user participates in at most one <em>current</em>
-  arrival event, although there may be many past/<em>historic</em> arrival
-  events, in which that user has participated (and an IS may store all these
-  historic event records in its database). </p><p>For supporting a distinction
-  between snapshot and history cardinality constraints, Tauzovich (1991) has
-  proposed to add a “lifetime cardinality” as a supplement to the snapshot
-  cardinality to association ends in his <em>Temporal Entity-Relationship</em>
-  modeling approach. We adopt this distinction for <abbr title="Object Event">OE</abbr> class models, where we allow for a
-  <strong>history multiplicity expression</strong> in the form of
-  “H:<em>m</em>“, where <em>m</em> is a normal multiplicity expression (such
-  as * or 0..1), in addition to the standard snapshot multiplicity expression
-  at the event/activity class side (or association end) of a participation
-  association. For avoiding the cluttering of <abbr title="Object Event">OE</abbr> class diagrams, we assume that, by default,
-  at the event/activity class side of a participation association, the
-  snapshot multiplicity is <i>zero-or-one</i> (0..1) and the history
-  multiplicity is <i>zero-or-more</i> (*). By convention, we only display an
-  explicit history multiplicity expression in an <abbr title="Object Event">OE</abbr> class diagram if it is different from the
-  default (*).</p><p>Notice that <i>book borrowing</i> and <i>book return</i>
-  events represent corresponding <strong>activity end events</strong> since
-  borrowing and returning books are, in fact, activities that take some time
-  and, therefore, consist of an activity start event followed by an activity
-  end event. Whenever we are not interested in considering their start event
-  and their duration, we can reduce activities to their (instantaneous) end
-  events, as in the model above.</p><p>While we model (types of)
-  <strong>business events</strong> in business process (simulation) models, we
-  may also want to model more low-level types of events in other kinds of
-  models, such as messaging events, user interface events or software
-  application events.</p></section><section class="role-section2" id="ActivityTypes_CIM"><h3 class="role-section2-title"><span class="role-label"><span class="role-number">2.1.3</span>. </span>Modeling Activity Types</h3><p>It is important to distinguish between <em>ongoing</em> and
+  above. </p><p>The multiplicity expression ∗ at the <i>arrival</i> and
+  <i>departure</i> association ends states that a library user participates in
+  zero or many arrival and departure events over time. </p><p>Notice that
+  <i>book borrowing</i> and <i>book return</i> events represent corresponding
+  <strong>activity end events</strong> since borrowing and returning books
+  are, in fact, activities that take some time and, therefore, consist of an
+  activity start event followed by an activity end event. Whenever we are not
+  interested in considering their start event and their duration, we can
+  reduce activities to their (instantaneous) end events, as in the model
+  above.</p><p>While we model (types of) <strong>business events</strong> in
+  business process (simulation) models, we may also want to model more
+  low-level types of events in other kinds of models, such as messaging
+  events, user interface events or software application system
+  events.</p></section><section class="role-section2" id="ActivityTypes_CIM"><h3 class="role-section2-title"><span class="role-label"><span class="role-number">2.1.3</span>. </span>Modeling Activity Types</h3><p>It is important to distinguish between <em>ongoing</em> and
   <em>completed</em> activities. Only a completed activity corresponds to an
   event, since events need to have occurred (they need a value for their
   <em>occurrence time</em> attribute), so they are always in the past. As
@@ -426,7 +410,7 @@ span.button {
   events and activities, like library users participating in <i>arrival</i>
   and <i>departure</i> events, or book copies participating in <i>book
   lending</i> and <i>book take back</i> activities, as shown with blue lines
-  in the following diagram:</p><figure><img id="secCIM-ParticipationAssociations__figCIM-ObjEvtAct" src="OEMS_files/PublicLibrary-ObjEvtAct_CIM.svg" width="450" /></figure><p>This
+  in the following diagram:</p><figure id="secCIM-ParticipationAssociations__figCIM-ObjEvtAct"><img src="OEMS_files/PublicLibrary-ObjEvtAct_CIM.svg" width="450" /></figure><p>This
   model includes six participation associations:</p><ol>
       <li>Exactly one library user participates in any <i>arrival</i> or
       <i>departure</i> event, as indicated by the multiplicity '1' shown at
@@ -439,37 +423,60 @@ span.button {
       <li>One or more book copies participate in any <i>book lending</i> or
       <i>book take back</i> activity, as indicated by the multiplicity
       '1..*'.</li>
-    </ol><p>While these three statements express the <em><b>participant
+    </ol><p>While the above three statements express the <em><b>participant
   multiplicities</b></em> shown at the association ends of the respective
   participant object types, there are also <em><b>participation
   multiplicities</b></em> shown at the association ends of the respective
   event/activity types. They can be stated as follows:</p><ol>
+      <li>A library user participates in zero or more <i>arrival</i> and
+      <i>departure</i> events over time, as indicated by the multiplicity
+      '*'.</li>
+
+      <li>A library user participates in zero or more <i>book lending</i> and
+      <i>book take back</i> activities over time, as indicated by the
+      multiplicity '*'.</li>
+
+      <li>A book copy participates in zero or more <i>book lending</i> and
+      <i>book take back</i> activities over time, as indicated by the
+      multiplicity '*'.</li>
+    </ol><p>Notice that we have used the phrase &quot;over time&quot; in these
+  participation multiplicity statements. It refers to the history populations
+  of the event/activity classes involved.</p><p>Tauzovich (1991) has proposed
+  a distinction between snapshot and history cardinality constraints in his
+  <em>Temporal Entity-Relationship</em> modeling approach. We adopt this
+  distinction for <abbr title="Object Event">OE</abbr> class models, where we
+  allow for a <strong>snapshot multiplicity expression</strong> in the form of
+  “S:<em>m</em>“, where <em>m</em> is a normal multiplicity expression (such
+  as * or 0..1), in addition to the history multiplicity expression at the
+  event/activity class side (or association end) of a participation
+  association. For avoiding the cluttering of <abbr title="Object Event">OE</abbr> class diagrams, we assume that, by default,
+  at the event/activity class side of a participation association, the
+  snapshot multiplicity is <i>zero-or-one</i> (0..1). By convention, we only
+  display an explicit snapshot multiplicity expression in an <abbr title="Object Event">OE</abbr> class diagram if it is different from the
+  default (0..1).</p><p>However, in addition to these <em><b>history
+  participation multiplicities</b></em> stating in how many events/activities
+  an object may participate <em>over time</em>, we also need to be able to
+  express <b><em>snapshot participation multiplicities</em></b> stating in how
+  many events/activities an object may participate <em>at a time</em>. We can
+  do this by adding a second multiplicity expression to the association end at
+  the event/activity type side prefixed with &quot;S:&quot;, as in the following
+  diagram:</p><figure><img src="OEMS_files/ParticipationMultiplicity.svg" width="450" /></figure><p>The snapshot participation multiplicity 'S:0..1'
+  in this example can be verbalized as follows: a library user participates in
+  at most one <i>book lending</i> activity at a time. Since this multiplicity
+  is the most frequent type of snapshot participation multiplicity, it is
+  assumed as the default (and not shown) in <abbr title="Object Event">OE</abbr> class models. Consequently, in the model
+  above, since no snapshot participation multiplicities are shown, all of them
+  have by default the multiplicity 0..1, as verbalized by the following
+  statements: </p><ol>
       <li>A library user participates in at most one <i>arrival</i> or
-      <i>departure</i> event (at a time), as indicated by the multiplicity
-      '0..1'.</li>
+      <i>departure</i> event at a time.</li>
 
       <li>A library user participates in at most one <i>book lending</i> or
-      <i>book take back</i> activity (at a time), as indicated by the
-      multiplicity '0..1'.</li>
+      <i>book take back</i> activity at a time.</li>
 
       <li>A book copy participates in at most one <i>book lending</i> or
-      <i>book take back</i> activity (at a time), as indicated by the
-      multiplicity '0..1'.</li>
-    </ol><p>Notice that we have used the phrase &quot;at a time&quot; in these
-  participation multiplicity statements. It refers to the snapshot semantics
-  of constraints in UML, according to which a constraint is evaluated against
-  the snapshot populations of the classes involved in it.</p><p>However, in
-  addition to these <em><b>snapshot participation multiplicities</b></em>
-  stating in how many events/activities an object may participate <em>at a
-  time</em>, we also want to express <b><em>history participation
-  multiplicities</em></b> stating in how many events/activities an object may
-  participate <em>over time</em>. We can do this by adding a second
-  multiplicity expression to the association end at the event/activity type
-  side prefixed with &quot;H:&quot;, as in the following diagram:</p><figure><img src="OEMS_files/HistoryParticipationMultiplicity.svg" width="450" /></figure><p>The history participation multiplicity 'H:*' in
-  this example can be verbalized as follows: a library user participates in
-  zero or many <i>book lending</i> activities over time. Since this
-  zero-or-many multiplicity is the most frequent type of history participation
-  multiplicity, it is assumed as the default (and not shown) in <abbr title="Object Event">OE</abbr> class models.</p></section></section><section class="role-section1" id="secCPM"><h2 class="role-section1-title"><span class="role-label"><span class="role-number">2.2</span>. </span>Making Conceptual Process Models</h2><p>A <dfn>conceptual process model</dfn> should describe the relevant
+      <i>book take back</i> activity at a time.</li>
+    </ol></section></section><section class="role-section1" id="secCPM"><h2 class="role-section1-title"><span class="role-label"><span class="role-number">2.2</span>. </span>Making Conceptual Process Models</h2><p>A <dfn>conceptual process model</dfn> should describe the relevant
   <em>causal regularities</em> of the problem domain in the form of <em>event
   rules</em>, providing one event rule for each type of event described in the
   conceptual information model. A conceptual <em>event rule</em> for an event
@@ -612,7 +619,7 @@ span.button {
 
       <li>the business event types <i>Arrival</i> and <i>Departure</i>;</li>
 
-      <li>business activity types <i>BookLending</i> and
+      <li>the business activity types <i>BookLending</i> and
       <i>BookTakeBack</i>.</li>
     </ol><p>Notice that in the design model, as is common in <abbr title="Object-Oriented">OO</abbr> modeling, we use camel case notation for
   all type names.</p><p>The two event types <i>Arrival</i> and
@@ -638,7 +645,7 @@ span.button {
   can be automatically computed from the implicit <i>occurrenceTime</i>
   attribute).</p><p>The class model expressed above with the visual modeling
   language of <abbr title="Object Event">OE</abbr> class diagrams can also be
-  expressed textually, following the syntax of SysML, in the following
+  expressed textually, following the syntax of <a href="https://www.omg.org/spec/KerML">KerML</a>, in the following
   way:</p><table class="role-listing" style="width: 100%; border-collapse: collapse;"><colgroup class="listing-numbers-column" style="width: 2.25em;"></colgroup><tbody style="vertical-align: baseline;"><tr><td class="listing-numbers"><pre style="text-align: right; background-color: transparent; border-style: none; padding: 0; margin: 0;">1
 2
 3
@@ -784,11 +791,11 @@ activityType <b>BookTakeBack</b> {
   <em>Specialization</em> is a relationship between types that is subject to
   certain constraints (such as the constraint that object types can only
   specialize other object types). The meta-classes <i>Type</i>,
-  <i>Specialization</i>, <i>Classifier</i>, and <i>Feature</i>, shown in <a class="role-figure-ref" href="#secIDM-FormalSemantics__figOEMLmetaclasses"><span class="role-label">Figure <span class="role-number">4-1</span></span></a>, are defined in the <a href="https://www.omg.org/spec/KerML">Kernel Modeling Language</a>
-  (developed by the Object Management Group as the foundation of SysML v2 and
-  a future version UML).</p><figure id="secIDM-FormalSemantics__figOEMLmetaclasses"><figcaption><span class="role-label">Figure <span class="role-number">4-1</span>. </span>The
-  abstract syntax of the OE Modeling Language based on KerML
-  meta-classes.</figcaption><div><img alt="???" src="OEMS_files/OEML-Metamodel.svg" width="700" /></div></figure><section class="role-section1" id="OE-Logic"><h2 class="role-section1-title"><span class="role-label"><span class="role-number">4.1</span>. </span>Object Event Logic</h2><p>An <abbr title="Object Event">OE</abbr> class model, like the one
+  <i>Specialization</i>, <i>Classifier</i>, and <i>Feature</i>, shown in <a class="role-figure-ref" href="#secIDM-FormalSemantics__figOEMLmetaclasses"><span class="role-label">Figure <span class="role-number">4-1</span></span></a>, are defined in the <a href="https://www.omg.org/spec/KerML">Kernel Modeling Language</a> developed
+  by the Object Management Group as the foundation of SysML v2 and a future
+  version UML.</p><figure id="secIDM-FormalSemantics__figOEMLmetaclasses"><figcaption><span class="role-label">Figure <span class="role-number">4-1</span>. </span>The abstract
+  syntax of the OE Modeling Language based on KerML
+  meta-classes.</figcaption><div><img alt="???" src="OEMS_files/OEML-Metamodel.svg" width="650" /></div></figure><section class="role-section1" id="OE-Logic"><h2 class="role-section1-title"><span class="role-label"><span class="role-number">4.1</span>. </span>Object Event Logic</h2><p>An <abbr title="Object Event">OE</abbr> class model, like the one
   presented in <a class="role-figure-ref" href="#secIDM-IS__figLibraryIDM"><span class="role-label">Figure <span class="role-number">3-1</span></span></a>,
   defines (1) a <strong><em>vocabulary</em></strong> consisting of the names
   of object types, event types, attributes and associations, and (2) a set of
