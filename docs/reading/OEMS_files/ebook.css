@@ -238,7 +238,7 @@ b.xmgui {
 }
 
 a.external:after {
-    content: " " url(new_window.svg);
+    content: " " url(../icons/new_window.svg);
 }
 
 /*
@@ -551,7 +551,7 @@ h2.role-index-div-title { /*Symbols,A,B,C*/
 
 a.role-index-toc-ref:before {
     float: right;
-    content: url(backToTop.svg);
+    content: url(../icons/backToTop.svg);
     width: 1em;
     height: 1em;
 }
@@ -895,51 +895,51 @@ blockquote.role-warning:before {
 }
 
 blockquote.role-note:before {
-    content: url(note.svg);
+    content: url(../icons/note.svg);
 }
 
 blockquote.role-attention:before {
-    content: url(attention.svg);
+    content: url(../icons/attention.svg);
 }
 
 blockquote.role-caution:before {
-    content: url(caution.svg);
+    content: url(../icons/caution.svg);
 }
 
 blockquote.role-danger:before {
-    content: url(danger.svg);
+    content: url(../icons/danger.svg);
 }
 
 blockquote.role-fastpath:before {
-    content: url(fastpath.svg);
+    content: url(../icons/fastpath.svg);
 }
 
 blockquote.role-important:before {
-    content: url(important.svg);
+    content: url(../icons/important.svg);
 }
 
 blockquote.role-notice:before {
-    content: url(notice.svg);
+    content: url(../icons/notice.svg);
 }
 
 blockquote.role-remember:before {
-    content: url(remember.svg);
+    content: url(../icons/remember.svg);
 }
 
 blockquote.role-restriction:before {
-    content: url(restriction.svg);
+    content: url(../icons/restriction.svg);
 }
 
 blockquote.role-tip:before {
-    content: url(tip.svg);
+    content: url(../icons/tip.svg);
 }
 
 blockquote.role-trouble:before {
-    content: url(trouble.svg);
+    content: url(../icons/trouble.svg);
 }
 
 blockquote.role-warning:before {
-    content: url(warning.svg);
+    content: url(../icons/warning.svg);
 }
 
 
@@ -1189,8 +1189,8 @@ a.role-footnote-ref {
 }
 
 figure.threecells {
-  width: 120%;
-  margin-left: -10%;
+  width: 110%;
+  margin-left: -5%;
 }
 figure.threecells > div {
   display: flex;
